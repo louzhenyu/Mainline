@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* CSS Document */
+/*初始化结构*/
+body, button, input, select, textarea, pre {
+    font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+    font-size: 12px;
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{list-style: none;}
+a{text-decoration:none;color:#00588a;}
+a:hover,.alink a,.link{text-decoration:underline;} 
+/*清楚浮动*/
+.cc{*zoom:1;}
+.cc:after{content:'\20';display:block;height:0;clear:both;visibility: hidden;}
+.c{clear:both;font:0px/0px Arial;overflow:hidden;height:0;width:0;}
+/*通用样式*/
+.fr{float:right}
+.fl{float:left}
+/*头部导航样式*/
+.header{height:82px; width:100%; background:url(../Images/headBg.jpg) repeat-x;}
+.header h1{color:#FFF; font-size:20px; padding:10px;}
+.header .logout{float:right; color:#FFF; margin-right:20px; height:18px;}
+.nav li{ float:left; width:90px; height:35px; margin:0 5px; line-height:35px; font-size:14px; text-align:center;}
+.nav .nactive{ background:url(../Images/navActive.gif) no-repeat;}
+.nav li a{color:#FFF;}
+.nav .nactive a{color:#00588a;}
+.crumb{ height:33px; background:url(../Images/crumbBg.gif) repeat-x; line-height:33px; padding-left:10px;}
+/*头部导航样式*/
+.loginBg{background:url(../Images/loginBg.gif);padding-top:240px;}
+.loginLine{background-color:#a8bbc8; border-top:5px solid #cad4d9; border-bottom:5px solid #cad4d9; height:228px;}
+.loginWin{ width:329px; height:228px; background:url(../Images/loginWinBg.jpg) no-repeat; margin:0 auto; color:#FFF;}
+.wintit{padding:25px; line-height:49px; }
+.wintit .winLogin{width:47px; height:49px; background:url(../Images/login.png) no-repeat; float:left;}
+.wintit h1{ font-size:20px; margin-left:20px; display:inline;}
+.winCon{ margin-left:80px; margin-bottom:2px;}
+.winNote{height:15px; padding-left:50px; color:#ff9999;}
+.loginBn{padding:0 8px; margin-left:20px;}
+/*表格样式*/
+table.HYGrid
+{
+    border: 1px solid #AAC2CE; 
+}
+
+table.HYGrid thead {
+    border-right: 1px solid #FFFFFF;
+    background: url("Images/fhbg.gif") repeat-x scroll center bottom #FAFAFA;
+    border-color: #CCCCCC #CCCCCC -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    overflow: hidden;
+    position: relative;
+}
+table.HYGrid thead td
+{
+    font-weight:bolder;
+    font-size:14px;
+    text-align:center;
+}
+table.HYGrid th,table.HYGrid td
+{
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #DDDDDD;    
+    height:25px;
+}
+table.HYGrid  td
+{
+    border-top: 1px solid #AAC2CE;
+    /*white-space: nowrap;*/
+    padding-left:1px;
+    word-break:break-all;
+    text-align:left;
+}
+table.HYGrid tbody no 
+{
+    height:100px;
+    position:fixed;
+    overflow-y:auto;
+}
+table.HYGrid .RowSelected
+{
+    background: #d9ebf5;
+}
+/*按钮*/
+.btn_02_mout{
+	/*border-style: none;
+    border-color: inherit;
+    border-width: medium;*/
+    width:73px;
+    height:25px;
+	line-height:25px;
+	border:none;
+	background:url(../Images/btn_05.gif);
+	color:#1f4a9c;
+}
+.btn_02_mover{
+	width:73px;
+	height:25px;
+	line-height:25px;
+	border:none;
+	background:url(../Images/btn_06.gif);
+	color:#1f4a9c;
+}
+.btn_02_mover a:link,.btn_02_mover a:active,.btn_02_mover a:visited ,.btn_02_mover a:hover {
+	color: #1f4a9c;
+	text-decoration: none;
+}
+.btn_04_mout{
+	width:73px;
+	height:22px;
+	border:none;
+	background:url(../Images/btn_10.gif);
+	color:#333;
+}
+.btn_04_mover{
+	width:73px;
+	height:22px;
+	border:none;
+	background:url(../Images/btn_09.gif);
+	color:#1f4a9c;
+}
+/*标签切换*/
+.nTab{
+width: 99%;
+margin: 0 auto;
+background-position:left;
+background-repeat:repeat-y;
+margin-bottom:2px;
+}
+.nTab .TabTitle{
+clear: both;
+height: 22px;
+overflow: hidden;
+}
+.nTab .TabTitle ul{
+border:0;
+margin:0;
+padding:0;
+}
+.nTab .TabTitle li{
+float: left;
+cursor: pointer;
+padding:0 10px;
+
+list-style-type: none;
+}
+.nTab .TabTitle .active{background:#fff;border-left:1px #AACCEE solid;border-top:1px #AACCEE solid;border-right:1px #AACCEE solid;border-bottom:1px #fff solid; text-align:center;height:24px;
+	background:url(../Images/block_01_bg.gif) repeat-x; line-height:24px;}
+.nTab .TabTitle .normal{background:#EBF3FB;border:1px #AACCEE solid; text-align:center; line-height:24px; height:24px;}
+.nTab .TabContent{
+width:auto;background:#fff;
+margin: 0px auto;
+padding:5px;
+border:1px #AACCEE solid;
+}
+/*表格样式*/
+.tb_01 {
+	border:1px solid #aac2ce; 
+	border-collapse:collapse;
+}
+.tb_01 td{padding-left:10px; padding:1px;
+}
+.tb_01 th, .tb_01 .tb_title01 {
+	font-weight:normal;
+	height:20px;
+	background:url(../Images/block_list_tit_bg.jpg) repeat-x;
+	border-bottom:1px solid #aac2ce;
+}
+.tb_01 .over{ background-color:#c9d6e5;}
+.tb_01 .column{ background-color:#eaeef3;}
+
+.message
+{
+   color:Black;
+   font-size:inherit; 
+}

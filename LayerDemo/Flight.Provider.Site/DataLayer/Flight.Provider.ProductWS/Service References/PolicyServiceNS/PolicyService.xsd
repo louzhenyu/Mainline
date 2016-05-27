@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56529/PolicyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.RequestDTO" />
+  <xs:import schemaLocation="http://localhost:56529/PolicyService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.ResponseDTO" />
+  <xs:element name="GetString">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStringResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyRemarkApply">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.RequestDTO" minOccurs="0" name="request" nillable="true" type="q1:PolicyRemarkApplyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyRemarkApplyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.ResponseDTO" minOccurs="0" name="PolicyRemarkApplyResult" nillable="true" type="q2:PolicyRemarkApplyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyRemarkSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.RequestDTO" minOccurs="0" name="request" nillable="true" type="q3:PolicyRemarkSearchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PolicyRemarkSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.ResponseDTO" minOccurs="0" name="PolicyRemarkSearchResult" nillable="true" type="q4:PolicyRemarkSearchResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

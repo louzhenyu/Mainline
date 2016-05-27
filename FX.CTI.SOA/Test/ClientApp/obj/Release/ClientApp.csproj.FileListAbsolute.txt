@@ -1,0 +1,6 @@
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Release\app.config
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Release\ClientApp.exe.config
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Release\ClientApp.exe
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Release\ClientApp.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\obj\Release\ClientApp.exe
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\obj\Release\ClientApp.pdb

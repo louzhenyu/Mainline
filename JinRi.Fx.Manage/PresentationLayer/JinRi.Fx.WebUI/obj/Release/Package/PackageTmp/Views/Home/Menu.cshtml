@@ -1,0 +1,61 @@
+﻿@using JinRi.Fx.Web
+@using JinRi.Fx.Entity
+@{
+    Layout = null;
+    object[] obj = Model as object[];
+    List<SysModule> listModule = ViewBag.ModuleList as List<SysModule>;
+    List<SysMenu> listMenu = ViewBag.MenuList as List<SysMenu>;
+}
+<div class="page-sidebar nav-collapse collapse">
+    <!-- BEGIN SIDEBAR MENU -->
+    <ul class="page-sidebar-menu">
+        <li style="padding-bottom:10px; ">
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+            <div class="sidebar-toggler hidden-phone"><h3 style="margin-left:-160px; line-height:23px;  color:white; ">System Menu</h3></div>
+            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        </li>
+        <li>
+            <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+            <!--
+            <form class="sidebar-search dn">
+                <div class="input-box">
+                    <a href="javascript:;" class="remove"></a>
+                    <input type="text" placeholder="Search..." />
+                    <input type="button" class="submit" value=" " />
+                </div>
+            </form>                
+            -->
+            <!-- END RESPONSIVE QUICK SEARCH FORM -->
+        </li>
+
+        <!--菜单绑定-->
+        @for (int index = 0; index < listModule.Count; index++)
+        {
+            var m = listModule[index];
+            List<JinRi.Fx.Entity.SysMenu> list = listMenu.Where(c => c.ModuleId == m.ModuleId).ToList<JinRi.Fx.Entity.SysMenu>();
+            bool hasSub =list.Count>0;
+            if (!hasSub) { continue; }
+            
+            <li class="">
+			    <a href="@(string.IsNullOrEmpty(m.ModuleUrl) ? "javascript:;" : m.ModuleUrl)" title="@m.ModuleName">
+			    <i class="@m.ImageUrl"></i> 
+			    <span class="title">@m.ModuleName</span>
+                @if (hasSub)
+                {
+                    <span class='arrow'></span>
+                }
+			    </a>
+                @if (hasSub)
+                {
+                    <ul class="sub-menu">
+                        @foreach (var menu in list)
+                        {
+                            <li><a href="@menu.MenuUrl" title="@menu.Remark">@menu.MenuName</a></li>
+                        }
+                    </ul>
+                }
+		    </li>
+        }
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>

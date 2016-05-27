@@ -1,0 +1,9 @@
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\bin\Release\JinRi.Fx.Entity.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\bin\Release\JinRi.Fx.Entity.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\bin\Release\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\bin\Release\JRedis.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\bin\Release\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\obj\Release\JinRi.Fx.Entity.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\obj\Release\JinRi.Fx.Entity.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\obj\Release\JinRi.Fx.Entity.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\EntityLayer\JinRi.Fx.Entity\bin\Release\JRedis.xml

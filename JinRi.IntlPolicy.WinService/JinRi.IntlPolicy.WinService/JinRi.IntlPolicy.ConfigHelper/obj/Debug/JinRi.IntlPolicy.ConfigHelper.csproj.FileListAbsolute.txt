@@ -1,0 +1,17 @@
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\JinRi.IntlPolicy.ConfigHelper.dll.config
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\JinRi.IntlPolicy.ConfigHelper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\JinRi.IntlPolicy.ConfigHelper.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\AutoMapper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\JinRi.IntlPolicy.Entity.Mq.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\System.IO.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\System.Runtime.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\System.Threading.Tasks.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\JinRi.IntlPolicy.Entity.Mq.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\AutoMapper.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\System.IO.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\System.Runtime.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\bin\Debug\System.Threading.Tasks.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\obj\Debug\JinRi.IntlPolicy.ConfigHelper.csproj.App.config
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\obj\Debug\JinRi.IntlPolicy.ConfigHelper.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\obj\Debug\JinRi.IntlPolicy.ConfigHelper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.ConfigHelper\obj\Debug\JinRi.IntlPolicy.ConfigHelper.pdb

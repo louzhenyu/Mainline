@@ -1,0 +1,11 @@
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JinRi.Fx.RequestDTO.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JinRi.Fx.RequestDTO.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JinRi.Fx.Entity.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JRedis.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JinRi.Fx.Entity.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\obj\Release\JinRi.Fx.RequestDTO.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\obj\Release\JinRi.Fx.RequestDTO.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\obj\Release\JinRi.Fx.RequestDTO.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\JinRi.Fx.RequestDTO\bin\Release\JRedis.xml

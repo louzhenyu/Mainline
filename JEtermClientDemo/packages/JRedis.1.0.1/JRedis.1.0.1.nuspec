@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JRedis</id>
+    <version>1.0.1</version>
+    <title>JRedis</title>
+    <authors>今日 - 架构部</authors>
+    <owners>古大集团</owners>
+    <projectUrl>http://wiki.jinri.org.cn/pages/viewpage.action?pageId=11698178</projectUrl>
+    <iconUrl>http://192.168.1.24:10086/ico.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库。</description>
+  </metadata>
+</package>

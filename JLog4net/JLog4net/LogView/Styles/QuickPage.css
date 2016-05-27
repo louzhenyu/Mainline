@@ -1,0 +1,111 @@
+﻿/*分页插件样式开始*/
+.pagination
+{
+	height: 30px;
+	position: relative;
+	background: #efefef;
+	border-top: #ccc 1px silid;
+	zoom: 1;
+	border:1px solid #bdddee;
+}
+.pagination table
+{
+	float: left;
+	height: 30px;
+}
+.pagination-info
+{
+	padding-right: 6px;
+	float: right;
+	font-size: 12px;
+	padding-top: 8px;
+}
+.l-btn
+{
+	outline-style: none;
+	outline-color: invert;
+	outline-width: medium;
+	padding-right: 18px;
+	zoom: 1;
+	display: inline-block;
+	/*background: url(images/button_a_bg.gif) no-repeat right top;*/
+	height: 24px;
+	color: #444;
+	font-size: 12px;
+	cursor: pointer;
+	text-decoration: none;
+}
+.l-btn-plain
+{
+	border: transparent 1px solid;
+	padding-right: 5px;
+	background: none transparent scroll repeat 0% 0%;
+	_border: 0px solid #efefef;
+	_padding: 1px 6px 1px 1px;
+}
+.l-btn-plain span.l-btn-left
+{
+	padding-left: 5px;
+	background: none transparent scroll repeat 0% 0%;
+}
+.l-btn-disabled
+{
+	/*filter: alpha(opacity=50);*/
+	color: #ccc;
+	cursor: pointer;
+	opacity: 0.5;
+}
+.l-btn-left
+{
+	padding-bottom: 4px;
+	line-height: 16px;
+	padding-left: 18px;
+	padding-right: 0px;
+	display: inline-block;
+	/*background: url(images/button_span_bg.gif) no-repeat left top;*/
+	height: 16px;
+	padding-top: 4px;
+}
+.l-btn-text
+{
+	padding: 0px 0px 0px 0px;
+	line-height: 16px;
+	display: inline-block;
+	height: 16px;
+}
+.l-btn-empty
+{
+	padding: 0px 0px 0px 0px;
+	/*width: 16px;*/
+	display: inline-block;
+}
+.pagination-btn-separator
+{
+	border-left: #ccc 1px solid;
+	margin: 3px 1px;
+	float: left;
+	height: 24px;
+	border-right: #fff 1px solid;
+}
+.pagination-num
+{
+	border: #ccc 1px solid;
+	margin: 0px 2px;
+}
+.pagination-first
+{
+	/*background: url(images/pagination_first.gif) no-repeat;*/
+}
+.pagination-prev
+{
+	/*background: url(images/pagination_prev.gif) no-repeat;*/
+}
+.pagination-next
+{
+	/*background: url(images/pagination_next.gif) no-repeat;*/
+}
+.pagination-last
+{
+	/*background: url(images/pagination_last.gif) no-repeat;*/
+}
+/*分页插件样式结束*/

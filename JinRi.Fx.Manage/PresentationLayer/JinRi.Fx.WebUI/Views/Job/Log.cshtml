@@ -1,0 +1,71 @@
+﻿@using JinRi.Fx.Web
+@using JinRi.Fx.Entity
+@using Webdiyer.WebControls.Mvc
+@model JinRi.Fx.WebUI.Models.JobLogModel
+@{
+    ViewBag.Title = "运行日志";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+    PagedList<JobExecuteLog> list = ViewBag.DataSource;
+}
+<div style="width:90%; padding:20px;">
+    @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "search" })) { }
+    @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "listForm" }))
+    {
+        <table style="width:100%;">
+            <tr>
+                <td>&nbsp;开始时间：</td>
+                <td style="padding-top:10px;">
+                    @Html.TextBox("StartTime", Model.StartTime.ToString("yyyy-MM-dd HH:mm:ss"), new { @id = "StartTime", @class = "m-wrap small" })
+                </td>
+                <td>&nbsp;结束时间：</td>
+                <td style="padding-top:10px;">
+                    @Html.TextBox("EndTime", Model.EndTime.ToString("yyyy-MM-dd HH:mm:ss"), new { @id = "EndTime", @class = "m-wrap small" })
+                </td>
+                <td>
+                    <button type="button" class="btn" id="btnSearch">搜索 <i class="icon-search"></i></button>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>运行时间</th>
+                    <th>状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in list)
+                {
+                    <tr>
+                        <td>@m.ExecuteTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td style="@(m.Success == 0 ? "" : "color:red")">@(m.Success == 0 ? "成功" : "失败")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="dataTables_paginate paging_bootstrap pagination">
+            @Html.Pager(list, new PagerOptions { PageIndexParameterName = "pageIndex", NumericPagerItemCount = 3 }, new { id = "flickrpager" })
+        </div>
+    }
+</div>
+@section PageSpecificJavascriptIncludes{
+    <script>
+        $("#StartTime").datetimepicker({
+            autoclose: true,
+            todayBtn: true,
+            minuteStep: 5
+        });
+
+        $("#EndTime").datetimepicker({
+            autoclose: true,
+            todayBtn: true,
+            minuteStep: 5
+        });
+        $(function () {
+            $(".form-actions").hide();
+            $("#btnSearch").click(function () {
+                document.forms["listForm"].submit();
+            });
+        });
+    </script>
+}

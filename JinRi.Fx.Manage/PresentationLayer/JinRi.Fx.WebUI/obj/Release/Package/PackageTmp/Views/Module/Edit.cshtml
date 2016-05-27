@@ -1,0 +1,63 @@
+﻿@model JinRi.Fx.Entity.SysModule
+
+@{
+    ViewBag.Title = "模块修改";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>模块名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ModuleName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ModuleName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">模块地址：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ModuleUrl, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ModuleUrl)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">图标地址：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ImageUrl, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ImageUrl)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">所属系统：</label>
+                <div class="controls">                    
+                    @Html.TextBoxFor(m => m.SystemId, new { @class = "m-wrap integer", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SystemId)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">排序：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Sort, new { @class = "m-wrap small integer" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Sort)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">状态：</label>
+                <div class="controls">                    
+                    @Html.DropDownList("ModelState", null, new { @style = "width:135px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Status)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap", @style = "width:300px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

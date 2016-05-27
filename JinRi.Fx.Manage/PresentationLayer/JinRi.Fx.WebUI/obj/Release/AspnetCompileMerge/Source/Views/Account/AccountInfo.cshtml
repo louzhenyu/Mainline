@@ -1,0 +1,69 @@
+﻿@using JinRi.Fx.Entity
+@model JinRi.Fx.Entity.SysUser
+
+@{
+    ViewBag.Title = "AccountInfo";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+    Dictionary<int, SysRole> dictionaryRole = ViewBag.DictionaryRole;
+}
+<style>
+    .control-label {
+        padding-top: 0px !important;
+    }
+</style>
+<div class="portlet-body form-horizontal form-bordered form-row-stripped">
+    <div class="row-fluid">
+        <div class="control-group">
+            <label class="control-label">用户名：</label>
+            <div class="controls">
+                @Model.UserName @Html.HiddenFor(m => m.UserId)
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">所属角色：</label>
+            <div class="controls">
+                @(!dictionaryRole.ContainsKey(@Model.RoleId) ? "无" : dictionaryRole[@Model.RoleId].RoleName)                
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">用户状态：</label>
+            <div class="controls">
+                @(Model.Status == 0 ? "启用" : "禁用")
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">真实姓名：</label>
+            <div class="controls">
+                @Model.RealName
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">联系电话：</label>
+            <div class="controls">
+                @Model.Tel
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">邮箱：</label>
+            <div class="controls">
+                @Model.Email
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">注册日期：</label>
+            <div class="controls">
+                @Model.RegDate.ToString("yyyy-MM-dd")
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(function () {
+            $("#submit").hide();
+        });
+    </script>
+}

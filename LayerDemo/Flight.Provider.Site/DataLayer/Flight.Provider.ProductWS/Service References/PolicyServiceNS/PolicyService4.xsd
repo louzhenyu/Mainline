@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.ResponseDTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.ResponseDTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56529/PolicyService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Flight.Product.Entity" />
+  <xs:import schemaLocation="http://localhost:56529/PolicyService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.RequestDTO" />
+  <xs:complexType name="PolicyRemarkApplyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Flight.Product.Entity" base="q1:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PolicyRemarkApplyResponse" nillable="true" type="tns:PolicyRemarkApplyResponse" />
+  <xs:complexType name="PolicyRemarkSearchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Flight.Product.Entity" base="q2:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Flight.Product.Entity.RequestDTO" minOccurs="0" name="Data" nillable="true" type="q3:ArrayOfPolicyRemarkDTO" />
+          <xs:element minOccurs="0" name="Paging" nillable="true" type="q2:ResponsePaging" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PolicyRemarkSearchResponse" nillable="true" type="tns:PolicyRemarkSearchResponse" />
+</xs:schema>

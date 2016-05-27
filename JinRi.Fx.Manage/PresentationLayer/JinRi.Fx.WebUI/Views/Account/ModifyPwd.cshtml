@@ -1,0 +1,45 @@
+﻿@model JinRi.Fx.Entity.SysUser
+
+@{
+    ViewBag.Title = "修改密码";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <style>
+        .form-horizontal .form-actions {
+            padding-left:0px;
+        }
+    </style>
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>登录名：</label>
+                <div class="controls">
+                    @Model.UserName @Html.HiddenFor(m => m.UserId)
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>原密码：</label>
+                <div class="controls">
+                    @Html.PasswordFor(m => m.PassWord, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.PassWord)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>新密码：</label>
+                <div class="controls">
+                    @Html.Password("NewPassword","", new { @class = "m-wrap small" })
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>重复新密码：</label>
+                <div class="controls">                    
+                    @Html.Password("NewPassword2","", new { @class = "m-wrap small" })
+                </div>
+            </div>
+        </div>
+    </div>
+}

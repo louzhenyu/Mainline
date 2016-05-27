@@ -1,0 +1,6 @@
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.Entity\bin\Release\FX.CTI.Entity.XML
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.Entity\bin\Release\FX.CTI.Entity.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.Entity\bin\Release\FX.CTI.Entity.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.Entity\obj\Release\FX.CTI.Entity.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.Entity\obj\Release\FX.CTI.Entity.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.Entity\obj\Release\FX.CTI.Entity.pdb

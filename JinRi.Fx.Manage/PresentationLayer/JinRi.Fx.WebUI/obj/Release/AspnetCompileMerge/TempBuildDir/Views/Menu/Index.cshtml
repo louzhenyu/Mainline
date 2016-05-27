@@ -1,0 +1,98 @@
+﻿@using JinRi.Fx.Web
+@using JinRi.Fx.Entity
+@using Webdiyer.WebControls.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Dictionary<int, SysModule> dictionaryModule = ViewBag.DictionaryModule;
+    PagedList<SysMenu> menuList = ViewBag.MenuList;
+}
+
+<div class="row-fluid">
+    <div class="span4">
+        <div>
+            <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+            <a class="btn blue thickbox" title='添加新菜单' href="@Url.Action("Create")?TB_iframe=true&height=480&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+        </div>
+    </div>
+    <div class="span8">
+        @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+        {
+            <div class="dataTables_filter">
+                <label>
+                    &nbsp;<button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                </label>
+                <label>
+                    <span>&nbsp;菜单名称：</span>
+                    @Html.TextBox("MenuName", null, new { @class = "m-wrap small" })
+                </label>&nbsp;
+                <label>
+                    <span>&nbsp;菜单模块：</span>                    
+                    @Html.DropDownList("ModuleId", null, new { @style = "width:120px" })
+                </label>&nbsp;
+                <label>
+                    <span>&nbsp;状态：</span>
+                    @Html.DropDownList("Status", 
+                    new List<SelectListItem> {
+                        new SelectListItem { Text = "全部", Value = "-1",Selected = true},
+                        new SelectListItem { Text = "启用", Value = "0" },
+                        new SelectListItem { Text = "禁用", Value = "1" } },
+                 new { @class = "m-wrap", @style = "width:120px" })
+                </label>&nbsp;
+            </div>
+        }
+    </div>
+</div>
+
+<div class="alert">
+    <button class="close" data-dismiss="alert"></button>
+    <strong>系统菜单相关：</strong>
+    管理系统下的所有菜单，请注意菜单地址栏格式，基础数据，请勿随意删除！
+</div>
+
+@using (Html.BeginForm("Delete", "Menu", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;"><input type="checkbox" id="checkall" class="group-checkable" /></th>
+                <th>菜单代码</th>
+                <th>菜单名称</th>
+                <th>菜单地址</th>
+                <th>图标地址</th>
+                <th>所属模块</th>
+                <th>排序</th>
+                <th>状态</th>
+                <th>备注</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in menuList)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.MenuId' />
+                    </td>
+                    <td>@m.MenuId</td>
+                    <td>@m.MenuName</td>
+                    <td>@m.MenuUrl</td>
+                    <td>@m.ImageUrl</td>
+                    <td>@(!dictionaryModule.ContainsKey(m.ModuleId) ? "无" : dictionaryModule[m.ModuleId].ModuleName)</td>
+                    <td>@m.Sort</td>
+                    <td style="@(m.Status == 0 ? "" : "color:red")">@(m.Status==0?"启用":"禁用")</td>
+                    <td>@m.Remark</td>
+                    <td>
+                        <a class="btn mini purple thickbox" title='编辑菜单信息' href="@Url.Action("Edit", new { id = m.MenuId })?TB_iframe=true&height=480&width=500">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(menuList, new PagerOptions { PageIndexParameterName = "pageIndex" }, new { id = "flickrpager" })
+</div>

@@ -1,0 +1,167 @@
+﻿@using JinRi.Fx.Entity
+@model JinRi.Fx.Entity.JobHttpScheduler
+
+@{
+    ViewBag.Title = "新增计划任务";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+
+    JobHttpScheduler item = new JobHttpScheduler();
+}
+<style>
+    .control-group {
+        height: 40px;
+    }
+
+    .controls {
+        height: 40px;
+        padding-top: 3px !important;
+    }
+</style>
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>任务名称：</label>
+                <div class="controls">
+                    @Html.TextBox("JobName", "", new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.JobName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">组名：</label>
+                <div class="controls">
+                    @Html.TextBox("GroupName", "", new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.GroupName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">请求地址：</label>
+                <div class="controls">
+                    @Html.TextBox("RequestURL", "", new { @class = "m-wrap tooltip-control", @style = "width:300px;", @title = "例如：http://www.jinri.cn/Example.aspx" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RequestURL)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">请求类型：</label>
+                <div class="controls">
+                    @Html.DropDownList("RequestType",
+                        new List<SelectListItem> {
+                            new SelectListItem { Text = "GET", Value = "0", Selected=true },
+                            new SelectListItem { Text = "POST", Value = "1" } },
+                     new { @class = "m-wrap", @style = "width:120px" })
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">开始时间：</label>
+                <div class="controls">
+                    @Html.TextBox("StartTime", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), new { @class = "m-wrap tooltip-control"})
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.StartTime)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Trigger类型：</label>
+                <div class="controls">
+                    @Html.DropDownList("TriggerType",
+                        new List<SelectListItem> {
+                            new SelectListItem { Text = "SimpleTrigger", Value = "0" , Selected=true},
+                            new SelectListItem { Text = "CronTrigger", Value = "1" } },
+                        new { @id = "TriggerType", @class = "m-wrap", @style = "width:120px" })
+                </div>
+            </div>
+
+            <div class="control-group" id="divRepeatCount">
+                <label class="control-label">重复次数：</label>
+                <div class="controls">
+                    @Html.TextBox("RepeatCount", "-1", new { @class = "m-wrap small integer tooltip-control", @title = "-1表示不限次数" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RepeatCount)</span>
+                </div>
+            </div>
+            <div class="control-group" id="divRepeatInterval">
+                <label class="control-label">间隔时间：</label>
+                <div class="controls">
+                    @Html.TextBox("RepeatInterval", "", new { @class = "m-wrap small integer tooltip-control", @title = "正整数(单位：分钟)" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RepeatInterval)</span>
+                </div>
+            </div>
+            <div class="control-group" id="divCronExpression" style="display:none;">
+                <label class="control-label">Cron表达式：</label>
+                <div class="controls">
+                    @Html.TextBox("CronExpression", "", new { @class = "m-wrap tooltip-control", @style = "width:250px;", @title = "Cron-Like表达式，例如：每5分钟执行一次(0 0/5 * * * ?)" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.CronExpression)</span>
+                    <a id="btnFireTime" class="btn thickbox tooltip-control" href="#">
+                        <i class="icon-search"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">状态：</label>
+                <div class="controls">
+                    @Html.DropDownList("JobStatus",
+                    new List<SelectListItem> {
+                        new SelectListItem { Text = "启用", Value = "0" },
+                        new SelectListItem { Text = "禁用", Value = "1" } },
+                 new { @class = "m-wrap", @style = "width:120px" })
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">描述：</label>
+                <div class="controls">
+                    @Html.TextBox("JobDescription", "", new { @class = "m-wrap", @style = "width:350px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.JobDescription)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(function () {
+            $("#TriggerType").change(function () {
+                if ($(this).val() == "0") {
+                    $('#divRepeatCount').show();
+                    $('#divRepeatInterval').show();
+                    $('#divCronExpression').hide();
+                }
+                else {
+                    $('#divRepeatCount').hide();
+                    $('#divRepeatInterval').hide();
+                    $('#divCronExpression').show();
+
+                    if ($('#RepeatCount').val() == "" || isNaN($('#RepeatCount').val())) {
+                        $('#RepeatCount').val("-1");
+                    }
+                    if ($('#RepeatInterval').val() == "" || isNaN($('#RepeatInterval').val())) {
+                        $('#RepeatInterval').val("60");
+                    }
+                }
+            });
+            $("#StartTime").datetimepicker({
+                format: "yyyy-MM-dd hh:ii:ss",
+                autoclose: true,
+                todayBtn: true,
+                minuteStep: 5
+            });
+            $("#TriggerType").change();
+            $("#btnFireTime").click(function () { getFireTime(); });
+        });
+        function getFireTime() {
+            var apiAddress = "http://" + window.location.host + "/api/cron?CronExpression=" + $('#CronExpression').val();
+            $.ajax({
+                type: "GET",
+                url: apiAddress,
+                dataType: "jsonp",
+                jsonpCallback: "callback"
+            });
+        }
+        function callback(result) {
+            var title = "";
+            if (result.FireTimes != undefined) {
+                $(result.FireTimes).each(function (i) {
+                    title += (result.FireTimes[i] + "　　　　　");
+                });
+            }
+            $('#CronExpression').attr("data-original-title", title).focus();
+        }
+    </script>
+}

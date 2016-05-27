@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{16ca63ae-18c3-4529-a1c8-504c8bfd6977}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{05630fb1-0ac5-43d4-8d0e-ca3560c8aa6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{92ace754-0db0-44c4-929d-f70e9b4f26b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{40fc3635-eeff-44f4-ad10-af2446b0716a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\CAsyncSocketEx">
+      <UniqueIdentifier>{138e81c9-98b2-4e9e-83ab-5c82b4316271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\MD5">
+      <UniqueIdentifier>{9223dd33-15c7-45b4-af1d-de86fe121398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\Encrypt">
+      <UniqueIdentifier>{4d63f21e-d4ce-47f4-aef2-4fa52689d107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\Protocol">
+      <UniqueIdentifier>{6c1d9521-d8e3-432d-b6d4-a7ace9aed52a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\IOCP">
+      <UniqueIdentifier>{05bc6af9-d8f4-45c8-8f2b-729d80455361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\redis">
+      <UniqueIdentifier>{03dab64f-be11-4b03-bc31-279145a3e22e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\json">
+      <UniqueIdentifier>{14a5560c-3552-4db1-9fea-e06925a53c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\HttpHelper">
+      <UniqueIdentifier>{c1a9c40f-c0b3-4367-a852-d815876c9f1a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EtermServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermServerDoc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermServerView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CntrItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyncSocketEx\AsyncSocketEx.h">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyncSocketEx\AsyncSocketExLayer.h">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyncSocketEx\AsyncSslSocketLayer.h">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyncSocketEx\CBase64Coding.hpp">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClInclude>
+    <ClInclude Include="Encrypt\Base64.h">
+      <Filter>Utility\Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="Encrypt\DES.h">
+      <Filter>Utility\Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="Encrypt\Encrypt.h">
+      <Filter>Utility\Encrypt</Filter>
+    </ClInclude>
+    <ClInclude Include="WorkspaceBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="stringEx.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="strcoding.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GetHDSerial.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpParse.h">
+      <Filter>Utility\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\AcceptContext.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\BaseDefine.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\ContextStack.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\MemoryBlock.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\OperateContext.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\TcpReceiveContext.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\TcpSendContext.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\TcpServer.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\TcpSrvException.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\UdpContext.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\UdpServer.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCP\WebServer.h">
+      <Filter>Utility\IOCP</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="limitIP.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="lip.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Data.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermCommand.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowInfo.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermPacket.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketHelper.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="PrinterDecrypt.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Proxyer.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Registry.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="RegDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CppSQLite3U.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="IPdlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermSocket.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="RxADO.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermUtility.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgConfigManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermConfig.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EtermConfigData.h">
+      <Filter>Data</Filter>
+    </ClInclude>
+    <ClInclude Include="redis\hiredis.h">
+      <Filter>Utility\redis</Filter>
+    </ClInclude>
+    <ClInclude Include="redis\xLock.h">
+      <Filter>Utility\redis</Filter>
+    </ClInclude>
+    <ClInclude Include="redis\xRedisClient.h">
+      <Filter>Utility\redis</Filter>
+    </ClInclude>
+    <ClInclude Include="redis\xRedisPool.h">
+      <Filter>Utility\redis</Filter>
+    </ClInclude>
+    <ClInclude Include="RedisHelper.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="json\autolink.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\config.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\features.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\forwards.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_batchallocator.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_tool.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\reader.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\value.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\writer.h">
+      <Filter>Utility\json</Filter>
+    </ClInclude>
+    <ClInclude Include="xmlHelper.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="enums.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EmailHelper.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="CAsyncSocketEx\AsyncProxySocketLayer.h">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Utility\MD5</Filter>
+    </ClInclude>
+    <ClInclude Include="threadpools.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="LockEterm.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Proxy.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="SMS.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Http.h">
+      <Filter>Utility\HttpHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="HttpSocket.h">
+      <Filter>Utility\HttpHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="ZBase64.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="BookData.h">
+      <Filter>Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgReckon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="eterm3Helper.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="DateTime.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="PingYingHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EtermServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermServerDoc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermServerView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CntrItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncSocketEx\AsyncSocketEx.cpp">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncSocketEx\AsyncSocketExLayer.cpp">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncSocketEx\AsyncSslSocketLayer.cpp">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncSocketEx\CBase64Coding.cpp">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClCompile>
+    <ClCompile Include="Encrypt\Base64.cpp">
+      <Filter>Utility\Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="Encrypt\DES.cpp">
+      <Filter>Utility\Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="Encrypt\Encrypt.cpp">
+      <Filter>Utility\Encrypt</Filter>
+    </ClCompile>
+    <ClCompile Include="WorkspaceBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="stringEx.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="strcoding.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="GetHDSerial.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Global.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgConfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpParse.cpp">
+      <Filter>Utility\Protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\AcceptContext.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\ContextStack.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\MemoryBlock.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\OperateContext.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\TcpReceiveContext.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\TcpSendContext.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\TcpServer.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\TcpSrvException.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\UdpContext.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\UdpServer.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCP\WebServer.cpp">
+      <Filter>Utility\IOCP</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="limitIP.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="lip.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermCommand.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowInfo.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermPacket.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketHelper.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="PrinterDecrypt.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Proxyer.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Registry.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="RegDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CppSQLite3U.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="IPdlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermSocket.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="RxADO.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermUtility.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgConfigManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermConfig.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EtermConfigData.cpp">
+      <Filter>Data</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_connection.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_hashs.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_keys.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_lists.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_sets.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_sortedsets.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisClient_strings.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="redis\xRedisPool.cpp">
+      <Filter>Utility\redis</Filter>
+    </ClCompile>
+    <ClCompile Include="RedisHelper.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_reader.cpp">
+      <Filter>Utility\json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_value.cpp">
+      <Filter>Utility\json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_writer.cpp">
+      <Filter>Utility\json</Filter>
+    </ClCompile>
+    <ClCompile Include="xmlHelper.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="enums.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EmailHelper.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="CAsyncSocketEx\AsyncProxySocketLayer.cpp">
+      <Filter>Utility\CAsyncSocketEx</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>Utility\MD5</Filter>
+    </ClCompile>
+    <ClCompile Include="LockEterm.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Proxy.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="SMS.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Http.cpp">
+      <Filter>Utility\HttpHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="HttpSocket.cpp">
+      <Filter>Utility\HttpHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="ZBase64.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="BookData.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgReckon.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="eterm3Helper.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="DateTime.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="PingYingHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EtermServer.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="UserImages.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\EtermServerDoc.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\EtermServer.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\green.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\red.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\White.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\EtermServer.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+</Project>

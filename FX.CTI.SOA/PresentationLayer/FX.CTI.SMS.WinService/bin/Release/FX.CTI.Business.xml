@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FX.CTI.Business</name>
+    </assembly>
+    <members>
+        <member name="T:FX.CTI.Business.EmailRepeater">
+            <summary>
+            邮件转发器
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.EmailRepeater.SendEmail(FX.CTI.Entity.DTO.EmailRequest)">
+            <summary>
+            发送邮件请求到MQ
+            </summary>
+            <param name="eRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FX.CTI.Business.EmailRepeater.CheckParas(FX.CTI.Entity.DTO.EmailRequest)">
+            <summary>
+            参数检查
+            </summary>
+            <param name="eRequest">EmailRequest对象</param>
+            <returns>参数合法，返回true;参数非法，返回false</returns>
+        </member>
+        <member name="M:FX.CTI.Business.EmailRepeater.ConverToCommonDTO(System.String,FX.CTI.Entity.DTO.EmailRequest)">
+            <summary>
+            EmailRequest对象转换成类型为EmailDTO的数据传输对象
+            </summary>
+            <param name="emailId">邮件编号</param>
+            <param name="eRequest">EmailRequest对象</param>
+            <returns>类型为EmailDTO的数据传输对象</returns>
+        </member>
+        <member name="T:FX.CTI.Business.EmailSender">
+            <summary>
+            Email发送器
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.EmailSender.Start">
+            <summary>
+            开始从RabbitMQ收消息,收到后发送到邮件服务器
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.EmailSender.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.EmailSender.HandleMessage(FX.CTI.Entity.DTO.EmailDTO)">
+            <summary>
+            收到RabbitMQ消息的回调
+            </summary>
+            <param name="emailDto"></param>
+        </member>
+        <member name="M:FX.CTI.Business.EmailSender.CreateConn">
+            <summary>
+            创建RabbitMQ服务器的连接
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.EmailSender.InitializeMailHelper">
+            <summary>
+            创建MailHelper的对象_mailHelper
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.EmailSender.SendMail(FX.CTI.Entity.DTO.EmailDTO)">
+            <summary>
+            依据EmailDTO对象内容发送邮件
+            </summary>
+            <param name="emailDto">EmailDTO对象</param>
+        </member>
+        <member name="F:FX.CTI.Business.EmailSender._mqHost">
+            <summary>
+            RabbitMQ连接字符串
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Business.EmailSender._smtpHost">
+            <summary>
+            邮件服务器地址
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Business.EmailSender._emailSenderAddr">
+            <summary>
+            邮件发送者地址
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Business.EmailSender._emailSenderPwd">
+            <summary>
+            邮件发送者密码
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Business.EmailSender._bus">
+            <summary>
+            EasyNetQ连接
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Business.EmailSender._mailHelper">
+            <summary>
+            发送邮件辅助对象
+            </summary>
+        </member>
+        <member name="T:FX.CTI.Business.SmsRepeater">
+            <summary>
+            短信转发器
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.SmsRepeater.SendSMS(FX.CTI.Entity.DTO.SMSRequest)">
+            <summary>
+            发送邮件请求到MQ
+            </summary>
+            <param name="eRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FX.CTI.Business.SmsRepeater.CheckParas(FX.CTI.Entity.DTO.SMSRequest)">
+            <summary>
+            参数检查
+            </summary>
+            <param name="eRequest">SMSRequest对象</param>
+            <returns>参数合法，返回true;参数非法，返回false</returns>
+        </member>
+        <member name="M:FX.CTI.Business.SmsRepeater.ConverToCommonDTO(System.String,FX.CTI.Entity.DTO.SMSRequest)">
+            <summary>
+            SMSRequest对象转换成类型为SMSDTO的数据传输对象
+            </summary>
+            <param name="smsId">SMS编号</param>
+            <param name="eRequest">SMSRequest对象</param>
+            <returns>类型为SMSDTO的数据传输对象</returns>
+        </member>
+        <member name="M:FX.CTI.Business.SMSSender.Start">
+            <summary>
+            开始从RabbitMQ收消息,收到后发送到短信服务器
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.SMSSender.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.SMSSender.HandleMessage(FX.CTI.Entity.DTO.SMSDTO)">
+            <summary>
+            收到RabbitMQ消息的回调
+            </summary>
+            <param name="smsDto"></param>
+        </member>
+        <member name="M:FX.CTI.Business.SMSSender.CreateConn">
+            <summary>
+            创建RabbitMQ服务器的连接
+            </summary>
+        </member>
+        <member name="M:FX.CTI.Business.SMSSender.SendSMS(FX.CTI.Entity.DTO.SMSDTO)">
+            <summary>
+            依据SMSDTO对象内容发送短信
+            </summary>
+            <param name="smsDto">SMSDTO对象</param>
+        </member>
+        <member name="F:FX.CTI.Business.SMSSender._mqHost">
+            <summary>
+            RabbitMQ连接字符串
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Business.SMSSender._bus">
+            <summary>
+            EasyNetQ连接
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{A3D1B62F-1EC9-49F1-B070-27E13EEB1082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceContract", "ServiceContract\ServiceContract.csproj", "{6748FB0E-0A76-474D-8177-02A504A51197}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceImpl", "ServiceImpl\ServiceImpl.csproj", "{FDBCF19A-35CB-4453-BE0D-3FA8CF7FC788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{9FB4C303-29E9-4652-904C-6D2BB368EACC}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ServiceHost\\ServiceHost.csproj
+		SccProjectName1 = ServiceHost
+		SccLocalPath1 = ServiceHost
+		SccProjectUniqueName2 = ServiceContract\\ServiceContract.csproj
+		SccProjectName2 = ServiceContract
+		SccLocalPath2 = ServiceContract
+		SccProjectUniqueName3 = ServiceImpl\\ServiceImpl.csproj
+		SccProjectName3 = ServiceImpl
+		SccLocalPath3 = ServiceImpl
+		SccProjectUniqueName4 = Client\\Client.csproj
+		SccProjectName4 = Client
+		SccLocalPath4 = Client
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3D1B62F-1EC9-49F1-B070-27E13EEB1082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D1B62F-1EC9-49F1-B070-27E13EEB1082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D1B62F-1EC9-49F1-B070-27E13EEB1082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D1B62F-1EC9-49F1-B070-27E13EEB1082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6748FB0E-0A76-474D-8177-02A504A51197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6748FB0E-0A76-474D-8177-02A504A51197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6748FB0E-0A76-474D-8177-02A504A51197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6748FB0E-0A76-474D-8177-02A504A51197}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDBCF19A-35CB-4453-BE0D-3FA8CF7FC788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDBCF19A-35CB-4453-BE0D-3FA8CF7FC788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDBCF19A-35CB-4453-BE0D-3FA8CF7FC788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDBCF19A-35CB-4453-BE0D-3FA8CF7FC788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB4C303-29E9-4652-904C-6D2BB368EACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB4C303-29E9-4652-904C-6D2BB368EACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB4C303-29E9-4652-904C-6D2BB368EACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB4C303-29E9-4652-904C-6D2BB368EACC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

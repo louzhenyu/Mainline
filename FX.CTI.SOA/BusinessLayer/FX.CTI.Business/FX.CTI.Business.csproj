@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54500455-0D18-48E4-AD86-592896A631F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FX.CTI.Business</RootNamespace>
+    <AssemblyName>FX.CTI.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\FX.CTI.Business.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\ReferenceDll\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="JFx, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceDll\JFx.dll</HintPath>
+    </Reference>
+    <Reference Include="JLog4net">
+      <HintPath>..\..\ReferenceDll\JLog4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\ReferenceDll\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\ReferenceDll\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\ReferenceDll\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmailRepeater.cs" />
+    <Compile Include="EmailSender.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmsRepeater.cs" />
+    <Compile Include="SMSSender.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonLayer\FX.CTI.ConfigHelper\FX.CTI.ConfigHelper.csproj">
+      <Project>{a29a136f-0050-4e78-835c-2594cd9a2d55}</Project>
+      <Name>FX.CTI.ConfigHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonLayer\FX.CTI.MQBusMgr\FX.CTI.MQBusMgr.csproj">
+      <Project>{21f3f81b-97f6-4878-b3a2-021371866417}</Project>
+      <Name>FX.CTI.MQBusMgr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\FX.CTI.DB\FX.CTI.DB.csproj">
+      <Project>{b9b06c7b-ab93-4c5c-90e3-c1c452a7cbb6}</Project>
+      <Name>FX.CTI.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\FX.CTI.SMSWS\FX.CTI.SMSWS.csproj">
+      <Project>{9ca8050d-a5f6-4298-a827-4e6f376c9eb3}</Project>
+      <Name>FX.CTI.SMSWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\FX.CTI.DBEntity\FX.CTI.DBEntity.csproj">
+      <Project>{b48cc13a-dc39-4bdb-85b0-50e3714dfebf}</Project>
+      <Name>FX.CTI.DBEntity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\FX.CTI.Entity\FX.CTI.Entity.csproj">
+      <Project>{03837385-0747-4284-a968-3e7a1fa5c94b}</Project>
+      <Name>FX.CTI.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,123 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Direct", "Direct", "{EAFDF62F-BC1F-44C7-AE70-137AC43231F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "Messages\Messages.csproj", "{86FF361C-826C-4D5E-A035-370C7B472AC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{41716339-891B-4BC1-ADE1-6FC22AFC7360}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task", "Task", "{CAD179AD-BA89-4C6D-9C9B-DF94C4BC7FB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Topics", "Topics", "{1537DC59-41BE-405A-86F0-C60EC09D14B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher", "点对点通讯\Publisher\Publisher.csproj", "{2EEA5D3C-A38D-417D-A8D0-569E6F6C68E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscriber", "点对点通讯\Subscriber\Subscriber.csproj", "{3666FA2A-DF9A-4EC9-AB1D-6F6734488E71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher", "工作队列\Publisher\Publisher.csproj", "{BC48523A-82E7-44ED-BFCA-7D4EC4D72D68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscriber", "工作队列\Subscriber\Subscriber.csproj", "{567BD6B2-6D1A-4BF9-81D1-DE495D0FD884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher", "主题订阅\Publisher\Publisher.csproj", "{C7CD21EE-B85D-4A87-BCAD-BBC819FC211B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriberA", "主题订阅\Subscriber\SubscriberA.csproj", "{C491DE6D-ABD0-47C7-91EB-E46F1E6D3725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubscriberB", "主题订阅\Subscriber1\SubscriberB.csproj", "{93B07DD4-E856-44FC-B8CF-7BE2FDACDDB9}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.2.36:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = Messages\\Messages.csproj
+		SccProjectName0 = Messages
+		SccLocalPath0 = Messages
+		SccProjectUniqueName1 = 点对点通讯\\Publisher\\Publisher.csproj
+		SccProjectTopLevelParentUniqueName1 = RabbitMQDemo.sln
+		SccProjectName1 = 点对点通讯/Publisher
+		SccLocalPath1 = 点对点通讯\\Publisher
+		SccProjectUniqueName2 = 点对点通讯\\Subscriber\\Subscriber.csproj
+		SccProjectTopLevelParentUniqueName2 = RabbitMQDemo.sln
+		SccProjectName2 = 点对点通讯/Subscriber
+		SccLocalPath2 = 点对点通讯\\Subscriber
+		SccProjectUniqueName3 = 工作队列\\Publisher\\Publisher.csproj
+		SccProjectTopLevelParentUniqueName3 = RabbitMQDemo.sln
+		SccProjectName3 = 工作队列/Publisher
+		SccLocalPath3 = 工作队列\\Publisher
+		SccProjectUniqueName4 = 工作队列\\Subscriber\\Subscriber.csproj
+		SccProjectTopLevelParentUniqueName4 = RabbitMQDemo.sln
+		SccProjectName4 = 工作队列/Subscriber
+		SccLocalPath4 = 工作队列\\Subscriber
+		SccProjectUniqueName5 = 主题订阅\\Publisher\\Publisher.csproj
+		SccProjectTopLevelParentUniqueName5 = RabbitMQDemo.sln
+		SccProjectName5 = 主题订阅/Publisher
+		SccLocalPath5 = 主题订阅\\Publisher
+		SccProjectUniqueName6 = 主题订阅\\Subscriber\\SubscriberA.csproj
+		SccProjectTopLevelParentUniqueName6 = RabbitMQDemo.sln
+		SccProjectName6 = 主题订阅/Subscriber
+		SccLocalPath6 = 主题订阅\\Subscriber
+		SccProjectUniqueName7 = 主题订阅\\Subscriber1\\SubscriberB.csproj
+		SccProjectTopLevelParentUniqueName7 = RabbitMQDemo.sln
+		SccProjectName7 = 主题订阅/Subscriber1
+		SccLocalPath7 = 主题订阅\\Subscriber1
+		SccLocalPath8 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86FF361C-826C-4D5E-A035-370C7B472AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86FF361C-826C-4D5E-A035-370C7B472AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86FF361C-826C-4D5E-A035-370C7B472AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86FF361C-826C-4D5E-A035-370C7B472AC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EEA5D3C-A38D-417D-A8D0-569E6F6C68E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EEA5D3C-A38D-417D-A8D0-569E6F6C68E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EEA5D3C-A38D-417D-A8D0-569E6F6C68E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EEA5D3C-A38D-417D-A8D0-569E6F6C68E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3666FA2A-DF9A-4EC9-AB1D-6F6734488E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3666FA2A-DF9A-4EC9-AB1D-6F6734488E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3666FA2A-DF9A-4EC9-AB1D-6F6734488E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3666FA2A-DF9A-4EC9-AB1D-6F6734488E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC48523A-82E7-44ED-BFCA-7D4EC4D72D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC48523A-82E7-44ED-BFCA-7D4EC4D72D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC48523A-82E7-44ED-BFCA-7D4EC4D72D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC48523A-82E7-44ED-BFCA-7D4EC4D72D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567BD6B2-6D1A-4BF9-81D1-DE495D0FD884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567BD6B2-6D1A-4BF9-81D1-DE495D0FD884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567BD6B2-6D1A-4BF9-81D1-DE495D0FD884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567BD6B2-6D1A-4BF9-81D1-DE495D0FD884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CD21EE-B85D-4A87-BCAD-BBC819FC211B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CD21EE-B85D-4A87-BCAD-BBC819FC211B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CD21EE-B85D-4A87-BCAD-BBC819FC211B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CD21EE-B85D-4A87-BCAD-BBC819FC211B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C491DE6D-ABD0-47C7-91EB-E46F1E6D3725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C491DE6D-ABD0-47C7-91EB-E46F1E6D3725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C491DE6D-ABD0-47C7-91EB-E46F1E6D3725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C491DE6D-ABD0-47C7-91EB-E46F1E6D3725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B07DD4-E856-44FC-B8CF-7BE2FDACDDB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B07DD4-E856-44FC-B8CF-7BE2FDACDDB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B07DD4-E856-44FC-B8CF-7BE2FDACDDB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B07DD4-E856-44FC-B8CF-7BE2FDACDDB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EEA5D3C-A38D-417D-A8D0-569E6F6C68E0} = {EAFDF62F-BC1F-44C7-AE70-137AC43231F9}
+		{3666FA2A-DF9A-4EC9-AB1D-6F6734488E71} = {EAFDF62F-BC1F-44C7-AE70-137AC43231F9}
+		{BC48523A-82E7-44ED-BFCA-7D4EC4D72D68} = {CAD179AD-BA89-4C6D-9C9B-DF94C4BC7FB7}
+		{567BD6B2-6D1A-4BF9-81D1-DE495D0FD884} = {CAD179AD-BA89-4C6D-9C9B-DF94C4BC7FB7}
+		{C7CD21EE-B85D-4A87-BCAD-BBC819FC211B} = {1537DC59-41BE-405A-86F0-C60EC09D14B7}
+		{C491DE6D-ABD0-47C7-91EB-E46F1E6D3725} = {1537DC59-41BE-405A-86F0-C60EC09D14B7}
+		{93B07DD4-E856-44FC-B8CF-7BE2FDACDDB9} = {1537DC59-41BE-405A-86F0-C60EC09D14B7}
+	EndGlobalSection
+EndGlobal

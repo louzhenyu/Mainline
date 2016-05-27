@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSOA", "JSOA\JSOA.csproj", "{CA443EC5-8D92-4DB1-BAF2-0F7ED75EC164}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceDll", "ReferenceDll", "{2F6122F0-DED9-44A3-88BD-C84B757B43CC}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceDll\DotNetOpenAuth.dll = ReferenceDll\DotNetOpenAuth.dll
+		ReferenceDll\DotNetOpenAuth.xml = ReferenceDll\DotNetOpenAuth.xml
+		ReferenceDll\MsgPack.dll = ReferenceDll\MsgPack.dll
+		ReferenceDll\MsgPack.xml = ReferenceDll\MsgPack.xml
+		ReferenceDll\MySql.Data.dll = ReferenceDll\MySql.Data.dll
+		ReferenceDll\protobuf-net.dll = ReferenceDll\protobuf-net.dll
+		ReferenceDll\protobuf-net.xml = ReferenceDll\protobuf-net.xml
+		ReferenceDll\System.Web.Mvc.dll = ReferenceDll\System.Web.Mvc.dll
+		ReferenceDll\System.Web.Mvc.xml = ReferenceDll\System.Web.Mvc.xml
+		ReferenceDll\System.Web.Razor.Unofficial.dll = ReferenceDll\System.Web.Razor.Unofficial.dll
+		ReferenceDll\System.Web.WebPages.Deployment.dll = ReferenceDll\System.Web.WebPages.Deployment.dll
+		ReferenceDll\System.Web.WebPages.dll = ReferenceDll\System.Web.WebPages.dll
+		ReferenceDll\System.Web.WebPages.Razor.dll = ReferenceDll\System.Web.WebPages.Razor.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerHostTest", "SwaggerHostTest\SwaggerHostTest.csproj", "{27148692-450E-43F6-9F7E-49C26AA0E230}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JSOA\\JSOA.csproj
+		SccProjectName1 = JSOA
+		SccLocalPath1 = JSOA
+		SccProjectUniqueName2 = SwaggerHostTest\\SwaggerHostTest.csproj
+		SccProjectName2 = SwaggerHostTest
+		SccLocalPath2 = SwaggerHostTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA443EC5-8D92-4DB1-BAF2-0F7ED75EC164}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA443EC5-8D92-4DB1-BAF2-0F7ED75EC164}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA443EC5-8D92-4DB1-BAF2-0F7ED75EC164}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA443EC5-8D92-4DB1-BAF2-0F7ED75EC164}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27148692-450E-43F6-9F7E-49C26AA0E230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27148692-450E-43F6-9F7E-49C26AA0E230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27148692-450E-43F6-9F7E-49C26AA0E230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27148692-450E-43F6-9F7E-49C26AA0E230}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+﻿@using JinRi.Fx.Web
+@using JinRi.Fx.Entity
+@using Webdiyer.WebControls.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Dictionary<int, SysProductEntity> dictionaryProduct = ViewBag.DictionaryProduct;
+    PagedList<SysSubEntity> subSystemList = ViewBag.SubSystemList;
+}
+
+<div class="row-fluid">
+    <div class="span4">
+        <div>
+            @if ((this.ViewContext.Controller as JinRi.Fx.Web.ControllerBase).WorkContext.IsAdmin)
+            {
+                <a class="btn red" id="delete" href="javascript:;"><i class="icon-trash icon-white"></i> 删除</a>
+            }
+            <a class="btn blue thickbox" title='添加子系统' href="@Url.Action("Create")?TB_iframe=true&height=420&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+        </div>
+    </div>
+    <div class="span8">
+        @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+        {
+            <div class="dataTables_filter">
+                <label>
+                    &nbsp;<button type="submit" class="btn blue thickbox">搜索 <i class="icon-search"></i></button>
+                </label>
+                <label>
+                    <span>&nbsp;子系统名称：</span>
+                    @Html.TextBox("SystemName", null, new { @class = "m-wrap small" })
+                </label>&nbsp;
+                <label>
+                    <span>&nbsp;产品线：</span>
+                    @Html.DropDownList("ProductId", null, new { @style = "width:120px" })
+                </label>&nbsp;
+            </div>
+        }
+    </div>
+</div>
+
+<div class="alert">
+    <button class="close" data-dismiss="alert"></button>
+    <strong>子系统相关：</strong>基础数据，请勿随意删除！
+</div>
+
+@using (Html.BeginForm("Delete", "SysSub", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;"><input type="checkbox" id="checkall" class="group-checkable" /></th>
+                <th>子系统代码</th>
+                <th>所属产品线</th>
+                <th>中文名称</th>
+                <th>英文名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in subSystemList)
+            {
+                <tr title="@m.Remark" class="tooltip-control">
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.SubSystemId' />
+                    </td>
+                    <td>@m.SubSystemId</td>
+                    <td>@(!dictionaryProduct.ContainsKey(m.ProductId) ? "无" : dictionaryProduct[m.ProductId].ProductName)</td>
+                    <td>@m.SystemName</td>
+                    <td>@m.SystemEName</td>
+                    <td>
+                        <a class="btn mini purple thickbox" title='编辑子系统信息' href="@Url.Action("Edit", new { id = m.SubSystemId })?TB_iframe=true&height=420&width=500">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(subSystemList, new PagerOptions { PageIndexParameterName = "pageIndex" }, new { id = "flickrpager" })
+</div>

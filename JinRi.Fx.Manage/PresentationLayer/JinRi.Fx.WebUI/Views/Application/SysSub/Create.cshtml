@@ -1,0 +1,57 @@
+﻿@model JinRi.Fx.Entity.SysSubEntity
+
+@{
+    ViewBag.Title = "新增子系统";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>所属产品线：</label>
+                <div class="controls">
+                    @Html.DropDownList("ProductId", null, new { @id = "ProductId", @style = "width:135px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProductId)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>子系统编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.SubSystemId, new { @id = "SubSystemId", @class = "m-wrap small integer" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SubSystemId)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>中文名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.SystemName, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SystemName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>英文名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.SystemEName, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SystemEName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Remark, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}@section PageSpecificJavascriptIncludes{
+    <script>
+        $(function () {
+            $("#SubSystemId").val($("#ProductId").val() + "XX");
+            $("#ProductId").change(function () {
+                $("#SubSystemId").val($(this).val() + "XX");
+            });
+        });
+    </script>
+}

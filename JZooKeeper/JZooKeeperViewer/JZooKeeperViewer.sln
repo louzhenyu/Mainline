@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JZooKeeperViewer", "JZooKeeperViewer\JZooKeeperViewer.csproj", "{BFD2BF84-A6CB-46FB-84CA-562FFE5F128C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceDll", "ReferenceDll", "{7057099A-9DE0-4049-8F78-B173C7C9E13C}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceDll\JLog4net.dll = ReferenceDll\JLog4net.dll
+		ReferenceDll\JZooKeeperNet.dll = ReferenceDll\JZooKeeperNet.dll
+		ReferenceDll\JZooKeeperNet.Recipes.dll = ReferenceDll\JZooKeeperNet.Recipes.dll
+		ReferenceDll\JZooKeeperNet.Recipes.XML = ReferenceDll\JZooKeeperNet.Recipes.XML
+		ReferenceDll\JZooKeeperNet.xml = ReferenceDll\JZooKeeperNet.xml
+		ReferenceDll\MongoDB.Bson.dll = ReferenceDll\MongoDB.Bson.dll
+		ReferenceDll\MongoDB.Driver.dll = ReferenceDll\MongoDB.Driver.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PrismDll", "PrismDll", "{D2196E46-B4CF-4752-963A-92AFF07D8441}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceDll\PrismDll\Microsoft.Practices.Prism.Mvvm.Desktop.dll = ReferenceDll\PrismDll\Microsoft.Practices.Prism.Mvvm.Desktop.dll
+		ReferenceDll\PrismDll\Microsoft.Practices.Prism.Mvvm.dll = ReferenceDll\PrismDll\Microsoft.Practices.Prism.Mvvm.dll
+		ReferenceDll\PrismDll\Microsoft.Practices.Prism.Mvvm.xml = ReferenceDll\PrismDll\Microsoft.Practices.Prism.Mvvm.xml
+		ReferenceDll\PrismDll\Microsoft.Practices.Prism.SharedInterfaces.dll = ReferenceDll\PrismDll\Microsoft.Practices.Prism.SharedInterfaces.dll
+		ReferenceDll\PrismDll\Microsoft.Practices.Prism.SharedInterfaces.xml = ReferenceDll\PrismDll\Microsoft.Practices.Prism.SharedInterfaces.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JZooKeeperViewer\\JZooKeeperViewer.csproj
+		SccProjectName1 = JZooKeeperViewer
+		SccLocalPath1 = JZooKeeperViewer
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFD2BF84-A6CB-46FB-84CA-562FFE5F128C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD2BF84-A6CB-46FB-84CA-562FFE5F128C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD2BF84-A6CB-46FB-84CA-562FFE5F128C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD2BF84-A6CB-46FB-84CA-562FFE5F128C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2196E46-B4CF-4752-963A-92AFF07D8441} = {7057099A-9DE0-4049-8F78-B173C7C9E13C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Debug\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Debug\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Debug\JRedis.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\obj\Debug\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\obj\Debug\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Debug\JRedis.xml

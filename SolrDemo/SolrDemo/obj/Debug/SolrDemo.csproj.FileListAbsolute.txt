@@ -1,0 +1,14 @@
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\SolrDemo.exe
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\SolrDemo.pdb
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\Dapper.dll
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\SolrNet.dll
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\Dapper.pdb
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\Dapper.xml
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\SolrNet.pdb
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\bin\Debug\SolrNet.xml
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\obj\Debug\SolrDemo.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\obj\Debug\SolrDemo.exe
+E:\JinRi.Arch\Mainline\SolrDemo\SolrDemo\obj\Debug\SolrDemo.pdb

@@ -1,0 +1,13 @@
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\JinRi.IntlPolicy.Entity.Mq.dll.config
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\JinRi.IntlPolicy.Entity.Mq.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\JinRi.IntlPolicy.Entity.Mq.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\System.IO.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\System.Runtime.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\System.Threading.Tasks.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\System.IO.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\System.Runtime.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\bin\Debug\System.Threading.Tasks.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\obj\Debug\JinRi.IntlPolicy.Entity.Mq.csproj.App.config
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\obj\Debug\JinRi.IntlPolicy.Entity.Mq.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\obj\Debug\JinRi.IntlPolicy.Entity.Mq.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Entity.Mq\obj\Debug\JinRi.IntlPolicy.Entity.Mq.pdb

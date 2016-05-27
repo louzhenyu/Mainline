@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19BD1B13-2776-4708-8EA8-3651B55513EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JinRi.Fx.Logic</RootNamespace>
+    <AssemblyName>JinRi.Fx.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JFx, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JFx.1.0.4\lib\JFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JLog4net, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JLog4net.1.0.1\lib\JLog4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JZooKeeperNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceDll\JZooKeeperNet.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.8.2.34, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JLog4net.1.0.1\lib\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.8.2.34, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JLog4net.1.0.1\lib\MongoDB.Driver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\SysApiLogic.cs" />
+    <Compile Include="Application\SysAppDependentLogic.cs" />
+    <Compile Include="Application\SysApplicationLogic.cs" />
+    <Compile Include="Application\SysAppTypeLogic.cs" />
+    <Compile Include="Application\SysProductLogic.cs" />
+    <Compile Include="Application\SysSubLogic.cs" />
+    <Compile Include="ConfigService\JZooKeeperClient.cs" />
+    <Compile Include="Dashboard\DashboardLogic.cs" />
+    <Compile Include="DD\AdvancedFieldLogic.cs" />
+    <Compile Include="DD\DatabaseLogic.cs" />
+    <Compile Include="DD\FieldLogic.cs" />
+    <Compile Include="DD\LogLogic.cs" />
+    <Compile Include="DD\TableLogic.cs" />
+    <Compile Include="Eterm\EtermConfigLogic.cs" />
+    <Compile Include="Eterm\EtermScriptLogic.cs" />
+    <Compile Include="JinRi\AirComLogic.cs" />
+    <Compile Include="Job\JobExecuteLogLogic.cs" />
+    <Compile Include="Job\JobHttpSchedulerLogic.cs" />
+    <Compile Include="System\SysRoleRightLogic.cs" />
+    <Compile Include="System\SysMenuLogic.cs" />
+    <Compile Include="System\SysRoleLogic.cs" />
+    <Compile Include="System\SysModuleLogic.cs" />
+    <Compile Include="System\SysUserLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonLayer\JinRi.Fx.Utility\JinRi.Fx.Utility.csproj">
+      <Project>{d0ea45bd-0e70-40c8-b623-ad3e2b01f8ec}</Project>
+      <Name>JinRi.Fx.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataLayer\JinRi.Fx.Data\JinRi.Fx.Data.csproj">
+      <Project>{72d937de-e72e-4be9-aa86-88cdcad21eb5}</Project>
+      <Name>JinRi.Fx.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\JinRi.Fx.Entity\JinRi.Fx.Entity.csproj">
+      <Project>{466e29a8-6357-404c-b5f9-ad0254a9f0da}</Project>
+      <Name>JinRi.Fx.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JinRi.Fx.RequestDTO\JinRi.Fx.RequestDTO.csproj">
+      <Project>{2399fddd-e77d-4bc4-a7d6-645751ef21bd}</Project>
+      <Name>JinRi.Fx.RequestDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JinRi.Fx.ResponseDTO\JinRi.Fx.ResponseDTO.csproj">
+      <Project>{6d7b2bfa-b38a-420a-8aec-91004d762e72}</Project>
+      <Name>JinRi.Fx.ResponseDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

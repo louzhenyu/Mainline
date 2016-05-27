@@ -1,0 +1,205 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageSpecificJavascriptIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mdm.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/icon.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/default/easyui.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/demo.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Content/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/jquery.easyui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/locale/easyui-lang-zh_CN.js")"></script>
+    <script type="text/javascript">
+        var url;
+        $(function() {
+            $("#cbDb").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                url: '/AdvancedField/DbJson?ServerName=' + '@ViewBag.ServerName',
+                onSelect: selectDb,
+                onLoadSuccess: function () {
+                    var val = $(this).combobox("getData");
+                    for (var item in val[0]) {
+                        if (item == "Value") {
+                            $(this).combobox("select", val[0][item]);
+                        }
+                    }
+                }
+            });
+            $("#cbTable").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                data: [{ Value: '', Text: '全部' }]
+            });
+            initAdvancedFieldData();
+        });
+
+        function selectDb(rec) {
+            var url = '/Log/TableJson?ServerName=' + '@ViewBag.ServerName' + '&DatabaseName=' + rec.Value;
+            $('#cbTable').combobox('reload', url);
+            $('#cbTable').combobox('setValue', '');
+        }
+
+        function searchData() {
+            var queryData = {
+                Server: '@ViewBag.ServerName',
+                Db: $('#cbDb').combobox('getValue'),
+                Table: $('#cbTable').combobox('getValue'),
+                Col: $('#inputCol').val(),
+                ColDesc: $('#inputColDesc').val()
+            };
+            if ($('#cbDb').combobox('getValue') == '' && ($.trim($('#inputCol').val()) != '' || $.trim($('#inputColDesc').val()) != '')) {
+                $.messager.confirm("操作提示", "搜索全部数据库速度较慢，您确定要执行操作吗？", function(data) {
+                    if (data) {
+                        initAdvancedFieldData(queryData);
+                    }
+                });
+            } else {
+                initAdvancedFieldData(queryData);
+            }
+        }
+
+        function initAdvancedFieldData(queryData) {
+            $('#tbAdvancedField').datagrid({
+                fit: true,
+                fitColumns: true,
+                nowrap: false,
+                autoRowHeight: false,
+                striped: true,
+                collapsible: true,
+                url: '/AdvancedField/AdvancedFieldJson',
+                sortName: 'DatabaseName',
+                sortOrder: 'asc',
+                singleSelect: true,
+                border: true,
+                remoteSort: false,
+                idField: 'FieldName',
+                pagination: true,
+                rownumbers: true,
+                pageSize: 20,
+                pageList: [15, 20, 25, 30, 35, 40, 45, 50],
+                pagePosition: 'bottom',
+                queryParams: queryData,
+                columns: [
+                    [
+                        { field: 'DatabaseName', title: '数据库', width: 50, sortable: true },
+                        { field: 'TableName', title: '表', width: 50, sortable: true },
+                        { field: 'FieldName', title: '字段', width: 50, sortable: true },
+                        { field: 'FieldOrder', title: '位置', width: 50, sortable: true },
+                        { field: 'FieldType', title: '类型', width: 50, sortable: true },
+                        { field: 'FieldMaxLength', title: '最大长度', width: 50, sortable: true },
+                        { field: 'IsFieldAutoIncrement', title: '是否自增', width: 50, sortable: true },
+                        { field: 'IsFieldPrimaryKey', title: '是否主键', width: 50, sortable: true },
+                        { field: 'IsFieldNullable', title: '是否可空', width: 50, sortable: true },
+                        { field: 'FieldDefaultValue', title: '默认值', width: 50, sortable: true },
+                        { field: 'FieldDescription', title: '描述', width: 50, sortable: true }
+                    ]
+                ],
+                loadFilter: function(data) {
+                    if (data == null) {
+                        data = $(this).datagrid("reload");
+                    }
+                    return data;
+                },
+                toolbar: '#toolbarAdvancedField'
+            });
+        }
+
+        function reloadAdvancedField() {
+            $("#tbAdvancedField").datagrid("reload");
+        }
+
+        function editAdvancedField() {
+            $('.easyui-dialog').dialog('close');
+            var row = $('#tbAdvancedField').datagrid('getSelected');
+            if (row) {
+                $('#dlgAdvancedField').dialog('open').dialog('center').dialog('setTitle', '编辑');
+                $('#lbAdvancedFieldName').text(row.FieldName);
+                $('#fmAdvancedField').form('load', row);
+                $('#inputAdvancedFieldServerName').val('@ViewBag.ServerName');
+                $('#inputAdvancedFieldDatabaseName').val(row.DatabaseName);
+                $('#inputAdvancedFieldTableName').val(row.TableName);
+                url = '/AdvancedField/Edit';
+            }
+        }
+
+        function saveAdvancedField() {
+            $('#fmAdvancedField').form('submit', {
+                url: url,
+                onSubmit: function() {
+                    $('#taFieldDescription').val(encodeURI($('#taFieldDescription').val()));
+                    return $(this).form('validate');
+                },
+                success: function(result) {
+                    var tResult = eval("(' + result + ')");
+                    if (tResult.errorMsg) {
+                        $.messager.show({
+                            title: '出错了:<',
+                            msg: tResult.errorMsg
+                        });
+                    } else {
+                        $('#dlgAdvancedField').dialog('close');
+                        $('#tbAdvancedField').datagrid('reload');
+                    }
+                }
+            });
+        }
+    </script>   
+}
+<div style="height:600px">
+    <table id="tbAdvancedField"></table>
+    <div id="toolbarAdvancedField">
+        <table>
+            <tr>
+                <td>数据库:</td>
+                <td>
+                    <input id="cbDb" style="width: 150px" />
+                </td>
+                <td>表:</td>
+                <td>
+                    <input id="cbTable" style="width: 150px" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td>字段关键字:</td>
+                <td>
+                    <input id="inputCol" class="easyui-validatebox" style="width: 150px" value="" />
+                </td>
+                <td>字段描述关键字:</td>
+                <td>
+                    <input id="inputColDesc" class="easyui-validatebox" style="width: 150px" value="" />
+                </td>
+                <td>
+                    <a href="javascript:searchData();" class="easyui-linkbutton" data-options="iconCls:'easyui-icon-search',plain:true">查找</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-reload" plain="true" onclick="reloadAdvancedField()">刷新</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-edit" plain="true" onclick="editAdvancedField()">编辑</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="dlgAdvancedField" class="easyui-dialog" style="width:500px;height:400px;padding:10px 20px" closed="true" buttons="#dlgAdvancedField-buttons">
+        <form id="fmAdvancedField" method="post" novalidate>
+            <div class="fitem">
+                <label>名称:</label>
+                <label id="lbAdvancedFieldName"></label>
+            </div>
+            <div class="fitem">
+                <label>描述:</label>
+                <br />
+                <textarea id ="taFieldDescription" name="FieldDescription" class="easyui-validatebox" style="width: 400px; height: 150px"></textarea>
+            </div>
+            <input id="inputAdvancedFieldServerName" name="ServerName" type="hidden" />
+            <input id="inputAdvancedFieldDatabaseName" name="DatabaseName" type="hidden" />
+            <input id="inputAdvancedFieldTableName" name="TableName" type="hidden" />
+            <input id="inputAdvancedFieldFieldName" name="FieldName" type="hidden" />
+        </form>
+    </div>
+    <div id="dlgAdvancedField-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconcls="easyui-icon-ok" onclick="saveAdvancedField()" style="width:90px">保存</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-cancel" onclick="javascript: $('#dlgAdvancedField').dialog('close');" style="width:90px">取消</a>
+    </div>
+</div>

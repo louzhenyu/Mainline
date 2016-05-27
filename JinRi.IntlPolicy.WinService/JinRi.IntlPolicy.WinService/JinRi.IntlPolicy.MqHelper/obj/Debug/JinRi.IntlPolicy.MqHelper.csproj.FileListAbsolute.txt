@@ -1,0 +1,17 @@
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\JinRi.IntlPolicy.MqHelper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\JinRi.IntlPolicy.MqHelper.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\EasyNetQ.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\JinRi.IntlPolicy.ConfigHelper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\RabbitMQ.Client.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\AutoMapper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\JinRi.IntlPolicy.Entity.Mq.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\System.Runtime.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\JinRi.IntlPolicy.ConfigHelper.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\EasyNetQ.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\RabbitMQ.Client.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\AutoMapper.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\JinRi.IntlPolicy.Entity.Mq.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\bin\Debug\System.Runtime.xml
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\obj\Debug\JinRi.IntlPolicy.MqHelper.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\obj\Debug\JinRi.IntlPolicy.MqHelper.dll
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.WinService\JinRi.IntlPolicy.MqHelper\obj\Debug\JinRi.IntlPolicy.MqHelper.pdb

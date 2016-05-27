@@ -1,0 +1,228 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 12.00.21005.1 (2a01094a).
+//
+// e:\program\fx\jinri.fx.eterm\etermserver\release\etermproxy.tlh
+//
+// C++ source equivalent of Win32 type library EtermProxy.tlb
+// compiler-generated file created 07/09/15 at 19:51:04 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace EtermProxy {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("6bd97095-442f-4f10-9215-03984fa2efd0"))
+/* LIBID */ __EtermProxy;
+struct /* coclass */ AVH;
+struct /* coclass */ Booking;
+struct /* coclass */ CancelPnr;
+struct /* coclass */ GetPrice;
+struct /* coclass */ Rmk;
+struct /* coclass */ TicketByBigPnr;
+struct /* coclass */ TicketInfo;
+struct /* coclass */ TicketInfoByF;
+struct /* coclass */ TicketInfoByS;
+struct /* coclass */ SeekPNR;
+struct /* coclass */ EtermRequest;
+struct __declspec(uuid("a28d10a2-fe68-394c-b5f3-6b8e203ecd2b"))
+/* dual interface */ IProxy;
+struct /* coclass */ Proxy;
+struct /* coclass */ EtermHelper;
+struct /* coclass */ HttpHelper;
+struct /* coclass */ LogWrite;
+struct /* coclass */ SerializationUnit;
+struct __declspec(uuid("b2f98d73-64b7-3c3c-8986-ddcb64cc8e6d"))
+/* dual interface */ _EtermRequest;
+struct __declspec(uuid("74ae5858-c8dc-33d5-bd22-df7840b3a82c"))
+/* dual interface */ _EtermHelper;
+struct __declspec(uuid("6a9265c6-c38d-3e57-92d6-38e4694206fe"))
+/* dual interface */ _HttpHelper;
+struct __declspec(uuid("9d53591b-ffd0-354d-bd9e-e971e9561b6c"))
+/* dual interface */ _LogWrite;
+struct __declspec(uuid("6326d4ee-27b6-30cd-9b4b-a51462e54686"))
+/* dual interface */ _SerializationUnit;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IProxy, __uuidof(IProxy));
+_COM_SMARTPTR_TYPEDEF(_EtermRequest, __uuidof(_EtermRequest));
+_COM_SMARTPTR_TYPEDEF(_EtermHelper, __uuidof(_EtermHelper));
+_COM_SMARTPTR_TYPEDEF(_HttpHelper, __uuidof(_HttpHelper));
+_COM_SMARTPTR_TYPEDEF(_LogWrite, __uuidof(_LogWrite));
+_COM_SMARTPTR_TYPEDEF(_SerializationUnit, __uuidof(_SerializationUnit));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("999fd779-d729-344c-92ff-653e28c21a60"))
+AVH;
+    // interface _Object
+
+struct __declspec(uuid("c877f2f6-82f2-379e-b30b-bb96019717e2"))
+Booking;
+    // interface _Object
+
+struct __declspec(uuid("d0b92544-47ea-346e-bd33-97eed3eba4c3"))
+CancelPnr;
+    // interface _Object
+
+struct __declspec(uuid("231697e5-cd0f-3378-a9a3-b2c3ec71bfcf"))
+GetPrice;
+    // interface _Object
+
+struct __declspec(uuid("1726f3ba-588e-3d5f-8309-5baac83dab1f"))
+Rmk;
+    // interface _Object
+
+struct __declspec(uuid("7364c456-746b-3088-96b1-c4f9ceafa963"))
+TicketByBigPnr;
+    // interface _Object
+
+struct __declspec(uuid("30e96662-c8fd-3bb9-932b-6c91dfb1ecd4"))
+TicketInfo;
+    // interface _Object
+
+struct __declspec(uuid("58028a67-6cf2-3cd8-854d-d1fce7c152a5"))
+TicketInfoByF;
+    // interface _Object
+
+struct __declspec(uuid("aeee971f-6760-3278-82e9-211ea199d194"))
+TicketInfoByS;
+    // interface _Object
+
+struct __declspec(uuid("64e9c8f1-8604-3d76-9cf8-d248a5ad06f1"))
+SeekPNR;
+    // interface _Object
+
+struct __declspec(uuid("7ff08537-3ccb-3c48-ad72-9cc052302a1a"))
+EtermRequest;
+    // [ default ] interface _EtermRequest
+    // interface _Object
+
+struct __declspec(uuid("a28d10a2-fe68-394c-b5f3-6b8e203ecd2b"))
+IProxy : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall InvokeEterm (
+        /*[in]*/ long hwnd,
+        /*[in]*/ long handle,
+        /*[in]*/ BSTR strPost,
+        /*[in]*/ BSTR strParam,
+        /*[out,retval]*/ BSTR * pRetVal ) = 0;
+      virtual HRESULT __stdcall SetEtermData (
+        /*[in]*/ BSTR config,
+        /*[in]*/ BSTR guid,
+        /*[in]*/ BSTR cmd,
+        /*[in]*/ BSTR data ) = 0;
+};
+
+struct __declspec(uuid("18f18c7a-ae06-45bd-9d5b-e277b4bd7c1e"))
+Proxy;
+    // interface _Object
+    // [ default ] interface IProxy
+
+struct __declspec(uuid("47ef496a-c297-3ef7-8389-209b8ad37202"))
+EtermHelper;
+    // [ default ] interface _EtermHelper
+    // interface _Object
+
+struct __declspec(uuid("ebee486f-10fd-3e68-9243-11c1021ce2e8"))
+HttpHelper;
+    // [ default ] interface _HttpHelper
+    // interface _Object
+
+struct __declspec(uuid("bd605eec-ad3a-3cc9-aac4-680e7dd1a044"))
+LogWrite;
+    // [ default ] interface _LogWrite
+    // interface _Object
+
+struct __declspec(uuid("f01284a4-f207-320b-b235-445cd8cdb372"))
+SerializationUnit;
+    // [ default ] interface _SerializationUnit
+    // interface _Object
+
+struct __declspec(uuid("b2f98d73-64b7-3c3c-8986-ddcb64cc8e6d"))
+_EtermRequest : IDispatch
+{};
+
+struct __declspec(uuid("74ae5858-c8dc-33d5-bd22-df7840b3a82c"))
+_EtermHelper : IDispatch
+{};
+
+struct __declspec(uuid("6a9265c6-c38d-3e57-92d6-38e4694206fe"))
+_HttpHelper : IDispatch
+{};
+
+struct __declspec(uuid("9d53591b-ffd0-354d-bd9e-e971e9561b6c"))
+_LogWrite : IDispatch
+{};
+
+struct __declspec(uuid("6326d4ee-27b6-30cd-9b4b-a51462e54686"))
+_SerializationUnit : IDispatch
+{};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_EtermProxy =
+    {0x6bd97095,0x442f,0x4f10,{0x92,0x15,0x03,0x98,0x4f,0xa2,0xef,0xd0}};
+extern "C" const GUID __declspec(selectany) CLSID_AVH =
+    {0x999fd779,0xd729,0x344c,{0x92,0xff,0x65,0x3e,0x28,0xc2,0x1a,0x60}};
+extern "C" const GUID __declspec(selectany) CLSID_Booking =
+    {0xc877f2f6,0x82f2,0x379e,{0xb3,0x0b,0xbb,0x96,0x01,0x97,0x17,0xe2}};
+extern "C" const GUID __declspec(selectany) CLSID_CancelPnr =
+    {0xd0b92544,0x47ea,0x346e,{0xbd,0x33,0x97,0xee,0xd3,0xeb,0xa4,0xc3}};
+extern "C" const GUID __declspec(selectany) CLSID_GetPrice =
+    {0x231697e5,0xcd0f,0x3378,{0xa9,0xa3,0xb2,0xc3,0xec,0x71,0xbf,0xcf}};
+extern "C" const GUID __declspec(selectany) CLSID_Rmk =
+    {0x1726f3ba,0x588e,0x3d5f,{0x83,0x09,0x5b,0xaa,0xc8,0x3d,0xab,0x1f}};
+extern "C" const GUID __declspec(selectany) CLSID_TicketByBigPnr =
+    {0x7364c456,0x746b,0x3088,{0x96,0xb1,0xc4,0xf9,0xce,0xaf,0xa9,0x63}};
+extern "C" const GUID __declspec(selectany) CLSID_TicketInfo =
+    {0x30e96662,0xc8fd,0x3bb9,{0x93,0x2b,0x6c,0x91,0xdf,0xb1,0xec,0xd4}};
+extern "C" const GUID __declspec(selectany) CLSID_TicketInfoByF =
+    {0x58028a67,0x6cf2,0x3cd8,{0x85,0x4d,0xd1,0xfc,0xe7,0xc1,0x52,0xa5}};
+extern "C" const GUID __declspec(selectany) CLSID_TicketInfoByS =
+    {0xaeee971f,0x6760,0x3278,{0x82,0xe9,0x21,0x1e,0xa1,0x99,0xd1,0x94}};
+extern "C" const GUID __declspec(selectany) CLSID_SeekPNR =
+    {0x64e9c8f1,0x8604,0x3d76,{0x9c,0xf8,0xd2,0x48,0xa5,0xad,0x06,0xf1}};
+extern "C" const GUID __declspec(selectany) CLSID_EtermRequest =
+    {0x7ff08537,0x3ccb,0x3c48,{0xad,0x72,0x9c,0xc0,0x52,0x30,0x2a,0x1a}};
+extern "C" const GUID __declspec(selectany) IID_IProxy =
+    {0xa28d10a2,0xfe68,0x394c,{0xb5,0xf3,0x6b,0x8e,0x20,0x3e,0xcd,0x2b}};
+extern "C" const GUID __declspec(selectany) CLSID_Proxy =
+    {0x18f18c7a,0xae06,0x45bd,{0x9d,0x5b,0xe2,0x77,0xb4,0xbd,0x7c,0x1e}};
+extern "C" const GUID __declspec(selectany) CLSID_EtermHelper =
+    {0x47ef496a,0xc297,0x3ef7,{0x83,0x89,0x20,0x9b,0x8a,0xd3,0x72,0x02}};
+extern "C" const GUID __declspec(selectany) CLSID_HttpHelper =
+    {0xebee486f,0x10fd,0x3e68,{0x92,0x43,0x11,0xc1,0x02,0x1c,0xe2,0xe8}};
+extern "C" const GUID __declspec(selectany) CLSID_LogWrite =
+    {0xbd605eec,0xad3a,0x3cc9,{0xaa,0xc4,0x68,0x0e,0x7d,0xd1,0xa0,0x44}};
+extern "C" const GUID __declspec(selectany) CLSID_SerializationUnit =
+    {0xf01284a4,0xf207,0x320b,{0xb2,0x35,0x44,0x5c,0xd8,0xcd,0xb3,0x72}};
+extern "C" const GUID __declspec(selectany) IID__EtermRequest =
+    {0xb2f98d73,0x64b7,0x3c3c,{0x89,0x86,0xdd,0xcb,0x64,0xcc,0x8e,0x6d}};
+extern "C" const GUID __declspec(selectany) IID__EtermHelper =
+    {0x74ae5858,0xc8dc,0x33d5,{0xbd,0x22,0xdf,0x78,0x40,0xb3,0xa8,0x2c}};
+extern "C" const GUID __declspec(selectany) IID__HttpHelper =
+    {0x6a9265c6,0xc38d,0x3e57,{0x92,0xd6,0x38,0xe4,0x69,0x42,0x06,0xfe}};
+extern "C" const GUID __declspec(selectany) IID__LogWrite =
+    {0x9d53591b,0xffd0,0x354d,{0xbd,0x9e,0xe9,0x71,0xe9,0x56,0x1b,0x6c}};
+extern "C" const GUID __declspec(selectany) IID__SerializationUnit =
+    {0x6326d4ee,0x27b6,0x30cd,{0x9b,0x4b,0xa5,0x14,0x62,0xe5,0x46,0x86}};
+
+} // namespace EtermProxy
+
+#pragma pack(pop)

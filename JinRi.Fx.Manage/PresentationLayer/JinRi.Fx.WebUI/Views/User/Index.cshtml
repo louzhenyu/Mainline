@@ -1,0 +1,94 @@
+﻿@using JinRi.Fx.Web
+@using JinRi.Fx.Entity
+@using Webdiyer.WebControls.Mvc
+@model PagedList<SysUser>
+@{
+    ViewBag.Title = "用户列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Dictionary<int, SysRole> dictionaryRole = ViewBag.DictionaryRole;
+}
+
+<div class="row-fluid">
+    <div class="span4">
+        <div>
+            <a class="btn red" id="delete" href="javascript:;" style="display:none;"><i class="icon-trash icon-white"></i> 删除</a>
+            <a class="btn blue thickbox" title='添加新用户' href="@Url.Action("Create")?TB_iframe=true&height=450&width=500"><i class="icon-plus icon-white"></i> 新增</a>
+        </div>
+    </div>
+    <div class="span8">
+        @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+        {
+            <div class="dataTables_filter">
+                <label>
+                    &nbsp;<button type="submit" class="btn">搜索 <i class="icon-search"></i></button>
+                </label>
+                <label>
+                    <span>&nbsp;用户名称：</span>
+                    @Html.TextBox("UserName", null, new { @class = "m-wrap small" })
+                </label>&nbsp;
+                <label>
+                    <span>&nbsp;用户状态：</span>
+                    @Html.DropDownList("Status",
+                    new List<SelectListItem> {
+                        new SelectListItem { Text = "全部", Value = "-1",Selected = true},
+                        new SelectListItem { Text = "启用", Value = "0" },
+                        new SelectListItem { Text = "禁用", Value = "1" } },
+                 new { @class = "m-wrap", @style = "width:120px" })
+                </label>&nbsp;
+            </div>
+        }
+    </div>
+</div>
+
+<div class="alert">
+    <button class="close" data-dismiss="alert"></button>
+    <strong>系统用户相关：</strong>
+    管理系统下的所有用户信息！
+</div>
+
+@using (Html.BeginForm("Delete", "User", FormMethod.Post, new { id = "mainForm" }))
+{
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 8px;"><input type="checkbox" id="checkall" class="group-checkable" /></th>
+                <th>用户代码</th>
+                <th>用户名</th>
+                <th>真实姓名</th>
+                <th>角色</th>
+                <th>状态</th>
+                <th>电话</th>
+                <th>Email</th>
+                <th>注册时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name='ids' value='@m.UserId' />
+                    </td>
+                    <td>@m.UserId</td>
+                    <td>@m.UserName</td>
+                    <td>@m.RealName</td>
+                    <td>@(!dictionaryRole.ContainsKey(m.RoleId)? "无" : dictionaryRole[m.RoleId].RoleName)</td>
+                    <td style="@(m.Status == 0 ? "" : "color:red")">@(m.Status == 0 ? "启用" : "禁用")</td>
+                    <td>@m.Tel</td>
+                    <td>@m.Email</td>
+                    <td>@m.RegDate.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <a class="btn mini purple thickbox" title='编辑用户信息' href="@Url.Action("Edit", new { id = m.UserId })?TB_iframe=true&height=450&width=500">
+                            <i class="icon-edit"></i>
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<div class="dataTables_paginate paging_bootstrap pagination">
+    @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageIndex" }, new { id = "flickrpager" })
+</div>

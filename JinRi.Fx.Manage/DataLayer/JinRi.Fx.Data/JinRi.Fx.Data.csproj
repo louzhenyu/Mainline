@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JinRi.Fx.Data</RootNamespace>
+    <AssemblyName>JinRi.Fx.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.37.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Dapper.Net.1.37.0\lib\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JFx, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\JFx.1.0.5\lib\JFx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\SysApiDal.cs" />
+    <Compile Include="Application\SysAppTypeDal.cs" />
+    <Compile Include="Application\SysAppDependentDal.cs" />
+    <Compile Include="Application\SysApplicationDal.cs" />
+    <Compile Include="Application\SysSubDal.cs" />
+    <Compile Include="Application\SysProductDal.cs" />
+    <Compile Include="ConnectionStr.cs" />
+    <Compile Include="Dashboard\DashboardDal.cs" />
+    <Compile Include="DD\AdvancedFieldDal.cs" />
+    <Compile Include="DD\ConnStrHelper.cs" />
+    <Compile Include="DD\DatabaseDal.cs" />
+    <Compile Include="DD\FieldDal.cs" />
+    <Compile Include="DD\LogDal.cs" />
+    <Compile Include="DD\TableDal.cs" />
+    <Compile Include="Eterm\EtermConfigDal.cs" />
+    <Compile Include="Eterm\EtermScriptDal.cs" />
+    <Compile Include="JinRiDB\AirComDal.cs" />
+    <Compile Include="Job\JobExecuteLogDAL.cs" />
+    <Compile Include="Job\JobHttpSchedulerDal.cs" />
+    <Compile Include="DapperHelper.cs" />
+    <Compile Include="System\SysRoleRightDal.cs" />
+    <Compile Include="System\SysMenuDal.cs" />
+    <Compile Include="System\SysRoleDal.cs" />
+    <Compile Include="System\SysModuleDal.cs" />
+    <Compile Include="System\SysUserDal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonLayer\JinRi.Fx.Utility\JinRi.Fx.Utility.csproj">
+      <Project>{d0ea45bd-0e70-40c8-b623-ad3e2b01f8ec}</Project>
+      <Name>JinRi.Fx.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\EntityLayer\JinRi.Fx.Entity\JinRi.Fx.Entity.csproj">
+      <Project>{466e29a8-6357-404c-b5f9-ad0254a9f0da}</Project>
+      <Name>JinRi.Fx.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JinRi.Fx.RequestDTO\JinRi.Fx.RequestDTO.csproj">
+      <Project>{2399fddd-e77d-4bc4-a7d6-645751ef21bd}</Project>
+      <Name>JinRi.Fx.RequestDTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

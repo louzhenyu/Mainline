@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JetermEntity</RootNamespace>
+    <AssemblyName>JetermEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\JetermEntity.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\JetermEntity.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChnCharInfo">
+      <HintPath>..\packages\ChnCharInfo.1.0.0\lib\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="DescriptionAttribute.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="EtermCommand.cs" />
+    <Compile Include="EtermConfig.cs" />
+    <Compile Include="Flight.cs" />
+    <Compile Include="Parser\AV.cs" />
+    <Compile Include="Parser\AVH.cs" />
+    <Compile Include="Parser\Booking.cs" />
+    <Compile Include="Parser\CancelPnr.cs" />
+    <Compile Include="Parser\GetPrice.cs" />
+    <Compile Include="Parser\Rmk.cs" />
+    <Compile Include="Parser\SeekPNR.cs" />
+    <Compile Include="Parser\ParserBase.cs" />
+    <Compile Include="Parser\ParserHelper.cs" />
+    <Compile Include="Passenger.cs" />
+    <Compile Include="Price.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\AutoTicket.cs" />
+    <Compile Include="Request\AV.cs" />
+    <Compile Include="Request\AVH.cs" />
+    <Compile Include="Request\Booking.cs" />
+    <Compile Include="Request\CancelPnr.cs" />
+    <Compile Include="Request\GetPrice.cs" />
+    <Compile Include="Request\IRequst.cs" />
+    <Compile Include="Request\IResult.cs" />
+    <Compile Include="Request\Request.cs" />
+    <Compile Include="Request\Rmk.cs" />
+    <Compile Include="Request\SeekPNR.cs" />
+    <Compile Include="Request\TicketByBigPnr.cs" />
+    <Compile Include="Request\TicketInfo.cs" />
+    <Compile Include="Request\TicketInfoByF.cs" />
+    <Compile Include="Request\TicketInfoByS.cs" />
+    <Compile Include="Request\TicketInfoHis.cs" />
+    <Compile Include="Response\AutoTicket.cs" />
+    <Compile Include="Response\AV.cs" />
+    <Compile Include="Response\AVH.cs" />
+    <Compile Include="Response\Booking.cs" />
+    <Compile Include="Response\CancelPnr.cs" />
+    <Compile Include="Response\GetPrice.cs" />
+    <Compile Include="Response\Response.cs" />
+    <Compile Include="Response\Rmk.cs" />
+    <Compile Include="Response\SeekPNR.cs" />
+    <Compile Include="Response\TicketByBigPnr.cs" />
+    <Compile Include="Response\TicketInfo.cs" />
+    <Compile Include="Response\TicketInfoByF.cs" />
+    <Compile Include="Response\TicketInfoByS.cs" />
+    <Compile Include="Response\TicketInfoHis.cs" />
+    <Compile Include="Parser\TicketByBigPnr.cs" />
+    <Compile Include="Parser\TicketInfo.cs" />
+    <Compile Include="Parser\TicketInfoByF.cs" />
+    <Compile Include="Parser\TicketInfoByS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

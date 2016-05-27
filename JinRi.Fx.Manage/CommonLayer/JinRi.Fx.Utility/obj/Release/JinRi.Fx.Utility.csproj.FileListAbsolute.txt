@@ -1,0 +1,7 @@
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Release\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Release\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Release\JRedis.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\obj\Release\JinRi.Fx.Utility.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\obj\Release\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\obj\Release\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\CommonLayer\JinRi.Fx.Utility\bin\Release\JRedis.xml

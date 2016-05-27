@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Owin.Metrics</name>
+    </assembly>
+    <members>
+        <member name="T:Owin.Metrics.Middleware.ActiveRequestCounterMiddleware">
+            <summary>
+            Owin middleware that counts the number of active requests.
+            </summary>
+        </member>
+        <member name="T:Owin.Metrics.OwinMetrics">
+            <summary>
+            Helper class to register OWIN Metrics
+            </summary>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetrics.WithOwin(Metrics.MetricsConfig,System.Action{System.Object})">
+            <summary>
+            Add Metrics Middleware to the Owin pipeline.
+            Sample: Metric.Config.WithOwin( m => app.Use(m)) 
+            Where app is the IAppBuilder
+            </summary>
+            <param name="config">Chainable configuration object.</param>
+            <param name="middlewareRegistration">Action used to register middleware. This should generally be app.Use(middleware)</param>
+            <returns>Chainable configuration object.</returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetrics.WithOwin(Metrics.MetricsConfig,System.Action{System.Object},System.Action{Owin.Metrics.OwinMetricsConfig})">
+            <summary>
+            Add Metrics Middleware to the Owin pipeline.
+            Sample: Metric.Config.WithOwin( m => app.Use(m)) 
+            Where app is the IAppBuilder
+            </summary>
+            <param name="config">Chainable configuration object.</param>
+            <param name="middlewareRegistration">Action used to register middleware. This should generally be app.Use(middleware)</param>
+            <param name="owinConfig">Action used to configure Owin metrics.</param>
+            <returns>Chainable configuration object.</returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsConfig.WithRequestMetricsConfig(System.Text.RegularExpressions.Regex[],System.String)">
+            <summary>
+            Register all predefined metrics.
+            </summary>
+            <param name="ignoreRequestPathPatterns">Patterns for paths to ignore.</param>
+            <param name="owinContext">Name of the metrics context where to register the metrics.</param>
+            <returns>Chainable configuration object.</returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsConfig.WithRequestMetricsConfig(System.Action{Owin.Metrics.OwinRequestMetricsConfig},System.Text.RegularExpressions.Regex[],System.String)">
+            <summary>
+            Configure which Owin metrics to be registered.
+            </summary>
+            <param name="config">Action used to configure Owin metrics.</param>
+            <param name="ignoreRequestPathPatterns">Patterns for paths to ignore.</param>
+            <param name="owinContext">Name of the metrics context where to register the metrics.</param>
+            <returns>Chainable configuration object.</returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsConfig.WithMetricsEndpoint">
+            <summary>
+            Expose Owin metrics endpoint
+            </summary>
+            <returns>Chainable configuration object.</returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsConfig.WithMetricsEndpoint(System.Action{Owin.Metrics.OwinMetricsEndpointConfig})">
+            <summary>
+            Configure Owin metrics endpoint.
+            </summary>
+            <param name="config">Action used to configure the Owin Metrics endpoint.</param>
+            <returns>Chainable configuration object.</returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsEndpointConfig.MetricsEndpoint(System.String,System.Boolean)">
+            <summary>
+            Configures the metrics endpoint
+            </summary>
+            <param name="endpoint">The endpoint e.g http://api.com/{endpoint} </param>
+            <param name="enabled">if set to <c>true</c> [enabled].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsEndpointConfig.MetricsJsonEndpoint(System.String,System.Boolean)">
+            <summary>
+            Configures the json endpoint which returns metrics as a json result
+            </summary>
+            <param name="endpoint">The endpoint e.g http://api.com/{endpoint} </param>        
+            <param name="enabled">if set to <c>true</c> [enabled].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsEndpointConfig.MetricsTextEndpoint(System.String,System.Boolean)">
+            <summary>
+            Configures the text endpoint which returns metrics as human readable text
+            </summary>
+            <param name="endpoint">The endpoint e.g http://api.com/{endpoint} </param>        
+            <param name="enabled">if set to <c>true</c> [enabled].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsEndpointConfig.MetricsHealthEndpoint(System.String,System.Boolean)">
+            <summary>
+            Configures the health endpoint which returns health status's in json format.
+            </summary>
+            <param name="endpoint">The endpoint e.g http://api.com/{endpoint} </param>        
+            <param name="enabled">if set to <c>true</c> [enabled].</param>
+            <returns></returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinMetricsEndpointConfig.MetricsPingEndpoint(System.String,System.Boolean)">
+            <summary>
+            Configures the ping endpoint.
+            </summary>
+            <param name="endpoint">The endpoint e.g http://api.com/{endpoint} </param>        
+            <param name="enabled">if set to <c>true</c> [enabled].</param>
+            <returns></returns>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsEndpointEnabled">
+            <summary>
+            Gets or sets a value indicating whether [metrics endpoint enabled].
+            </summary>
+            <value>
+            <c>true</c> if [metrics endpoint enabled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsEndpointName">
+            <summary>
+            Gets or sets the name of the metrics endpoint.
+            </summary>
+            <value>
+            The name of the metrics endpoint.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsJsonEndpointEnabled">
+            <summary>
+            Gets or sets a value indicating whether [metrics json endpoint enabled].
+            </summary>
+            <value>
+            <c>true</c> if [metrics json endpoint enabled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsJsonEndpointName">
+            <summary>
+            Gets or sets the name of the metrics json endpoint.
+            </summary>
+            <value>
+            The name of the metrics json endpoint.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsTextEndpointEnabled">
+            <summary>
+            Gets or sets a value indicating whether [metrics text endpoint enabled].
+            </summary>
+            <value>
+            <c>true</c> if [metrics text endpoint enabled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsTextEndpointName">
+            <summary>
+            Gets or sets the name of the metrics text endpoint.
+            </summary>
+            <value>
+            The name of the metrics text endpoint.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsHealthEndpointEnabled">
+            <summary>
+            Gets or sets a value indicating whether [metrics health endpoint enabled].
+            </summary>
+            <value>
+            <c>true</c> if [metrics health endpoint enabled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsHealthEndpointName">
+            <summary>
+            Gets or sets the name of the metrics health endpoint.
+            </summary>
+            <value>
+            The name of the metrics health endpoint.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsPingEndpointEnabled">
+            <summary>
+            Gets or sets a value indicating whether [metrics ping endpoint enabled].
+            </summary>
+            <value>
+            <c>true</c> if [metrics ping endpoint enabled]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Owin.Metrics.OwinMetricsEndpointConfig.MetricsPingEndpointName">
+            <summary>
+            Gets or sets the name of the metrics ping endpoint.
+            </summary>
+            <value>
+            The name of the metrics ping endpoint.
+            </value>
+        </member>
+        <member name="M:Owin.Metrics.OwinRequestMetricsConfig.WithAllOwinMetrics">
+            <summary>
+            Configure global OWIN Metrics.
+            Available global metrics are: Request Timer, Active Requests Counter, Error Meter
+            </summary>
+            <returns>
+            This instance to allow chaining of the configuration.
+            </returns>
+        </member>
+        <member name="M:Owin.Metrics.OwinRequestMetricsConfig.WithRequestTimer(System.String)">
+            <summary>
+            Registers a Timer metric named "Owin.Requests" that records how many requests per second are handled and also
+            keeps a histogram of the request duration.
+            </summary>
+            <param name="metricName">Name of the metric.</param>
+        </member>
+        <member name="M:Owin.Metrics.OwinRequestMetricsConfig.WithActiveRequestCounter(System.String)">
+            <summary>
+            Registers a Counter metric named "Owin.ActiveRequests" that shows the current number of active requests
+            </summary>
+            <param name="metricName">Name of the metric.</param>
+        </member>
+        <member name="M:Owin.Metrics.OwinRequestMetricsConfig.WithPostAndPutRequestSizeHistogram(System.String)">
+            <summary>
+            Register a Histogram metric named "Owin.PostAndPutRequestsSize" on the size of the POST and PUT requests
+            </summary>
+            <param name="metricName">Name of the metric.</param>
+        </member>
+        <member name="M:Owin.Metrics.OwinRequestMetricsConfig.WithTimerForEachRequest">
+            <summary>
+            Registers a timer for each request.
+            Timer is created based on route and will be named:
+            Owin.{HTTP_METHOD_NAME} [{ROUTE_PATH}]
+            </summary>
+        </member>
+        <member name="M:Owin.Metrics.OwinRequestMetricsConfig.WithErrorsMeter(System.String)">
+            <summary>
+            Registers a Meter metric named "Owin.Errors" that records the rate at witch unhanded errors occurred while 
+            processing Nancy requests.
+            </summary>
+            <param name="metricName">Name of the metric.</param>
+        </member>
+    </members>
+</doc>

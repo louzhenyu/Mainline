@@ -1,0 +1,168 @@
+﻿@{
+    Layout = null;
+}
+<script type="text/javascript">
+    var url;
+    initTableData();
+    $('.alertImg').tooltip();
+    function initTableData(queryData) {
+        $('#tbTable').datagrid({
+            fit: false,
+            height: 520,
+            fitColumns: true,
+            nowrap: false,
+            autoRowHeight: false,
+            striped: true,
+            collapsible: true,
+            url: '/Table/TableJson?ServerName=@ViewBag.ServerName&DatabaseName=@ViewBag.DatabaseName&SchemaName=@ViewBag.SchemaName',
+            sortName: 'TableName',
+            sortOrder: 'asc',
+            singleSelect: true,
+            border: true,
+            remoteSort: false,
+            idField: 'TableName',
+            pagination: false,
+            rownumbers: true,
+            pageSize: 20,
+            pageList: [15, 20, 25, 30, 35, 40, 45, 50],
+            pagePosition: 'bottom',
+            queryParams: queryData,
+            columns: [
+                [
+                    {
+                        field: 'TableName',
+                        title: '名称',
+                        width: 50,
+                        sortable: true,
+                        formatter: function(value, row, index) {
+                            return '<a href="javascript:addFieldTab(\'' + row.TableName + '\');">' + value + '</a>';
+                        }
+                    },
+                    { field: 'TableOwner', title: '所有者', width: 30, sortable: true },
+                    {
+                        field: 'ColCount', title: '字段数', width: 20, sortable: true,
+                        formatter: function(value, row, index) {
+                            if (row.ColCount >= 30) {
+                                return '<font color=\'red\'>' + row.ColCount + '</font><img class="alertImg" title="字段数超过30，建议减少！" src= "/Content/themes/metro/images/validatebox_warning.png" style="float:right"></img>';
+                            } else {
+                                return row.ColCount;
+                            }
+                        }
+                    },
+                    { field: 'TableDescription', title: '描述', width: 50, sortable: true }
+                ]
+            ],
+            loadFilter: function(data) {
+                if (data == null) {
+                    data = $(this).datagrid("reload");
+                }
+                return data;
+            },
+            toolbar: '#toolbarTable',
+            filterBtnIconCls: 'easyui-icon-filter'
+        });
+        $('#tbTable').datagrid('enableFilter', [
+            {
+                field: 'TableName',
+                type: 'text',
+                op: ['contains', 'equal', 'notequal', 'beginwith', 'endwith']
+            },
+            {
+                field: 'TableOwner',
+                type: 'text',
+                op: ['contains', 'equal', 'notequal', 'beginwith', 'endwith']
+            },
+            {
+                field: 'ColCount',
+                type: 'numberbox',
+                op:['equal','notequal','less','greater']
+            },
+            {
+                field: 'TableDescription',
+                type: 'text',
+                op: ['contains', 'equal', 'notequal', 'beginwith', 'endwith']
+            }
+        ]);
+    }
+
+    function addFieldTab(tablename) {
+        var url = "/Field/Field?ServerName=@ViewBag.ServerName&DatabaseName=@ViewBag.DatabaseName&SchemaName=@ViewBag.SchemaName&TableName=" + tablename;
+        addTab("数据表:" + tablename, url, 2);
+    }
+
+    function reloadTable() {
+        $("#tbTable").datagrid("reload");
+    }
+
+    function editTable() {
+        $('.easyui-dialog').dialog('close');
+        var row = $('#tbTable').datagrid('getSelected');
+        if (row) {
+            $('#dlgTable').dialog('open').dialog('center').dialog('setTitle', '编辑');
+            $('#lbTableName').text(row.TableName);
+            $('#fmTable').form('load', row);
+            $('#inputTableServerName').val('@ViewBag.ServerName');
+            $('#inputTableDbName').val('@ViewBag.DatabaseName');
+            $('#inputTableSchemaName').val('@ViewBag.SchemaName');
+            url = '/Table/Edit';
+        }
+    }
+
+    function saveTable() {
+        $('#fmTable').form('submit', {
+            url: url,
+            onSubmit: function() {
+                return $(this).form('validate');
+            },
+            success: function(result) {
+                var tResult = eval("(' + result + ')");
+                if (tResult.errorMsg) {
+                    $.messager.show({
+                        title: '出错了:<',
+                        msg: tResult.errorMsg
+                    });
+                } else {
+                    $('#dlgTable').dialog('close');
+                    $('#tbTable').datagrid('reload');
+                }
+            }
+        });
+    }
+</script>
+<table id="tbTable"></table>
+<div id="toolbarTable">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+        <td style=" padding-left:2px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-reload" plain="true" onclick="reloadTable()">刷新</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-edit" plain="true" onclick="editTable()">编辑</a>
+        </td>
+    </tr>
+</table>
+</div>
+<div id="dlgTable" class="easyui-dialog" style="width:500px;height:400px;padding:10px 20px" closed="true" buttons="#dlgTable-buttons">
+<form id="fmTable" method="post" novalidate>
+    <div class="fitem">
+        <label>名称:</label>
+        <label id="lbTableName"></label>
+    </div>
+    <div class="fitem">
+        <label>所有者:</label>
+        <br/>
+        <input id="inputTableOwner" name="TableOwner" style="width: 400px"/>
+    </div>
+    <div class="fitem">
+        <label>描述:</label>
+        <br />
+        <textarea id="taTableDescription" name="TableDescription" class="easyui-validatebox" style="width: 400px; height: 150px"></textarea>
+    </div>
+    <input name="TableName" type="hidden">
+    <input id="inputTableServerName" name="ServerName" type="hidden" />
+    <input id="inputTableDatabaseName" name="DatabaseName" type="hidden" />
+    <input id="inputTableSchemaName" name="SchemaName" type="hidden" />
+</form>
+</div>
+<div id="dlgTable-buttons">
+<a href="javascript:void(0)" class="easyui-linkbutton c6" iconcls="easyui-icon-ok" onclick="saveTable()" style="width:90px">保存</a>
+<a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-cancel" onclick="javascript: $('#dlgTable').dialog('close');" style="width:90px">取消</a>
+</div>

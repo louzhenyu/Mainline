@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{921C2250-0AB9-4316-BB01-418936C7F897}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JRedis</RootNamespace>
+    <AssemblyName>JRedis</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\JRedis.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redis\ServiceStack.Common\ActionExecExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\AssertExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\AssertUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\AttributeExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\ByteArrayExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\CommandsUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\CryptUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\DictionaryExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\DirectoryInfoExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\DisposableExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\EnumerableExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\EnumExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\ExecExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\FuncUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\IdUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\IntExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\IPAddressExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Common\MetadataTypes.cs" />
+    <Compile Include="Redis\ServiceStack.Common\ModelConfig.cs" />
+    <Compile Include="Redis\ServiceStack.Common\PerfUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Reflection\DelegateFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Reflection\PropertyAccessor.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Reflection\StaticAccessors.cs" />
+    <Compile Include="Redis\ServiceStack.Common\StringUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Support\ActionExecHandler.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Support\AdapterBase.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Support\CommandExecsHandler.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Support\CommandResultsHandler.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Support\InMemoryLogFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Common\Support\Thread.WinRT.cs" />
+    <Compile Include="Redis\ServiceStack.Common\UrnId.cs" />
+    <Compile Include="Redis\ServiceStack.Common\XLinqExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ApiAllowableValuesAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ApiAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ApiMemberAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ApiResponse.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\AttributeBase.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\ICacheClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\IDeflateProvider.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\IGZipProvider.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\IMemcachedClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\IRemoveByPattern.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\ISession.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Caching\ISessionFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\CollectionTypes.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Commands\ICommand.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Commands\ICommand.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Commands\ICommandExec.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Commands\ICommandList.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Configuration\IAppSettings.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Configuration\IContainerAdapter.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Configuration\IRelease.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Configuration\IResolver.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Configuration\ITypeFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\AliasAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\AutoIncrementAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\BelongToAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\CompositeIndexAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\ComputeAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\DecimalLengthAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\DefaultAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\DescriptionAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\ForeignKeyAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\IgnoreAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\IndexAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\MetaAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\PrimaryKeyAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\RangeAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\ReferenceAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\ReferencesAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\RequiredAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\SchemaAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\SequenceAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\DataAnnotations\StringLengthAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Data\DataException.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Data\DbConnectionFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Data\IDbConnectionFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Data\IEntityStore.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Data\IEntityStore.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Data\IHasDbConnection.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ErrorResponse.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Feature.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IHasResponseStatus.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IMeta.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IOneWayClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IO\IEndpoint.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IO\IVirtualDirectory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IO\IVirtualFile.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IO\IVirtualNode.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IO\IVirtualPathProvider.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IReplyClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IResponseStatus.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IRestClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IRestClientAsync.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IRestGateway.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IService.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IServiceClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\IServiceClientAsync.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\ConsoleLogFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\ConsoleLogger.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\DebugLogFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\DebugLogger.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\ILog.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\ILogFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\LogManager.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\NullDebugLogger.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\NullLogFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\StringBuilderLog.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\TestLogFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Logging\TestLogger.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\IMessage.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\IMessageFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\IMessageProducer.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\IMessageQueueClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\IMessageQueueClientFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\IMessageService.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\MessageError.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\MessageFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\MessageHandlerStats.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\MessageOption.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\MessagingException.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\QueueNames.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Messaging\UnRetryableMessagingException.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\ICacheByDateModified.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\ICacheByEtag.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasAction.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasGuidId.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasId.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasIntId.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasLongId.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasNamed.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasNamedCollection.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasNamedList.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasStringId.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasUserId.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IHasUserSession.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Model\IResponseStatusConvertible.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Property.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisHash.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisList.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisSet.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisSortedSet.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisTransaction.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisTypedClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisTypedPipeline.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Generic\IRedisTypedQueueableOperation.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisClientCacheManager.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisClientsManager.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisHash.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisList.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisNativeClient.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisSet.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisSortedSet.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisSubscription.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisTransaction.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\IRedisTransactionBase.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\ItemRef.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Pipeline\IRedisPipeline.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Pipeline\IRedisPipelineShared.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Pipeline\IRedisQueueableOperation.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\Pipeline\IRedisQueueCompletableOperation.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\RedisKeyType.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Redis\SortOptions.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\RequestAttributes.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\RequestLogEntry.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ResponseError.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\ResponseStatus.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\RestrictAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\RouteAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\SwaggerType.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IContentTypeReader.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IContentTypes.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IContentTypeWriter.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\ICookies.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IExpirable.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHasOptions.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHasRequestFilter.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHasResponseFilter.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHttpError.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHttpFile.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHttpRequest.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHttpResponse.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IHttpResult.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IPartialWriter.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IRequest.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IRequestLogger.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IRequestPreferences.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IRequiresRequest.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IRequiresRequestStream.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IResponse.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IRestPath.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IServiceController.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IServiceRoutes.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IServiceRunner.cs" />
+    <Compile Include="Redis\ServiceStack.Interfaces\Web\IStreamWriter.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\BasicRedisClientManager.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\BasicRedisClientManager.ICacheClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\BufferPool.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Commands.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\ConnectionUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\ManagedListGeneric.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\QueuedRedisTypedCommand.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisClientHash.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisClientList.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisClientSet.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisClientsManagerExtensionsGeneric.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisClientSortedSet.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedClient_App.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedClient_Hash.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedClient_List.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedClient_Set.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedClient_SortedSet.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedCommandQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedPipeline.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Generic\RedisTypedTransaction.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\IRedisClientFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\IRedisFailover.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\QueuedRedisCommand.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\QueuedRedisOperation.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\RedisAllPurposePipeline.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\RedisCommand.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\RedisCommandQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\RedisPipelineCommand.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Pipeline\RedisQueueCompletableOperation.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\PooledRedisClientManager.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\PooledRedisClientManager.Disposable.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\PooledRedisClientManager.ICacheClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisCacheClientFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient.ICacheClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientHash.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientList.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientManagerCacheClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientManagerConfig.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientSet.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientsManagerExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClientSortedSet.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient_Hash.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient_List.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient_Set.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient_Slowlog.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisClient_SortedSet.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisEndpoint.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisException.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisLock.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisNativeClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisNativeClient_Utils.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisPipeline.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisResponseException.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\RedisSubscription.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\ShardedConnectionPool.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\ShardedRedisClientManager.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\ConsistentHash.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\IOrderedDictionary.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\ISerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\DisposableDistributedLock.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\DistributedLock.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\IDistributedLock.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\ILockingStrategy.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\NoLockingStrategy.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\ReaderWriterLockingStrategy.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\ReadLock.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Locking\WriteLock.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\ObjectSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\OptimizedObjectSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\OrderedDictionary.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\IChronologicalWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\RedisChronologicalWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\RedisSequentialWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\RedisSequentialWorkQueue.Locks.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\RedisSimpleWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\RedisWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\SequentialData.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\SerializingRedisClient.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\Implementation\SerializingRedisClientFactory.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\ISequentialData.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\ISequentialWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\Queue\ISimpleWorkQueue.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\RedisNamespace.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Support\SerializedObjectWrapper.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Transaction\RedisTransaction.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\Transaction\RedisTransactionFailedException.cs" />
+    <Compile Include="Redis\ServiceStack.Redis\UtilExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\AssemblyUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\AutoMappingUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Build.Silverlight.cs" />
+    <Compile Include="Redis\ServiceStack.Text\CollectionExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DateTimeSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeArray.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeBuiltin.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeCollection.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeDictionary.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeDynamic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeKeyValuePair.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeListWithElements.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeSpecializedCollections.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeType.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeTypeRef.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeTypeRefJson.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeTypeRefJsv.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\DeserializeTypeUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\ITypeSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\JsDelegates.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\JsReader.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\JsState.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\JsWriter.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\ParseUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\StaticParseMethod.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\WriteDictionary.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\WriteLists.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Common\WriteType.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Controller\CommandProcessor.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Controller\PathInfo.cs" />
+    <Compile Include="Redis\ServiceStack.Text\CsvAttribute.cs" />
+    <Compile Include="Redis\ServiceStack.Text\CsvConfig.cs" />
+    <Compile Include="Redis\ServiceStack.Text\CsvSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\CsvStreamExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\CsvWriter.cs" />
+    <Compile Include="Redis\ServiceStack.Text\DateTimeExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\DynamicJson.cs" />
+    <Compile Include="Redis\ServiceStack.Text\DynamicProxy.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Env.cs" />
+    <Compile Include="Redis\ServiceStack.Text\HashSet.cs" />
+    <Compile Include="Redis\ServiceStack.Text\HttpUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\ITracer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\ITypeSerializer.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\JsConfig.cs" />
+    <Compile Include="Redis\ServiceStack.Text\JsConfigScope.cs" />
+    <Compile Include="Redis\ServiceStack.Text\JsonObject.cs" />
+    <Compile Include="Redis\ServiceStack.Text\JsonSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\JsonSerializer.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Json\JsonReader.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Json\JsonTypeSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Json\JsonUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Json\JsonWriter.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\JsvFormatter.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Jsv\JsvDeserializeType.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Jsv\JsvReader.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Jsv\JsvSerializer.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Jsv\JsvTypeSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Jsv\JsvWriter.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\LicenseUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\ListExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\MapExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Marc\Link.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Marc\ObjectAccessor.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Marc\TypeAccessor.cs" />
+    <Compile Include="Redis\ServiceStack.Text\PathUtils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\QueryStringSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\ReflectionExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Reflection\StaticAccessors.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Rsa\BigInteger.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Rsa\Providers.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Rsa\RSACryptoServiceProvider.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Rsa\Scrypt.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Rsa\Utils.cs" />
+    <Compile Include="Redis\ServiceStack.Text\StreamExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\StringExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Support\AssemblyTypeDefinition.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Support\DoubleConverter.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Support\TypePair.cs" />
+    <Compile Include="Redis\ServiceStack.Text\SystemTime.cs" />
+    <Compile Include="Redis\ServiceStack.Text\TextExtensions.cs" />
+    <Compile Include="Redis\ServiceStack.Text\Tracer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\TranslateListWithElements.cs" />
+    <Compile Include="Redis\ServiceStack.Text\TypeConfig.cs" />
+    <Compile Include="Redis\ServiceStack.Text\TypeSerializer.cs" />
+    <Compile Include="Redis\ServiceStack.Text\TypeSerializer.Generic.cs" />
+    <Compile Include="Redis\ServiceStack.Text\XmlSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Redis\ServiceStack.Common\Properties\" />
+    <Folder Include="Redis\ServiceStack.Interfaces\Properties\" />
+    <Folder Include="Redis\ServiceStack.Redis\Properties\" />
+    <Folder Include="Redis\ServiceStack.Text\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Redis\ServiceStack.Common\ServiceStack.Common.csproj" />
+    <Content Include="Redis\ServiceStack.Common\ServiceStack.Common.csproj.user" />
+    <Content Include="Redis\ServiceStack.Common\ServiceStack.Common.Signed.csproj" />
+    <Content Include="Redis\ServiceStack.Interfaces\Redis\Redis-annotated.png" />
+    <Content Include="Redis\ServiceStack.Interfaces\Redis\Redis.png" />
+    <Content Include="Redis\ServiceStack.Interfaces\ServiceStack.Interfaces.Android.csproj" />
+    <Content Include="Redis\ServiceStack.Interfaces\ServiceStack.Interfaces.AndroidIndie.csproj" />
+    <Content Include="Redis\ServiceStack.Interfaces\ServiceStack.Interfaces.csproj" />
+    <Content Include="Redis\ServiceStack.Interfaces\ServiceStack.Interfaces.SL5.csproj" />
+    <Content Include="Redis\ServiceStack.Redis\ServiceStack.Redis.csproj" />
+    <Content Include="Redis\ServiceStack.Redis\ServiceStack.Redis.csproj.user" />
+    <Content Include="Redis\ServiceStack.Redis\ServiceStack.Redis.Signed.csproj" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.Android.csproj" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.AndroidIndie.csproj" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.csproj" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.Signed.csproj" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.SL5.csproj" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.sln" />
+    <Content Include="Redis\ServiceStack.Text\ServiceStack.Text.XBox360.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Redis\ServiceStack.Interfaces\Redis\Redis.cd" />
+    <None Include="Redis\ServiceStack.Text\ServiceStack.Text.SL5.sln.DotSettings" />
+    <None Include="Redis\ServiceStack.Text\ServiceStack.Text.suo" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JZooKeeperNet.Recipes</name>
+    </assembly>
+    <members>
+        <member name="M:ZooKeeperNet.Recipes.DistributedQueue.Enqueue(System.Byte[])">
+            <summary>
+            Adds an item to the queue
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.DistributedQueue.Dequeue">
+            <summary>
+            Removes an item from the queue.  If an item is not available, a <see cref="T:ZooKeeperNet.Recipes.NoSuchElementException">NoSuchElementException</see>
+            is thrown.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.DistributedQueue.Take">
+            <summary>
+            Removes an item from the queue.  If an item is not available, then the method blocks until one is.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZooKeeperNet.Recipes.Locks.LockInternals">
+            <summary>
+            Common lock logic adapted from:
+            https://git-wip-us.apache.org/repos/asf?p=incubator-curator.git;a=blob;f=curator-recipes/src/main/java/org/apache/curator/framework/recipes/locks/LockInternals.java;h=06a1f6bd7b91c6e7133ab466b062ee25598f3554;hb=master
+            </summary>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.Locks.LockInternals.Clean">
+            <summary>
+            Attempt to delete the lock node so that sequence numbers get reset.
+            </summary>
+        </member>
+        <member name="T:ZooKeeperNet.Recipes.Locks.IInterProcessLock">
+            <summary>
+            Roughly following the pattern from curator-recipes
+            See: http://curator.incubator.apache.org/curator-recipes/index.html
+            </summary>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.Locks.IInterProcessLock.Acquire(System.Nullable{System.TimeSpan})">
+            <summary>
+            Acquire the mutex, blocking until it's available or the timeout passes.  Each call 
+            to Acquire() must be balanced by a call to Release.
+            
+            NOTE: The same thread can call acquire re-entrantly.
+            </summary>
+            <param name="timeout">time to wait or null to wait indefinitely</param>
+            <returns>true if the mutex was acquired, false otherwise.</returns>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.Locks.IInterProcessLock.Release">
+            <summary>
+            Perform a single release of the mutex.  If the thread had made multiple calls
+            to acquire, the mutex will continue to be held until all such calls are balanced
+            with corresponding Release() calls.
+            </summary>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.Locks.IInterProcessLock.IsAcquiredInThisProcess">
+            <summary>
+            Returns true if the mutex is acquired by a thread in this process.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ZooKeeperNet.Recipes.Locks.InterProcessMutex">
+            <summary>
+            Roughly following the pattern from curator-recipes for a reentrant mutex that works across processes.
+            See: https://git-wip-us.apache.org/repos/asf?p=incubator-curator.git;a=blob;f=curator-recipes/src/main/java/org/apache/curator/framework/recipes/locks/InterProcessMutex.java;h=703cc8b03e4de560e73c3b78b5c29392a05eb62e;hb=master
+            </summary>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.ILeaderWatcher.TakeLeadership">
+            <summary>
+            This is called when all of the below:
+            <list type="bullet">
+            <item>
+            <description>After this process calls start</description>
+            </item>
+            <item>
+            <description>The first time that we determine that we are leader</description>
+            </item>
+            </list>
+            </summary>
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.ProtocolSupport.RetryOperation``1(System.Func{``0})">
+            Perform the given operation, retrying if the connection fails
+            @return object. it needs to be cast to the callee's expected 
+            return type.
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.ProtocolSupport.EnsurePathExists(System.String)">
+            Ensures that the given path exists with no data, the current
+            ACL and no flags
+            @param path
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.ProtocolSupport.EnsureExists(System.String,System.Byte[],System.Collections.Generic.List{Org.Apache.Zookeeper.Data.ACL},ZooKeeperNet.CreateMode)">
+            Ensures that the given path exists with the given data, ACL and flags
+            @param path
+            @param acl
+            @param flags
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.ProtocolSupport.IsDisposed">
+            Returns true if this protocol has been closed
+            @return true if this protocol is closed
+        </member>
+        <member name="M:ZooKeeperNet.Recipes.ProtocolSupport.DoRetryDelay(System.Int32)">
+            Performs a retry delay if this is not the first attempt
+            @param attemptCount the number of the attempts performed so far
+        </member>
+    </members>
+</doc>

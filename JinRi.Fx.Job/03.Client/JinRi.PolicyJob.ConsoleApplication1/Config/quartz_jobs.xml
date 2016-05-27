@@ -1,0 +1,33 @@
+﻿<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+  <schedule>
+    <job>
+      <name>PolicySyncJob</name>
+      <group>PolicyGroup</group>
+      <description>政策同步服务</description>
+      <job-type>JinRi.PolicyJob.ConsoleApplication1.SchedulerJob, JinRi.PolicyJob.ConsoleApplication1</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>PolicySyncTrigger</name>
+        <group>PolicySyncTriggerGroup</group>
+        <job-name>PolicySyncJob</job-name>
+        <job-group>PolicyGroup</job-group>
+        <cron-expression>0/2 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>PolicySyncTrigger1</name>
+        <group>PolicySyncTriggerGroup</group>
+        <job-name>PolicySyncJob</job-name>
+        <job-group>PolicyGroup</job-group>
+        <cron-expression>0/1 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

@@ -1,0 +1,41 @@
+﻿@model JinRi.Fx.Entity.SysRole
+
+@{
+    ViewBag.Title = "新增角色";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>角色名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.RoleName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RoleName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">所属系统：</label>
+                <div class="controls">                    
+                    @Html.TextBoxFor(m => m.SystemId, new { @class = "m-wrap small integer" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.SystemId)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">状态：</label>
+                <div class="controls">
+                    @Html.DropDownList("ModelState", null, new { @style = "width:135px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Status)</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap", @style = "width:300px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,213 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.Service", "PresentationLayer\FX.CTI.Service\FX.CTI.Service.csproj", "{5715B080-B540-44D2-8044-D0CC1409E033}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{008FAD2B-FFC5-4400-91D2-842582851D43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityLayer", "EntityLayer", "{01382922-AD32-48D1-9B5D-8D02CAAA4293}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceDll", "ReferenceDll", "{DB28A059-B6D4-4C49-AD62-DFBD92459E23}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceDll\Dapper.dll = ReferenceDll\Dapper.dll
+		ReferenceDll\Dapper.xml = ReferenceDll\Dapper.xml
+		ReferenceDll\EasyNetQ.dll = ReferenceDll\EasyNetQ.dll
+		ReferenceDll\EasyNetQ.xml = ReferenceDll\EasyNetQ.xml
+		ReferenceDll\JFx.dll = ReferenceDll\JFx.dll
+		ReferenceDll\JFx.xml = ReferenceDll\JFx.xml
+		ReferenceDll\JLog4net.dll = ReferenceDll\JLog4net.dll
+		ReferenceDll\JLog4net.XML = ReferenceDll\JLog4net.XML
+		ReferenceDll\MongoDB.Bson.dll = ReferenceDll\MongoDB.Bson.dll
+		ReferenceDll\MongoDB.Bson.xml = ReferenceDll\MongoDB.Bson.xml
+		ReferenceDll\MongoDB.Driver.dll = ReferenceDll\MongoDB.Driver.dll
+		ReferenceDll\MongoDB.Driver.xml = ReferenceDll\MongoDB.Driver.xml
+		ReferenceDll\RabbitMQ.Client.dll = ReferenceDll\RabbitMQ.Client.dll
+		ReferenceDll\RabbitMQ.Client.xml = ReferenceDll\RabbitMQ.Client.xml
+		ReferenceDll\RestSharp.dll = ReferenceDll\RestSharp.dll
+		ReferenceDll\RestSharp.xml = ReferenceDll\RestSharp.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{63E96812-71FA-401C-BE30-401D8863D90F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{805A2308-4D29-4E91-8DC5-857FF2FEF246}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{51953B35-3147-498C-9B27-E5D1AEDAD99F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.Entity", "EntityLayer\FX.CTI.Entity\FX.CTI.Entity.csproj", "{03837385-0747-4284-A968-3E7A1FA5C94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.DBEntity", "EntityLayer\FX.CTI.DBEntity\FX.CTI.DBEntity.csproj", "{B48CC13A-DC39-4BDB-85B0-50E3714DFEBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.DB", "DataLayer\FX.CTI.DB\FX.CTI.DB.csproj", "{B9B06C7B-AB93-4C5C-90E3-C1C452A7CBB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.Business", "BusinessLayer\FX.CTI.Business\FX.CTI.Business.csproj", "{54500455-0D18-48E4-AD86-592896A631F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C098C71E-5603-4A2E-A2F0-8FF6C5572003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp", "Test\ClientApp\ClientApp.csproj", "{9D815F82-BDEB-46BA-91C3-00A3A6F4A7FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5715B080-B540-44D2-8044-D0CC1409E033} = {5715B080-B540-44D2-8044-D0CC1409E033}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_FX.CTI.Sender", "Test\Test_FX.CTI.Sender\Test_FX.CTI.Sender.csproj", "{885CEAE4-D767-4FF8-BA1D-0FEE1E7B7CB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.Email.WinService", "PresentationLayer\FX.CTI.Email.WinService\FX.CTI.Email.WinService.csproj", "{929799E2-FB4C-43F5-9C54-C3ABE21BF5CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.SMS.WinService", "PresentationLayer\FX.CTI.SMS.WinService\FX.CTI.SMS.WinService.csproj", "{5AC65C94-895C-4316-AF43-BA75177ED93B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSMSWXT", "Test\TestSMSWXT\TestSMSWXT.csproj", "{196333BF-05F6-4C4D-9031-08012463C884}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.SMSWS", "DataLayer\FX.CTI.SMSWS\FX.CTI.SMSWS.csproj", "{9CA8050D-A5F6-4298-A827-4E6F376C9EB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.ConfigHelper", "CommonLayer\FX.CTI.ConfigHelper\FX.CTI.ConfigHelper.csproj", "{A29A136F-0050-4E78-835C-2594CD9A2D55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_EmailRepeater", "Test\Test_EmailRepeater\Test_EmailRepeater.csproj", "{91E78AEC-3AB5-4DBA-BF94-F234DE63EE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FX.CTI.MQBusMgr", "CommonLayer\FX.CTI.MQBusMgr\FX.CTI.MQBusMgr.csproj", "{21F3F81B-97F6-4878-B3A2-021371866417}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 15
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PresentationLayer\\FX.CTI.Service\\FX.CTI.Service.csproj
+		SccProjectTopLevelParentUniqueName1 = FX.CTI.SOA.sln
+		SccProjectName1 = PresentationLayer/FX.CTI.Service
+		SccLocalPath1 = PresentationLayer\\FX.CTI.Service
+		SccProjectUniqueName2 = EntityLayer\\FX.CTI.Entity\\FX.CTI.Entity.csproj
+		SccProjectTopLevelParentUniqueName2 = FX.CTI.SOA.sln
+		SccProjectName2 = EntityLayer/FX.CTI.Entity
+		SccLocalPath2 = EntityLayer\\FX.CTI.Entity
+		SccProjectUniqueName3 = EntityLayer\\FX.CTI.DBEntity\\FX.CTI.DBEntity.csproj
+		SccProjectTopLevelParentUniqueName3 = FX.CTI.SOA.sln
+		SccProjectName3 = EntityLayer/FX.CTI.DBEntity
+		SccLocalPath3 = EntityLayer\\FX.CTI.DBEntity
+		SccProjectUniqueName4 = DataLayer\\FX.CTI.DB\\FX.CTI.DB.csproj
+		SccProjectTopLevelParentUniqueName4 = FX.CTI.SOA.sln
+		SccProjectName4 = DataLayer/FX.CTI.DB
+		SccLocalPath4 = DataLayer\\FX.CTI.DB
+		SccProjectUniqueName5 = BusinessLayer\\FX.CTI.Business\\FX.CTI.Business.csproj
+		SccProjectTopLevelParentUniqueName5 = FX.CTI.SOA.sln
+		SccProjectName5 = BusinessLayer/FX.CTI.Business
+		SccLocalPath5 = BusinessLayer\\FX.CTI.Business
+		SccProjectUniqueName6 = Test\\ClientApp\\ClientApp.csproj
+		SccProjectTopLevelParentUniqueName6 = FX.CTI.SOA.sln
+		SccProjectName6 = Test/ClientApp
+		SccLocalPath6 = Test\\ClientApp
+		SccProjectUniqueName7 = Test\\Test_FX.CTI.Sender\\Test_FX.CTI.Sender.csproj
+		SccProjectTopLevelParentUniqueName7 = FX.CTI.SOA.sln
+		SccProjectName7 = Test/Test_FX.CTI.Sender
+		SccLocalPath7 = Test\\Test_FX.CTI.Sender
+		SccProjectUniqueName8 = PresentationLayer\\FX.CTI.Email.WinService\\FX.CTI.Email.WinService.csproj
+		SccProjectTopLevelParentUniqueName8 = FX.CTI.SOA.sln
+		SccProjectName8 = PresentationLayer/FX.CTI.Email.WinService
+		SccLocalPath8 = PresentationLayer\\FX.CTI.Email.WinService
+		SccProjectUniqueName9 = PresentationLayer\\FX.CTI.SMS.WinService\\FX.CTI.SMS.WinService.csproj
+		SccProjectTopLevelParentUniqueName9 = FX.CTI.SOA.sln
+		SccProjectName9 = PresentationLayer/FX.CTI.SMS.WinService
+		SccLocalPath9 = PresentationLayer\\FX.CTI.SMS.WinService
+		SccProjectUniqueName10 = Test\\TestSMSWXT\\TestSMSWXT.csproj
+		SccProjectTopLevelParentUniqueName10 = FX.CTI.SOA.sln
+		SccProjectName10 = Test/TestSMSWXT
+		SccLocalPath10 = Test\\TestSMSWXT
+		SccProjectUniqueName11 = DataLayer\\FX.CTI.SMSWS\\FX.CTI.SMSWS.csproj
+		SccProjectTopLevelParentUniqueName11 = FX.CTI.SOA.sln
+		SccProjectName11 = DataLayer/FX.CTI.SMSWS
+		SccLocalPath11 = DataLayer\\FX.CTI.SMSWS
+		SccProjectUniqueName12 = CommonLayer\\FX.CTI.ConfigHelper\\FX.CTI.ConfigHelper.csproj
+		SccProjectTopLevelParentUniqueName12 = FX.CTI.SOA.sln
+		SccProjectName12 = CommonLayer/FX.CTI.ConfigHelper
+		SccLocalPath12 = CommonLayer\\FX.CTI.ConfigHelper
+		SccProjectUniqueName13 = Test\\Test_EmailRepeater\\Test_EmailRepeater.csproj
+		SccProjectTopLevelParentUniqueName13 = FX.CTI.SOA.sln
+		SccProjectName13 = Test/Test_EmailRepeater
+		SccLocalPath13 = Test\\Test_EmailRepeater
+		SccProjectUniqueName14 = CommonLayer\\FX.CTI.MQBusMgr\\FX.CTI.MQBusMgr.csproj
+		SccProjectTopLevelParentUniqueName14 = FX.CTI.SOA.sln
+		SccProjectName14 = CommonLayer/FX.CTI.MQBusMgr
+		SccLocalPath14 = CommonLayer\\FX.CTI.MQBusMgr
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5715B080-B540-44D2-8044-D0CC1409E033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5715B080-B540-44D2-8044-D0CC1409E033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5715B080-B540-44D2-8044-D0CC1409E033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5715B080-B540-44D2-8044-D0CC1409E033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03837385-0747-4284-A968-3E7A1FA5C94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03837385-0747-4284-A968-3E7A1FA5C94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03837385-0747-4284-A968-3E7A1FA5C94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03837385-0747-4284-A968-3E7A1FA5C94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48CC13A-DC39-4BDB-85B0-50E3714DFEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48CC13A-DC39-4BDB-85B0-50E3714DFEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48CC13A-DC39-4BDB-85B0-50E3714DFEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48CC13A-DC39-4BDB-85B0-50E3714DFEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B06C7B-AB93-4C5C-90E3-C1C452A7CBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B06C7B-AB93-4C5C-90E3-C1C452A7CBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B06C7B-AB93-4C5C-90E3-C1C452A7CBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B06C7B-AB93-4C5C-90E3-C1C452A7CBB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54500455-0D18-48E4-AD86-592896A631F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54500455-0D18-48E4-AD86-592896A631F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54500455-0D18-48E4-AD86-592896A631F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54500455-0D18-48E4-AD86-592896A631F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D815F82-BDEB-46BA-91C3-00A3A6F4A7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D815F82-BDEB-46BA-91C3-00A3A6F4A7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D815F82-BDEB-46BA-91C3-00A3A6F4A7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D815F82-BDEB-46BA-91C3-00A3A6F4A7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{885CEAE4-D767-4FF8-BA1D-0FEE1E7B7CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885CEAE4-D767-4FF8-BA1D-0FEE1E7B7CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885CEAE4-D767-4FF8-BA1D-0FEE1E7B7CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885CEAE4-D767-4FF8-BA1D-0FEE1E7B7CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{929799E2-FB4C-43F5-9C54-C3ABE21BF5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{929799E2-FB4C-43F5-9C54-C3ABE21BF5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{929799E2-FB4C-43F5-9C54-C3ABE21BF5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{929799E2-FB4C-43F5-9C54-C3ABE21BF5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC65C94-895C-4316-AF43-BA75177ED93B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC65C94-895C-4316-AF43-BA75177ED93B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC65C94-895C-4316-AF43-BA75177ED93B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC65C94-895C-4316-AF43-BA75177ED93B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{196333BF-05F6-4C4D-9031-08012463C884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196333BF-05F6-4C4D-9031-08012463C884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196333BF-05F6-4C4D-9031-08012463C884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196333BF-05F6-4C4D-9031-08012463C884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA8050D-A5F6-4298-A827-4E6F376C9EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA8050D-A5F6-4298-A827-4E6F376C9EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA8050D-A5F6-4298-A827-4E6F376C9EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA8050D-A5F6-4298-A827-4E6F376C9EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A29A136F-0050-4E78-835C-2594CD9A2D55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A29A136F-0050-4E78-835C-2594CD9A2D55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A29A136F-0050-4E78-835C-2594CD9A2D55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A29A136F-0050-4E78-835C-2594CD9A2D55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E78AEC-3AB5-4DBA-BF94-F234DE63EE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E78AEC-3AB5-4DBA-BF94-F234DE63EE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E78AEC-3AB5-4DBA-BF94-F234DE63EE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E78AEC-3AB5-4DBA-BF94-F234DE63EE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F3F81B-97F6-4878-B3A2-021371866417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F3F81B-97F6-4878-B3A2-021371866417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F3F81B-97F6-4878-B3A2-021371866417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F3F81B-97F6-4878-B3A2-021371866417}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5715B080-B540-44D2-8044-D0CC1409E033} = {008FAD2B-FFC5-4400-91D2-842582851D43}
+		{929799E2-FB4C-43F5-9C54-C3ABE21BF5CE} = {008FAD2B-FFC5-4400-91D2-842582851D43}
+		{5AC65C94-895C-4316-AF43-BA75177ED93B} = {008FAD2B-FFC5-4400-91D2-842582851D43}
+		{03837385-0747-4284-A968-3E7A1FA5C94B} = {01382922-AD32-48D1-9B5D-8D02CAAA4293}
+		{B48CC13A-DC39-4BDB-85B0-50E3714DFEBF} = {01382922-AD32-48D1-9B5D-8D02CAAA4293}
+		{B9B06C7B-AB93-4C5C-90E3-C1C452A7CBB6} = {63E96812-71FA-401C-BE30-401D8863D90F}
+		{9CA8050D-A5F6-4298-A827-4E6F376C9EB3} = {63E96812-71FA-401C-BE30-401D8863D90F}
+		{A29A136F-0050-4E78-835C-2594CD9A2D55} = {805A2308-4D29-4E91-8DC5-857FF2FEF246}
+		{21F3F81B-97F6-4878-B3A2-021371866417} = {805A2308-4D29-4E91-8DC5-857FF2FEF246}
+		{54500455-0D18-48E4-AD86-592896A631F2} = {51953B35-3147-498C-9B27-E5D1AEDAD99F}
+		{9D815F82-BDEB-46BA-91C3-00A3A6F4A7FD} = {C098C71E-5603-4A2E-A2F0-8FF6C5572003}
+		{885CEAE4-D767-4FF8-BA1D-0FEE1E7B7CB9} = {C098C71E-5603-4A2E-A2F0-8FF6C5572003}
+		{196333BF-05F6-4C4D-9031-08012463C884} = {C098C71E-5603-4A2E-A2F0-8FF6C5572003}
+		{91E78AEC-3AB5-4DBA-BF94-F234DE63EE1B} = {C098C71E-5603-4A2E-A2F0-8FF6C5572003}
+	EndGlobalSection
+EndGlobal

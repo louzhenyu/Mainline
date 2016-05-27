@@ -1,0 +1,15 @@
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.ConfigHelper.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.ConfigHelper.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.DB.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.DBEntity.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\JFx.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\Dapper.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.DB.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.DB.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.DBEntity.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\FX.CTI.DBEntity.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\JFx.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\bin\Release\Dapper.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\obj\Release\FX.CTI.ConfigHelper.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\obj\Release\FX.CTI.ConfigHelper.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\CommonLayer\FX.CTI.ConfigHelper\obj\Release\FX.CTI.ConfigHelper.pdb

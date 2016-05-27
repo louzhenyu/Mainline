@@ -1,0 +1,156 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JetermClient", "JetermClient\JetermClient.csproj", "{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JetermClient.Test", "JetermClient.Test\JetermClient.Test.csproj", "{191743AA-9BD8-4E10-8125-E78E2AD2AC70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{28ED5960-642C-4821-AF48-47FE8E529F49}"
+	ProjectSection(SolutionItems) = preProject
+		ShareDLL\JinRi.Jason.Alipay.dll = ShareDLL\JinRi.Jason.Alipay.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtermProxy", "EtermProxy\EtermProxy.csproj", "{0A00386C-04AF-4820-9746-896711DD3903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EtermProxy.UnitTest", "EtermProxy.UnitTest\EtermProxy.UnitTest.csproj", "{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EtermServer", "EtermServer\EtermServer.vcxproj", "{99E67607-8790-4EDF-8BD3-C4E86524DA66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JetermEntity", "JetermEntity\JetermEntity.csproj", "{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JetermUntility", "JetermUntility\JetermUntility.csproj", "{7CE8A51B-A789-42C1-90D1-4305C6EA3344}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{ADEF4AD3-1C9C-4522-9893-D8F4BCA151B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{A545A3FA-52FB-44FE-A27F-8EA296A0967A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{93A57A62-A32F-4318-8021-12A466960362}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JetermClient.Test\\JetermClient.Test.csproj
+		SccProjectTopLevelParentUniqueName1 = EtermServer.sln
+		SccProjectName1 = JetermClient.Test
+		SccLocalPath1 = JetermClient.Test
+		SccProjectUniqueName2 = JetermClient\\JetermClient.csproj
+		SccProjectTopLevelParentUniqueName2 = EtermServer.sln
+		SccProjectName2 = JetermClient
+		SccLocalPath2 = JetermClient
+		SccProjectUniqueName3 = EtermProxy\\EtermProxy.csproj
+		SccProjectTopLevelParentUniqueName3 = EtermServer.sln
+		SccProjectName3 = EtermProxy
+		SccLocalPath3 = EtermProxy
+		SccProjectUniqueName4 = EtermProxy.UnitTest\\EtermProxy.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName4 = EtermServer.sln
+		SccProjectName4 = EtermProxy.UnitTest
+		SccLocalPath4 = EtermProxy.UnitTest
+		SccProjectUniqueName5 = EtermServer\\EtermServer.vcxproj
+		SccProjectTopLevelParentUniqueName5 = EtermServer.sln
+		SccProjectName5 = EtermServer
+		SccLocalPath5 = EtermServer
+		SccProjectUniqueName6 = JetermEntity\\JetermEntity.csproj
+		SccProjectTopLevelParentUniqueName6 = EtermServer.sln
+		SccProjectName6 = JetermEntity
+		SccLocalPath6 = JetermEntity
+		SccProjectUniqueName7 = JetermUntility\\JetermUntility.csproj
+		SccProjectTopLevelParentUniqueName7 = EtermServer.sln
+		SccProjectName7 = JetermUntility
+		SccLocalPath7 = JetermUntility
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE}.Release|Win32.ActiveCfg = Release|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70}.Release|Win32.ActiveCfg = Release|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0A00386C-04AF-4820-9746-896711DD3903}.Release|Win32.ActiveCfg = Release|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23}.Release|Win32.ActiveCfg = Release|Any CPU
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Debug|Win32.Build.0 = Debug|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Release|Any CPU.ActiveCfg = Release|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Release|Win32.ActiveCfg = Release|Win32
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66}.Release|Win32.Build.0 = Release|Win32
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99}.Release|Win32.ActiveCfg = Release|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{191743AA-9BD8-4E10-8125-E78E2AD2AC70} = {ADEF4AD3-1C9C-4522-9893-D8F4BCA151B8}
+		{F8DEBAC0-4D25-4F5A-93AD-B9886E5031BE} = {ADEF4AD3-1C9C-4522-9893-D8F4BCA151B8}
+		{8D9961E2-1D2D-4C8B-8495-77945FAB4F23} = {A545A3FA-52FB-44FE-A27F-8EA296A0967A}
+		{99E67607-8790-4EDF-8BD3-C4E86524DA66} = {A545A3FA-52FB-44FE-A27F-8EA296A0967A}
+		{7CE8A51B-A789-42C1-90D1-4305C6EA3344} = {A545A3FA-52FB-44FE-A27F-8EA296A0967A}
+		{0A00386C-04AF-4820-9746-896711DD3903} = {A545A3FA-52FB-44FE-A27F-8EA296A0967A}
+		{3A3CD91E-A6AC-4A74-BE64-E5ED522D4B99} = {93A57A62-A32F-4318-8021-12A466960362}
+	EndGlobalSection
+EndGlobal

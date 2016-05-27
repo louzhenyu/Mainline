@@ -1,0 +1,5 @@
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.Test\bin\Debug\JinRi.IntlPolicySolr.Test.exe.config
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.Test\bin\Debug\JinRi.IntlPolicySolr.Test.exe
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.Test\bin\Debug\JinRi.IntlPolicySolr.Test.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.Test\obj\Debug\JinRi.IntlPolicySolr.Test.exe
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.SOA\JinRi.IntlPolicySolr.Test\obj\Debug\JinRi.IntlPolicySolr.Test.pdb

@@ -1,0 +1,443 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 12.00.21005.1 (7bd1687a).
+//
+// e:\program\fx\jinri.fx.eterm\etermserver\debug\etermproxy.tlh
+//
+// C++ source equivalent of Win32 type library EtermProxy.tlb
+// compiler-generated file created 01/07/15 at 15:04:57 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace EtermProxy {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("6bd97095-442f-4f10-9215-03984fa2efd0"))
+/* LIBID */ __EtermProxy;
+struct /* coclass */ Business;
+struct /* coclass */ EtermProxy_BLL_TicketInfo;
+struct /* coclass */ EtermProxy_BLL_TicketInfoByF;
+struct /* coclass */ EtermProxy_BLL_TicketInfoByS;
+struct /* coclass */ EtermProxy_BLL_TicketInfoHis;
+struct /* coclass */ EtermProxy_BLL_SeekPNR;
+struct /* coclass */ EtermCommand;
+enum CmdType;
+enum ConfigState;
+enum Sexual;
+enum IDtype;
+enum PassengerType;
+enum ConfigLevel;
+struct /* coclass */ Flight;
+struct /* coclass */ Passenger;
+struct /* coclass */ Price;
+struct /* coclass */ EtermProxy_Entity_Request_TicketInfo;
+struct /* coclass */ EtermProxy_Entity_Request_TicketInfoByF;
+struct /* coclass */ EtermProxy_Entity_Request_TicketInfoByS;
+struct /* coclass */ EtermProxy_Entity_Request_TicketInfoHis;
+struct /* coclass */ EtermProxy_Entity_Response_TicketInfo;
+struct /* coclass */ EtermProxy_Entity_Response_TicketInfoByF;
+struct /* coclass */ EtermProxy_Entity_Response_TicketInfoByS;
+struct /* coclass */ EtermProxy_Entity_Response_TicketInfoHis;
+struct __declspec(uuid("110a2e8f-e25e-3863-85f8-6b1c627bcca3"))
+/* dual interface */ IProxy;
+struct /* coclass */ Proxy;
+struct /* coclass */ EtermProxy_Entity_Request_SeekPNR;
+struct /* coclass */ EtermProxy_Entity_Response_SeekPNR;
+struct /* coclass */ EtermHelper;
+enum Month;
+struct /* coclass */ HttpHelper;
+struct __declspec(uuid("f5ddddc3-fade-3dd8-991c-c6cc27de9bfd"))
+/* dual interface */ _Business;
+struct __declspec(uuid("1a89d17a-d20d-3aac-86d9-6cd83953ca30"))
+/* dual interface */ _EtermProxy_BLL_TicketInfo;
+struct __declspec(uuid("66c2b22f-6a3b-3d78-b647-50bb090a746d"))
+/* dual interface */ _EtermProxy_BLL_TicketInfoByF;
+struct __declspec(uuid("477f4707-2524-3f70-8a1a-0467f26225fb"))
+/* dual interface */ _EtermProxy_BLL_TicketInfoByS;
+struct __declspec(uuid("24a4e15e-a8e1-3803-aff4-e6a150c6e4ac"))
+/* dual interface */ _EtermProxy_BLL_TicketInfoHis;
+struct __declspec(uuid("22f73b52-cded-397e-bbae-dba76b73c134"))
+/* dual interface */ _EtermProxy_BLL_SeekPNR;
+struct __declspec(uuid("cc1d4e3a-9795-3a48-a1d5-315ac66d5f38"))
+/* dual interface */ _EtermCommand;
+struct __declspec(uuid("006f738b-7652-38bf-a2ce-2994b667b587"))
+/* dual interface */ _Flight;
+struct __declspec(uuid("e7efd870-de42-3c6c-8f61-0a25d0f4c621"))
+/* dual interface */ _Passenger;
+struct __declspec(uuid("03c06562-1878-3e45-9c6c-93b1121a9c2e"))
+/* dual interface */ _Price;
+struct __declspec(uuid("18e3ba59-b048-3524-9778-0c842d388506"))
+/* dual interface */ _EtermProxy_Entity_Request_TicketInfo;
+struct __declspec(uuid("366c4d6c-2d9c-30ce-99b4-bac12ca995d4"))
+/* dual interface */ _EtermProxy_Entity_Request_TicketInfoByF;
+struct __declspec(uuid("60f9d2b4-2aa3-3f64-a4cd-b086edf33e64"))
+/* dual interface */ _EtermProxy_Entity_Request_TicketInfoByS;
+struct __declspec(uuid("b5caa3c8-a865-3d90-95e4-94bb880018b2"))
+/* dual interface */ _EtermProxy_Entity_Request_TicketInfoHis;
+struct __declspec(uuid("c4d5249e-507e-38d4-99cb-d06fbef776e9"))
+/* dual interface */ _EtermProxy_Entity_Response_TicketInfo;
+struct __declspec(uuid("bf7af35b-8845-30c3-915f-c946cf2916ac"))
+/* dual interface */ _EtermProxy_Entity_Response_TicketInfoByF;
+struct __declspec(uuid("bd06a4f7-ea9e-3352-9e33-2bfbfdfbaa86"))
+/* dual interface */ _EtermProxy_Entity_Response_TicketInfoByS;
+struct __declspec(uuid("29995518-402a-3d31-a6d8-5a4938d81c2a"))
+/* dual interface */ _EtermProxy_Entity_Response_TicketInfoHis;
+struct __declspec(uuid("24b4b7c4-a24a-32d9-b012-72eec7eea179"))
+/* dual interface */ _EtermProxy_Entity_Request_SeekPNR;
+struct __declspec(uuid("51db5bf1-ce0c-35e3-ae99-b17687a0fd47"))
+/* dual interface */ _EtermProxy_Entity_Response_SeekPNR;
+struct __declspec(uuid("74ae5858-c8dc-33d5-bd22-df7840b3a82c"))
+/* dual interface */ _EtermHelper;
+struct __declspec(uuid("6a9265c6-c38d-3e57-92d6-38e4694206fe"))
+/* dual interface */ _HttpHelper;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IProxy, __uuidof(IProxy));
+_COM_SMARTPTR_TYPEDEF(_Business, __uuidof(_Business));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_BLL_TicketInfo, __uuidof(_EtermProxy_BLL_TicketInfo));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_BLL_TicketInfoByF, __uuidof(_EtermProxy_BLL_TicketInfoByF));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_BLL_TicketInfoByS, __uuidof(_EtermProxy_BLL_TicketInfoByS));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_BLL_TicketInfoHis, __uuidof(_EtermProxy_BLL_TicketInfoHis));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_BLL_SeekPNR, __uuidof(_EtermProxy_BLL_SeekPNR));
+_COM_SMARTPTR_TYPEDEF(_EtermCommand, __uuidof(_EtermCommand));
+_COM_SMARTPTR_TYPEDEF(_Flight, __uuidof(_Flight));
+_COM_SMARTPTR_TYPEDEF(_Passenger, __uuidof(_Passenger));
+_COM_SMARTPTR_TYPEDEF(_Price, __uuidof(_Price));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Request_TicketInfo, __uuidof(_EtermProxy_Entity_Request_TicketInfo));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Request_TicketInfoByF, __uuidof(_EtermProxy_Entity_Request_TicketInfoByF));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Request_TicketInfoByS, __uuidof(_EtermProxy_Entity_Request_TicketInfoByS));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Request_TicketInfoHis, __uuidof(_EtermProxy_Entity_Request_TicketInfoHis));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Response_TicketInfo, __uuidof(_EtermProxy_Entity_Response_TicketInfo));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Response_TicketInfoByF, __uuidof(_EtermProxy_Entity_Response_TicketInfoByF));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Response_TicketInfoByS, __uuidof(_EtermProxy_Entity_Response_TicketInfoByS));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Response_TicketInfoHis, __uuidof(_EtermProxy_Entity_Response_TicketInfoHis));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Request_SeekPNR, __uuidof(_EtermProxy_Entity_Request_SeekPNR));
+_COM_SMARTPTR_TYPEDEF(_EtermProxy_Entity_Response_SeekPNR, __uuidof(_EtermProxy_Entity_Response_SeekPNR));
+_COM_SMARTPTR_TYPEDEF(_EtermHelper, __uuidof(_EtermHelper));
+_COM_SMARTPTR_TYPEDEF(_HttpHelper, __uuidof(_HttpHelper));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("58077706-9a17-3c85-ab26-58d07dbfba08"))
+Business;
+    // [ default ] interface _Business
+    // interface _Object
+
+struct __declspec(uuid("30e96662-c8fd-3bb9-932b-6c91dfb1ecd4"))
+EtermProxy_BLL_TicketInfo;
+    // [ default ] interface _EtermProxy_BLL_TicketInfo
+    // interface _Object
+
+struct __declspec(uuid("58028a67-6cf2-3cd8-854d-d1fce7c152a5"))
+EtermProxy_BLL_TicketInfoByF;
+    // [ default ] interface _EtermProxy_BLL_TicketInfoByF
+    // interface _Object
+
+struct __declspec(uuid("aeee971f-6760-3278-82e9-211ea199d194"))
+EtermProxy_BLL_TicketInfoByS;
+    // [ default ] interface _EtermProxy_BLL_TicketInfoByS
+    // interface _Object
+
+struct __declspec(uuid("464b013f-8d12-3607-8d4a-b24258d9b9c1"))
+EtermProxy_BLL_TicketInfoHis;
+    // [ default ] interface _EtermProxy_BLL_TicketInfoHis
+    // interface _Object
+
+struct __declspec(uuid("64e9c8f1-8604-3d76-9cf8-d248a5ad06f1"))
+EtermProxy_BLL_SeekPNR;
+    // [ default ] interface _EtermProxy_BLL_SeekPNR
+    // interface _Object
+
+struct __declspec(uuid("56ad5240-1e0d-3ce3-a318-7ec5efe2400a"))
+EtermCommand;
+    // [ default ] interface _EtermCommand
+    // interface _Object
+
+enum __declspec(uuid("711af891-640d-3463-879d-df830ca52182"))
+CmdType
+{
+    CmdType_Booking = 0,
+    CmdType_GetPrice = 1,
+    CmdType_SeekPNR = 2,
+    CmdType_GetTicketByBigPnr = 3,
+    CmdType_GetTicketInfo = 4,
+    CmdType_GetTicketInfoByS = 5,
+    CmdType_GetTicketInfoByF = 6,
+    CmdType_GetTicketHisInfo = 7,
+    CmdType_RMK = 8,
+    CmdType_CancelPnr = 9
+};
+
+enum __declspec(uuid("b6c64dba-c448-3c61-98e4-fdc908cb1366"))
+ConfigState
+{
+    ConfigState_connect = 0,
+    ConfigState_disconnect = 1,
+    ConfigState_suspend = 2
+};
+
+enum __declspec(uuid("f7a8f8e4-0c5a-3093-82a7-19b618417766"))
+Sexual
+{
+    Sexual_male = 0,
+    Sexual_female = 1
+};
+
+enum __declspec(uuid("e72800aa-0ed7-3795-9d07-bc0cf3401083"))
+IDtype
+{
+    IDtype_IDcard = 0
+};
+
+enum __declspec(uuid("2d2a7b31-109b-37e1-8027-708a9a71d263"))
+PassengerType
+{
+    PassengerType_Adult = 0,
+    PassengerType_Children = 1,
+    PassengerType_Baby = 2
+};
+
+enum __declspec(uuid("d3c02571-42c0-31a8-b7a5-f6b04d21f18d"))
+ConfigLevel
+{
+    ConfigLevel_A = 0,
+    ConfigLevel_B = 1,
+    ConfigLevel_C = 2,
+    ConfigLevel_D = 3,
+    ConfigLevel_E = 4
+};
+
+struct __declspec(uuid("a0d35b78-4be2-318d-b4eb-56eb954079da"))
+Flight;
+    // [ default ] interface _Flight
+    // interface _Object
+
+struct __declspec(uuid("4b49ef19-9e7b-304e-9f88-d8c7cb4ea9dc"))
+Passenger;
+    // [ default ] interface _Passenger
+    // interface _Object
+
+struct __declspec(uuid("34248704-aaaa-3c9b-9bc1-21b11a897719"))
+Price;
+    // [ default ] interface _Price
+    // interface _Object
+
+struct __declspec(uuid("31af185e-3cb2-344e-9e89-bacfc0376084"))
+EtermProxy_Entity_Request_TicketInfo;
+    // [ default ] interface _EtermProxy_Entity_Request_TicketInfo
+    // interface _Object
+
+struct __declspec(uuid("f91cf8f4-08f2-3597-b555-3509d98fd9c8"))
+EtermProxy_Entity_Request_TicketInfoByF;
+    // [ default ] interface _EtermProxy_Entity_Request_TicketInfoByF
+    // interface _Object
+
+struct __declspec(uuid("3103f3f7-92e1-35a4-8a0f-f3088d65b0a9"))
+EtermProxy_Entity_Request_TicketInfoByS;
+    // [ default ] interface _EtermProxy_Entity_Request_TicketInfoByS
+    // interface _Object
+
+struct __declspec(uuid("12e2be7c-db3e-3abb-929e-776aff1e05b7"))
+EtermProxy_Entity_Request_TicketInfoHis;
+    // [ default ] interface _EtermProxy_Entity_Request_TicketInfoHis
+    // interface _Object
+
+struct __declspec(uuid("cb9781ad-8a7a-3f5d-ba51-0e887b26bb34"))
+EtermProxy_Entity_Response_TicketInfo;
+    // [ default ] interface _EtermProxy_Entity_Response_TicketInfo
+    // interface _Object
+
+struct __declspec(uuid("9fe6631b-5152-3cb7-8101-617396899de2"))
+EtermProxy_Entity_Response_TicketInfoByF;
+    // [ default ] interface _EtermProxy_Entity_Response_TicketInfoByF
+    // interface _Object
+
+struct __declspec(uuid("25bc114c-b908-378c-a643-adf5f870e261"))
+EtermProxy_Entity_Response_TicketInfoByS;
+    // [ default ] interface _EtermProxy_Entity_Response_TicketInfoByS
+    // interface _Object
+
+struct __declspec(uuid("88d4c919-7ab6-3f3f-89ba-ad348b1f6608"))
+EtermProxy_Entity_Response_TicketInfoHis;
+    // [ default ] interface _EtermProxy_Entity_Response_TicketInfoHis
+    // interface _Object
+
+struct __declspec(uuid("110a2e8f-e25e-3863-85f8-6b1c627bcca3"))
+IProxy : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t InvokeEterm (
+        long hwnd,
+        long handle,
+        _bstr_t config,
+        _bstr_t url );
+    HRESULT SetEtermData (
+        _bstr_t config,
+        _bstr_t data );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_InvokeEterm (
+        /*[in]*/ long hwnd,
+        /*[in]*/ long handle,
+        /*[in]*/ BSTR config,
+        /*[in]*/ BSTR url,
+        /*[out,retval]*/ BSTR * pRetVal ) = 0;
+      virtual HRESULT __stdcall raw_SetEtermData (
+        /*[in]*/ BSTR config,
+        /*[in]*/ BSTR data ) = 0;
+};
+
+struct __declspec(uuid("18f18c7a-ae06-45bd-9d5b-e277b4bd7c1e"))
+Proxy;
+    // interface _Object
+    // [ default ] interface IProxy
+
+struct __declspec(uuid("9efcc6dd-5c86-3e45-8ea6-bb4fc2781b5d"))
+EtermProxy_Entity_Request_SeekPNR;
+    // [ default ] interface _EtermProxy_Entity_Request_SeekPNR
+    // interface _Object
+
+struct __declspec(uuid("44e61021-4c1b-3711-8bdd-632c4366c40e"))
+EtermProxy_Entity_Response_SeekPNR;
+    // [ default ] interface _EtermProxy_Entity_Response_SeekPNR
+    // interface _Object
+
+struct __declspec(uuid("47ef496a-c297-3ef7-8389-209b8ad37202"))
+EtermHelper;
+    // [ default ] interface _EtermHelper
+    // interface _Object
+
+enum __declspec(uuid("cd614eed-3cf0-35dd-813f-00d370d9521c"))
+Month
+{
+    Month_JAN = 1,
+    Month_FEB = 2,
+    Month_MAR = 3,
+    Month_APR = 4,
+    Month_MAY = 5,
+    Month_JUN = 6,
+    Month_JUL = 7,
+    Month_AUG = 8,
+    Month_SEP = 9,
+    Month_OCT = 10,
+    Month_NOV = 11,
+    Month_DEC = 12
+};
+
+struct __declspec(uuid("ebee486f-10fd-3e68-9243-11c1021ce2e8"))
+HttpHelper;
+    // [ default ] interface _HttpHelper
+    // interface _Object
+
+struct __declspec(uuid("f5ddddc3-fade-3dd8-991c-c6cc27de9bfd"))
+_Business : IDispatch
+{};
+
+struct __declspec(uuid("1a89d17a-d20d-3aac-86d9-6cd83953ca30"))
+_EtermProxy_BLL_TicketInfo : IDispatch
+{};
+
+struct __declspec(uuid("66c2b22f-6a3b-3d78-b647-50bb090a746d"))
+_EtermProxy_BLL_TicketInfoByF : IDispatch
+{};
+
+struct __declspec(uuid("477f4707-2524-3f70-8a1a-0467f26225fb"))
+_EtermProxy_BLL_TicketInfoByS : IDispatch
+{};
+
+struct __declspec(uuid("24a4e15e-a8e1-3803-aff4-e6a150c6e4ac"))
+_EtermProxy_BLL_TicketInfoHis : IDispatch
+{};
+
+struct __declspec(uuid("22f73b52-cded-397e-bbae-dba76b73c134"))
+_EtermProxy_BLL_SeekPNR : IDispatch
+{};
+
+struct __declspec(uuid("cc1d4e3a-9795-3a48-a1d5-315ac66d5f38"))
+_EtermCommand : IDispatch
+{};
+
+struct __declspec(uuid("006f738b-7652-38bf-a2ce-2994b667b587"))
+_Flight : IDispatch
+{};
+
+struct __declspec(uuid("e7efd870-de42-3c6c-8f61-0a25d0f4c621"))
+_Passenger : IDispatch
+{};
+
+struct __declspec(uuid("03c06562-1878-3e45-9c6c-93b1121a9c2e"))
+_Price : IDispatch
+{};
+
+struct __declspec(uuid("18e3ba59-b048-3524-9778-0c842d388506"))
+_EtermProxy_Entity_Request_TicketInfo : IDispatch
+{};
+
+struct __declspec(uuid("366c4d6c-2d9c-30ce-99b4-bac12ca995d4"))
+_EtermProxy_Entity_Request_TicketInfoByF : IDispatch
+{};
+
+struct __declspec(uuid("60f9d2b4-2aa3-3f64-a4cd-b086edf33e64"))
+_EtermProxy_Entity_Request_TicketInfoByS : IDispatch
+{};
+
+struct __declspec(uuid("b5caa3c8-a865-3d90-95e4-94bb880018b2"))
+_EtermProxy_Entity_Request_TicketInfoHis : IDispatch
+{};
+
+struct __declspec(uuid("c4d5249e-507e-38d4-99cb-d06fbef776e9"))
+_EtermProxy_Entity_Response_TicketInfo : IDispatch
+{};
+
+struct __declspec(uuid("bf7af35b-8845-30c3-915f-c946cf2916ac"))
+_EtermProxy_Entity_Response_TicketInfoByF : IDispatch
+{};
+
+struct __declspec(uuid("bd06a4f7-ea9e-3352-9e33-2bfbfdfbaa86"))
+_EtermProxy_Entity_Response_TicketInfoByS : IDispatch
+{};
+
+struct __declspec(uuid("29995518-402a-3d31-a6d8-5a4938d81c2a"))
+_EtermProxy_Entity_Response_TicketInfoHis : IDispatch
+{};
+
+struct __declspec(uuid("24b4b7c4-a24a-32d9-b012-72eec7eea179"))
+_EtermProxy_Entity_Request_SeekPNR : IDispatch
+{};
+
+struct __declspec(uuid("51db5bf1-ce0c-35e3-ae99-b17687a0fd47"))
+_EtermProxy_Entity_Response_SeekPNR : IDispatch
+{};
+
+struct __declspec(uuid("74ae5858-c8dc-33d5-bd22-df7840b3a82c"))
+_EtermHelper : IDispatch
+{};
+
+struct __declspec(uuid("6a9265c6-c38d-3e57-92d6-38e4694206fe"))
+_HttpHelper : IDispatch
+{};
+
+//
+// Wrapper method implementations
+//
+
+#include "e:\program\fx\jinri.fx.eterm\etermserver\debug\etermproxy.tli"
+
+} // namespace EtermProxy
+
+#pragma pack(pop)

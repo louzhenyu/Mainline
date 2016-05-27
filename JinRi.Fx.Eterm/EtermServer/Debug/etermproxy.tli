@@ -1,0 +1,25 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 12.00.21005.1 (7bd1687a).
+//
+// e:\program\fx\jinri.fx.eterm\etermserver\debug\etermproxy.tli
+//
+// Wrapper implementations for Win32 type library EtermProxy.tlb
+// compiler-generated file created 01/07/15 at 15:04:57 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IProxy wrapper method implementations
+//
+
+inline _bstr_t IProxy::InvokeEterm ( long hwnd, long handle, _bstr_t config, _bstr_t url ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_InvokeEterm(hwnd, handle, config, url, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+inline HRESULT IProxy::SetEtermData ( _bstr_t config, _bstr_t data ) {
+    HRESULT _hr = raw_SetEtermData(config, data);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}

@@ -1,0 +1,54 @@
+﻿@model JinRi.Fx.Entity.EtermScript
+@{
+    ViewBag.Title = "Eterm脚本编辑";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+<style>
+    .control-group {
+        height: 40px;
+    }
+
+    .controls {
+        height: 40px;
+        padding-top: 3px !important;
+    }
+
+    .control-group2 {
+        height: 387px;
+    }
+
+    .controls2 {
+        padding: 10px;
+        position: relative;
+        border-left: 1px solid #eee;
+        margin-left: 120px;
+        padding-top: 3px;
+    }
+</style>
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>方法名：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.MethodName, new { @class = "m-wrap small", @readonly = "readonly" })                    
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.MethodName)</span>
+                </div>
+            </div>
+            <div class="control-group2">
+                <label class="control-label"><span class="required">*</span>脚本内容：</label>
+                <div class="controls2">
+                    @Html.TextAreaFor(m => m.ScriptContent, new { rows = "18", cols = "70", @style="width:700px"})
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ScriptContent)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap", @style = "width:350px;" })
+                </div>
+            </div>
+        </div>
+    </div>
+}

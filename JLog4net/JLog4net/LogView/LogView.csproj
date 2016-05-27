@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C0E0114-FDDD-48B9-AAD8-45B297B8245F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LogView</RootNamespace>
+    <AssemblyName>LogView</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\LogView.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20820.16598, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefDll\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="JRedis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\RefDll\JRedis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB, Version=0.90.0.1, Culture=neutral, PublicKeyToken=f61bd00ba2535278, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefDll\MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.8.2.34, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefDll\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.8.2.34, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefDll\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\btn_05.gif" />
+    <Content Include="Images\headBg.jpg" />
+    <Content Include="LogSearch.aspx" />
+    <Content Include="NewLogSearch.aspx" />
+    <Content Include="Scripts\jquery\checkCode.js" />
+    <Content Include="Config\Database.config" />
+    <None Include="Scripts\jquery\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.13\jquery-1.5.2.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.13\jquery-ui-1.8.13.custom.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.13\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.13\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="Scripts\jquery\jquery.contextmenu.r2.js" />
+    <Content Include="Scripts\jquery\jquery.TableSplic.js" />
+    <Content Include="Scripts\jquery\jquery.TableSplic2.js" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\1-1.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\1-2.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\1-3.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\1-4.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\2-1.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\2-2.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\2-3.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\2-4.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\checkbox.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\edit.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\10.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\1_close.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\1_open.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\2.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\3.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\4.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\5.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\6.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\7.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\8.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\flag\9.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\folder_Close.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\folder_Open.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\line_bottom.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\line_center.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\line_conn.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\line_top.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\loading.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\minus_bottom.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\minus_center.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\minus_noLine.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\minus_root.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\minus_top.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\moveArrow.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\page.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\plus_bottom.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\plus_center.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\plus_noLine.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\plus_root.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\plus_top.gif" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\radio.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\remove.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\10.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\1_close.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\1_open.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\2.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\3.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\4.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\5.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\6.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\7.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\8.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\img\sim\9.png" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\jquery.ztree-2.6.js" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\jquery.ztree-2.6.min.js" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\zTreeIcons.css" />
+    <Content Include="Scripts\jquery\jQueryUiTree\zTree2.6\zTreeStyle.css" />
+    <Content Include="Scripts\jquery\json2.js" />
+    <Content Include="Scripts\jquery\QuickPage.js" />
+    <Content Include="Scripts\My97DatePicker\calendar.js" />
+    <Content Include="Scripts\My97DatePicker\config.js" />
+    <Content Include="Scripts\My97DatePicker\lang\en.js" />
+    <Content Include="Scripts\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\My97DatePicker\My97DatePicker.htm" />
+    <Content Include="Scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Scripts\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Scripts\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Scripts\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\publicFunctionTools.js" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.all.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.base.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_diagonals-thick_8_333333_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_glass_40_111111_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_glass_55_1c1c1c_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_highlight-hard_100_f9f9f9_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_highlight-hard_40_aaaaaa_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_highlight-soft_50_aaaaaa_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_inset-hard_45_cd0a0a_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-bg_inset-hard_55_ffeb80_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-icons_4ca300_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-icons_ededed_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-icons_ffcf29_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\black-tie\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_flat_0_333333_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-icons_004276_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\blitzer\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\cupertino\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_highlight-hard_20_0972a5_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_highlight-soft_33_003147_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_highlight-soft_35_222222_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_highlight-soft_44_444444_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-bg_loop_25_000000_21x21.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dark-hive\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_diagonals-thick_15_0b3e6f_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_dots-medium_30_0b58a2_4x4.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_dots-small_20_333333_2x2.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_dots-small_30_a32d00_2x2.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_dots-small_40_00498f_2x2.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_flat_40_292929_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-bg_gloss-wave_20_111111_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-icons_00498f_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-icons_98d2fb_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-icons_9ccdfc_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\dot-luv\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_flat_55_994d53_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_flat_55_fafafa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_gloss-wave_30_3d3644_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_highlight-soft_100_dcd9de_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_highlight-soft_100_eae6ea_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_highlight-soft_25_30273a_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-bg_highlight-soft_45_5f5964_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-icons_734d99_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-icons_8d78a5_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-icons_a8a3ae_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-icons_ebccce_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\eggplant\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_diagonals-small_25_c5ddfc_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_diagonals-thick_20_e69700_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_diagonals-thick_22_1484e6_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_diagonals-thick_26_2293f7_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_flat_0_e69700_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_flat_0_e6b900_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_highlight-soft_100_f9f9f9_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-bg_inset-hard_100_eeeeee_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-icons_0a82eb_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-icons_0b54d5_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-icons_5fa5e3_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-icons_fcdd4a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\excite-bike\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\flick\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_diagonals-small_40_db4865_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_diagonals-small_50_93c3cd_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_diagonals-small_50_ff3853_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_diagonals-small_75_ccd232_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_dots-medium_80_ffff38_4x4.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_dots-small_35_35414f_2x2.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_flat_75_ba9217_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-bg_white-lines_85_f7f7ba_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-icons_88a206_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-icons_c02669_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-icons_e1e463_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-icons_ffeb33_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\hot-sneaks\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_glass_100_f5f0e5_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_glass_25_cb842e_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_glass_70_ede4d4_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_highlight-hard_100_f4f0ec_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_highlight-hard_75_f5f5b5_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-bg_inset-soft_100_f4f0ec_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-icons_c47a23_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-icons_cb672b_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-icons_f08000_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-icons_f35f07_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\humanity\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_diagonals-small_0_aaaaaa_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_diagonals-thick_15_444444_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_diagonals-thick_95_ffdc2e_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_glass_55_fbf5d0_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_highlight-hard_30_285c00_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_highlight-soft_33_3a8104_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_highlight-soft_50_4eb305_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_highlight-soft_60_4ca20b_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-bg_inset-soft_10_285c00_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-icons_4eb305_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-icons_72b42d_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\le-frog\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_glass_15_5f391b_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_gloss-wave_20_1c160d_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_gloss-wave_25_453326_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_gloss-wave_30_44372c_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_highlight-soft_20_201913_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_highlight-soft_20_619226_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-bg_inset-soft_10_201913_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-icons_9bcc60_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-icons_add978_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-icons_e3ddc9_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-icons_f1fd86_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\mint-choc\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-icons_999999_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\overcast\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_diagonal-maze_20_6e4f1c_10x10.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_diagonal-maze_40_000000_10x10.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_10_eceadf_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_10_f8f7f6_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_15_eceadf_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_15_f7f3de_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_15_ffffff_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_65_654b24_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-bg_fine-grain_68_b83400_60x60.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-icons_3572ac_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-icons_8c291d_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-icons_b83400_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-icons_fbdb93_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\pepper-grinder\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\redmond\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\smoothness\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-icons_808080_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\south-street\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\start\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_diagonals-medium_20_d34d17_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_gloss-wave_45_817865_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_gloss-wave_60_fece2f_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_gloss-wave_70_ffdd57_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_gloss-wave_90_fff9e5_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_highlight-soft_100_feeebd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-bg_inset-soft_30_ffffff_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_3d3d3d_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_bd7b00_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_d19405_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_eb990f_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_ed9f26_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_fadc7a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\images\ui-icons_ffe180_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\sunny\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_diamond_10_4f4221_10x8.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_diamond_20_372806_10x8.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_diamond_25_675423_10x8.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_diamond_25_d5ac5d_10x8.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_diamond_8_261803_10x8.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_diamond_8_443113_10x8.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_flat_75_ddd4b0_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-bg_highlight-hard_65_fee4bd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_070603_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_e8e2b5_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_e9cd86_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_efec9f_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_f2ec64_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_f9f2bd_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\images\ui-icons_ff7519_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\swanky-purse\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_diagonals-small_50_262626_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_flat_0_303030_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_flat_0_4c4c4c_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_glass_40_0a0a0a_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_glass_55_f1fbe5_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_glass_60_000000_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_gloss-wave_55_000000_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_gloss-wave_85_9fda58_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-bg_gloss-wave_95_f6ecd5_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-icons_000000_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-icons_1f1f1f_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-icons_9fda58_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-icons_b8ec79_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\trontastic\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_flat_30_cccccc_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_flat_50_5c5c5c_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_glass_20_555555_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_glass_40_0078a3_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_glass_40_ffc73d_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_gloss-wave_25_333333_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_highlight-soft_80_eeeeee_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_inset-soft_25_000000_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-bg_inset-soft_30_f58400_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-icons_4b8e0b_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-icons_a83300_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-darkness\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\ui-lightness\jquery.ui.theme.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_gloss-wave_16_121212_500x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_highlight-hard_15_888888_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_highlight-hard_55_555555_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_highlight-soft_35_adadad_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_highlight-soft_60_dddddd_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-bg_inset-soft_15_121212_1x100.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_666666_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_aaaaaa_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_bbbbbb_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_c98000_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_cccccc_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\images\ui-icons_f29a00_256x240.png" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery-ui.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.accordion.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.all.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.autocomplete.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.base.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.button.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.core.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.datepicker.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.dialog.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.progressbar.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.resizable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.selectable.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.slider.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.tabs.css" />
+    <Content Include="Styles\jquery-ui-themes-1.8.10\themes\vader\jquery.ui.theme.css" />
+    <Content Include="Styles\QuickPage.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\style.css" />
+    <Content Include="test.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\Function.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\LogModel.cs" />
+    <Compile Include="LogSearch.aspx.cs">
+      <DependentUpon>LogSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogSearch.aspx.designer.cs">
+      <DependentUpon>LogSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewLogSearch.aspx.cs">
+      <DependentUpon>NewLogSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewLogSearch.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Config\AppSetting.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\JinRi.Fx.Logic\JinRi.Fx.Logic.csproj">
+      <Project>{19bd1b13-2776-4708-8ea8-3651b55513ee}</Project>
+      <Name>JinRi.Fx.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CommonLayer\JinRi.Fx.Utility\JinRi.Fx.Utility.csproj">
+      <Project>{d0ea45bd-0e70-40c8-b623-ad3e2b01f8ec}</Project>
+      <Name>JinRi.Fx.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\JinRi.Fx.Data\JinRi.Fx.Data.csproj">
+      <Project>{72d937de-e72e-4be9-aa86-88cdcad21eb5}</Project>
+      <Name>JinRi.Fx.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntityLayer\JinRi.Fx.Entity\JinRi.Fx.Entity.csproj">
+      <Project>{466e29a8-6357-404c-b5f9-ad0254a9f0da}</Project>
+      <Name>JinRi.Fx.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JLog4net\JLog4net.csproj">
+      <Project>{bb879e04-e741-4c76-9585-4d4b0f1aa36d}</Project>
+      <Name>JLog4net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Log4Net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\MongoSearchConfig.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8423</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://locahost:8423</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

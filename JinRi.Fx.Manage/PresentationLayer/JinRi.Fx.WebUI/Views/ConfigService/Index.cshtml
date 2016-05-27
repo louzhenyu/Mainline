@@ -1,0 +1,727 @@
+﻿@using JinRi.Fx.Web
+@{
+    ViewBag.Title = "ZooKeeper配置服务";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    div.treeBackground {
+        width: 250px;
+        height: 362px;
+        text-align: left;
+    }
+
+    div.left {
+        float: left;
+        width: 250px;
+    }
+
+    ul.ztree {
+        margin-top: 10px;
+        border: 1px solid #617775;
+        background: #f0f6e4;
+        width: 300px;
+        height: 480px;
+        overflow-y: scroll;
+        overflow-x: auto;
+    }
+
+    .loading {
+        background: url(/Content/Images/loading.gif) center no-repeat;
+    }
+</style>
+
+<div class="alert" style="margin-bottom: 10px;">
+    <button class="close" data-dismiss="alert"></button>
+    <strong>ZooKeeper配置服务相关：</strong>
+    各配置项节点的路径表示规则是：/ConfigService/{App ID}/{配置项名}。
+</div>
+
+<div class="row-fluid">
+    @using (Html.BeginForm(null, null, null, FormMethod.Post, new { id = "LoadTreeForm" }))
+    {
+        <div class="span12">
+            <div>
+                <button type="submit" class="btn blue" id="loadTree">加载树 <i class="icon-white"></i></button>
+            </div>
+        </div>
+    }
+    <div class="span12" style="margin-left:0px;" id="mainDiv">
+        <table style="width:100%;">
+            <tr>
+                @*<td class="tdLabel">*@
+                <td class="span4" style="vertical-align:top; padding-top:3px;">
+                    <div class="treeBackground left">
+                        <ul id="zTreeView" class="ztree"></ul>
+                    </div>
+                </td>
+                <td class="span8" style="vertical-align:top; padding-top:11px; display:block;" id="tdEdit">
+                    <!--各按钮-->
+                    <div class="span12" style="margin-left:0px;">
+                        <a class="btn mini blue" title='新增节点/子节点' href="#" onclick="return DoCanAdd();">
+                            <i class="icon-plus"></i>
+                            新增
+                        </a>
+                        <a id="deleteNode" class="btn mini red" title='删除叶子节点' href="#" onclick="return false;">
+                            <i class="icon-trash"></i>
+                            删除
+                        </a>
+                        <a id="updateNodeValue" class="btn mini purple" title='更新节点的值' href="#" onclick="return false;">
+                            <i class="icon-edit"></i>
+                            更新
+                        </a>
+                    </div>
+                    <!--节点路径显示区域-->
+                    <div class="span12" style="margin-left:0px;">
+                        <table>
+                            <tr>
+                                <td><label for="NodePathLabel" class="control-label">选中节点的路径：</label></td>
+                                <td>
+                                    <label for="NodePath" id="NodePath" class="control-label"></label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!--文本框-->
+                    <div class="span12" style="margin-left:0px;">
+                        @Html.TextArea("NodeValue", null, new { rows = "4", cols = "20", style = "width:700px; height:270px;" })
+                    </div>
+                </td>
+                <td class="span8" style="vertical-align:top; padding-top:11px; display:none;" id="tdAdd">
+                    <!--各按钮-->
+                    <div class="span12" style="margin-left:0px;">
+                        <a id="addNodeBtn" class="btn mini blue" title='新增节点/子节点' href="#" onclick="return false;">
+                            新增
+                        </a>
+                        <a class="btn mini red" title='返回' href="#" onclick="return DoReturn();">
+                            返回
+                        </a>
+                    </div>
+                    <!--节点信息输入区域-->
+                    <div class="span12" style="margin-left:0px;">
+                        <div class="control-group">
+                            <label for="NewNodePath" class="control-label" id="NewNodePath">选中节点的路径：</label>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><span class="required">*</span>节点名称：</label>
+                            <div class="controls">
+                                @Html.TextBox("NewNodeName", "")
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">节点值：</label>
+                            <div class="controls">
+                                @Html.TextArea("NewNodeValue", null, new { rows = "4", cols = "20", style = "width:700px; height:270px;" })
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@section PageSpecificJavascriptIncludes{
+    <link rel="stylesheet" href="/Content/css/zTree/zTreeStyle.css" type="text/css">
+    <script src="@Url.StaticFile("/Content/js/zTree/jquery.ztree.core-3.5.min.js")" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var setting = {
+            view: {
+                showIcon: showIconForTree,
+                selectedMulti: false
+            },
+            data: {
+                key: {
+                    children: "children"
+                },
+                simpleData: {
+                    enable: true,
+                    idKey: "id",
+                    pIdKey: "pId",
+                    rootPId: 0
+                }
+            },
+            async: {
+                /*
+                enable: true,
+                */
+                ///*
+                enable: false,
+                //*/
+                url: '@Url.Action("LoadTree", "ConfigService")',
+                autoParam: ["id", "name", "pId"]
+            },
+            callback: {
+                beforeExpand: beforeExpand,
+                onAsyncSuccess: onAsyncSuccess,
+                onAsyncError: onAsyncError,
+                beforeClick: beforeClick,
+                onClick: onClick,
+                beforeRemove: beforeRemove,
+                onRemove: onRemove
+            }
+        };
+
+        function showIconForTree(treeId, treeNode) {
+            return !treeNode.isParent;
+        };
+
+        function beforeExpand(treeId, treeNode) {
+            if (!treeNode.isAjaxing) {
+                return true;
+            } else {
+                alert("树还在下载中，请稍后展开节点");
+                return false;
+            }
+        }
+
+        function onAsyncSuccess(event, treeId, treeNode, msg) {
+
+        }
+        function onAsyncError() {
+            alert("树加载失败");
+        }
+
+        function beforeClick(treeId, treeNode, clickFlag) {
+            $("#NewNodePath").val("选中节点的路径： ");
+            $("#NewNodePath").html("选中节点的路径： ");
+            $("#NewNodeName").val("");
+            $("#NewNodeValue").val("");
+            ToggleTdVisible(tdEdit, true);
+            ToggleTdVisible(tdAdd, false);
+
+            return (treeNode.click != false);
+        }
+        function onClick(event, treeId, treeNode, clickFlag) {
+            var nodePath = treeNode.NodePath;
+
+            $("#NodePath").val(nodePath);
+            $("#NodePath").html(nodePath);
+
+            showNodeValue(nodePath);
+        }
+
+        function beforeRemove(treeId, treeNode) {
+            return confirm("确认删除叶子节点【" + treeNode.NodePath + "】吗？");
+        }
+        function onRemove(e, treeId, treeNode) {
+            deleteNode(treeNode.NodePath);
+        }
+
+        //加载树
+        function createTree() {
+            $("#mainDiv").addClass('loading');
+
+            SetEnable(false);
+
+            $("#zTreeView").empty();
+            $("#NodePath").empty();
+            $("#NodeValue").val("");
+
+            $.ajax({
+                url: '@Url.Action("LoadTree", "ConfigService")',
+                data: { id: 0 },
+                dataType: "text",
+                type: "Get"
+            })
+            .done(function (data) {
+                var result = eval('(' + data + ')');
+                if (!result.IsSuccess) {
+                    alert(result.Message);
+                }
+                else {                    
+                    if (result.ZNodeList.length > 0)
+                    {
+                        $.fn.zTree.init($("#zTreeView"), setting, result.ZNodeList);
+                    }
+                }
+            })
+            .fail(function (msg) { alert("树加载失败！Error信息为：" + msg); })
+            .always(function () {
+                $("#mainDiv").removeClass('loading');
+                SetEnable(true);
+                ReSizeTree();
+                ReSizeNodeText();
+            });
+        }
+
+        //显示节点值
+        function showNodeValue(nodePath) {
+            $("#mainDiv").addClass('loading');
+
+            SetEnable(false);
+            $("#zTreeView").hide();
+
+            $("#NodeValue").val("");
+
+            $.ajax({
+                url: '@Url.Action("GetNodeValue", "ConfigService")',
+                data: { nodePath: nodePath },
+                dataType: "text",
+                type: "POST"
+            })
+            .done(function (data) {
+                var result = eval('(' + data + ')');
+                if (result.length == 0) {
+                    alert("请先加载树");
+                    $("#loadTree").focus();
+                }
+                else {
+                    if (result.IsSuccess) {
+                        $("#NodeValue").val(result.NodeValue);
+                    }
+                    else {
+                        if (result.Message == null || result.Message == "") {
+                            alert("请先加载树");
+                            $("#loadTree").focus();
+                        }
+                        else {
+                            if (result.Message.indexOf("删除") > -1) {
+                                //do delete zTree node
+                                var zTree = $.fn.zTree.getZTreeObj("zTreeView");
+                                var nodes = zTree.getSelectedNodes();
+                                if (nodes != null && nodes.length > 0) {
+                                    var treeNode = nodes[0];
+                                    if (treeNode.children == null || treeNode.children.length < 1) {
+                                        zTree.removeNode(treeNode, false);
+                                    }
+                                }
+
+                                $("#NodePath").html("");
+                                $("#NodeValue").val("");
+                            }
+                            alert(result.Message);
+                        }
+                    }
+                }
+            })
+            .fail(function (msg) { alert("读取该节点【" + nodePath + "】的值失败！Error信息为：" + msg); })
+            .always(function () {
+                $("#mainDiv").removeClass('loading');
+                $("#zTreeView").show();
+                SetEnable(true);
+            });
+        }
+
+        //是否允许新增节点前置条件
+        function DoCanAdd() {
+            var zTree = $.fn.zTree.getZTreeObj("zTreeView");
+            if (zTree == null) {
+                alert("请先加载树");
+                return false;
+            }
+
+            var nodes = zTree.getSelectedNodes();
+            if (nodes == null || nodes.length == 0) {
+                alert("请先选择将要在哪个节点下新增节点");
+                return false;
+            }
+
+            ToggleTdVisible(tdEdit, false);
+            ToggleTdVisible(tdAdd, true);
+            ReSizeTree();
+            ReSizeNodeText();
+
+            var selectedNode = nodes[0];
+            $("#NewNodePath").val("选中节点的路径： " + selectedNode.NodePath);
+            $("#NewNodePath").html("选中节点的路径： " + selectedNode.NodePath);
+            $("#NewNodeName").val("");
+            $("#NewNodeValue").val("");
+
+            $("#NewNodeName").focus();
+
+            return false;
+        }
+
+        //新增节点
+        function add(e) {
+            var nodeName = $.trim($("#NewNodeName").val());
+            if (nodeName == "") {
+                alert("新增节点时，节点名称为必填项");
+                $("#NewNodeName").focus();
+                return;
+            }
+
+            var zTree = $.fn.zTree.getZTreeObj("zTreeView"),
+			isParent = e.data.isParent,
+			nodes = zTree.getSelectedNodes(),
+			treeNode = nodes[0];
+            var nodePath = $.trim($("#NewNodePath").val());
+            nodePath = nodePath.replace("选中节点的路径： ", "");
+            nodePath = nodePath + '/' + nodeName;
+            var nodeValue = $.trim($("#NewNodeValue").val());
+            if (treeNode) {
+
+                $("#mainDiv").addClass('loading');
+
+                $('button[type="submit"]').attr('disabled', 'disabled');
+                ToggleTdVisible(tdEdit, false);
+                ToggleTdVisible(tdAdd, false);
+                $("#zTreeView").hide();
+
+                $.ajax({
+                    url: '@Url.Action("AddNode", "ConfigService")',
+                    data: { nodePath: nodePath, nodeValue: nodeValue },
+                    dataType: "text",
+                    type: "POST"
+                })
+                .done(function (data) {
+                    var result = eval('(' + data + ')');
+                    if (result.length == 0) {
+                        alert("请先加载树");
+                        $("#loadTree").focus();
+                    }
+                    else {
+                        if (result.IsSuccess) {
+
+                            // do add zTree node
+                            var id = treeNode.id + '1';
+                            if (treeNode.children != null && treeNode.children.length > 0) {
+                                id = treeNode.children.length + 1;
+                                id = treeNode.id + id.toString();
+                            }
+                            treeNode = zTree.addNodes(treeNode, { id: id, pId: treeNode.id, isParent: isParent, name: nodeName, NodePath: nodePath });
+
+                            alert("成功新增该节点【" + nodePath + "】");
+
+                            $("#NewNodeName").val("");
+                            $("#NewNodeValue").val("");
+                            $("#zTreeView").show();
+                            ToggleTdVisible(tdAdd, true);
+                            $("#NewNodeName").focus();
+                        }
+                        else {
+                            if (result.Message == null || result.Message == "") {
+                                alert("请先加载树");
+                                $("#loadTree").focus();
+                                $("#NewNodePath").val("选中节点的路径： ");
+                                $("#NewNodePath").html("选中节点的路径： ");
+                                $("#NewNodeName").val("");
+                                $("#NewNodeValue").val("");
+                                $("#zTreeView").show();
+                                ToggleTdVisible(tdEdit, true);
+                            }
+                            else {
+                                alert(result.Message);
+                                $("#zTreeView").show();
+                                ToggleTdVisible(tdAdd, true);
+                                $("#NewNodeName").focus();
+                            }
+                        }
+                    }
+                })
+                .fail(function (msg) {
+                    alert("新增该节点【" + nodePath + "】的值失败！Error信息为：" + msg);
+                    $("#zTreeView").show();
+                    ToggleTdVisible(tdAdd, true);
+                    $("#NewNodeName").focus();
+                })
+                .always(function () {
+                    $("#mainDiv").removeClass('loading');
+                    $('button[type="submit"]').removeAttr('disabled');
+                    //$("#zTreeView").show();
+                });
+            }
+        };
+
+        //返回编辑节点值显示区
+        function DoReturn() {
+            var nodeName = $.trim($("#NewNodeName").val());
+            var nodeValue = $.trim($("#NewNodeValue").val());
+            if (nodeName != '' || nodeValue != '') {
+                if (!confirm("您在新增节点中，所以请问您确定要返回吗？")) {
+                    $("#NewNodeName").focus();
+                    return false;
+                }
+            }
+
+            ToggleTdVisible(tdEdit, true);
+            ToggleTdVisible(tdAdd, false);
+
+            return false;
+        }
+
+        //删除叶子节点
+        function remove(e) {
+            var zTree = $.fn.zTree.getZTreeObj("zTreeView");
+            var nodes = zTree.getSelectedNodes();
+            if (nodes == null || nodes.length == 0) {
+                alert("请先选择一个要删除的叶子节点");
+                return;
+            }
+            var treeNode = nodes[0];
+            if (treeNode.children != null && treeNode.children.length > 0) {
+                alert("只能删除叶子节点");
+                return;
+            }
+
+            if (treeNode.NodePath == '/ConfigService') {
+                alert("不允许删除根节点【" + treeNode.NodePath + "】");
+                return;
+            }
+
+            zTree.removeNode(treeNode, true);
+        };
+
+        function deleteNode(nodePath) {
+            $("#mainDiv").addClass('loading');
+
+            SetEnable(false);
+            $("#zTreeView").hide();
+
+            $.ajax({
+                url: '@Url.Action("DeleteNode", "ConfigService")',
+                data: { nodePath: nodePath },
+                dataType: "text",
+                type: "Get"
+            })
+            .done(function (data) {
+                var result = eval('(' + data + ')');
+                if (result.length == 0) {
+                    alert("请先加载树");
+                }
+                else {
+                    if (result.IsSuccess) {
+                        $("#NodePath").html("");
+                        $("#NodeValue").val("");
+                        alert("成功删除该叶子节点【" + nodePath + "】");
+
+                        $("#deleteNode").focus();
+                    }
+                    else {
+                        if (result.Message == null || result.Message == "") {
+                            alert("请先加载树");
+                        }
+                        else {
+                            alert(result.Message);
+                        }
+                    }
+                }
+            })
+            .fail(function (msg) { alert("删除该叶子节点【" + nodePath + "】失败！Error信息为：" + msg); })
+            .always(function () {
+                $("#mainDiv").removeClass('loading');
+                $("#zTreeView").show();
+                SetEnable(true);
+            });
+        }
+
+        //更新节点值
+        function updateNodeValue() {
+            var zTree = $.fn.zTree.getZTreeObj("zTreeView");
+            if (zTree == null) {
+                alert("请先加载树");
+                $("#loadTree").focus();
+                return false;
+            }
+
+            var nodePath = $("#NodePath").val();
+
+            if (nodePath == '/ConfigService') {
+                alert("不允许更新该节点【" + nodePath + "】的值");
+                $("#NodeValue").focus();
+                return false;
+            }
+
+            if (!confirm("确认更新该节点【" + nodePath + "】的值吗？")) {
+                $("#NodeValue").focus();
+                return false;
+            }
+
+            $("#mainDiv").addClass('loading');
+
+            SetEnable(false);
+            $("#zTreeView").hide();
+
+            var newNodeValue = $.trim($("#NodeValue").val());
+            $("#NodeValue").val(newNodeValue);
+
+            $.ajax({
+                url: '@Url.Action("UpdateNodeValue", "ConfigService")',
+                data: { nodePath: nodePath, newNodeValue: newNodeValue },
+                dataType: "text",
+                type: "POST"
+            })
+            .done(function (data) {
+                var result = eval('(' + data + ')');
+                if (result.length == 0) {
+                    alert("请先加载树");
+                    $("#loadTree").focus();
+                }
+                else {
+                    if (result.IsSuccess) {
+                        alert("成功更新【" + nodePath + "】节点的值");
+                    }
+                    else {
+                        if (result.Message == null || result.Message == "") {
+                            alert("请先加载树");
+                            $("#loadTree").focus();
+                        }
+                        else {
+                            if (result.Message.indexOf("删除") > -1) {
+                                //do delete zTree node
+                                var nodes = zTree.getSelectedNodes();
+                                if (nodes != null && nodes.length > 0) {
+                                    var treeNode = nodes[0];
+                                    if (treeNode.children == null || treeNode.children.length < 1) {
+                                        zTree.removeNode(treeNode, false);
+                                    }
+                                }
+
+                                $("#NodePath").html("");
+                                $("#NodeValue").val("");
+                            }
+                            alert(result.Message);
+                        }
+                    }
+                }
+            })
+            .fail(function (msg) { alert("更新该节点【" + nodePath + "】的值失败！Error信息为：" + msg); })
+            .always(function () {
+                $("#mainDiv").removeClass('loading');
+                $("#zTreeView").show();
+                $("#NodeValue").focus();
+                SetEnable(true);
+                ReSizeTree();
+                ReSizeNodeText();
+            });
+        }
+
+        function SetEnable(isEnable) {
+            if (isEnable) {
+                $('button[type="submit"]').removeAttr('disabled');
+                ToggleTdVisible(tdEdit, true);
+            }
+            else {
+                $('button[type="submit"]').attr('disabled', 'disabled');
+                ToggleTdVisible(tdEdit, false);
+            }
+        }
+
+        function ToggleTdVisible(td, isShow) {
+            if (isShow) {
+                td.show();
+                ReSizeTree();
+                ReSizeNodeText();
+                return;
+            }
+
+            td.hide();
+        }
+
+        var tdEdit = $('#tdEdit');
+        var tdAdd = $('#tdAdd');
+        $(document).ready(function () {
+            ReSizeTree();
+            ReSizeNodeText();
+
+            $("#addNodeBtn").bind("click", { isParent: true }, add);
+
+            $("#deleteNode").bind("click", remove);
+            //$("#deleteNode").click(remove);
+
+            $("#updateNodeValue").bind("click", updateNodeValue);
+
+            var $loadTreeForm = $("#LoadTreeForm");
+            $loadTreeForm.on('submit', function (event) {
+                event.preventDefault();
+
+                createTree();
+            });
+        });
+
+        $(window).resize(function () {
+            ReSizeTree();
+            ReSizeNodeText();
+        });
+
+        function ReSizeTree() {
+            var $pageHeader = $('.container-fluid');
+            var pageHeaderHeight = $pageHeader.height();
+
+            var $innerPage = $('.page-container');
+            var innerPageHeight = $innerPage.height();
+
+            var $tree = $('#zTreeView');
+            var treeTop = $tree.offset().top - pageHeaderHeight;
+            $tree.css('height', '480px');
+            var treeHeight = $tree.height();
+
+            $tree.css('width', '300px');
+            var treeWidth = $tree.width();
+
+            //调整树控件的高度、宽度
+            if ((treeTop + treeHeight) > innerPageHeight) {
+                var newTreeHeight = innerPageHeight - treeTop - 140;
+                $tree.css('height', newTreeHeight + 'px');
+
+                $tree.css('width', '230px');
+            }
+            else {
+                $tree.css('height', '480px');
+                $tree.css('width', '300px');
+            }
+        }
+
+        function ReSizeNodeText() {
+            var $innerPage = $('.page-container');
+            var innerPageWidth = $innerPage.width();
+            var innerPageHeight = $innerPage.height();
+
+            //调整位于编辑区域的节点值文本框的宽度
+            var $nodeValueEdit = $('#NodeValue');
+            $nodeValueEdit.css('width', '700px');
+            var nodeValueEditWidth = $nodeValueEdit.width();
+            var nodeValueEditLeft = $nodeValueEdit.offset().left;
+            if ((nodeValueEditLeft + nodeValueEditWidth) > innerPageWidth) {
+                var newWidth = innerPageWidth - nodeValueEditLeft - 50;
+                $nodeValueEdit.css('width', newWidth + 'px');
+            }
+            else {
+                $nodeValueEdit.css('width', '700px');
+            }
+
+            //调整位于编辑区域的节点值文本框的高度
+            $nodeValueEdit.css('height', '270px');
+            var nodeValueEditHeight = $nodeValueEdit.height();
+            var nodeValueEditTop = $nodeValueEdit.offset().top;
+            if ((nodeValueEditTop + nodeValueEditHeight) > innerPageHeight) {
+                var newNodeValueHeight = innerPageHeight - nodeValueEditTop - 40;
+                $nodeValueEdit.css('height', newNodeValueHeight + 'px');
+            }
+            else {
+                $nodeValueEdit.css('height', '270px');
+            }
+
+            //调整位于新增区域的节点值名的宽度
+            var $nodeNameNew = $('#NewNodeName');
+            var nodeNameNewLeft = $nodeNameNew.offset().left;
+            $nodeNameNew.css('width', '218px');
+            var nodeNameNewWidth = $nodeNameNew.width();
+
+            if ((nodeNameNewLeft + nodeNameNewWidth) > innerPageWidth) {
+                var newWidth = innerPageWidth - nodeNameNewLeft - 50;
+                $nodeNameNew.css('width', newWidth + 'px');
+            }
+            else {
+                $nodeNameNew.css('width', '218px');
+            }
+
+            //调整位于新增区域的节点值文本框的宽度
+            var $nodeValueNew = $('#NewNodeValue');
+            var nodeValueNewLeft = $nodeValueNew.offset().left;
+            $nodeValueNew.css('width', '700px');
+            var nodeValueNewWidth = $nodeValueNew.width();
+
+            if ((nodeValueNewLeft + nodeValueNewWidth) > innerPageWidth) {
+                var newWidth = innerPageWidth - nodeValueNewLeft - 50;
+                $nodeValueNew.css('width', newWidth + 'px');
+            }
+            else {
+                $nodeValueNew.css('width', '700px');
+            }
+        }
+
+    </script>
+}

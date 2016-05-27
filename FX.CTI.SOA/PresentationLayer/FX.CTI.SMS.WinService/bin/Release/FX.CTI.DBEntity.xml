@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FX.CTI.DBEntity</name>
+    </assembly>
+    <members>
+        <member name="T:FX.CTI.DBEntity.Email">
+            <summary>
+            邮件数据实体
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailId">
+            <summary>
+            编号(主键)
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.AppId">
+            <summary>
+            调用者编号
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailToAddr">
+            <summary>
+            收件人地址
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailCC">
+            <summary>
+            抄送人
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailSubject">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailContent">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailStatus">
+            <summary>
+            处理状态
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailErrMsg">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailReceivedTime">
+            <summary>
+            接受时间
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.Email.EmailSentTime">
+            <summary>
+            发出时间
+            </summary>
+        </member>
+        <member name="T:FX.CTI.DBEntity.EmailStatus">
+            <summary>
+            邮件处理状态
+            </summary>
+        </member>
+        <member name="F:FX.CTI.DBEntity.EmailStatus.Received">
+            <summary>
+            已接受
+            </summary>
+        </member>
+        <member name="F:FX.CTI.DBEntity.EmailStatus.Sent">
+            <summary>
+            已发出
+            </summary>
+        </member>
+        <member name="F:FX.CTI.DBEntity.EmailStatus.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="T:FX.CTI.DBEntity.SMS">
+            <summary>
+            短信数据实体
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSId">
+            <summary>
+            编号(主键)
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.AppId">
+            <summary>
+            调用者编号
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSMobile">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSContent">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSErrMsg">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSStatus">
+            <summary>
+            处理状态
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSReceivedTime">
+            <summary>
+            接受时间
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DBEntity.SMS.SMSSentTime">
+            <summary>
+            发出时间
+            </summary>
+        </member>
+        <member name="T:FX.CTI.DBEntity.SMSStatus">
+            <summary>
+            短信处理状态
+            </summary>
+        </member>
+        <member name="F:FX.CTI.DBEntity.SMSStatus.Received">
+            <summary>
+            已接受
+            </summary>
+        </member>
+        <member name="F:FX.CTI.DBEntity.SMSStatus.Sent">
+            <summary>
+            已发出
+            </summary>
+        </member>
+        <member name="F:FX.CTI.DBEntity.SMSStatus.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+    </members>
+</doc>

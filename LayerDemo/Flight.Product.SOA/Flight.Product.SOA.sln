@@ -1,0 +1,100 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{97568523-6ED6-4F18-8EF7-5DF540F8C7CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{428EFE7F-2147-4395-88EC-15F9F1664C46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{F07A9A2E-38EA-44F6-BDA7-BC060CC27EDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityLayer", "EntityLayer", "{7FE810A8-AA64-4C47-AF4D-3938487F73F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{2FC63B06-FDE2-49D6-97F4-3F1E8DD58A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Product.Utility", "CommonLayer\Flight.Product.Utility\Flight.Product.Utility.csproj", "{F05AC111-D7CB-40D3-B378-65F41B1A89EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Product.Entity", "EntityLayer\Flight.Product.Entity\Flight.Product.Entity.csproj", "{960FFBB8-3E21-44CB-962C-CCF113A9456D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Product.Business", "BusinessLayer\Flight.Product.Business\Flight.Product.Business.csproj", "{0CBF27EB-B5AB-462D-86AB-40EBCCD7C8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Product.Service", "PresentationLayer\Flight.Product.Service\Flight.Product.Service.csproj", "{B44D9722-0EB2-4492-B25D-01D1B131A393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Product.DBEntity", "EntityLayer\Flight.Product.DBEntity\Flight.Product.DBEntity.csproj", "{55A02370-A4D3-4679-89AE-17E96F5F3D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flight.Product.DB", "DataLayer\Flight.Product.DB\Flight.Product.DB.csproj", "{3980CE03-F789-4EA8-84E4-C446B2817772}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.2.36:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CommonLayer\\Flight.Product.Utility\\Flight.Product.Utility.csproj
+		SccProjectTopLevelParentUniqueName1 = Flight.Product.SOA.sln
+		SccProjectName1 = CommonLayer/Flight.Product.Utility
+		SccLocalPath1 = CommonLayer\\Flight.Product.Utility
+		SccProjectUniqueName2 = EntityLayer\\Flight.Product.Entity\\Flight.Product.Entity.csproj
+		SccProjectTopLevelParentUniqueName2 = Flight.Product.SOA.sln
+		SccProjectName2 = EntityLayer/Flight.Product.Entity
+		SccLocalPath2 = EntityLayer\\Flight.Product.Entity
+		SccProjectUniqueName3 = BusinessLayer\\Flight.Product.Business\\Flight.Product.Business.csproj
+		SccProjectTopLevelParentUniqueName3 = Flight.Product.SOA.sln
+		SccProjectName3 = BusinessLayer/Flight.Product.Business
+		SccLocalPath3 = BusinessLayer\\Flight.Product.Business
+		SccProjectUniqueName4 = PresentationLayer\\Flight.Product.Service\\Flight.Product.Service.csproj
+		SccProjectTopLevelParentUniqueName4 = Flight.Product.SOA.sln
+		SccProjectName4 = PresentationLayer/Flight.Product.Service
+		SccLocalPath4 = PresentationLayer\\Flight.Product.Service
+		SccProjectUniqueName5 = EntityLayer\\Flight.Product.DBEntity\\Flight.Product.DBEntity.csproj
+		SccProjectTopLevelParentUniqueName5 = Flight.Product.SOA.sln
+		SccProjectName5 = EntityLayer/Flight.Product.DBEntity
+		SccLocalPath5 = EntityLayer\\Flight.Product.DBEntity
+		SccProjectUniqueName6 = DataLayer\\Flight.Product.DB\\Flight.Product.DB.csproj
+		SccProjectTopLevelParentUniqueName6 = Flight.Product.SOA.sln
+		SccProjectName6 = DataLayer/Flight.Product.DB
+		SccLocalPath6 = DataLayer\\Flight.Product.DB
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F05AC111-D7CB-40D3-B378-65F41B1A89EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F05AC111-D7CB-40D3-B378-65F41B1A89EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F05AC111-D7CB-40D3-B378-65F41B1A89EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F05AC111-D7CB-40D3-B378-65F41B1A89EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{960FFBB8-3E21-44CB-962C-CCF113A9456D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{960FFBB8-3E21-44CB-962C-CCF113A9456D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{960FFBB8-3E21-44CB-962C-CCF113A9456D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{960FFBB8-3E21-44CB-962C-CCF113A9456D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CBF27EB-B5AB-462D-86AB-40EBCCD7C8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CBF27EB-B5AB-462D-86AB-40EBCCD7C8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CBF27EB-B5AB-462D-86AB-40EBCCD7C8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CBF27EB-B5AB-462D-86AB-40EBCCD7C8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B44D9722-0EB2-4492-B25D-01D1B131A393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B44D9722-0EB2-4492-B25D-01D1B131A393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B44D9722-0EB2-4492-B25D-01D1B131A393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B44D9722-0EB2-4492-B25D-01D1B131A393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A02370-A4D3-4679-89AE-17E96F5F3D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A02370-A4D3-4679-89AE-17E96F5F3D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A02370-A4D3-4679-89AE-17E96F5F3D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A02370-A4D3-4679-89AE-17E96F5F3D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3980CE03-F789-4EA8-84E4-C446B2817772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3980CE03-F789-4EA8-84E4-C446B2817772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3980CE03-F789-4EA8-84E4-C446B2817772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3980CE03-F789-4EA8-84E4-C446B2817772}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CBF27EB-B5AB-462D-86AB-40EBCCD7C8BE} = {97568523-6ED6-4F18-8EF7-5DF540F8C7CF}
+		{F05AC111-D7CB-40D3-B378-65F41B1A89EC} = {428EFE7F-2147-4395-88EC-15F9F1664C46}
+		{3980CE03-F789-4EA8-84E4-C446B2817772} = {F07A9A2E-38EA-44F6-BDA7-BC060CC27EDB}
+		{960FFBB8-3E21-44CB-962C-CCF113A9456D} = {7FE810A8-AA64-4C47-AF4D-3938487F73F6}
+		{55A02370-A4D3-4679-89AE-17E96F5F3D1B} = {7FE810A8-AA64-4C47-AF4D-3938487F73F6}
+		{B44D9722-0EB2-4492-B25D-01D1B131A393} = {2FC63B06-FDE2-49D6-97F4-3F1E8DD58A1A}
+	EndGlobalSection
+EndGlobal

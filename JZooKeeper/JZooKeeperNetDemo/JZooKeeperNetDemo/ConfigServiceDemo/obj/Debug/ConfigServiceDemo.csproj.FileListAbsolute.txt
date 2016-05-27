@@ -1,0 +1,1 @@
+E:\JinRi.Arch\Mainline\JZooKeeper\JZooKeeperNetDemo\JZooKeeperNetDemo\ConfigServiceDemo\bin\Debug\ConfigServiceDemo.exe.config

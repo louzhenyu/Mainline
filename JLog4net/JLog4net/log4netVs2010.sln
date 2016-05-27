@@ -1,0 +1,131 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogView", "LogView\LogView.csproj", "{2C0E0114-FDDD-48B9-AAD8-45B297B8245F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Log4NetDemo", "JinRi.Log4NetDemo\JinRi.Log4NetDemo.csproj", "{48A3D844-2AD7-4AB7-8239-0D75BFF52544}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLog4netWinFormDemo", "JLog4netWinFormDemo\JLog4netWinFormDemo.csproj", "{DB0FA79F-09BF-4064-A3D0-04B61004BA02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RefDll", "RefDll", "{997AF697-5E4E-459D-B2EA-68F78DDA2A62}"
+	ProjectSection(SolutionItems) = preProject
+		RefDll\AjaxControlToolkit.dll = RefDll\AjaxControlToolkit.dll
+		RefDll\AjaxControlToolkit.pdb = RefDll\AjaxControlToolkit.pdb
+		RefDll\Dapper.dll = RefDll\Dapper.dll
+		RefDll\JFx.dll = RefDll\JFx.dll
+		RefDll\JFx.xml = RefDll\JFx.xml
+		RefDll\JRedis.dll = RefDll\JRedis.dll
+		RefDll\MongoDB.Bson.dll = RefDll\MongoDB.Bson.dll
+		RefDll\MongoDB.Bson.xml = RefDll\MongoDB.Bson.xml
+		RefDll\MongoDB.dll = RefDll\MongoDB.dll
+		RefDll\MongoDB.Driver.dll = RefDll\MongoDB.Driver.dll
+		RefDll\MongoDB.Driver.xml = RefDll\MongoDB.Driver.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{CA095672-963C-498A-AE0E-8F5A10CDC5A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Data", "DataLayer\JinRi.Fx.Data\JinRi.Fx.Data.csproj", "{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityLayer", "EntityLayer", "{DCE1571D-5884-442E-A6A2-1248F7A1733C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Entity", "EntityLayer\JinRi.Fx.Entity\JinRi.Fx.Entity.csproj", "{466E29A8-6357-404C-B5F9-AD0254A9F0DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{9B5B42C1-B747-42B1-804A-BC399A7B488B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Utility", "CommonLayer\JinRi.Fx.Utility\JinRi.Fx.Utility.csproj", "{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{8521A49C-0D5F-4B4D-A9A9-DC2ACDD28DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Logic", "BusinessLayer\JinRi.Fx.Logic\JinRi.Fx.Logic.csproj", "{19BD1B13-2776-4708-8EA8-3651B55513EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JLog4net", "JLog4net", "{F7CD93DC-9E06-462E-8DF2-DECB847ACDFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLog4net", "JLog4net\JLog4net.csproj", "{BB879E04-E741-4C76-9585-4D4B0F1AA36D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.2.36:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BusinessLayer\\JinRi.Fx.Logic\\JinRi.Fx.Logic.csproj
+		SccProjectTopLevelParentUniqueName1 = log4netVs2010.sln
+		SccProjectName1 = BusinessLayer/JinRi.Fx.Logic
+		SccLocalPath1 = BusinessLayer\\JinRi.Fx.Logic
+		SccProjectUniqueName2 = CommonLayer\\JinRi.Fx.Utility\\JinRi.Fx.Utility.csproj
+		SccProjectTopLevelParentUniqueName2 = log4netVs2010.sln
+		SccProjectName2 = CommonLayer/JinRi.Fx.Utility
+		SccLocalPath2 = CommonLayer\\JinRi.Fx.Utility
+		SccProjectUniqueName3 = DataLayer\\JinRi.Fx.Data\\JinRi.Fx.Data.csproj
+		SccProjectTopLevelParentUniqueName3 = log4netVs2010.sln
+		SccProjectName3 = DataLayer/JinRi.Fx.Data
+		SccLocalPath3 = DataLayer\\JinRi.Fx.Data
+		SccProjectUniqueName4 = EntityLayer\\JinRi.Fx.Entity\\JinRi.Fx.Entity.csproj
+		SccProjectTopLevelParentUniqueName4 = log4netVs2010.sln
+		SccProjectName4 = EntityLayer/JinRi.Fx.Entity
+		SccLocalPath4 = EntityLayer\\JinRi.Fx.Entity
+		SccProjectUniqueName5 = JinRi.Log4NetDemo\\JinRi.Log4NetDemo.csproj
+		SccProjectName5 = JinRi.Log4NetDemo
+		SccLocalPath5 = JinRi.Log4NetDemo
+		SccProjectUniqueName6 = JLog4net\\JLog4net.csproj
+		SccProjectTopLevelParentUniqueName6 = log4netVs2010.sln
+		SccProjectName6 = JLog4net
+		SccLocalPath6 = JLog4net
+		SccProjectUniqueName7 = JLog4netWinFormDemo\\JLog4netWinFormDemo.csproj
+		SccProjectName7 = JLog4netWinFormDemo
+		SccLocalPath7 = JLog4netWinFormDemo
+		SccProjectUniqueName8 = LogView\\LogView.csproj
+		SccProjectName8 = LogView
+		SccLocalPath8 = LogView
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C0E0114-FDDD-48B9-AAD8-45B297B8245F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0E0114-FDDD-48B9-AAD8-45B297B8245F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0E0114-FDDD-48B9-AAD8-45B297B8245F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0E0114-FDDD-48B9-AAD8-45B297B8245F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A3D844-2AD7-4AB7-8239-0D75BFF52544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A3D844-2AD7-4AB7-8239-0D75BFF52544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A3D844-2AD7-4AB7-8239-0D75BFF52544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A3D844-2AD7-4AB7-8239-0D75BFF52544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB0FA79F-09BF-4064-A3D0-04B61004BA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0FA79F-09BF-4064-A3D0-04B61004BA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0FA79F-09BF-4064-A3D0-04B61004BA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0FA79F-09BF-4064-A3D0-04B61004BA02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB879E04-E741-4C76-9585-4D4B0F1AA36D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB879E04-E741-4C76-9585-4D4B0F1AA36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB879E04-E741-4C76-9585-4D4B0F1AA36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB879E04-E741-4C76-9585-4D4B0F1AA36D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5} = {CA095672-963C-498A-AE0E-8F5A10CDC5A5}
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA} = {DCE1571D-5884-442E-A6A2-1248F7A1733C}
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC} = {9B5B42C1-B747-42B1-804A-BC399A7B488B}
+		{19BD1B13-2776-4708-8EA8-3651B55513EE} = {8521A49C-0D5F-4B4D-A9A9-DC2ACDD28DE2}
+		{BB879E04-E741-4C76-9585-4D4B0F1AA36D} = {F7CD93DC-9E06-462E-8DF2-DECB847ACDFB}
+	EndGlobalSection
+EndGlobal

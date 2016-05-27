@@ -1,0 +1,7 @@
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Debug\ClientApp.exe.config
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Debug\app.config
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Debug\ClientApp.exe
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\bin\Debug\ClientApp.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\obj\Debug\ClientApp.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\obj\Debug\ClientApp.exe
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\Test\ClientApp\obj\Debug\ClientApp.pdb

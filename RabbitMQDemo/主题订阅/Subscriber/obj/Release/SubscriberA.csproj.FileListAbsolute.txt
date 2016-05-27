@@ -1,0 +1,12 @@
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\Subscriber.exe.config
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\Subscriber.exe
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\Subscriber.pdb
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\EasyNetQ.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\Messages.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\RabbitMQ.Client.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\Messages.pdb
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\EasyNetQ.xml
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\bin\Release\RabbitMQ.Client.xml
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\obj\Release\Subscriber.exe
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\obj\Release\Subscriber.pdb
+E:\JinRi.Arch\Mainline\RabbitMQDemo\主题订阅\Subscriber\obj\Release\SubscriberA.csprojResolveAssemblyReference.cache

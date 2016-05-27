@@ -1,0 +1,10 @@
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\JinRi.Fx.Web.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\JinRi.Fx.Web.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\JinRi.Fx.Utility.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\System.Web.Mvc.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\JRedis.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\JinRi.Fx.Utility.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\obj\Debug\JinRi.Fx.Web.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\obj\Debug\JinRi.Fx.Web.dll
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\obj\Debug\JinRi.Fx.Web.pdb
+E:\JinRi.Arch\Mainline\JinRi.Fx.Manage\PresentationLayer\JinRi.Fx.Web\bin\Debug\JRedis.xml

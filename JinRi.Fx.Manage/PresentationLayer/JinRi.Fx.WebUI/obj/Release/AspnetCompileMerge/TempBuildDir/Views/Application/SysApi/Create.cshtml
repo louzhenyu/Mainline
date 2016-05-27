@@ -1,0 +1,87 @@
+﻿@model JinRi.Fx.Entity.SysApiEntity
+
+@{
+    ViewBag.Title = "新增系统接口";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>应用编号：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.AppId, new { @id = "AppId", @class = "m-wrap small integer" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.AppId)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>接口名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApiName, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>接口类型：</label>
+                <div class="controls">
+                    @Html.DropDownList("ApiType", null, new { @id = "ApiType", @style = "width:135px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiType)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>接口描述：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApiDescription, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiDescription)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>负责人：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApiOwner, new { @class = "m-wrap" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiOwner)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>接口地址：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ApiAddress, new { @class = "m-wrap", @style = "width:250px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiAddress)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>状态：</label>
+                <div class="controls">
+                    @Html.DropDownList("ApiStatus", null, new { @id = "Status", @style = "width:135px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ApiStatus)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Remark, new { @class = "m-wrap", @style = "width:250px;height:50px;" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}@section PageSpecificJavascriptIncludes{
+    <script>
+        $(function () {
+            @*$.ajax({
+                url: '@Url.Action("MetricsKey", "Dashboard")',
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("#MetricName").autocomplete({
+                        max: 15, 　　　　　　　　　　 //下拉项目的个数，default：10
+                        source: data,
+                        select: function (e, ui) {//alert(ui.item.value)
+                        }
+                    });
+                }
+            })*@
+        });
+    </script>
+}

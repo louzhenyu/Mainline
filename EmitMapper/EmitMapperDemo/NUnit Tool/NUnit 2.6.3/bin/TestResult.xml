@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\Program Files (x86)\NUnit 2.6.3\bin\NUnitTests.nunit" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-07-29" time="16:59:50">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="D:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="JG-YANGLI" user="yangli" user-domain="GDLY" />
+  <culture-info current-culture="zh-CN" current-uiculture="zh-CN" />
+  <test-suite type="Project" name="D:\Program Files (x86)\NUnit 2.6.3\bin\NUnitTests.nunit" executed="True" result="Success" success="True" time="0.066" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="D:\Program Files (x86)\NUnit 2.6.3\bin\tests/nunit.core.tests.dll" executed="True" result="Success" success="True" time="0.046" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="NUnit" executed="True" result="Success" success="True" time="0.046" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Core" executed="True" result="Success" success="True" time="0.046" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="0.045" asserts="0">
+                    <results>
+                      <test-suite type="ParameterizedFixture" name="ParameterizedTestFixtureWithTypeAsArgument" executed="True" result="Success" success="True" time="0.045" asserts="0">
+                        <results>
+                          <test-suite type="TestFixture" name="ParameterizedTestFixtureWithTypeAsArgument(System.String)" executed="True" result="Success" success="True" time="0.043" asserts="0">
+                            <results>
+                              <test-case name="NUnit.Core.Tests.ParameterizedTestFixtureWithTypeAsArgument(System.String).MakeSureTypeIsInSystemNamespace" executed="True" result="Success" success="True" time="0.027" asserts="1" />
+                            </results>
+                          </test-suite>
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

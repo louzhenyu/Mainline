@@ -1,0 +1,5 @@
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Test\bin\Debug\JinRi.IntlPolicy.Test.exe.config
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Test\bin\Debug\JinRi.IntlPolicy.Test.exe
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Test\bin\Debug\JinRi.IntlPolicy.Test.pdb
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Test\obj\Debug\JinRi.IntlPolicy.Test.exe
+E:\JinRi.Arch\Mainline\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.SOA\JinRi.IntlPolicy.Test\obj\Debug\JinRi.IntlPolicy.Test.pdb

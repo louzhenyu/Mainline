@@ -1,0 +1,9 @@
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\bin\Release\Messages.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\bin\Release\Messages.pdb
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\bin\Release\EasyNetQ.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\bin\Release\RabbitMQ.Client.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\bin\Release\EasyNetQ.xml
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\bin\Release\RabbitMQ.Client.xml
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\obj\Release\Messages.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\obj\Release\Messages.dll
+E:\JinRi.Arch\Mainline\RabbitMQDemo\Messages\obj\Release\Messages.pdb

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FX.CTI.DB</name>
+    </assembly>
+    <members>
+        <member name="T:FX.CTI.DB.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DB.ConnectionString.FxDB_SELECT">
+            <summary>
+            Fx库只读连接
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DB.ConnectionString.FxDB_INSERT">
+            <summary>
+            FxDB库写连接
+            </summary>
+        </member>
+        <member name="P:FX.CTI.DB.ConnectionString.JinRi_SELECT">
+            <summary>
+            Fx库只读连接
+            </summary>
+        </member>
+        <member name="M:FX.CTI.DB.FxDB.EmailQuery.GetEmailList">
+            <summary>
+            获取所有Email
+            </summary>
+            <returns>所有Email</returns>
+        </member>
+        <member name="M:FX.CTI.DB.FxDB.EmailQuery.GetEmail(System.String)">
+            <summary>
+            获取单个Email
+            </summary>
+            <param name="emailId">邮件编号</param>
+            <returns>NULL未获取到Email，其他返回相应的Email</returns>
+        </member>
+        <member name="M:FX.CTI.DB.FxDB.EmailQuery.IsEmailIdExist(System.String)">
+            <summary>
+            检查emailId是否已存在
+            </summary>
+            <param name="emailId">邮件编号</param>
+            <returns>true:已存在，false:不存在</returns>
+        </member>
+        <member name="M:FX.CTI.DB.FxDB.SMSQuery.GetSMSList">
+            <summary>
+            获取所有SMS
+            </summary>
+            <returns>所有SMS</returns>
+        </member>
+        <member name="M:FX.CTI.DB.FxDB.SMSQuery.GetSMS(System.String)">
+            <summary>
+            获取单个SMS
+            </summary>
+            <param name="smsId">SMS编号</param>
+            <returns>NULL未获取到SMS，其他返回相应的SMS</returns>
+        </member>
+        <member name="M:FX.CTI.DB.FxDB.SMSQuery.IsSMSIdExist(System.String)">
+            <summary>
+            检查smsId是否已存在
+            </summary>
+            <param name="smsId">短信编号</param>
+            <returns>true:已存在，false:不存在</returns>
+        </member>
+    </members>
+</doc>

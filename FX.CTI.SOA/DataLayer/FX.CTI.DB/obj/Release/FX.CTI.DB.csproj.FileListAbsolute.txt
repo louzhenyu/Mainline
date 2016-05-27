@@ -1,0 +1,13 @@
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\FX.CTI.DB.XML
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\FX.CTI.DB.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\FX.CTI.DB.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\Dapper.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\FX.CTI.DBEntity.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\JFx.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\FX.CTI.DBEntity.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\FX.CTI.DBEntity.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\Dapper.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\bin\Release\JFx.xml
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\obj\Release\FX.CTI.DB.csprojResolveAssemblyReference.cache
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\obj\Release\FX.CTI.DB.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\DataLayer\FX.CTI.DB\obj\Release\FX.CTI.DB.pdb

@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EtermProxy</name>
+    </assembly>
+    <members>
+        <member name="M:EtermProxy.BLL.Business.system(System.String)">
+            <summary>
+            Eterm调用方法
+            </summary>
+            <param name="cmd">Eterm指令</param>
+            <returns>Eterm返回字符串</returns>
+        </member>
+        <member name="P:EtermProxy.BLL.Business.hwnd">
+            <summary>
+            Eterm指针
+            </summary>
+        </member>
+        <member name="P:EtermProxy.BLL.Business.handle">
+            <summary>
+            信号句柄
+            </summary>
+        </member>
+        <member name="P:EtermProxy.BLL.Business.config">
+            <summary>
+            配置号
+            </summary>
+        </member>
+        <member name="M:EtermProxy.BLL.TicketInfo.BusinessDispose(EtermProxy.Entity.Request.TicketInfo)">
+            <summary>
+            【获取票号信息】命令结果解析
+            </summary>
+            <param name="ticketInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.BLL.SeekPNR.BusinessDispose(EtermProxy.Entity.Request.SeekPNR)">
+            <summary>
+            业务处理
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EtermProxy.Entity.EtermCommand">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.Booking">
+            <summary>
+            订位
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.GetPrice">
+            <summary>
+            P特价
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.SeekPNR">
+            <summary>
+            提取PNR编码
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.GetTicketByBigPnr">
+            <summary>
+            DETR大编码
+            </summary> 
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.GetTicketInfo">
+            <summary>
+            DETR票号 查票号状态
+            </summary> 
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.GetTicketInfoByS">
+            <summary>
+            DETR票号,S
+            </summary> 
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.GetTicketInfoByF">
+            <summary>
+            DETR票号,F
+            </summary> 
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.GetTicketHisInfo">
+            <summary>
+            DETR票号,H 查票号历史记录
+            </summary> 
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.RMK">
+            <summary>
+            授权
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.CmdType.CancelPnr">
+            <summary>
+            擦编码
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigState.connect">
+            <summary>
+            已连接
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigState.disconnect">
+            <summary>
+            连接关闭
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigState.suspend">
+            <summary>
+            挂起
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.EtermCommand.Sexual">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.Sexual.male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.Sexual.female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.EtermCommand.IDtype">
+            <summary>
+            证件类型
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.IDtype.IDcard">
+            <summary>
+            身份证
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.EtermCommand.PassengerType">
+            <summary>
+            乘客类型
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.PassengerType.Adult">
+            <summary>
+            成人
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.PassengerType.Children">
+            <summary>
+            儿童
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.PassengerType.Baby">
+            <summary>
+            婴儿
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.EtermCommand.ConfigLevel">
+            <summary>
+            配置级别
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigLevel.A">
+            <summary>
+            A
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigLevel.B">
+            <summary>
+            B
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigLevel.C">
+            <summary>
+            C
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigLevel.D">
+            <summary>
+            D
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Entity.EtermCommand.ConfigLevel.E">
+            <summary>
+            E
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.FilghtNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.Cabin">
+            <summary>
+            舱位
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.SCity">
+            <summary>
+            出发城市三字码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.ECity">
+            <summary>
+            到达城市三字码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.SDate">
+            <summary>
+            出发日期
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.EDate">
+            <summary>
+            到达日期
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.DepDate">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Flight.ArrDate">
+            <summary>
+            到达时间
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Passenger">
+            <summary>
+            乘机人
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.name">
+            <summary>
+            乘机人姓名
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.sexual">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.idtype">
+            <summary>
+            证件类型
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.cardno">
+            <summary>
+            证件号码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.PassType">
+            <summary>
+            乘客类型
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.Ename">
+            <summary>
+            乘客名拼音（婴儿）使用
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.BirthDay">
+            <summary>
+            出生年月（婴儿）使用
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Passenger.TicketNo">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Price">
+            <summary>
+            基础运价
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Price.FacePrice">
+            <summary>
+            票面价
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Price.TotalPrice">
+            <summary>
+            总价
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Price.Tax">
+            <summary>
+            税
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Price.Fuel">
+            <summary>
+            机建燃油
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Request.TicketInfo">
+            <summary>
+            获取票号 DETR:TN
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Request.TicketInfoByF">
+            <summary>
+            获取票号 DETR:TN,F
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Request.TicketInfoByS">
+            <summary>
+            获取票号 DETR:TN,S
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Request.TicketInfoHis">
+            <summary>
+            获取票号 DETR:TN,H
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Response.TicketInfo">
+            <summary>
+            获取票号 DETR:TN
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.SCity">
+            <summary>
+            出发城市
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.ECity">
+            <summary>
+            到达城市
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.Airline">
+            <summary>
+            航司
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.Cabin">
+            <summary>
+            仓位
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.SDate">
+            <summary>
+            起飞日期
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.TicketStatus">
+            <summary>
+            客票状态
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfo.BigPnr">
+            <summary>
+            大编码
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Response.TicketInfoByF">
+            <summary>
+            获取票号 DETR:TN,F
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByF.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByF.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByF.PassengerCardNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByF.IsSchedule">
+            <summary>
+            是否打印行程单
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Response.TicketInfoByS">
+            <summary>
+            获取票号 DETR:TN,S
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByS.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByS.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByS.Airline">
+            <summary>
+            航司
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByS.SCity">
+            <summary>
+            出发城市
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByS.ECity">
+            <summary>
+            到达城市
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoByS.Cabin">
+            <summary>
+            仓位
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Response.TicketInfoHis">
+            <summary>
+            获取票号 DETR:TN,H
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoHis.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoHis.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoHis.CancelTime">
+            <summary>
+            取位时间
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.TicketInfoHis.IsSchedule">
+            <summary>
+            是否打印行程单
+            </summary>
+        </member>
+        <member name="T:EtermProxy.IProxy">
+            <summary>
+            Eterm代理接口
+            </summary>
+        </member>
+        <member name="M:EtermProxy.Proxy.InvokeEterm(System.IntPtr,System.IntPtr,System.String,System.String)">
+            <summary>
+            Eterm代理方法
+            </summary>
+            <param name="url">请求url</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:EtermProxy.Proxy.SetEtermData(System.String,System.String)">
+            <summary>
+            设置Eterm数据
+            </summary>
+            <param name="hwnd"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:EtermProxy.Proxy.getObject(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            请求参数对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="P:EtermProxy.Entity.Request.SeekPNR.PNR">
+            <summary>
+            记录编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Request.SeekPNR.PassengerType">
+            <summary>
+            编码乘客类型
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Request.SeekPNR.GetPrice">
+            <summary>
+            是否获取价格
+            </summary>
+        </member>
+        <member name="T:EtermProxy.Entity.Response.SeekPNR">
+            <summary>
+            提取PNR
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.PNR">
+            <summary>
+            PNR记录编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.BigPNR">
+            <summary>
+            大编码
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.Passengers">
+            <summary>
+            乘机人
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.Flight">
+            <summary>
+            航班信息
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.Mobile">
+            <summary>
+            联系电话，CTCT项
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.Prices">
+            <summary>
+            基本运价
+            </summary>
+        </member>
+        <member name="P:EtermProxy.Entity.Response.SeekPNR.RMKOfficeNo">
+            <summary>
+            授权的OFFICE号
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.EtermData">
+            <summary>
+            Eterm数据
+            </summary>
+        </member>
+        <member name="M:EtermProxy.Utility.EtermHelper.system(System.IntPtr,System.IntPtr,System.String,System.String)">
+            <summary>
+            发送
+            </summary>
+            <param name="hwnd"></param>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.Utility.EtermHelper.getmethod(System.String)">
+            <summary>
+            获取方法名
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.Utility.EtermHelper.getparams(System.String)">
+            <summary>
+            获取参数集合
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.Utility.EtermHelper.FlightDateTime(System.String)">
+            <summary>
+            格式化处理
+            </summary>
+            <param name="EtermDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.Utility.EtermHelper.CheckData(System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            判断文本中是否包含特定关键字，用于判断文本是否符合规范。符合规范的文本才会被解析。
+            </summary>
+            <param name="data">文本内容</param>
+            <param name="keys">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="T:EtermProxy.Utility.EtermHelper.Month">
+            <summary>
+            月份枚举
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.JAN">
+            <summary>
+            一月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.FEB">
+            <summary>
+            二月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.MAR">
+            <summary>
+            三月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.APR">
+            <summary>
+            四月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.MAY">
+            <summary>
+            五月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.JUN">
+            <summary>
+            六月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.JUL">
+            <summary>
+            七月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.AUG">
+            <summary>
+            八月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.SEP">
+            <summary>
+            九月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.OCT">
+            <summary>
+            十月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.NOV">
+            <summary>
+            十一月
+            </summary>
+        </member>
+        <member name="F:EtermProxy.Utility.EtermHelper.Month.DEC">
+            <summary>
+            十二月
+            </summary>
+        </member>
+        <member name="M:EtermProxy.Utility.HttpHelper.UrlEncodeGB2312(System.String)">
+            <summary>
+            解决URL中文编码
+            </summary>
+            <param name="strParm">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.Utility.HttpHelper.HttpGet(System.String,System.Int32)">
+            <summary>
+            GET方式
+            </summary>
+            <param name="strURL">URI资源</param>
+            <param name="timeOut">超时值：以毫秒为单位</param>
+            <returns></returns>
+        </member>
+        <member name="M:EtermProxy.Utility.HttpHelper.HttpPost(System.String,System.String,System.Int32)">
+            <summary>
+            POST方式
+            </summary>
+            <param name="strURL">URI资源</param>
+            <param name="strParm">POST参数</param>
+            <param name="timeOut">超时值：以毫秒为单位</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

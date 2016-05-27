@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JZooKeeperNet</id>
+    <version>1.0.0</version>
+    <title>JZooKeeperNet</title>
+    <authors>今日 - 架构部</authors>
+    <owners>古大集团</owners>
+    <projectUrl>http://wiki.jinri.org.cn/display/arch/ZooKeeper+Home</projectUrl>
+    <iconUrl>http://192.168.1.24:10086/ico.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>分布式协调服务组件</description>
+  </metadata>
+</package>

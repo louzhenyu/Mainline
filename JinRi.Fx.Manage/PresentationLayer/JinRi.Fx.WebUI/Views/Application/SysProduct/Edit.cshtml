@@ -1,0 +1,40 @@
+﻿@model JinRi.Fx.Entity.SysProductEntity
+
+@{
+    ViewBag.Title = "产品线修改";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+
+            <div class="control-group">
+                <label class="control-label">产品线编号：</label>
+                <div class="controls">
+                    @Model.ProductId @Html.HiddenFor(m => m.ProductId)
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>产品线名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProductName, new { @class = "m-wrap" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProductName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>英文名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.ProductEName, new { @class = "m-wrap" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.ProductEName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">备注：</label>
+                <div class="controls">
+                    @Html.TextAreaFor(m => m.Remark, new { @class = "m-wrap" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

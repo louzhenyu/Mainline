@@ -1,0 +1,2690 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JetermEntity</name>
+    </assembly>
+    <members>
+        <member name="P:JetermEntity.Config.ServerUrl">
+            <summary>
+            服务器地址
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.OfficeNo">
+            <summary>
+            OfficeNo
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.cmdType">
+            <summary>
+            配置功能列表
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.State">
+            <summary>
+            Eterm状态
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.ConfigLevel">
+            <summary>
+            配置级别
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.AllowAirLine">
+            <summary>
+            允许航班
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.DenyAirLine">
+            <summary>
+            禁止航班
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Config.ConfigList">
+            <summary>
+            当前可用配置列表
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Error.ErrorCode">
+            <summary>
+            错误代码号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Error.ErrorMessage">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Error.CmdResultBag">
+            <summary>
+            Eterm指令返回结果
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Error.InnerDetailedErrorMessage">
+            <summary>
+            JEtermClient内部记录的具体错误信息
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand">
+            <summary>
+            公共枚举订定义
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.CmdType">
+            <summary>
+            Eterm调用方法枚举
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.Booking">
+            <summary>
+            订位
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.GetPrice">
+            <summary>
+            P特价
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.SeekPNR">
+            <summary>
+            提取PNR编码
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.TicketByBigPnr">
+            <summary>
+            DETR大编码
+            </summary> 
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.TicketInfo">
+            <summary>
+            DETR票号 查票号状态
+            </summary> 
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.TicketInfoByS">
+            <summary>
+            DETR票号,S
+            </summary> 
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.TicketInfoByF">
+            <summary>
+            DETR票号,F
+            </summary> 
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.TicketHisInfo">
+            <summary>
+            DETR票号,H 查票号历史记录
+            </summary> 
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.Rmk">
+            <summary>
+            授权
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.CancelPnr">
+            <summary>
+            擦编码
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.AutoTicket">
+            <summary>
+            自动出票
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.AV">
+            <summary>
+            AV查询
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CmdType.AVH">
+            <summary>
+            AVH查询
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.ConfigState">
+            <summary>
+            配置状态
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigState.connect">
+            <summary>
+            已连接
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigState.disconnect">
+            <summary>
+            连接关闭
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigState.suspend">
+            <summary>
+            挂起
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.Sexual">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.Sexual.male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.Sexual.female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.IDtype">
+            <summary>
+            证件类型
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.IDtype.NotSet">
+            <summary>
+            没有设置
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.IDtype.IDcard">
+            <summary>
+            身份证
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.IDtype.Other">
+            <summary>
+            其他
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.PassengerType">
+            <summary>
+            乘客类型
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.PassengerType.NotSet">
+            <summary>
+            没有设置
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.PassengerType.Adult">
+            <summary>
+            成人
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.PassengerType.Children">
+            <summary>
+            儿童
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.PassengerType.Baby">
+            <summary>
+            婴儿
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.ConfigLevel">
+            <summary>
+            配置级别
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigLevel.A">
+            <summary>
+            A
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigLevel.B">
+            <summary>
+            B
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigLevel.C">
+            <summary>
+            C
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigLevel.D">
+            <summary>
+            D
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ConfigLevel.E">
+            <summary>
+            E
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.OperatMethod">
+            <summary>
+            外部操作方法（用于自动出票）
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.OperatMethod.add">
+            <summary>
+            添加Eterm配置
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.OperatMethod.del">
+            <summary>
+            删除Eterm配置
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.OperatMethod.mod">
+            <summary>
+            修改Eterm配置
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.CacheTime">
+            <summary>
+            缓存时间
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CacheTime.none">
+            <summary>
+            不存/取缓存
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CacheTime.min1">
+            <summary>
+            缓存1分钟
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CacheTime.min5">
+            <summary>
+            缓存5分钟
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CacheTime.min10">
+            <summary>
+            缓存10分钟
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CacheTime.min30">
+            <summary>
+            缓存30分钟
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.CacheTime.infinite">
+            <summary>
+            永久缓存(30天)
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.FlightType">
+            <summary>
+            Flight Type
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.TicketStatus">
+            <summary>
+            客票状态类型
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.ServerSource">
+            <summary>
+            服务器来源
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ServerSource.EtermServer">
+            <summary>
+            新版本调用Eterm方式(志勇)
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ServerSource.EtermRemote">
+             <summary>
+            旧版本调用Eterm方式(宋的)
+             </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ServerSource.BigSystem">
+            <summary>
+            走大系统
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.BookingState.BookingSuccess">
+            <summary>
+            订位成功
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.BookingState.WaitBooking">
+            <summary>
+            等待订位
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.BookingState.BookingFail">
+            <summary>
+            订位失败
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermCommand.ERROR">
+            <summary>
+            错误枚举
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NONE">
+            <summary>
+            未知错误
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_FIND_CONFIG">
+            <summary>
+            没有发现可用配置
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_BUSINESS">
+            <summary>
+            无效的业务名称
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_REQUEST_PARAM">
+            <summary>
+            无效的请求参数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.EMPTY_REQUEST_PARAM">
+            <summary>
+            没有传必须传的请求参数值
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.EMPTY_REQUEST_ADULT_PNR">
+            <summary>
+            给儿童订位时，成人PNR请求参数必传
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.EMPTY_PASSENGERLIST">
+            <summary>
+            没有给各Passenger传入必须传的请求参数值，如：乘客类型、姓名、ID号、ID卡类型
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.EMPTY_OR_INVALID_MOBILE">
+            <summary>
+            没有给Mobile请求参数传值，或者是给Mobile传了无效的值
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_PHONENO">
+            <summary>
+            无效的Phone No值
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PATINVALID_REQUEST_PARAM">
+            <summary>
+            无效的【PAT:A】指令请求参数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.EMPTY_PAT_REQUEST_PARAM">
+            <summary>
+            没有给【PAT:A】指令传必须传的请求参数值
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_FLIGHTNO">
+            <summary>
+            航班号请求参数格式不正确，输入格式应如CZ380
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_SDATE">
+            <summary>
+            出发日期请求参数格式不正确，输入格式应如02JAN
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_PASSENGERLIST">
+            <summary>
+            传入的乘客列表中，有乘客名字不合法
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.ORDER_COMMAND_EMPTY">
+            <summary>
+            预订命令返回为空
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.RT_COMMAND_EMPTY">
+            <summary>
+            RT命令返回为空
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.COMMAND_EMPTY">
+            <summary>
+            指令返回为空
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.REMOTE_ERROR">
+            <summary>
+            服务器返回错误
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.BOOKING_REMOTE_ERROR">
+            <summary>
+            订位系统出现故障，暂时无法进行订位
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PARSE_INFO_ERROR">
+            <summary>
+            航信信息解析错误
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.BOOKING_FAIL">
+            <summary>
+            很抱歉，订位失败，请重新预订
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.RMK_FAIL">
+            <summary>
+            很抱歉，不能授权
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.REGEX_FORMAT">
+            <summary>
+            正则验证错误
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.REQUEST_PARAM_ABSENCE">
+            <summary>
+            缺少请求参数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PATNO_CABIN_FLIGHTNO">
+            <summary>
+            缺少舱位或航班号【PAT:A】指令请求参数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.SYSTEM_FAULT">
+            <summary>
+            系统出现故障
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.REMARK_OFFICE">
+            <summary>
+            需要授权
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NOT_EXIST_PNR">
+            <summary>
+            此记录编号不存在
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.CANCELLED">
+            <summary>
+            此记录编号无效，状态为已取消
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.CANCEL_PNR_STATE_RR">
+            <summary>
+            不允许擦编码状态为RR的编码，因为您CancelOut请求参数传的是false。
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_AUDLT_PNR">
+            <summary>
+            未将成人编码输入到儿童编码里，指令为：“SSR OTHS 航空公司代码 ADULT PNR IS 成人编码”
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.AUDLT_NO_BABY">
+            <summary>
+            成人编码不含婴儿航段，请做入后再导入，或选择预订创单！
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.ONE_PASSENGER_ON_BABY">
+            <summary>
+            一位乘客只能带一个婴儿，请检查！
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_SEGMENT_STATE_NO">
+            <summary>
+            此记录第1段航班信息的编号位置被“NO”掉了，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_SEGMENT_STATE_HL">
+            <summary>
+            此记录第1段航班信息的编号为“HL”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_SEGMENT_STATE_TN">
+            <summary>
+            此记录第1段航班信息的编号为“TN”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_SEGMENT_STATE_HN">
+            <summary>
+            此记录第1段航班信息的编号为“HN”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_SEGMENT_STATE_HX">
+            <summary>
+            此记录第1段航班信息的编号为“HX”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_SEGMENT_STATE_SA">
+            <summary>
+            此记录第1段航班信息的编号为“SA”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.SECOND_SEGMENT_STATE_NO">
+            <summary>
+            此记录第2段航班信息的编号位置被“NO”掉了，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.SECOND_SEGMENT_STATE_HL">
+            <summary>
+            此记录第1段航班信息的编号为“HL”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.SECOND_SEGMENT_STATE_HN">
+            <summary>
+            此记录第2段航班信息的编号为“HN”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.THIRD_SEGMENT_STATE_NO">
+            <summary>
+            此记录第3段航班信息的编号位置被“NO”掉了，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.THIRD_SEGMENT_STATE_HL">
+            <summary>
+            此记录第3段航班信息的编号为“HL”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.THIRD_SEGMENT_STATE_HN">
+            <summary>
+            此记录第3段航班信息的编号为“HN”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FORTH_SEGMENT_STATE_NO">
+            <summary>
+            此记录第4段航班信息的编号位置被“NO”掉了，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FORTH_SEGMENT_STATE_HL">
+            <summary>
+            此记录第4段航班信息的编号为“HL”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FORTH_SEGMENT_STATE_HN">
+            <summary>
+            此记录第4段航班信息的编号为“HN”状态不是有效记录编号，请检查您的PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.HU_CABIN_OSI">
+            <summary>
+            针对海航(HU)A舱请备注OSI项，OSI项格式如：OSI HU CKIN SSAC/S1
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PNR_AIRCOM_NO_INCLUDE">
+            <summary>
+            您订的往返程编码不属于同一家航空公司，请检查后重新导入
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PNR_NO_CREATE_ORDER">
+            <summary>
+            此记录编号暂时无法导入创建订单
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PNR_USE_CHILD">
+            <summary>
+            此记录编号含有儿童，请使用儿童PNR导入创建订单
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NEED_PAT">
+            <summary>
+            需要PAT:A*IN指令
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.CZ_CHILD_NEED_SSR">
+            <summary>
+            南航(CZ)儿童需要加以下SSR项，
+            应在SSR项输入旅客标识，SSR项格式如下：
+            SSR CHLD 航空公司代码 Action-Code1/出生日期/Pn
+            示例指令： SSR CHLD CZ HK1/03MAR04/P1
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PNR_CONTACT_AUDLT">
+            <summary>
+            此记录编号含有成人，请将成人与儿童拆开导入，请将成人编码输入到儿童编码里
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NOT_SUPPORT_ROUNDTRIP_CHILDTICKET">
+            <summary>
+            当前暂不支持往返儿童票，请将往返儿童票拆成两个单程编码导入
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.DETR_CN_C_COMMAND_RESULT_EMPTY">
+            <summary>
+            【DETR:CN/{大编码号},C】命令没有返回结果
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.COMMAND_RESULT_FORMAT_INCORRECT">
+            <summary>
+            命令返回结果格式不正确
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PATCOMMAND_RESULT_FORMAT_INCORRECT">
+            <summary>
+            【PAT:A】命令返回结果格式不正确
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PATCOMMAND_NO_RESULT">
+            <summary>
+            【PAT:A】命令没有返回结果
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.COMMAND_RESULT_FORMAT_INCORRECT_FM">
+            <summary>
+            命令返回结果格式不正确--缺乏起飞航班信息或起飞航班信息格式不正确
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.COMMAND_RESULT_FORMAT_INCORRECT_SCITY">
+            <summary>
+            命令返回结果格式不正确--出发城市三字码格式不正确
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.COMMAND_RESULT_FORMAT_INCORRECT_RL">
+            <summary>
+            命令返回结果格式不正确--缺乏RL信息
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.COMMAND_RESULT_FORMAT_INCORRECT_TO">
+            <summary>
+            命令返回结果格式不正确--缺乏TO信息
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_MATCHED_RECORD">
+            <summary>
+            没有符合查询条件的记录
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_ADULT_TICKET">
+            <summary>
+            成人编码不是RR状态，无法创单，请成人出票后再创单！
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INCORRECT_BABY_FLIGHTINFO">
+            <summary>
+            婴儿航段状态不对，请检查！
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INCORRECT_BABY_BIRTHDAY">
+            <summary>
+            出生年月非婴儿，请核实！
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_CARDNO">
+            <summary>
+            此记录编号未添加证件号码，加入后请重新导入PNR记录编号
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PARSE_PRICE_FAIL">
+            <summary>
+            获取价格PAT指令返回结果解析失败
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.PARSE_FAIL">
+            <summary>
+            Eterm指令返回结果解析失败
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_TICKET">
+            <summary>
+            票号不存在
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.TICKET_NOT_FOUND">
+            <summary>
+            没找到票
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_RECORD">
+            <summary>
+            没有记录
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.FIRST_INITIALISE_REQUEST">
+            <summary>
+            请先初始化请求对象
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_QUERY_CONDITION_OF_TICKETBYBIGPNR">
+            <summary>
+            请先设置查询条件：航班号FlightNo、出发城市SCity以及到达城市ECity
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.SELFDEFINE_ERROR_MESSAGE">
+            <summary>
+            自定义错误信息
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_AVH_REQUEST_PARAM">
+            <summary>
+            请给AVH指令传具有正确格式的请求参数值，如：出发城市三字码SCity传入格式如SHE、到达城市三字码ECity传入格式如PEK、航司Airline传入格式如CA
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_AVH_RESULT">
+            <summary>
+            AVH指令返回结果格式不正确
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_PERMISSION_CHECK_AVNUMBER">
+            <summary>
+            很抱歉，您没有权限查看舱位剩余可订数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NO_CHECK_HISTORY_AVNUMBER">
+            <summary>
+            很抱歉，不能查询到历史起飞日期的舱位剩余可订数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.ONLY_CHECK_WITHINONEYEAR_AVNUMBER">
+            <summary>
+            很抱歉，只能查询到起飞日期在1年内的舱位剩余可订数
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.INVALID_AV_RESULT">
+            <summary>
+            AV指令返回结果格式不正确
+            </summary>
+        </member>
+        <member name="F:JetermEntity.EtermCommand.ERROR.NOSHOW_CARBIN_NUMBER">
+            <summary>
+            很抱歉，指令返回结果中没有显示舱位可订数
+            </summary>
+        </member>
+        <member name="T:JetermEntity.EtermConfig">
+            <summary>
+            Eterm配置模型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.IsSSL">
+            <summary>
+            是否加密连接
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.AutoSI">
+            <summary>
+            是否自动SI
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.Port">
+            <summary>
+            服务器端口
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.Interval">
+            <summary>
+            指令间隔(毫秒)
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.MaxCount">
+            <summary>
+            最大使用配置流量
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.Count">
+            <summary>
+            当前当月流量
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.UserName">
+            <summary>
+            配置用户名
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.PassWord">
+            <summary>
+            配置密码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.ServerIP">
+            <summary>
+            服务器地址
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.SI">
+            <summary>
+            SI
+            </summary>
+        </member>
+        <member name="P:JetermEntity.EtermConfig.KeepAlive">
+            <summary>
+            保持连接（心跳包）
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Flight">
+            <summary>
+            航班信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.Airline">
+            <summary>
+            航司
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.Cabin">
+            <summary>
+            舱位
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.SubCabin">
+            <summary>
+            子舱位
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.SCity">
+            <summary>
+            出发城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.ECity">
+            <summary>
+            到达城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.DepTerminal">
+            <summary>
+            出发航站楼
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.ArrTerminal">
+            <summary>
+            到达航站楼
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.DepDate">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.ArrDate">
+            <summary>
+            到达时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.PNRState">
+            <summary>
+            各航段的PNR当前状态
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.DepDateString">
+            <summary>
+            起飞日期（string类型）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Flight.TicketStatus">
+            <summary>
+            各航段的客票状态（存的是枚举值）
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.ParserBase`2">
+            <summary>
+            通用解析方法基类
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="R"></typeparam>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserBase`2.ParseCmd(`0)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>
+            <returns>若请求参数验证通过，则返回Eterm指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserBase`2.ParseCmdResult(System.String)">
+            <summary>
+            解析Eterm指令返回结果
+            </summary>
+            <param name="cmdResult">Eterm指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.AV.ParseCmd(JetermEntity.Request.AV)">
+            <summary>
+            获得AV指令返回结果
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回AV指令（即：【AV:{航班号}/{起飞日期}】指令）；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.AV.ParseCmdResult(System.String)">
+            <summary>
+            解析AV指令（即：【AV:{航班号}/{起飞日期}】指令）返回结果
+            </summary>
+            <param name="cmdResult">AV指令（即：【AV:{航班号}/{起飞日期}】指令）返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="P:JetermEntity.Parser.AV.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.AVH.ParseCmd(JetermEntity.Request.AVH)">
+            <summary>
+            获得AVH指令返回结果
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回AVH指令（即：【AVH/{出发城市三字码}{到达城市三字码}/{起飞日期}/{航司}】指令）；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.AVH.ParseCmdResult(System.String)">
+            <summary>
+            解析AVH指令（即：【AVH/{出发城市三字码}{到达城市三字码}/{起飞日期}/{航司}】指令）返回结果
+            </summary>
+            <param name="cmdResult">AVH指令（即：【AVH/{出发城市三字码}{到达城市三字码}/{起飞日期}/{航司}】指令）返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="P:JetermEntity.Parser.AVH.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.Booking">
+            <summary>
+            解析订位SS指令
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.#ctor">
+            <summary>
+            构造订位SS指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.ParseCmd(JetermEntity.Request.Booking)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回订位SS指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.ParseCmdResult(System.String)">
+            <summary>
+            解析订位指令返回结果
+            </summary>
+            <param name="cmdResult">订位指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.GetHeadCommandLine(JetermEntity.Request.Booking,JetermEntity.Flight)">
+            <summary>
+            获得【起飞信息】和【返回信息】输入命令行
+            </summary>
+            <param name="request"></param>
+            <param name="sFlight">起飞信息</param>     
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.GetSecondCommandLine(JetermEntity.Request.Booking,JetermEntity.Flight,System.Collections.Generic.List{System.String})">
+            <summary>
+            获得以下输入命令行：
+            1、预订人名输入命令行
+            2、以【SSR FOID YY HK/NI】或【SSR FOID {0} HK/NI】开头的那些命令行       
+            3、可能出现的以【OSI HU CKIN SSAC/S{0}】开头的那些命令行
+            4、如果为儿童订票，则出现以【SSR CHLD {航司如MU} HK1/{儿童出生日期如10JUL12}/P{第几位儿童乘客如1}】那些命令行
+            </summary>
+            <param name="request">请求对象</param>
+            <param name="sFlight">返程信息</param>
+            <param name="commandLineList"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.GetCurrentName(System.String,System.Int32@)">
+            <summary>
+            获得单个姓名输入命令
+            </summary>
+            <param name="name">当前乘客姓名</param>
+            <param name="length">用于决定预订名命令行是否换行的度量器</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.ValidBookResult(System.String)">
+            <summary>
+            验证预订命令。若验证通过，则获得Pnr。
+            </summary>
+            <param name="cmdResult">预订命令返回结果</param>      
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Booking.SetWaitState(System.String)">
+            <summary>
+            根据判断条件设置等待订位标识
+            </summary>
+            <param name="cmdResult"></param>
+        </member>
+        <member name="P:JetermEntity.Parser.Booking.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.Booking.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.CancelPnr">
+            <summary>
+            解析擦编码XEPNR指令
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.CancelPnr.#ctor">
+            <summary>
+            构造擦编码XEPNR指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.CancelPnr.ParseCmd(JetermEntity.Request.CancelPnr)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回擦编码XEPNR指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.CancelPnr.ParseCmdResult(System.String)">
+            <summary>
+            解析擦编码XEPNR指令返回结果
+            </summary>
+            <param name="cmdResult">擦编码XEPNR指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="P:JetermEntity.Parser.CancelPnr.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.CancelPnr.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.GetPrice">
+            <summary>
+            解析获取价格PAT指令
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.#ctor">
+            <summary>
+            构造获取价格PAT指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.ParseCmd(JetermEntity.Request.GetPrice)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回获取价格PAT指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.ParseCmdResult(System.String)">
+            <summary>
+            解析获取价格PAT指令返回结果
+            </summary>
+            <param name="cmdResult">获取价格PAT指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.GetFacePriceList(System.String,JetermEntity.Flight)">
+            <summary>
+            获取儿童票/成人票的票面价（列表）
+            </summary>
+            <param name="priceResult"></param>  
+            <param name="firstFlight"></param>  
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.GetTaxFuelTotal(System.String,JetermEntity.Flight)">
+            <summary>
+            获得儿童往返票/儿童联程票/儿童单程票/成人往返票/成人联程票/成人单程票的机建费、燃油税和总价（列表）
+            </summary>
+            <param name="priceCmdResult"></param>
+            <param name="firstFlight"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.ReTax(System.String[],System.String)">
+            <summary>
+            获得ReTax
+            </summary>
+            <param name="str"></param>
+            <param name="seaStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.GetTaxFuelTotal(System.String,System.String,JetermEntity.Price)">
+            <summary>
+            获得成人单程票的机建费、燃油税和总价
+            </summary>
+            <param name="currentTax"></param>
+            <param name="currentFuel"></param>
+            <param name="price"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.GetAirportAndFuelPrice(System.String,System.String,System.Int32,JetermEntity.Price)">
+            <summary>
+            获得成人单程票的机建费和燃油税
+            </summary>
+            <param name="priceResult"></param>
+            <param name="priceRegexExpression"></param>
+            <param name="index"></param>
+            <param name="price"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.GetPrice.ReNum(System.String[],System.String,System.Boolean)">
+            <summary>
+            获得第2条价格记录的开始位置
+            </summary>
+            <param name="str"></param>
+            <param name="seaStr"></param>
+            <param name="decide">true为等于、false为包含</param>
+            <returns></returns>
+        </member>
+        <member name="P:JetermEntity.Parser.GetPrice.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.GetPrice.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.Rmk">
+            <summary>
+            解析授权RMK TJ AUTH指令
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.Rmk.#ctor">
+            <summary>
+            构造授权RMK TJ AUTH指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.Rmk.ParseCmd(JetermEntity.Request.Rmk)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回授权RMK TJ AUTH指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Rmk.ParseCmdResult(System.String)">
+            <summary>
+            解析授权RMK TJ AUTH指令返回结果
+            </summary>
+            <param name="cmdResult">授权RMK TJ AUTH指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.Rmk.IsSuccessRMK(System.String,System.String@)">
+            <summary>
+            是否授权成功
+            </summary>
+            <param name="cmdResult">授权命令返回结果</param>     
+            <param name="newPnr"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JetermEntity.Parser.Rmk.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.Rmk.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.SeekPNR">
+            <summary>
+            解析提取编码RT指令
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.#ctor">
+            <summary>
+            构造提取编码RT指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.ParseCmd(JetermEntity.Request.SeekPNR)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回提取编码RT指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.ParseCmdResult(System.String)">
+            <summary>
+            解析RT指令返回结果
+            </summary>
+            <param name="cmdResult">RT指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetAdultOrChdName(System.String)">
+            <summary>
+            获得成人/儿童乘客姓名，并设置guestNumber
+            </summary>
+            <param name="rtResult"></param>   
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetBabyInfo(System.String)">
+            <summary>
+            获得婴儿乘客姓名、姓名拼音、出生日期以及婴儿总数
+            </summary>
+            <param name="rtResult"></param>   
+            <returns></returns>     
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetAdultInfo(System.String)">
+            <summary>
+            获得各成人/儿童乘客的ID号、ID类型、票号以及姓名拼音
+            </summary>
+            <param name="rtResult"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetChildBirthday(System.String)">
+            <summary>
+            获得儿童出生日期
+            </summary>
+            <param name="rtResult"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetTicketNoAndEName">
+            <summary>
+            获得各成人/儿童乘客的票号、姓名拼音
+            </summary>        
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.IsChild(System.String,System.String)">
+            <summary>
+            成人、儿童、婴儿验证
+            </summary>
+            <param name="rtResult"></param>
+            <param name="flightNo">航班号</param>      
+            <returns></returns>       
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetSEDatetime(System.String[],JetermEntity.Flight)">
+            <summary>
+            获得起飞日期时间和到达日期时间，格式如：24OCT2021
+            </summary>
+            <param name="cutInfo"></param>
+            <param name="flight"></param>    
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetFlightInfo(System.String[],System.String,JetermEntity.Flight)">
+            <summary>
+            获得航班号、舱位代码、出发日期时间、到达日期时间、出发城市三字代码、到达城市三字代码以及航站楼这些航班信息
+            </summary>
+            <param name="cutInfo"></param>
+            <param name="info"></param>
+            <param name="flight"></param>    
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.SetLianCheng(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            分别获得第3段和第4段航班信息
+            </summary>
+            <param name="rtResult"></param>
+            <param name="num04"></param>
+            <param name="num05"></param>
+            <param name="num06"></param>    
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.SeekPNR.GetRMKOfficeNoList(System.String)">
+            <summary>
+            获取授权OFFICE号（可能有多个）
+            </summary>
+            <param name="rtResult"></param>    
+        </member>
+        <member name="P:JetermEntity.Parser.SeekPNR.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.SeekPNR.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetBigPNR(System.String)">
+            <summary>
+            获得大编码号
+            </summary>
+            <param name="rtResult"></param> 
+            <return></return>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.ValidRTResult(System.String,System.String,JetermEntity.EtermCommand.PassengerType)">
+            <summary>
+            验证RT命令返回结果
+            </summary>
+            <param name="data"></param>    
+            <param name="pnrInput"></param> 
+            <param name="passengeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetNewPnr(System.String,System.String@)">
+            <summary>
+            验证订位指令返回结果。
+            </summary>
+            <param name="bookingCmdResult">订位指令返回结果</param>
+            <param name="newPnr">若验证通过，则获得订位后的PNR。</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.ConvertDateTimeToString(System.DateTime)">
+            <summary>
+            日期类型转化为string类型，格式如05AUG15
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetAge(System.DateTime,System.DateTime)">
+            <summary>
+            计算实际年龄
+            </summary>
+            <param name="birthday"></param>
+            <param name="nowTime"></param>
+            <returns>实际年龄</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.TrimCHD(System.String)">
+            <summary>
+            去除儿童姓名中包含的“CHD”      
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.FilterSqlSpecial(System.String)">
+            <summary>
+            过滤SQL敏感字符
+            </summary>
+            <param name="inputText">要特殊过滤的字符串</param>
+            <returns>过滤后的字符串</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetValidBookSeatMobile(System.String)">
+            <summary>
+            获得符合Eterm订位指令格式要求的Mobile
+            </summary>
+            <param name="mobile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.SortChinese(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            对中文进行排序
+            </summary>
+            <param name="strs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetLengthOfString(System.String)">
+            <summary>
+            获取字符串长度
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetEnMonth(System.String)">
+            <summary>
+            获取英文月份名
+            </summary>
+            <param name="monthNumber">由数字字符组成的月份名</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetEnMonth(System.Int32)">
+            <summary>
+            获取英文月份名
+            </summary>
+            <param name="month"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetNumMonth(System.String)">
+            <summary>
+            获取数字字符月份
+            </summary>
+            <param name="monthString">英文型月份</param>
+            <returns>返回数字字符月份</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.CheckFilghtTime(System.String)">
+            <summary>
+            修正航班起飞时间、到达时间
+            <para>修正到达时间里面类似"120."的错误问题</para>   
+            </summary>
+            <param name="timeStr">格式：HHmm(有可能会有"120.","12"的错误格式)，长度必须是2、4位，否则不处理</param>
+            <returns>正确的时间格式</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.ConvertStringToDateTime(System.String)">
+            <summary>
+            格式化处理
+            </summary>
+            <param name="EtermDate"></param>     
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetTicketStatusAndSaveTime(System.String,JetermEntity.EtermCommand.TicketStatus@)">
+            <summary>
+            获得客票状态 以及 根据客票状态来决定是否设置永久缓存
+            </summary>
+            <param name="value"></param>     
+            <param name="ticketStatusResult"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.CheckData(System.String,System.Collections.Generic.IList{System.String})">
+            <summary>
+            判断文本中是否包含特定关键字，用于判断文本是否符合规范。符合规范的文本才会被解析。
+            </summary>
+            <param name="data">文本内容</param>
+            <param name="keys">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.IsTeam(System.String,System.Int32@,System.Boolean@)">
+             <summary>
+             判断是否是团队，并设置guestNumber初始值
+             </summary>
+             <param name="rtResult"></param>
+             <param name="guestNumber"></param>
+            <param name="isTeam"></param>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.RepalceYear(System.String)">
+            <summary>
+            兼容 SA30MAR13PEKCSX 中带有年份的问题
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetTerminal(System.String,JetermEntity.Flight)">
+            <summary>
+            获得航站楼信息
+            </summary>
+            <param name="terminalInfo"></param>
+            <param name="flight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.ConvertToPinYin(System.String)">
+            <summary>
+            中文转换成拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.ConvertToPinYin(System.Char[])">
+            <summary>
+            字符转换成拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.GetChinese(System.String)">
+            <summary>
+            获取中文字符
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JetermEntity.Parser.ParserHelper.ConvertStringToTicketStatusEnum(System.String)">
+            <summary>
+            Ticket Status对应的字符串转成对应的Enum
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:JetermEntity.Parser.ParserHelper.Month">
+            <summary>
+            月份枚举
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.JAN">
+            <summary>
+            一月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.FEB">
+            <summary>
+            二月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.MAR">
+            <summary>
+            三月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.APR">
+            <summary>
+            四月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.MAY">
+            <summary>
+            五月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.JUN">
+            <summary>
+            六月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.JUL">
+            <summary>
+            七月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.AUG">
+            <summary>
+            八月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.SEP">
+            <summary>
+            九月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.OCT">
+            <summary>
+            十月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.NOV">
+            <summary>
+            十一月
+            </summary>
+        </member>
+        <member name="F:JetermEntity.Parser.ParserHelper.Month.DEC">
+            <summary>
+            十二月
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.ParserHelper.ChinesePinYin">
+            <summary>
+            内部类
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.ParserHelper.ChinesePinYin.Key">
+            <summary>
+            未转换前字符串
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.ParserHelper.ChinesePinYin.Value">
+            <summary>
+            转换后字符串
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Passenger">
+            <summary>
+            乘机人
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.name">
+            <summary>
+            乘机人姓名
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.idtype">
+            <summary>
+            证件类型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.cardno">
+            <summary>
+            证件号码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.PassType">
+            <summary>
+            乘客类型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.Ename">
+            <summary>
+            乘客名拼音（婴儿）使用
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.BabyBirthday">
+            <summary>
+            婴儿出生日期
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.ChildBirthday">
+            <summary>
+            儿童出生日期
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Passenger.TicketNo">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Price">
+            <summary>
+            基础运价
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Price.FacePrice">
+            <summary>
+            票面价
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Price.Tax">
+            <summary>
+            机建费
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Price.Fuel">
+            <summary>
+            燃油税
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Price.TotalPrice">
+            <summary>
+            总价
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Price.Tag">
+            <summary>
+            价格标识
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.AutoTicket">
+            <summary>
+            自动出票请求模型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AutoTicket.Config">
+            <summary>
+            配置名称
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.AV">
+            <summary>
+            某航班的各航线的各舱位剩余可订数请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AV.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AV.DepDate">
+            <summary>
+            起飞日期
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.AVH">
+            <summary>
+            某航司的各直达航线的各舱位剩余可订数请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AVH.SCity">
+            <summary>
+            出发城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AVH.ECity">
+            <summary>
+            到达城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AVH.DepDate">
+            <summary>
+            起飞日期
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AVH.Airline">
+            <summary>
+            航司
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AVH.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.AVH.Carbin">
+            <summary>
+            舱位
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.Booking">
+            <summary>
+            订位请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.FlightList">
+            <summary>
+            航线信息列表（第1项表示起飞信息，若有第2项，则表示返回信息）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.PassengerList">
+            <summary>
+            乘机人信息列表
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.OfficeNo">
+            <summary>
+            保留时限项的Office号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.Mobile">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.PhoneNo">
+            <summary>
+            座机号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.RMKOfficeNoList">
+            <summary>
+            授权Office号列表
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.RMKRemark">
+            <summary>
+            授权备注
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Booking.Pnr">
+            <summary>
+            成人PNR，订儿童票时使用
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.CancelPnr">
+            <summary>
+            擦编码请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.CancelPnr.Pnr">
+            <summary>
+            记录编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.CancelPnr.CancelOut">
+            <summary>
+            是否擦出票的编码
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.GetPrice">
+            <summary>
+            获取价格请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.GetPrice.PassengerType">
+            <summary>
+            编码乘客类型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.GetPrice.FlightType">
+            <summary>
+            Flight Type（O表示单程，F表示往返，T表示联程；默认值为O）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.GetPrice.FlightList">
+            <summary>
+            航线信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Bussiness.IResult`1.state">
+            <summary>
+            是否成功
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Bussiness.IResult`1.result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.AppId">
+            <summary>
+            应用程序标识
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.CacheTime">
+            <summary>
+            取缓存时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.ConfigLevel">
+            <summary>
+            配置级别
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.TimeOut">
+            <summary>
+            请求超时时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.officeNo">
+            <summary>
+            系统OFFICE号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.ConfigName">
+            <summary>
+            配置名称
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Command`1.request">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.Rmk">
+            <summary>
+            授权请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Rmk.Pnr">
+            <summary>
+            记录编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.Rmk.RmkOfficeNoList">
+            <summary>
+            需授权OFFICE号
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.SeekPNR">
+            <summary>
+            提取PNR请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.SeekPNR.Pnr">
+            <summary>
+            记录编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.SeekPNR.PassengerType">
+            <summary>
+            编码乘客类型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.SeekPNR.GetPrice">
+            <summary>
+            是否获取价格
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.SeekPNR.Airline">
+            <summary>
+            航司
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.TicketByBigPnr">
+            <summary>
+            根据大编码获取票号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketByBigPnr.BigPnr">
+            <summary>
+            大编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketByBigPnr.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketByBigPnr.SCity">
+            <summary>
+            出发城市
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketByBigPnr.ECity">
+            <summary>
+            到达城市
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.TicketInfo">
+            <summary>
+            获取票号 DETR:TN 请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketInfo.TicketNo">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.TicketInfoByF">
+            <summary>
+            获取票号 DETR:TN,F 请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketInfoByF.TicketNo">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.TicketInfoByS">
+            <summary>
+            获取票号 DETR:TN,S 请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketInfoByS.TicketNo">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Request.TicketInfoHis">
+            <summary>
+            获取票号 DETR:TN,H 请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Request.TicketInfoHis.TicketNo">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.AutoTicket">
+            <summary>
+            自动出票返回模型
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.AV">
+            <summary>
+            某航班的各航线的各舱位剩余可订数返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AV.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AV.DepDate">
+            <summary>
+            起飞日期
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AV.TotalJourneyTime">
+            <summary>
+            总飞行时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AV.AVList">
+            <summary>
+            某航班的各航线的各舱位剩余可订数返回对象列表
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AV.ResultBag">
+            <summary>
+            【检查某航班的各航线的各舱位剩余可订数】指令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.AVSingle">
+            <summary>
+            某航班的某航线的各舱位剩余可订数返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.SCity">
+            <summary>
+            出发城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.ECity">
+            <summary>
+            到达城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.STime">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.ETime">
+            <summary>
+            到达时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.EWeek">
+            <summary>
+            到达时星期几
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.FltDuration">
+            <summary>
+            该航线的飞行时长
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.Ground">
+            <summary>
+            该航线的停飞总时长
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.STerminal">
+            <summary>
+            出发航站楼
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.ETerminal">
+            <summary>
+            到达航站楼
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.FlightModel">
+            <summary>
+            机型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.Meal">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.Distance">
+            <summary>
+            该航线的飞行总距离
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.ShareFlight">
+            <summary>
+            共享航班（true表示共享航班，false表示非共享航班；默认值为false）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.ShareFltNo">
+            <summary>
+            共享航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVSingle.CarbinNumList">
+            <summary>
+            舱位剩余可订数列表
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.AVCarbinNumber">
+            <summary>
+            舱位剩余可订数对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVCarbinNumber.Cabin">
+            <summary>
+            舱位
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVCarbinNumber.NumTag">
+            <summary>
+            舱位数代码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVCarbinNumber.NumStr">
+            <summary>
+            剩余可订数（string类型）
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.AVH">
+            <summary>
+            某航司的各直达航线的各舱位剩余可订数返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVH.DepDate">
+            <summary>
+            起飞日期
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVH.AVHList">
+            <summary>
+            某航司的各直达航线的各舱位剩余可订数返回对象列表
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVH.ResultBag">
+            <summary>
+            【检查某航司的各直达航线的各舱位剩余可订数】指令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.AVHSingle">
+            <summary>
+            某航班的直达航线的各舱位剩余可订数对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.Number">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.ShareFlight">
+            <summary>
+            共享航班（true表示共享航班，false表示非共享航班；默认值为false）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.ShareFltNoList">
+            <summary>
+            共享航班号列表
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.FlightModel">
+            <summary>
+            机型
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.SCity">
+            <summary>
+            出发城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.ECity">
+            <summary>
+            到达城市三字码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.STime">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.ETime">
+            <summary>
+            到达时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.DepTerminal">
+            <summary>
+            出发航站楼
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.ArrTerminal">
+            <summary>
+            到达航站楼
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.FltDuration">
+            <summary>
+            飞行总时长
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.AVHSingle.CarbinNumList">
+            <summary>
+            舱位剩余可订数列表
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.CarbinNumber">
+            <summary>
+            舱位剩余可订数对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CarbinNumber.Cabin">
+            <summary>
+            舱位
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CarbinNumber.NumTag">
+            <summary>
+            舱位数代码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CarbinNumber.NumStr">
+            <summary>
+            剩余可订数（string类型）
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.Booking">
+            <summary>
+            订位返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.Pnr">
+            <summary>    
+            订位编码 
+             </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.OfficeNo">
+             <summary>
+            订位Office号
+             </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.BookingState">
+            <summary>
+            根据编码状态返回占座是否成功
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.BigPNR">
+            <summary>
+            大编码号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.Command">
+            <summary>
+            订单执行的SS指令
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.ResultBag">
+            <summary>
+            订位命令返回结果
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Booking.RTResultBag">
+            <summary>
+            RT命令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.CancelPnr">
+            <summary>
+            插编码返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CancelPnr.IsSuccess">
+            <summary>
+            是否擦成功
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.GetPrice">
+            <summary>
+            获取价格返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.GetPrice.PriceList">
+            <summary>
+            基本运价
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.CommandResult`1">
+            <summary>
+            Eterm结果集
+            </summary>
+            <typeparam name="T">业务参数</typeparam>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.state">
+            <summary>
+            状态 成功或失败
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.error">
+            <summary>
+            错误原因
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.config">
+            <summary>
+            配置名称
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.OfficeNo">
+            <summary>
+            OFFICE号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.result">
+            <summary>
+            结果集
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.reqtime">
+            <summary>
+            请求时间
+            此时间为第一次请求黑屏时间，用于缓存时不包括此时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.SaveTime">
+            <summary>
+            缓存时间
+            此时间用于缓存结果时的时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.CommandResult`1.ServerUrl">
+            <summary>
+            JEterm Server地址
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.Rmk">
+            <summary>
+            授权返回结果
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.Rmk.IsSuccess">
+            <summary>
+            是否授权成功
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.SeekPNR">
+            <summary>
+            提取PNR返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.PassengerList">
+            <summary>
+            乘机人
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.PNR">
+            <summary>
+            PNR记录编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.FlightList">
+            <summary>
+            航班信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.ShareFlight">
+            <summary>
+            共享航班（true表示共享航班，false表示非共享航班；默认值为false）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.FlightType">
+            <summary>
+            Flight Type（O表示单程，F表示往返，T表示联程；默认值为O）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.RMKOfficeNoList">
+            <summary>
+            授权的OFFICE号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.BigPNR">
+            <summary>
+            大编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.Mobile">
+            <summary>
+            联系电话，CTCT项
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.PhoneNo">
+            <summary>
+            座机号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.OfficeNo">
+            <summary>
+            OfficeNo
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.AdultPnr">
+            <summary>
+            儿童监管人的PNR
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.PriceList">
+            <summary>
+            基本运价
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.SeekPNR.ResultBag">
+            <summary>
+            RT、PAT命令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.TicketByBigPnr">
+            <summary>
+            根据大编码获取票号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketByBigPnr.PassengerList">
+            <summary>
+            乘客集合（信息包括姓名、票号、证件号）
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketByBigPnr.FlightList">
+            <summary>
+            航班信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketByBigPnr.Price">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketByBigPnr.TicketStatus">
+            <summary>
+            客票状态
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketByBigPnr.ResultBag">
+            <summary>
+            TicketByBigPnr命令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.TicketInfo">
+            <summary>
+            获取票号 DETR:TN 返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfo.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfo.FlightList">
+            <summary>
+            航班信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfo.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfo.BigPnr">
+            <summary>
+            大编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfo.LianChengTicketList">
+            <summary>
+            联程票List
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfo.ResultBag">
+            <summary>
+            TicketInfo命令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.TicketInfoByF">
+            <summary>
+            获取票号 DETR:TN,F 返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByF.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByF.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByF.PassengerCardNo">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByF.IsSchedule">
+            <summary>
+            是否打印行程单
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.TicketInfoByS">
+            <summary>
+            获取票号 DETR:TN,S 返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByS.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByS.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByS.Price">
+            <summary>
+            价格
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByS.FlightList">
+            <summary>
+            航班信息
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByS.TicketStatus">
+            <summary>
+            客票状态
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoByS.ResultBag">
+            <summary>
+            TicketInfoByS命令返回结果
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Response.TicketInfoHis">
+            <summary>
+            获取票号 DETR:TN,H 返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoHis.TicketNo">
+            <summary>
+            票号/编码
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoHis.PassengerName">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoHis.CancelTime">
+            <summary>
+            取位时间
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Response.TicketInfoHis.IsSchedule">
+            <summary>
+            是否打印行程单
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.TicketByBigPnr">
+            <summary>
+            解析根据大编码号获取票号指令（即：解析【DETR:CN/{大编码号},C】指令）
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketByBigPnr.#ctor">
+            <summary>
+            构造根据大编码号获取票号指令（即：解析【DETR:CN/{大编码号},C】指令）返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketByBigPnr.ParseCmd(JetermEntity.Request.TicketByBigPnr)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回根据大编码号获取票号指令（即：解析【DETR:CN/{大编码号},C】指令）；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketByBigPnr.ParseCmdResult(System.String)">
+            <summary>
+            解析根据大编码号获取票号指令（即：解析【DETR:CN/{大编码号},C】指令）返回结果
+            </summary>
+            <param name="cmdResult">获取根据大编码号获取票号指令（即：解析【DETR:CN/{大编码号},C】指令）返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketByBigPnr.MatchFlightInfo(System.String)">
+            <summary>
+            获得第1种返回结果中的航班信息
+            </summary>
+            <param name="detrInfo"></param>   
+            <returns></returns>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketByBigPnr.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketByBigPnr.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketByBigPnr.FlightNo">
+            <summary>
+            航班查询条件
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketByBigPnr.SCity">
+            <summary>
+            出发城市三字码查询条件
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketByBigPnr.ECity">
+            <summary>
+            到达cha
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.TicketInfo">
+            <summary>
+            解析获取票号信息指令（即：解析【DETR:TN/{票号}】指令）
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfo.#ctor">
+            <summary>
+            构造获取票号信息指令（即：解析【DETR:TN/{票号}】指令）返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfo.ParseCmd(JetermEntity.Request.TicketInfo)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回获取票号信息指令（即：解析【DETR:TN/{票号}】指令）；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfo.ParseCmdResult(System.String)">
+            <summary>
+            解析获取票号信息指令（即：解析【DETR:TN/{票号}】指令）返回结果
+            </summary>
+            <param name="cmdResult">获取获取票号信息指令（即：解析【DETR:TN/{票号}】指令）返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfo.AnalysizeLianChengTicket(System.String,System.String)">
+            <summary>
+            解析联程票号
+            </summary>
+            <param name="data"></param>
+            <param name="ticketNo"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketInfo.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketInfo.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <member name="T:JetermEntity.Parser.TicketInfoByF">
+            <summary>
+            解析【DETR:TN/{票号},F】指令
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByF.#ctor">
+            <summary>
+            构造【DETR:TN/{票号},F】指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByF.ParseCmd(JetermEntity.Request.TicketInfoByF)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回【DETR:TN/{票号},F】指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByF.ParseCmdResult(System.String)">
+            <summary>
+            解析【DETR:TN/{票号},F】指令返回结果
+            </summary>
+            <param name="cmdResult">获取【DETR:TN/{票号},F】指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketInfoByF.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketInfoByF.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+        <!-- 对于成员“T:JetermEntity.Parser.TicketInfoByS”忽略有格式错误的 XML 注释 -->
+        <member name="M:JetermEntity.Parser.TicketInfoByS.#ctor">
+            <summary>
+            构造【DETR:TN/{票号},S】指令返回对象
+            </summary>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByS.ParseCmd(JetermEntity.Request.TicketInfoByS)">
+            <summary>
+            解析请求对象
+            </summary>
+            <param name="request">请求对象</param>  
+            <returns>若请求参数验证通过，则返回【DETR:TN/{票号},S】指令；否则返回为空。</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByS.ParseCmdResult(System.String)">
+            <summary>
+            解析【DETR:TN/{票号},S】指令返回结果
+            </summary>
+            <param name="cmdResult">获取【DETR:TN/{票号},S】指令返回结果</param>
+            <returns>解析结果对象</returns>
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByS.GetPrice(System.String)">
+            <summary>
+            获得价格
+            </summary>
+            <param name="etermApiResult"></param>  
+        </member>
+        <member name="M:JetermEntity.Parser.TicketInfoByS.GetFlight(System.String)">
+            <summary>
+            获得航班信息，包括出发城市三字码、到达城市三字码、出发日期、起飞日期、航班号、航司以及舱位
+            </summary>
+            <param name="etermApiResult"></param>     
+        </member>
+        <member name="P:JetermEntity.Parser.TicketInfoByS.Request">
+            <summary>
+            请求对象
+            </summary>
+        </member>
+        <member name="P:JetermEntity.Parser.TicketInfoByS.Response">
+            <summary>
+            返回对象
+            </summary>
+        </member>
+    </members>
+</doc>

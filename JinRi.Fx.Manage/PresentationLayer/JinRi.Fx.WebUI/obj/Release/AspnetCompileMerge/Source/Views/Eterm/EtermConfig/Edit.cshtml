@@ -1,0 +1,116 @@
+﻿@model JinRi.Fx.Entity.EtermConfig
+@using System.Collections.Generic;
+@using JinRi.Fx.Entity;
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+    Dictionary<int, string> cmdTypeData = ViewBag.CmdTypeData;
+    List<AirCom> airComList = ViewBag.AirComData;
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped" style="height:950px;">
+    <div class="row-fluid">
+        <div class="control-group">
+            <label class="control-label"><span class="required">*</span>服务器路径：</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.ServerUrl, new { @class = "m-wrap", @style = "width:200px;" })
+                @Html.Hidden("ConfigID", Model.ConfigID)
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ServerUrl)</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">OFFICE号：</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.OfficeNo, new { @class = "m-wrap", @style = "width:150px;" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">支持功能：</label>
+            <div class="controls">
+                @Html.CheckBox("chkAll", false) 全选
+                <br />
+                @foreach (var key in cmdTypeData.Keys)
+                {
+                    <div style="width:120px; float:left;"><input type="checkbox" name="chkItem" id="chkItem" value="@key" checked="@Model.ConfigType.Contains(key+",")" />@cmdTypeData[key]</div>
+                }
+                <br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">状态：</label>
+            <div class="controls">
+                @Html.DropDownList("ModelState", null, new { @style = "width:135px" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ConfigState)</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">配置级别：</label>
+            <div class="controls">
+                @Html.DropDownList("ConfigLevelData", null, new { @style = "width:135px" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.ConfigLevel)</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">支持航司：</label>
+            <div class="controls">
+                @Html.CheckBox("chkAllAllowAirCom", false) 全选
+                <br />
+                @foreach (var item in airComList)
+                {
+                    <div style="width:120px; float:left;"><input type="checkbox" name="chkAllowAirComItem" id="chkAllowAirComItem" checked="@Model.AllowAirLine.Contains(item.AirComE)" value="@item.AirComE" />@item.AircomC</div>
+                }
+                <br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">排除航司：</label>
+            <div class="controls">
+                @Html.CheckBox("chkAllDenyAirCom", false) 全选
+                <br />
+                @foreach (var item in airComList)
+                {
+                    <div style="width:120px; float:left;"><input type="checkbox" name="chkDenyAirComItem" id="chkDenyAirComItem" checked="@Model.DenyAirLine.Contains(item.AirComE )" value="@item.AirComE" />@item.AircomC</div>
+                }
+                <br />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">备注：</label>
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Remark, new { @class = "m-wrap", @style = "width:300px;height:50px;" })
+                <span class="help-inline">@Html.ValidationMessageFor(m => m.Remark)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+}
+
+
+@section PageSpecificJavascriptIncludes{
+    <script type="text/javascript">
+        $(function () {
+            $("#chkAll").click(function () {
+                var ischecked = this.checked;
+                $("input:checkbox[id^='chkItem']").each(function () {
+                    this.checked = ischecked;
+                }); 
+            });
+
+            $("#chkAllAllowAirCom").click(function () {
+                var ischecked = this.checked;
+                $("input:checkbox[id^='chkAllowAirComItem']").each(function () {
+                    this.checked = ischecked;
+                });
+            });
+
+            $("#chkAllDenyAirCom").click(function () {
+                var ischecked = this.checked;
+                $("input:checkbox[id^='chkDenyAirComItem']").each(function () {
+                    this.checked = ischecked;
+                });
+            });
+        });
+    </script>
+}

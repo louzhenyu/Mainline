@@ -1,0 +1,129 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{485B15BF-07AE-4E6B-932E-891096A81561}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{E8B18EB2-C089-4CF5-AFA3-9934045F2915}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataLayer", "DataLayer", "{8F4833BF-40F5-4CB4-95E8-A97B54D2A1DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLayer", "BusinessLayer", "{55287481-7314-4A9D-AE96-259E4B753BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityLayer", "EntityLayer", "{658363DE-9A15-4B9F-B4F4-79042F28BA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.WebUI", "PresentationLayer\JinRi.Fx.WebUI\JinRi.Fx.WebUI.csproj", "{337A3FFD-FF3F-42DA-BFF2-D03B11D4C328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Entity", "EntityLayer\JinRi.Fx.Entity\JinRi.Fx.Entity.csproj", "{466E29A8-6357-404C-B5F9-AD0254A9F0DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Logic", "BusinessLayer\JinRi.Fx.Logic\JinRi.Fx.Logic.csproj", "{19BD1B13-2776-4708-8EA8-3651B55513EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Data", "DataLayer\JinRi.Fx.Data\JinRi.Fx.Data.csproj", "{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Utility", "CommonLayer\JinRi.Fx.Utility\JinRi.Fx.Utility.csproj", "{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.Web", "PresentationLayer\JinRi.Fx.Web\JinRi.Fx.Web.csproj", "{08109853-133D-4772-B5C2-46C0CDED87C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceDll", "ReferenceDll", "{3FDD7D50-4D0A-4CC7-95B0-DC19267EA248}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceDll\JZooKeeperNet.dll = ReferenceDll\JZooKeeperNet.dll
+		ReferenceDll\MvcPager.dll = ReferenceDll\MvcPager.dll
+		ReferenceDll\System.Web.Mvc.dll = ReferenceDll\System.Web.Mvc.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.RequestDTO", "JinRi.Fx.RequestDTO\JinRi.Fx.RequestDTO.csproj", "{2399FDDD-E77D-4BC4-A7D6-645751EF21BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinRi.Fx.ResponseDTO", "JinRi.Fx.ResponseDTO\JinRi.Fx.ResponseDTO.csproj", "{6D7B2BFA-B38A-420A-8AEC-91004D762E72}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.2.36:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EntityLayer\\JinRi.Fx.Entity\\JinRi.Fx.Entity.csproj
+		SccProjectTopLevelParentUniqueName1 = JinRi.Fx.Manage.sln
+		SccProjectName1 = EntityLayer/JinRi.Fx.Entity
+		SccLocalPath1 = EntityLayer\\JinRi.Fx.Entity
+		SccProjectUniqueName2 = PresentationLayer\\JinRi.Fx.WebUI\\JinRi.Fx.WebUI.csproj
+		SccProjectTopLevelParentUniqueName2 = JinRi.Fx.Manage.sln
+		SccProjectName2 = PresentationLayer/JinRi.Fx.WebUI
+		SccLocalPath2 = PresentationLayer\\JinRi.Fx.WebUI
+		SccProjectUniqueName3 = PresentationLayer\\JinRi.Fx.Web\\JinRi.Fx.Web.csproj
+		SccProjectTopLevelParentUniqueName3 = JinRi.Fx.Manage.sln
+		SccProjectName3 = PresentationLayer/JinRi.Fx.Web
+		SccLocalPath3 = PresentationLayer\\JinRi.Fx.Web
+		SccProjectUniqueName4 = CommonLayer\\JinRi.Fx.Utility\\JinRi.Fx.Utility.csproj
+		SccProjectTopLevelParentUniqueName4 = JinRi.Fx.Manage.sln
+		SccProjectName4 = CommonLayer/JinRi.Fx.Utility
+		SccLocalPath4 = CommonLayer\\JinRi.Fx.Utility
+		SccProjectUniqueName5 = DataLayer\\JinRi.Fx.Data\\JinRi.Fx.Data.csproj
+		SccProjectTopLevelParentUniqueName5 = JinRi.Fx.Manage.sln
+		SccProjectName5 = DataLayer/JinRi.Fx.Data
+		SccLocalPath5 = DataLayer\\JinRi.Fx.Data
+		SccProjectUniqueName6 = BusinessLayer\\JinRi.Fx.Logic\\JinRi.Fx.Logic.csproj
+		SccProjectTopLevelParentUniqueName6 = JinRi.Fx.Manage.sln
+		SccProjectName6 = BusinessLayer/JinRi.Fx.Logic
+		SccLocalPath6 = BusinessLayer\\JinRi.Fx.Logic
+		SccProjectUniqueName7 = JinRi.Fx.RequestDTO\\JinRi.Fx.RequestDTO.csproj
+		SccProjectTopLevelParentUniqueName7 = JinRi.Fx.Manage.sln
+		SccProjectName7 = JinRi.Fx.RequestDTO
+		SccLocalPath7 = JinRi.Fx.RequestDTO
+		SccProjectUniqueName8 = JinRi.Fx.ResponseDTO\\JinRi.Fx.ResponseDTO.csproj
+		SccProjectTopLevelParentUniqueName8 = JinRi.Fx.Manage.sln
+		SccProjectName8 = JinRi.Fx.ResponseDTO
+		SccLocalPath8 = JinRi.Fx.ResponseDTO
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337A3FFD-FF3F-42DA-BFF2-D03B11D4C328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337A3FFD-FF3F-42DA-BFF2-D03B11D4C328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337A3FFD-FF3F-42DA-BFF2-D03B11D4C328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337A3FFD-FF3F-42DA-BFF2-D03B11D4C328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19BD1B13-2776-4708-8EA8-3651B55513EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08109853-133D-4772-B5C2-46C0CDED87C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08109853-133D-4772-B5C2-46C0CDED87C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08109853-133D-4772-B5C2-46C0CDED87C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08109853-133D-4772-B5C2-46C0CDED87C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2399FDDD-E77D-4BC4-A7D6-645751EF21BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2399FDDD-E77D-4BC4-A7D6-645751EF21BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2399FDDD-E77D-4BC4-A7D6-645751EF21BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2399FDDD-E77D-4BC4-A7D6-645751EF21BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D7B2BFA-B38A-420A-8AEC-91004D762E72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D7B2BFA-B38A-420A-8AEC-91004D762E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D7B2BFA-B38A-420A-8AEC-91004D762E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D7B2BFA-B38A-420A-8AEC-91004D762E72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{337A3FFD-FF3F-42DA-BFF2-D03B11D4C328} = {485B15BF-07AE-4E6B-932E-891096A81561}
+		{08109853-133D-4772-B5C2-46C0CDED87C0} = {485B15BF-07AE-4E6B-932E-891096A81561}
+		{D0EA45BD-0E70-40C8-B623-AD3E2B01F8EC} = {E8B18EB2-C089-4CF5-AFA3-9934045F2915}
+		{72D937DE-E72E-4BE9-AA86-88CDCAD21EB5} = {8F4833BF-40F5-4CB4-95E8-A97B54D2A1DA}
+		{19BD1B13-2776-4708-8EA8-3651B55513EE} = {55287481-7314-4A9D-AE96-259E4B753BD6}
+		{466E29A8-6357-404C-B5F9-AD0254A9F0DA} = {658363DE-9A15-4B9F-B4F4-79042F28BA7C}
+		{2399FDDD-E77D-4BC4-A7D6-645751EF21BD} = {658363DE-9A15-4B9F-B4F4-79042F28BA7C}
+		{6D7B2BFA-B38A-420A-8AEC-91004D762E72} = {658363DE-9A15-4B9F-B4F4-79042F28BA7C}
+	EndGlobalSection
+EndGlobal

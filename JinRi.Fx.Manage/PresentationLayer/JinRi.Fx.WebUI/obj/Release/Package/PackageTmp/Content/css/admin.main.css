@@ -1,0 +1,104 @@
+﻿html, body, div, span, input, p,h1, h2, h3, h4, h5, h6, blockquote, a, abbr, acronym, address, strong, b, u, i, center,dl, dt, dd, ol, ul,td,tr
+{
+    font-family:"Microsoft Yahei","微软雅黑","宋体", "Simsun", "Open Sans";
+}
+
+label { cursor:auto}
+
+.dn { display:none;}
+
+.well { padding:5px;}
+
+.mini { font-size: 13px !important; }
+
+.page-title{margin: 5px 0px 5px 0px;font-size: 18px;}
+
+.dataTables_filter label { margin:5px;}
+
+.table { border-top:3px solid #ccc}
+
+.alert { margin:0px}
+
+.form-horizontal .control-label  { width:100px; }
+.form-horizontal .controls { margin-left:120px; }
+
+.field-validation-error
+{
+    line-height:20px;
+	margin-left:2px;
+	padding-left:16px;
+	color:#f00;
+	background:url(../images/error.png) no-repeat left center;
+	_margin-left:2px;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+input.input-validation-error
+{
+    border-color:#f00;
+}
+
+.validation-summary-errors
+{
+    float:right;
+    color:#f00;
+    width:300px;
+    height:20px;
+    overflow:hidden;
+}
+
+.validation-summary-errors li
+{
+    float:right;
+    margin-left:20px;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+input.price{width:50px}
+input.number{width:30px}
+input.hasDatepicker{width:75px}
+
+h4{border-bottom: 1px solid #EEEEEE;}
+
+.m10 { margin : 10px}
+.p10 {  padding : 10px}
+
+.floatleft { float:left;}
+.floatright  { float:right;}
+
+.gray{color:#666}
+
+.green{color:green}
+
+.blue{color:blue}
+
+.integer {width:30px;}
+
+/*flickr style*/
+div#flickrpager {padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 3px; padding-top: 3px;; text-align: center}
+div#flickrpager a {border: #dedfde 1px solid; padding-right: 6px; background-position: 50% bottom; padding-left: 6px; padding-bottom: 2px;  color: #0061de; margin-right: 3px; padding-top: 2px; text-decoration: none}
+div#flickrpager a:hover {border: #000 1px solid;background-image: none; color: #fff;background-color: #0061de}
+div#flickrpager a:active {border-right: #000 1px solid; border-top: #000 1px solid; background-image: none; border-left: #000 1px solid; color: #fff; border-bottom: #000 1px solid; background-color: #0061de}
+div#flickrpager span.current {padding-right: 6px; padding-left: 6px; font-weight: bold; padding-bottom: 2px; color: #ff0084; margin-right: 3px; padding-top: 2px}
+div#flickrpager a.disabled {padding-right: 6px; padding-left: 6px; padding-bottom: 2px; color: #adaaad; margin-right: 3px; padding-top: 2px}
+
+
+.tooltip-inner {
+  max-width: 200px;
+  padding: 8px;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  background-color: #000000;
+  -webkit-border-radius: 4px !important;
+     -moz-border-radius: 4px !important;
+          border-radius: 4px !important;
+}

@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FX.CTI.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:FX.CTI.Entity.DTO.EmailDTO">
+            <summary>
+            EmailDTO
+            用做RabbitMQ发送端到接收端的通信契约
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailDTO.Id">
+            <summary>
+            Email编号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailDTO.AppId">
+            <summary>
+            应用编号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailDTO.ToAddr">
+            <summary>
+            收件人Email地址
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailDTO.CC">
+            <summary>
+            抄送地址
+            可否为null:是
+            多个地址用","分隔
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailDTO.Subject">
+            <summary>
+            标题
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailDTO.Content">
+            <summary>
+            内容
+            可否为null:否
+            </summary>
+        </member>
+        <member name="T:FX.CTI.Entity.DTO.EmailRequest">
+            <summary>
+            Email请求
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailRequest.AppId">
+            <summary>
+            调用者编号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailRequest.ToAddr">
+            <summary>
+            收件人Email地址
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailRequest.CC">
+            <summary>
+            抄送地址
+            可否为null:是
+            多个地址用","分隔
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailRequest.Subject">
+            <summary>
+            标题
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.EmailRequest.Content">
+            <summary>
+            内容
+            可否为null:否
+            </summary>
+        </member>
+        <member name="T:FX.CTI.Entity.DTO.EmailResponse">
+            <summary>
+            Email响应
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Entity.DTO.EmailResponse.Success">
+            <summary>
+            是否成功
+            true表示处理成功，已接受发Email请求，但不代表立刻发邮件或发邮件成功
+            false表示处理失败，已拒绝发Email请求
+            可否为null:否
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Entity.DTO.EmailResponse.ErrMsg">
+            <summary>
+            错误信息
+            可否为null:处理失败时可以，处理成功时不可以
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Entity.DTO.EmailResponse.EmailId">
+            <summary>
+            邮件编号
+            可否为null:处理失败时可以,处理成功时不可以
+            </summary>
+        </member>
+        <member name="T:FX.CTI.Entity.DTO.SMSDTO">
+            <summary>
+            SMSDTO
+            用做RabbitMQ发送端到接收端的通信契约
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSDTO.Id">
+            <summary>
+            SMS编号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSDTO.AppId">
+            <summary>
+            应用编号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSDTO.Mobile">
+            <summary>
+            手机号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSDTO.Content">
+            <summary>
+            短信内容
+            可否为null:否
+            </summary>
+        </member>
+        <member name="T:FX.CTI.Entity.DTO.SMSRequest">
+            <summary>
+            SMS短信请求
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSRequest.AppId">
+            <summary>
+            调用者编号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSRequest.Mobile">
+            <summary>
+            手机号
+            可否为null:否
+            </summary>
+        </member>
+        <member name="P:FX.CTI.Entity.DTO.SMSRequest.Content">
+            <summary>
+            短信内容
+            可否为null:否
+            </summary>
+        </member>
+        <member name="T:FX.CTI.Entity.DTO.SMSResponse">
+            <summary>
+            SMS短信响应
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Entity.DTO.SMSResponse.Success">
+            <summary>
+            是否成功
+            true表示处理成功，已接受发短信请求，但不代表立刻发短信或发短信成功
+            false表示处理失败，已拒绝发短信请求
+            可否为null:否
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Entity.DTO.SMSResponse.ErrMsg">
+            <summary>
+            错误信息
+            可否为null:处理失败时可以,处理成功时不可以
+            </summary>
+        </member>
+        <member name="F:FX.CTI.Entity.DTO.SMSResponse.SMSId">
+            <summary>
+            邮件编号
+            可否为null:处理失败时可以,处理成功时不可以
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,223 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section PageSpecificJavascriptIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mdm.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/icon.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/default/easyui.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/demo.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Content/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/jquery.easyui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/locale/easyui-lang-zh_CN.js")"></script>
+    <script type="text/javascript">
+        var serverName = '';
+        var dbName = '';
+        $(function() {
+            $("#cbOperator").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                url: '/Log/UserJson'
+            });
+            $("#cbServer").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                data: [{ Value: '', Text: '全部' }, { Value: '1', Text: '国内' }, { Value: '2', Text: '国际' }],
+                onSelect: selectServer
+            });
+            $("#cbDb").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                data: [{ Value: '', Text: '全部' }],
+                onSelect: selectDb
+            });
+            $("#cbTable").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                data: [{ Value: '', Text: '全部' }],
+                onSelect: selectTable
+            });
+            $("#cbCol").combobox({
+                required: true,
+                editable: true,
+                valueField: 'Value',
+                textField: 'Text',
+                data: [{ Value: '', Text: '全部' }]
+            });
+            $("#dbBeginTime").datebox({ required: true });
+            $("#dbEndTime").datebox({ required: true });
+            var date = new Date();
+            $("#dbEndTime").datebox('setValue', formatterDate(date));
+            date.setDate(date.getDate() - 3);
+            $("#dbBeginTime").datebox('setValue', formatterDate(date));
+            initData();
+        });
+
+        function selectServer(rec) {
+            serverName = rec.Value;
+            var url = '/Log/DbJson?ServerName=' + rec.Value;
+            $('#cbDb').combobox('reload', url);
+            $('#cbDb').combobox('setValue', '');
+            url = '/Log/TableJson?ServerName=' + '' + '&DatabaseName=' + '';
+            $('#cbTable').combobox('reload', url);
+            $('#cbTable').combobox('setValue', '');
+            url = '/Log/ColJson?ServerName=&DatabaseName=&ColumnName=';
+            $('#cbCol').combobox('reload', url);
+            $('#cbCol').combobox('setValue', '');
+        }
+
+        function selectDb(rec) {
+            dbName = rec.Value;
+            var url = '/Log/TableJson?ServerName=' + serverName + '&DatabaseName=' + rec.Value;
+            $('#cbTable').combobox('reload', url);
+            $('#cbTable').combobox('setValue', '');
+            url = '/Log/ColJson?ServerName=&DatabaseName=&ColumnName=';
+            $('#cbCol').combobox('reload', url);
+            $('#cbCol').combobox('setValue', '');
+        }
+
+        function selectTable(rec) {
+            var url = '/Log/ColJson?ServerName=' + serverName + '&DatabaseName=' + dbName + '&TableName=' + rec.Value;
+            $('#cbCol').combobox('reload', url);
+            $('#cbCol').combobox('setValue', '');
+        }
+
+        function refreshPage() {
+            $("#operateLogList").datagrid("reload");
+        }
+
+        //实现搜索的信息
+        function searchData() {
+
+            var queryData = {
+                Operator: $('#cbOperator').combobox('getValue'),
+                BeginTime: $('#dbBeginTime').datebox('getValue'),
+                EndTime: $('#dbEndTime').datebox('getValue'),
+                Server: $('#cbServer').combobox('getValue'),
+                Db: $('#cbDb').combobox('getValue'),
+                Table: $('#cbTable').combobox('getValue'),
+                Col: $('#cbCol').combobox('getValue')
+            };
+            initData(queryData);
+        }
+
+        function formatterDate(date) {
+            var day = date.getDate() > 9 ? date.getDate() : "0" + date.getDate();
+            var month = (date.getMonth() + 1) > 9 ? (date.getMonth() + 1) : "0"
+                + (date.getMonth() + 1);
+            return date.getFullYear() + '-' + month + '-' + day;
+        };
+
+        //实现对数据的绑定
+        function initData(queryData) {
+            $('#operateLogList').datagrid({
+                fit: true,
+                //height: 570,
+                nowrap: false,
+                autoRowHeight: false,
+                fitColumns: true,
+                striped: true,
+                collapsible: true,
+                url: '/Log/LogJson',
+                sortName: 'Id',
+                sortOrder: 'desc',
+                //striped:true,
+                singleSelect: true,
+                border: true,
+                remoteSort: false,
+                idField: 'Id',
+                pagination: true,
+                rownumbers: true,
+                pageSize: 20,
+                pageList: [15, 20, 25, 30, 35, 40, 45, 50],
+                pagePosition: 'bottom', // bottom,top,both
+                queryParams: queryData, //参数为了多条件查询预留
+                columns: [
+                    [
+                        { field: 'Id', title: '编号', width: 50, sortable: true },
+                        { field: 'Dealer', title: '操作员', width: 100, sortable: true },
+                        { field: 'DealTime', title: '操作时间', width: 200, sortable: true },
+                        {
+                            field: 'SvrName',
+                            title: '业务线',
+                            width: 50,
+                            sortable: true,
+                            formatter: function(value, row, index) {
+                                if (value == "1") {
+                                    return "国内";
+                                }
+                                if (value == "2") {
+                                    return "国际";
+                                }
+                            }
+                        },
+                        { field: 'DbName', title: '数据库', width: 100, sortable: true },
+                        { field: 'TblName', title: '表', width: 100, sortable: true },
+                        { field: 'ColName', title: '字段', width: 100, sortable: true },
+                        { field: 'OldOwner', title: '原所有者', width: 100, sortable: true },
+                        { field: 'NewOwner', title: '新所有者', width: 100, sortable: true },
+                        { field: 'OldDesc', title: '原描述', width: 100, sortable: true },
+                        { field: 'NewDesc', title: '新描述', width: 100, sortable: true }
+                    ]
+                ],
+                loadFilter: function(data) {
+                    if (data == null) {
+                        data = $(this).datagrid("reload");
+                    }
+                    return data;
+                },
+                toolbar: '#serachBox_OperateLog'
+            });
+        }
+    </script>
+}
+<div id="tabs" class="easyui-tabs" fit="true" border="true" style="height:400px">
+    <div title="日志查询" style="padding: 20px; overflow: hidden; color: red;" index="0">
+        <table id="operateLogList"></table>
+    </div>
+</div>
+<div id="serachBox_OperateLog">
+    <table>
+        <tr>
+            <td>操作员:</td>
+            <td>
+                <input id="cbOperator" style="width: 90px" value="" />
+            </td>
+            <td>开始时间:</td>
+            <td>
+                <input id="dbBeginTime" style="width: 150px" type="text" />
+            </td>
+            <td>结束时间:</td>
+            <td>
+                <input id="dbEndTime" style="width: 150px" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>业务线:</td>
+            <td>
+                <input id="cbServer" style="width: 90px" value="" />
+            </td>
+            <td>数据库:</td>
+            <td>
+                <input id="cbDb" style="width: 150px" value="" />
+            </td>
+            <td>表:</td>
+            <td>
+                <input id="cbTable" style="width: 150px" value="" />
+            </td>
+            <td>字段:</td>
+            <td>
+                <input id="cbCol" style="width: 150px" value="" />
+            </td>
+            <td><a href="javascript:searchData();" class="easyui-linkbutton" data-options="iconCls:'easyui-icon-search',plain:true">查找</a></td>
+            <td><a href="javascript:refreshPage();" class="easyui-linkbutton" data-options="iconCls:'easyui-icon-reload',plain:true">刷新</a></td>
+        </tr>
+    </table>
+</div>

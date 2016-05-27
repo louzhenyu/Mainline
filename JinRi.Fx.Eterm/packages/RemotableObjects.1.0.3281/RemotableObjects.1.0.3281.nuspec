@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RemotableObjects</id>
+    <version>1.0.3281</version>
+    <title>RemotableObjects</title>
+    <authors>今日 - 架构部</authors>
+    <owners>古大集团</owners>
+    <iconUrl>http://192.168.1.24:10086/ico.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>RemotableObjects</description>
+  </metadata>
+</package>

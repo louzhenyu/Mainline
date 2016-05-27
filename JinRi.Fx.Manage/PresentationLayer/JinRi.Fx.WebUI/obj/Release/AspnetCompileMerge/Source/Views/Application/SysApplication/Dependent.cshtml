@@ -1,0 +1,106 @@
+﻿@using JinRi.Fx.Web
+@using JinRi.Fx.Entity
+@using Webdiyer.WebControls.Mvc
+@model JinRi.Fx.WebUI.Models.AppDependentSearchArgs
+@{
+    ViewBag.Title = "绑定依赖关系";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+    Dictionary<int, SysAppTypeEntity> dictionaryAppType = ViewBag.DictionaryAppType;
+    PagedList<SysApplicationEntity> sysApplicationList = ViewBag.SysApplicationList;
+}
+<div class="row-fluid">
+    <div class="span8" style="padding-top:15px; padding-left:20px;">
+        @using (Html.BeginForm(null, null, null, FormMethod.Get, new { id = "search" }))
+        {
+            <table style="width:700px">
+                <tr>
+                    <td style="width:80px;padding-left:5px">所属子系统：</td>
+                    <td>@Html.DropDownList("SubSystemId", null, new { @style = "width:120px" })</td>
+                    <td style="width:80px;"><span>状　　态：</span></td>
+                    <td>
+                        @Html.DropDownList("Status",
+                    new List<SelectListItem> {
+                        new SelectListItem { Text = "全部", Value = "-1",Selected = true},
+                        new SelectListItem { Text = "启用", Value = "0" },
+                        new SelectListItem { Text = "禁用", Value = "1" } },
+                 new { @class = "m-wrap", @style = "width:120px" })
+                    </td>
+                    <td><span>应用名称：</span></td>
+                    <td>@Html.TextBox("AppName", null, new { @class = "m-wrap small" })</td>
+                    <td style="padding-left:10px"><button type="submit" class="btn blue thickbox" style="margin-top:-8px">搜索 <i class="icon-search"></i></button></td>
+                </tr>
+                <tr>
+                    <td>　应用类型：</td>
+                    <td>@Html.DropDownList("AppTypeId", null, new { @style = "width:120px" })</td>
+                    <td><span>是否绑定：</span></td>
+                    <td>
+                        @Html.DropDownList("Bind",
+                    new List<SelectListItem> {
+                        new SelectListItem { Text = "全部", Value = "-1",Selected = true},
+                        new SelectListItem { Text = "未绑定", Value = "0" },
+                        new SelectListItem { Text = "已绑定", Value = "1" }},
+                 new { @class = "m-wrap", @style = "width:120px" })
+                    </td>
+                    <td colspan="2">&nbsp;</td>
+                </tr>
+            </table>
+        }
+    </div>
+</div>
+@using (Html.BeginForm("BindDependent", "SysApplication", FormMethod.Post, new { id = "mainForm" }))
+{
+    @Html.Hidden("AppId", "")
+    <table class="table table-striped  ">
+        <thead>
+            <tr>
+                <th style="width: 8px;">&nbsp;</th>
+                <th>应用编号</th>
+                <th>中文名称</th>
+                <th>英文名称</th>
+                <th>应用类型</th>
+                <th>负责人</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in sysApplicationList)
+            {
+                <tr>
+                    <td>&nbsp;</td>
+                    <td style="@(m.IsDependent == 1 ? "font-weight:bold;color:red" : "")">@m.AppId</td>
+                    <td>@m.AppName</td>
+                    <td>@m.AppEName</td>
+                    <td>@(!dictionaryAppType.ContainsKey(m.AppTypeId) ? "无" : dictionaryAppType[m.AppTypeId].TypeName)</td>
+                    <td>@m.Owner</td>
+                    <td style="@(m.Status == 0 ? "" : "color:red")">@(m.Status == 0 ? "启用" : "禁用")</td>
+                    <td>
+                        @if (m.IsDependent == 0)
+                        {
+                            <a class="btn mini purple" href="@Url.Action("BindDependent", new { appId = ViewBag.AppId, dependentId = m.AppId, option = 0 })">
+                                绑定依赖
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="btn mini blue" href="@Url.Action("BindDependent", new { appId = ViewBag.AppId, dependentId = m.AppId, option = 1 })">
+                                移除绑定
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="dataTables_paginate paging_bootstrap pagination">
+        @Html.Pager(sysApplicationList, new PagerOptions { PageIndexParameterName = "pageIndex" }, new { id = "flickrpager" })
+    </div>
+}
+@section PageSpecificJavascriptIncludes{
+    <script>
+        $(function () {
+            $("#AppId").val("@ViewBag.AppId");
+            $(".form-actions").hide();
+        });
+    </script>
+}

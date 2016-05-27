@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ECharts">
+    <meta name="author" content="kener.linfeng@gmail.com">
+    <title>应用依赖关系图</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body style="padding:0">
+    <div class="container-fluid">
+        <div class="row-fluid example">
+            <div id="sidebar-code" class="col-md-4" style="width: 100%; display: none;">
+                <div class="well sidebar-nav">
+                    <div class="nav-header"><a href="#" onclick="autoResize()" class="glyphicon glyphicon-resize-full" id="icon-resize"></a>option</div>
+                    <textarea id="code" name="code"></textarea>
+                </div><!--/.well -->
+            </div><!--/span-->
+            <div id="graphic" class="col-md-8" style="width: 100%;">
+                <div id="main" class="main" style="width: 100%; height: 500px; "></div>
+                <div style="display:none;">
+                    <button type="button" class="btn btn-sm btn-success" onclick="refresh(true)">刷 新</button>
+                    <span class="text-primary">切换主题</span>
+                    <select id="theme-select"></select>
+                    <span id='wrong-message' style="color:red"></span>
+                </div>
+            </div><!--/span-->
+        </div><!--/row-->
+
+    </div><!--/.fluid-container-->
+    <script>
+        $("#graphic").attr("height", $(document).height() - 20);
+        $("#main").attr("height", $(document).height() - 20);
+        $("#graphic").css("height", $(document).height() - 20);
+        $("#main").css("height", $(document).height() - 20);
+    </script>
+    <script src="js/echarts.js"></script>
+    <script src="js/codemirror.js"></script>
+    <script src="js/echartsExample.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrics", "Src\Metrics\Metrics.csproj", "{95E29D40-DBEC-49E2-9CC5-26B88966DADE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FE317A5A-E540-401C-994F-353A1349C70B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{30108C17-0671-4786-90D0-0564718C3F70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A42F567-91B0-4FFB-A9AD-DB0D158784EA}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+		build.bat = build.bat
+		build.sh = build.sh
+		CHANGELOG.md = CHANGELOG.md
+		create-nuget.bat = create-nuget.bat
+		Publishing\Metrics.NET.nuspec = Publishing\Metrics.NET.nuspec
+		Publishing\Nancy.Metrics.nuspec = Publishing\Nancy.Metrics.nuspec
+		Publishing\Owin.Metrics.nuspec = Publishing\Owin.Metrics.nuspec
+		Publishing\push-nuget.bat = Publishing\push-nuget.bat
+		README.md = README.md
+		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metrics.Server", "Src\Metrics.Server\Metrics.Server.csproj", "{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsSamples", "Samples\MetricsSamples\MetricsSamples.csproj", "{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Src\\Metrics\\Metrics.csproj
+		SccProjectName1 = Src/Metrics
+		SccLocalPath1 = Src\\Metrics
+		SccProjectUniqueName2 = Src\\Metrics.Server\\Metrics.Server.csproj
+		SccProjectName2 = Src/Metrics.Server
+		SccLocalPath2 = Src\\Metrics.Server
+		SccProjectUniqueName3 = Samples\\MetricsSamples\\MetricsSamples.csproj
+		SccProjectTopLevelParentUniqueName3 = JinRi.Fx.Metrics.sln
+		SccProjectName3 = Samples/MetricsSamples
+		SccLocalPath3 = Samples\\MetricsSamples
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		MonoDebug|Any CPU = MonoDebug|Any CPU
+		MonoRelease|Any CPU = MonoRelease|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.MonoDebug|Any CPU.ActiveCfg = MonoDebug|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.MonoDebug|Any CPU.Build.0 = MonoDebug|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.MonoRelease|Any CPU.ActiveCfg = MonoRelease|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.MonoRelease|Any CPU.Build.0 = MonoRelease|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E29D40-DBEC-49E2-9CC5-26B88966DADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.MonoDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.MonoDebug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.MonoRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5950D5-26C3-40BE-B263-9B3B7D971A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.MonoDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.MonoDebug|Any CPU.Build.0 = Debug|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.MonoRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.MonoRelease|Any CPU.Build.0 = Release|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9990B120-4EF5-40AA-BA8F-C3D8C8F6484D} = {30108C17-0671-4786-90D0-0564718C3F70}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JFx", "JFx\JFx.csproj", "{D223FEBE-AE8E-4049-A2F6-19F85D3F6F3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JFxUnitTest", "JFxUnitTest\JFxUnitTest.csproj", "{4E95AB47-E18A-4F89-9370-DE58C63E3E17}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://jishu-tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = JFxUnitTest\\JFXUnitTest.csproj
+		SccProjectName1 = JFxUnitTest
+		SccLocalPath1 = JFxUnitTest
+		SccProjectUniqueName2 = JFx\\JFX.csproj
+		SccProjectName2 = JFx
+		SccLocalPath2 = JFx
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D223FEBE-AE8E-4049-A2F6-19F85D3F6F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D223FEBE-AE8E-4049-A2F6-19F85D3F6F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D223FEBE-AE8E-4049-A2F6-19F85D3F6F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D223FEBE-AE8E-4049-A2F6-19F85D3F6F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E95AB47-E18A-4F89-9370-DE58C63E3E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E95AB47-E18A-4F89-9370-DE58C63E3E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E95AB47-E18A-4F89-9370-DE58C63E3E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E95AB47-E18A-4F89-9370-DE58C63E3E17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,54 @@
+﻿@model JinRi.Fx.Entity.SysUser
+
+@{
+    ViewBag.Title = "新增用户";
+    Layout = "~/Views/Shared/_Layout.Edit.cshtml";
+}
+@section MainContent{
+    <div class="portlet-body form-horizontal form-bordered form-row-stripped">
+        <div class="row-fluid">
+            <div class="control-group">
+                <label class="control-label"><span class="required">*</span>用户名称：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.UserName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">真实姓名：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.RealName, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RealName)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">角色：</label>
+                <div class="controls">                    
+                    @Html.DropDownList("RoleList", null, new { @style = "width:120px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.RoleId)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">状态：</label>
+                <div class="controls">
+                    @Html.DropDownList("ModelState", null, new { @style = "width:135px" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Status)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">联系电话：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Tel, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Tel)</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Email：</label>
+                <div class="controls">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "m-wrap small" })
+                    <span class="help-inline">@Html.ValidationMessageFor(m => m.Email)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+}

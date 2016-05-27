@@ -1,0 +1,2255 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JFx</name>
+    </assembly>
+    <members>
+        <member name="T:JFx.AppEnvironment">
+            <summary>
+            获取当前应用程序环境信息
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.MachineName">
+            <summary>
+            获取此本地计算机的 NetBIOS 名称。
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.UserDomainName">
+            <summary>
+            获取与当前用户关联的网络域名。
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.UserName">
+            <summary>
+            获取当前已登录到 Windows 操作系统的人员的用户名。
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.OSVersion">
+            <summary>
+            获取包含当前平台标识符和版本号的 System.OperatingSystem 对象
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.CPUCount">
+            <summary>
+            获取当前计算机上的处理器数。
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.CommandLine">
+            <summary>
+            获取该进程的命令行。
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.HostName">
+            <summary>
+            本地计算机的主机名
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.LocalIPAddress">
+            <summary>
+            本机IP地址，非客户端IP，默认：string.Empty
+            </summary>
+        </member>
+        <member name="P:JFx.AppEnvironment.AppId">
+            <summary>
+            获取当前应用程序编号
+            <para>默认：0</para>
+            <para>获取方式：ConfigurationManager.AppSettings["AppId"]</para>
+            </summary>
+        </member>
+        <member name="T:JFx.Data.SqlHelper">
+            <summary>
+            数据库的通用访问代码
+            此类为抽象类，不允许实例化，在应用时直接调用即可
+            </summary>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            执行一个不需要返回值的SqlCommand命令，通过指定专用的连接字符串。
+             使用参数数组形式提供参数列表 
+             </summary>
+             <remarks>
+             使用示例：
+              int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connectionString">一个有效的数据库连接字符串</param>
+             <param name="commandType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+             <param name="commandText">存储过程的名字或者 T-SQL 语句</param>
+             <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+             <returns>返回一个数值表示此SqlCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            执行一条不返回结果的SqlCommand，通过一个已经存在的数据库连接 
+             使用参数数组提供参数
+             </summary>
+             <remarks>
+             使用示例：  
+              int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">一个现有的数据库连接</param>
+             <param name="commandType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+             <param name="commandText">存储过程的名字或者 T-SQL 语句</param>
+             <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+             <returns>返回一个数值表示此SqlCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteNonQuery(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条不返回结果的SqlCommand，通过一个已经存在的数据库事物处理 
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例： 
+             int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="trans">一个存在的 sql 事物处理</param>
+            <param name="commandType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="commandText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个数值表示此SqlCommand命令执行后影响的行数</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条返回结果集的SqlCommand命令，通过专用的连接字符串。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             SqlDataReader r = ExecuteReader(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">一个有效的数据库连接字符串</param>
+            <param name="commandType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="commandText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个包含结果的SqlDataReader</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条返回第一条记录第一列的SqlCommand命令，通过专用的连接字符串。 
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例：  
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connectionString">一个有效的数据库连接字符串</param>
+            <param name="commandType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="commandText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个object类型的数据，可以通过 Convert.To{Type}方法转换类型</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行一条返回第一条记录第一列的SqlCommand命令，通过已经存在的数据库连接。
+            使用参数数组提供参数
+            </summary>
+            <remarks>
+            使用示例： 
+             Object obj = ExecuteScalar(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+            </remarks>
+            <param name="connection">一个已经存在的数据库连接</param>
+            <param name="commandType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="commandText">存储过程的名字或者 T-SQL 语句</param>
+            <param name="commandParameters">以数组形式提供SqlCommand命令中用到的参数列表</param>
+            <returns>返回一个object类型的数据，可以通过 Convert.To{Type}方法转换类型</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.CacheParameters(System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            缓存参数数组
+            </summary>
+            <param name="cacheKey">参数缓存的键值</param>
+            <param name="commandParameters">被缓存的参数列表</param>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.GetCachedParameters(System.String)">
+            <summary>
+            获取被缓存的参数
+            </summary>
+            <param name="cacheKey">用于查找参数的KEY值</param>
+            <returns>返回缓存的参数数组</returns>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            为执行命令准备参数
+            </summary>
+            <param name="cmd">SqlCommand 命令</param>
+            <param name="conn">已经存在的数据库连接</param>
+            <param name="trans">数据库事物处理</param>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">Command text，T-SQL语句 例如 Select * from Products</param>
+            <param name="cmdParms">返回带参数的命令</param>
+        </member>
+        <member name="M:JFx.Data.SqlHelper.ExecuteDataSet(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            执行Command获取一个DataSet
+            </summary>
+            <param name="connectionString">连接字符串</param>
+            <param name="cmdType">SqlCommand命令类型 (存储过程， T-SQL语句， 等等。)</param>
+            <param name="cmdText">Command text，T-SQL语句 例如 Select * from Products</param>
+            <param name="commandParameters">参数列表</param>
+            <returns>返回缓存的参数数组</returns>
+        </member>
+        <member name="T:JFx.JinRiEncryptTool">
+            <summary>
+            加密工具
+            </summary>
+        </member>
+        <member name="M:JFx.JinRiEncryptTool.Decrypt(System.String,System.String)">
+            <summary>
+            使用指定密钥解密
+            </summary>
+            <param name="original">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:JFx.JinRiEncryptTool.Decrypt(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            使用指定密钥解密
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <param name="encoding">字符编码方案</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:JFx.JinRiEncryptTool.Decrypt(System.Byte[],System.Byte[])">
+            <summary>
+            使用指定密钥解密数据
+            </summary>
+            <param name="encrypted">密文</param>
+            <param name="key">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:JFx.JinRiEncryptTool.Encrypt(System.String,System.String)">
+            <summary>
+            使用指定密钥加密
+            </summary>
+            <param name="original">需要加密的字符串</param>
+            <param name="key">自定义的密钥</param>
+            <returns>返回加密字符串</returns>
+        </member>
+        <member name="M:JFx.JinRiEncryptTool.Encrypt(System.Byte[],System.Byte[])">
+            <summary>
+            使用指定密钥加密
+            </summary>
+            <param name="original">需要加密的字符串</param>
+            <param name="key">自定义的密钥</param>
+            <returns>返回加密字符串</returns>
+        </member>
+        <member name="M:JFx.JinRiEncryptTool.MakeMD5(System.Byte[])">
+            <summary>
+            生成MD5摘要
+            </summary>
+            <param name="original">数据源</param>
+            <returns>摘要</returns>
+        </member>
+        <member name="T:JFx.Utils.HttpHelper">
+            <summary>
+            HttpHelper
+            <para>调用方需进行异常处理</para>
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.SendPost(System.String,System.String)">
+            <summary>
+            发送POST请求
+            </summary>
+            <param name="url">地址</param>
+            <param name="data">POST数据</param>
+            <exception cref="T:System.InvalidOperationException">流正由上一个 System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)调用使用。- 或 -System.Net.HttpWebRequest.TransferEncoding 被设置为一个值，并且 System.Net.HttpWebRequest.SendChunked为 false。</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">System.Net.HttpWebRequest.Method 为 GET 或 HEAD，并且或者 System.Net.HttpWebRequest.ContentLength大于或等于零，或者 System.Net.HttpWebRequest.SendChunked 为 true。- 或 -System.Net.HttpWebRequest.KeepAlive为 true，System.Net.HttpWebRequest.AllowWriteStreamBuffering 为 false，System.Net.HttpWebRequest.ContentLength为 -1，System.Net.HttpWebRequest.SendChunked 为 false，System.Net.HttpWebRequest.Method为 POST 或 PUT。</exception>
+            <exception cref="T:System.NotSupportedException">请求缓存验证程序指示对此请求的响应可从缓存中提供；但是，此请求包含要发送到服务器的数据。发送数据的请求不得使用缓存。如果您正在使用错误实现的自定义缓存验证程序，则会发生此异常。</exception>
+            <exception cref="T:System.Net.WebException">System.Net.HttpWebRequest.Abort() 以前被调用过。- 或 -请求的超时期限到期。- 或 -处理请求时发生错误。</exception>
+            <returns>Response数据</returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.SendGet(System.String)">
+            <summary>
+            发送GET请求
+            </summary>
+            <param name="url">地址</param>
+            <exception cref="T:System.InvalidOperationException">流正由上一个 System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)调用使用。- 或 -System.Net.HttpWebRequest.TransferEncoding 被设置为一个值，并且 System.Net.HttpWebRequest.SendChunked为 false。</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">System.Net.HttpWebRequest.Method 为 GET 或 HEAD，并且或者 System.Net.HttpWebRequest.ContentLength大于或等于零，或者 System.Net.HttpWebRequest.SendChunked 为 true。- 或 -System.Net.HttpWebRequest.KeepAlive为 true，System.Net.HttpWebRequest.AllowWriteStreamBuffering 为 false，System.Net.HttpWebRequest.ContentLength为 -1，System.Net.HttpWebRequest.SendChunked 为 false，System.Net.HttpWebRequest.Method为 POST 或 PUT。</exception>
+            <exception cref="T:System.NotSupportedException">请求缓存验证程序指示对此请求的响应可从缓存中提供；但是，此请求包含要发送到服务器的数据。发送数据的请求不得使用缓存。如果您正在使用错误实现的自定义缓存验证程序，则会发生此异常。</exception>
+            <exception cref="T:System.Net.WebException">System.Net.HttpWebRequest.Abort() 以前被调用过。- 或 -请求的超时期限到期。- 或 -处理请求时发生错误。</exception>
+            <returns>Response数据</returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.Send(System.String,System.String,System.String,JFx.Utils.HttpConfig)">
+            <summary>
+            发送WEB请求
+            </summary>
+            <param name="url">地址</param>
+            <param name="method">POST、GET</param>
+            <param name="data">POST数据</param>
+            <param name="config">配置信息</param>
+            <exception cref="T:System.InvalidOperationException">流正由上一个 System.Net.HttpWebRequest.BeginGetResponse(System.AsyncCallback,System.Object)调用使用。- 或 -System.Net.HttpWebRequest.TransferEncoding 被设置为一个值，并且 System.Net.HttpWebRequest.SendChunked为 false。</exception>
+            <exception cref="T:System.Net.ProtocolViolationException">System.Net.HttpWebRequest.Method 为 GET 或 HEAD，并且或者 System.Net.HttpWebRequest.ContentLength大于或等于零，或者 System.Net.HttpWebRequest.SendChunked 为 true。- 或 -System.Net.HttpWebRequest.KeepAlive为 true，System.Net.HttpWebRequest.AllowWriteStreamBuffering 为 false，System.Net.HttpWebRequest.ContentLength为 -1，System.Net.HttpWebRequest.SendChunked 为 false，System.Net.HttpWebRequest.Method为 POST 或 PUT。</exception>
+            <exception cref="T:System.NotSupportedException">请求缓存验证程序指示对此请求的响应可从缓存中提供；但是，此请求包含要发送到服务器的数据。发送数据的请求不得使用缓存。如果您正在使用错误实现的自定义缓存验证程序，则会发生此异常。</exception>
+            <exception cref="T:System.Net.WebException">System.Net.HttpWebRequest.Abort() 以前被调用过。- 或 -请求的超时期限到期。- 或 -处理请求时发生错误。</exception>
+            <returns>Response数据</returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.UrlDecode(System.String)">
+            <summary>
+            解析URL(可以正确识别UTF-8和GB2312编码)
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.UrlEncode(System.String)">
+            <summary>
+            对 URL 字符串进行编码。
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.ParseQuery(System.String)">
+            <summary>
+            解析URL，返回查询字符串集合(已经正确识别UTF-8和GB2312编码)
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.PraseDomain(System.String)">
+            <summary>
+            解析URL返回域名
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.GetClientIP">
+            <summary>
+            获取客户端IP地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.Utils.HttpHelper.GetLocalIP">
+            <summary>
+            获取本机IP地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:JFx.Utils.HttpConfig.ContentType">
+            <summary>
+            默认(text/html)
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.HttpConfig.Timeout">
+            <summary>
+            超时时间(毫秒)默认100000
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.HttpConfig.GZipCompress">
+            <summary>
+            POST请求时，数据是否进行gzip压缩
+            </summary>
+        </member>
+        <member name="T:JFx.Utils.MailHelper">
+            <summary>
+            发送邮件辅助类
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.MailHelper.#ctor(System.String,System.String,System.String)">
+            <summary>
+            初始化MailHelper对象
+            <para>例如：</para>
+            <para>MailHelper mail= new MailHelper("smtp.jinri.cn", "sendMail@jinri.cn", "password");</para>
+            <para>IList&lt;Attachment&gt; list = new List&lt;Attachment&gt;();</para>
+            <para>list.Add(MailHelper.CreateAttachment("ZipFile\\test.txt"));</para>
+            <para>mail.SendMail("tonghangzhou@jinri.cn", "邮件发送", "请查收！","",list);</para>
+            </summary>
+            <param name="sHost">邮件服务器地址</param>
+            <param name="formMail">发送邮件账户地址</param>
+            <param name="strPassword">账户密码</param>
+        </member>
+        <member name="F:JFx.Utils.MailHelper.m_Password">
+            <summary>
+            发送邮件的账户密码
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.MailHelper.SendMail(System.String,System.String,System.String,System.String,System.Collections.Generic.IList{System.Net.Mail.Attachment})">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="sendTo">收件人地址</param>
+            <param name="title">标题</param>
+            <param name="content">邮件内容</param>
+            <param name="strCC">抄送人，多个地址用","分隔</param>
+            <param name="attachments">附件集合</param>
+            <returns>是否成功</returns>
+        </member>
+        <member name="M:JFx.Utils.MailHelper.CreateAttachment(System.String)">
+            <summary>
+            创建附件
+            注意：如果附件太大，可能需要等待的时候会很长
+            </summary>
+            <param name="filePath">文件地址</param>
+            <returns></returns>
+        </member>
+        <member name="P:JFx.Utils.MailHelper.Host">
+            <summary>
+            STMP服务器地址
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.MailHelper.Form">
+            <summary>
+            发送邮件的邮箱地址
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.MailHelper.Priority">
+            <summary>
+            邮件优先级
+            </summary>
+        </member>
+        <member name="T:JFx.Utils.PageItem">
+            <summary>
+            分页信息
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.PageItem.PageIndex">
+            <summary>
+            当前页下标
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.PageItem.PageSize">
+            <summary>
+            每页记录数
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.PageItem.TotalCount">
+            <summary>
+            总记录数
+            </summary>
+        </member>
+        <member name="T:JFx.Utils.ZipHelper">
+            <summary>
+            文件压缩解压辅助类
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.ZipHelper.#ctor">
+            <summary>
+            文件压缩解压辅助类
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.ZipHelper.AddFile(System.String)">
+            <summary>
+            添加压缩文件
+            </summary>
+            <param name="fileAbsolutePath">文件的绝对路径</param>
+        </member>
+        <member name="M:JFx.Utils.ZipHelper.CompressionZip(System.String,System.Int32)">
+            <summary>
+            压缩文件或者文件夹
+            <para>zip.AddFile(Environment.CurrentDirectory + "\\ZipFile\\6035021_111610206000_2.jpg");</para>
+            <para>zip.AddFile(Environment.CurrentDirectory + "\\ZipFile\\test.txt");</para>
+            <para>bool zipResult = zip.CompressionZip(Environment.CurrentDirectory + "\\ZipFile\\test.zip");</para>
+            </summary>
+            <param name="depositPath">压缩后文件的存放路径   如C:\\windows\abc.zip</param>
+            <param name="level">压缩等级：0-9,压缩等级越小，压缩比越高，压缩后的文件越小，耗时越长。</param>
+            <returns>是否压缩成功</returns>
+        </member>
+        <member name="M:JFx.Utils.ZipHelper.DeCompressionZip(System.String,System.String)">
+            <summary>
+            解压文件
+            <para>zip.DeCompressionZip(zipPath, Environment.CurrentDirectory + "\\ZipFile\\DeCompression",out files)</para>
+            </summary>
+            <param name="depositPath">压缩文件路径</param>
+            <param name="floderPath">解压的路径</param>
+            <returns>是否解压成功</returns>
+        </member>
+        <member name="M:JFx.Utils.ZipHelper.DeCompressionZip(System.String,System.String,System.String[]@)">
+            <summary>
+            解压文件
+            </summary>
+            <param name="depositPath">压缩文件路径</param>
+            <param name="floderPath">解压的路径</param>
+            <param name="filePaths">解压出来的所有文件路径</param>
+            <returns>是否解压成功</returns>
+        </member>
+        <member name="P:JFx.Utils.ZipHelper.AbsolutePaths">
+            <summary>
+            存放待压缩的文件的绝对路径
+            </summary>
+        </member>
+        <member name="P:JFx.Utils.ZipHelper.ErrorMsg">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="T:JFx.AppSettingsHelper">
+            <summary>
+            配置文件appSettings节点的帮助方法
+            </summary>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetString(System.String)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的字符串类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetString(System.String,System.String)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的字符串类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="defaultValue">默认值</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetStringArray(System.String,System.String)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的string[]类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="separator">分隔符</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetStringArray(System.String,System.String,System.String[])">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的string[]类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="separator">分隔符</param>
+            <param name="defaultValue">默认值</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.getStringArray(System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的string[]类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="separator">分隔符</param>
+            <param name="valueRequired">指定配置文件中是否必须需要配置有该名称的元素，传入False则方法返回默认值，反之抛出异常</param>
+            <param name="defaultValue">默认值</param>
+            <returns>字符串数组</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetInt32(System.String)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的Int类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <returns>Int</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetInt32(System.String,System.Int32)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的Int类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="defaultValue">默认值</param>
+            <returns>Int</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.getInt32(System.String,System.Nullable{System.Int32})">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的Int类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="defaultValue">默认值</param>
+            <returns>Int</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetBoolean(System.String)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的布尔类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <returns>布尔值</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetBoolean(System.String,System.Boolean)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的布尔类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="defaultValue">默认值</param>
+            <returns>布尔值</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.getBoolean(System.String,System.Nullable{System.Boolean})">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的布尔类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="defaultValue">默认值</param>
+            <returns>布尔值</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetTimeSpan(System.String)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的时间间隔类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <returns>时间间隔</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.GetTimeSpan(System.String,System.TimeSpan)">
+            <summary>
+            获取配置文件中appSettings节点下指定索引键的时间间隔类型的的值
+            </summary>
+            <param name="key">索引键</param>
+            <param name="defaultValue">默认值</param>
+            <returns>时间间隔</returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.getValue``1(System.String,System.Func{System.String,``0,System.Boolean},System.Nullable{``0})">
+            <summary>
+            获取配置文件appSettings集合中指定索引的值
+            </summary>
+            <typeparam name="T">返回值类型参数</typeparam>
+            <param name="key">索引键</param>
+            <param name="parseValue">将指定索引键的值转化为返回类型的值的委托方法</param>
+            <param name="defaultValue">默认值</param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.AppSettingsHelper.getValue(System.String,System.Boolean,System.String)">
+            <summary>
+            获取配置文件appSettings集合中指定索引的值
+            </summary>
+            <param name="key">索引</param>
+            <param name="valueRequired">指定配置文件中是否必须需要配置有该名称的元素，传入False则方法返回默认值，反之抛出异常</param>
+            <param name="defaultValue">默认值</param>
+            <returns>字符串</returns>
+        </member>
+        <member name="T:JFx.Utils.SerializerHelper">
+            <summary>
+            XML、Json序列化助手
+            <para>依赖于：Newtonsoft.Json.dll</para>
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.SerializerHelper.XmlSerialize(System.Object)">
+            <summary>
+            序列化成XML格式字符串
+            </summary>
+            <param name="obj">待序列化的对象</param>
+            <returns>序列化后的字符串</returns>
+        </member>
+        <member name="M:JFx.Utils.SerializerHelper.XmlDeserialize(System.String,System.Type)">
+            <summary>
+            从XML格式字符串反序列化 
+            </summary>
+            <param name="xml">xml字符串</param>
+            <param name="type">要生成的对象类型</param>
+            <returns>反序列化后的对象</returns>
+        </member>
+        <member name="M:JFx.Utils.SerializerHelper.JsonSerializer(System.Object,System.String)">
+            <summary>
+            以Json方式序列化指定对象
+            </summary>
+            <param name="obj">待序列化的对象</param>
+            <param name="datetimeFormat">解决DateTime序列化后为Date(1411797836360+0800)格式问题，若需要生成Date(1411797836360+0800)格式，请忽略此参数，格式：yyyy-MM-dd HH:mm:ss</param>
+            <returns>序列化后的Json文本</returns>
+        </member>
+        <member name="M:JFx.Utils.SerializerHelper.JsonDeserialize``1(System.String)">
+            <summary>
+            从Json格式字符串反序列化
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="json">json字符串</param>
+            <returns>序列化后的对象</returns>
+        </member>
+        <member name="T:ArrayExtensions">
+            <summary>
+            扩展数组基类
+            </summary>
+        </member>
+        <member name="M:ArrayExtensions.IsNullOrEmpty(System.Array)">
+            <summary>
+            	检查数组是否为空
+            	<para>null || length==0 </para>
+            </summary>
+            <param name = "source">数组对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ArrayExtensions.WithinIndex(System.Array,System.Int32)">
+            <summary>
+            	检查指定的索引号是否包含在数组中
+            </summary>
+            <param name = "source">数组对象</param>
+            <param name = "index">索引号</param>
+            <returns></returns>
+        </member>
+        <member name="M:ArrayExtensions.WithinIndex(System.Array,System.Int32,System.Int32)">
+            <summary>
+            	检查指定的索引号是否包含在数组中
+            </summary>
+            <param name = "source">数组对象</param>
+            <param name = "index">索引号</param>
+            <param name="dimension">维度</param>
+            <returns></returns>
+        </member>
+        <member name="T:CollectionExtensions">
+            <summary>
+            对ICollection的扩展
+            </summary>
+        </member>
+        <member name="M:CollectionExtensions.AddUnique``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary>
+            向集合中添加一项，如果这项值已存在则不加到集合中同时返回false,如果这项值不存在则加入到集合中同时返回true
+            </summary>
+            <typeparam name = "T">泛型集合的值的类型</typeparam>
+            <param name = "collection">集合对象的实例</param>
+            <param name = "value">待添加的项</param>
+            <returns>新增成功返回true,否则返回false</returns>
+            <example>
+            	<code>
+            		list.AddUnique(1); // returns true;
+            		list.AddUnique(1); // returns false;
+            	</code>
+            </example>
+        </member>
+        <member name="M:CollectionExtensions.AddRangeUnique``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            向集合中添加一组项，如果项已存在则不添加
+            </summary>
+            <typeparam name = "T">泛型集合的值的类型</typeparam>
+            <param name = "collection">集合对象的实例</param>
+            <param name = "values">待添加的一组项</param>
+            <returns>返回成功添加的数量</returns>
+        </member>
+        <member name="M:CollectionExtensions.RemoveAll``1(System.Collections.Generic.ICollection{``0},System.Predicate{``0})">
+            <summary>
+            移除集合中所有符合条件的项
+            </summary>
+            <typeparam name="T">泛型集合的值的类型</typeparam>
+            <param name="collection">集合对象的实例</param>
+            <param name="predicate">表示定义一组条件并确定指定对象是否符合这些条件的方法</param>
+        </member>
+        <member name="T:JFx.CombinedException">
+            <summary>
+            组合一组异常
+            </summary>
+        </member>
+        <member name="M:JFx.CombinedException.#ctor(System.String,System.Exception[])">
+            <summary>
+            构造一个组合异常类 <see cref="T:JFx.CombinedException"/>.
+            </summary>
+            <param name="message">异常提示信息</param>
+            <param name="innerExceptions">一组内部异常</param>
+        </member>
+        <member name="P:JFx.CombinedException.InnerExceptions">
+            <summary>
+            一组内部异常
+            </summary>
+        </member>
+        <member name="T:DictionaryExtensions">
+            <summary>
+            Dictionary扩展类
+            </summary>
+        </member>
+        <member name="M:DictionaryExtensions.GetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            获取指定Key的值，不存在则返回默认值
+            </summary>
+            <typeparam name="TKey">集合Key类型</typeparam>
+            <typeparam name="TValue">集合Value类型</typeparam>
+            <param name="dictionary">IDictionary</param>
+            <param name="key">Key</param>
+            <param name="defaultValue">defaultValue</param>
+            <returns>指定Key的值，不存在则返回默认值</returns>
+        </member>
+        <member name="M:DictionaryExtensions.ForEach``2(System.Collections.Generic.Dictionary{``0,``1},System.Action{``0,``1})">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dictionary"></param>
+            <param name="onEachFn"></param>
+        </member>
+        <member name="M:DictionaryExtensions.ConvertAll``3(System.Collections.Generic.IDictionary{``1,``2},System.Func{``1,``2,``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+            <param name="map"></param>
+            <param name="createFn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DictionaryExtensions.AddOrUpdate``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            指定的Key存在则修改，不存在则新增
+            </summary>
+            <param name="dic">IDictionary</param>
+            <param name="key">Key</param>
+            <param name="value">Value</param>
+        </member>
+        <member name="T:DirectoryInfoExtensions">
+            <summary>
+            	Extension methods for the DirectoryInfo class
+            </summary>
+        </member>
+        <member name="M:DirectoryInfoExtensions.GetFiles(System.IO.DirectoryInfo,System.String[])">
+            <summary>
+            	Gets all files in the directory matching one of the several (!) supplied patterns (instead of just one in the regular implementation).
+            </summary>
+            <param name = "directory">The directory.</param>
+            <param name = "patterns">The patterns.</param>
+            <returns>The matching files</returns>
+            <remarks>
+            	This methods is quite perfect to be used in conjunction with the newly created FileInfo-Array extension methods.
+            </remarks>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            	</code>
+            </example>
+        </member>
+        <member name="M:DirectoryInfoExtensions.FindFileRecursive(System.IO.DirectoryInfo,System.String)">
+            <summary>
+            	Searches the provided directory recursively and returns the first file matching the provided pattern.
+            </summary>
+            <param name = "directory">The directory.</param>
+            <param name = "pattern">The pattern.</param>
+            <returns>The found file</returns>
+            <example>
+            	<code>
+            		var directory = new DirectoryInfo(@"c:\");
+            		var file = directory.FindFileRecursive("win.ini");
+            	</code>
+            </example>
+        </member>
+        <member name="M:DirectoryInfoExtensions.FindFileRecursive(System.IO.DirectoryInfo,System.Func{System.IO.FileInfo,System.Boolean})">
+            <summary>
+            	Searches the provided directory recursively and returns the first file matching to the provided predicate.
+            </summary>
+            <param name = "directory">The directory.</param>
+            <param name = "predicate">The predicate.</param>
+            <returns>The found file</returns>
+            <example>
+            	<code>
+            		var directory = new DirectoryInfo(@"c:\");
+            		var file = directory.FindFileRecursive(f => f.Extension == ".ini");
+            	</code>
+            </example>
+        </member>
+        <member name="M:DirectoryInfoExtensions.FindFilesRecursive(System.IO.DirectoryInfo,System.String)">
+            <summary>
+            	Searches the provided directory recursively and returns the all files matching the provided pattern.
+            </summary>
+            <param name = "directory">The directory.</param>
+            <param name = "pattern">The pattern.</param>
+            <remarks>
+            	This methods is quite perfect to be used in conjunction with the newly created FileInfo-Array extension methods.
+            </remarks>
+            <returns>The found files</returns>
+            <example>
+            	<code>
+            		var directory = new DirectoryInfo(@"c:\");
+            		var files = directory.FindFilesRecursive("*.ini");
+            	</code>
+            </example>
+        </member>
+        <member name="M:DirectoryInfoExtensions.FindFilesRecursive(System.IO.DirectoryInfo,System.Func{System.IO.FileInfo,System.Boolean})">
+            <summary>
+            	Searches the provided directory recursively and returns the all files matching to the provided predicate.
+            </summary>
+            <param name = "directory">The directory.</param>
+            <param name = "predicate">The predicate.</param>
+            <returns>The found files</returns>
+            <remarks>
+            	This methods is quite perfect to be used in conjunction with the newly created FileInfo-Array extension methods.
+            </remarks>
+            <example>
+            	<code>
+            		var directory = new DirectoryInfo(@"c:\");
+            		var files = directory.FindFilesRecursive(f => f.Extension == ".ini");
+            	</code>
+            </example>
+        </member>
+        <member name="M:DirectoryInfoExtensions.FindFilesRecursive(System.IO.DirectoryInfo,System.Func{System.IO.FileInfo,System.Boolean},System.Collections.Generic.List{System.IO.FileInfo})">
+            <summary>
+            
+            </summary>
+            <param name="directory"></param>
+            <param name="predicate"></param>
+            <param name="foundFiles"></param>
+        </member>
+        <member name="M:DirectoryInfoExtensions.GetMatchingFiles(System.IO.DirectoryInfo,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="rootDirPath"></param>
+            <param name="fileSearchPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DirectoryInfoExtensions.GetMatchingFiles(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="rootDirPath"></param>
+            <param name="fileSearchPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EnumerableExtensions">
+            <summary>
+            	Extension methods for all kinds of (typed) enumerable data (Array, List, ...)
+            </summary>
+        </member>
+        <member name="M:EnumerableExtensions.ConvertList``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            	Converts all items of a list and returns them as enumerable.
+            </summary>
+            <typeparam name = "TSource">The source data type</typeparam>
+            <typeparam name = "TTarget">The target data type</typeparam>
+            <param name = "source">The source data.</param>
+            <returns>The converted data</returns>
+            <example>
+            	var values = new[] { "1", "2", "3" };
+            	values.ConvertList&lt;string, int&gt;().ForEach(Console.WriteLine);
+            </example>
+        </member>
+        <member name="M:EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            	Performs an action for each item in the enumerable
+            </summary>
+            <typeparam name = "T">The enumerable data type</typeparam>
+            <param name = "values">The data values.</param>
+            <param name = "action">The action to be performed.</param>
+            <example>
+            	var values = new[] { "1", "2", "3" };
+            	values.ConvertList&lt;string, int&gt;().ForEach(Console.WriteLine);
+            </example>
+            <remarks>
+            	This method was intended to return the passed values to provide method chaining. Howver due to defered execution the compiler would actually never run the entire code at all.
+            </remarks>
+        </member>
+        <member name="M:EnumerableExtensions.IgnoreNulls``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            	Returns enumerable object based on target, which does not contains null references.
+            	If target is null reference, returns empty enumerable object.
+            </summary>
+            <typeparam name = "T">Type of items in target.</typeparam>
+            <param name = "target">Target enumerable object. Can be null.</param>
+            <example>
+            	object[] items = null;
+            	foreach(var item in items.NotNull()){
+            	// result of items.NotNull() is empty but not null enumerable
+            	}
+             
+            	object[] items = new object[]{ null, "Hello World!", null, "Good bye!" };
+            	foreach(var item in items.NotNull()){
+            	// result of items.NotNull() is enumerable with two strings
+            	}
+            </example>
+            <remarks>
+            	Contributed by tencokacistromy, http://www.codeplex.com/site/users/view/tencokacistromy
+            </remarks>
+        </member>
+        <member name="M:EnumerableExtensions.Distinct``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            	Get Distinct
+            </summary>
+            <param name = "source"></param>
+            <param name = "expression"></param>
+            <typeparam name = "T"></typeparam>
+            <typeparam name = "TKey"></typeparam>
+            <returns></returns>
+             <remarks>
+             	Contributed by Michael T, http://about.me/MichaelTran
+             </remarks>
+        </member>
+        <member name="M:EnumerableExtensions.RemoveAll``1(System.Collections.Generic.IEnumerable{``0},System.Predicate{``0})">
+            <summary>
+            	Remove item from a list
+            </summary>
+            <param name = "source"></param>
+            <param name = "predicate"></param>
+            <typeparam name = "T"></typeparam>
+            <returns></returns>
+             <remarks>
+             	Contributed by Michael T, http://about.me/MichaelTran
+             </remarks>
+        </member>
+        <member name="T:EnumExtensions">
+            <summary>
+            枚举扩展类
+            </summary>
+        </member>
+        <member name="M:EnumExtensions.ToDescription(System.Enum)">
+            <summary>
+            Gets the textual description of the enum if it has one. e.g.
+            
+            <code>
+            enum UserColors
+            {
+                [Description("Bright Red")]
+                BrightRed
+            }
+            UserColors.BrightRed.ToDescription();
+            </code>
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnumExtensions.ToList(System.Enum)">
+            <summary>
+            
+            </summary>
+            <param name="enum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnumExtensions.Has``1(System.Enum,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnumExtensions.Is``1(System.Enum,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnumExtensions.Add``1(System.Enum,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EnumExtensions.Remove``1(System.Enum,``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="type"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FileInfoExtensions">
+            <summary>
+            	Extension methods for the FileInfo and FileInfo-Array classes
+            </summary>
+        </member>
+        <member name="M:FileInfoExtensions.Rename(System.IO.FileInfo,System.String)">
+            <summary>
+            	Renames a file.
+            </summary>
+            <param name = "file">The file.</param>
+            <param name = "newName">The new name.</param>
+            <returns>The renamed file</returns>
+            <example>
+            	<code>
+            		var file = new FileInfo(@"c:\test.txt");
+            		file.Rename("test2.txt");
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.RenameFileWithoutExtension(System.IO.FileInfo,System.String)">
+            <summary>
+            	Renames a without changing its extension.
+            </summary>
+            <param name = "file">The file.</param>
+            <param name = "newName">The new name.</param>
+            <returns>The renamed file</returns>
+            <example>
+            	<code>
+            		var file = new FileInfo(@"c:\test.txt");
+            		file.RenameFileWithoutExtension("test3");
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.Delete(System.IO.FileInfo[])">
+            <summary>
+            	Deletes several files at once and consolidates any exceptions.
+            </summary>
+            <param name = "files">The files.</param>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		files.Delete()
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.Delete(System.IO.FileInfo[],System.Boolean)">
+            <summary>
+            	Deletes several files at once and optionally consolidates any exceptions.
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "consolidateExceptions">if set to <c>true</c> exceptions are consolidated and the processing is not interrupted.</param>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		files.Delete()
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.CopyTo(System.IO.FileInfo[],System.String)">
+            <summary>
+            	Copies several files to a new folder at once and consolidates any exceptions.
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "targetPath">The target path.</param>
+            <returns>The newly created file copies</returns>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		var copiedFiles = files.CopyTo(@"c:\temp\");
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.CopyTo(System.IO.FileInfo[],System.String,System.Boolean)">
+            <summary>
+            	Copies several files to a new folder at once and optionally consolidates any exceptions.
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "targetPath">The target path.</param>
+            <param name = "consolidateExceptions">if set to <c>true</c> exceptions are consolidated and the processing is not interrupted.</param>
+            <returns>The newly created file copies</returns>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		var copiedFiles = files.CopyTo(@"c:\temp\");
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.MoveTo(System.IO.FileInfo[],System.String)">
+            <summary>
+            	Moves several files to a new folder at once and optionally consolidates any exceptions.
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "targetPath">The target path.</param>
+            <returns>The moved files</returns>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		files.MoveTo(@"c:\temp\");
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.MoveTo(System.IO.FileInfo[],System.String,System.Boolean)">
+            <summary>
+            	Movies several files to a new folder at once and optionally consolidates any exceptions.
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "targetPath">The target path.</param>
+            <param name = "consolidateExceptions">if set to <c>true</c> exceptions are consolidated and the processing is not interrupted.</param>
+            <returns>The moved files</returns>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		files.MoveTo(@"c:\temp\");
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.SetAttributes(System.IO.FileInfo[],System.IO.FileAttributes)">
+            <summary>
+            	Sets file attributes for several files at once
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "attributes">The attributes to be set.</param>
+            <returns>The changed files</returns>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		files.SetAttributes(FileAttributes.Archive);
+            	</code>
+            </example>
+        </member>
+        <member name="M:FileInfoExtensions.SetAttributesAdditive(System.IO.FileInfo[],System.IO.FileAttributes)">
+            <summary>
+            	Appends file attributes for several files at once (additive to any existing attributes)
+            </summary>
+            <param name = "files">The files.</param>
+            <param name = "attributes">The attributes to be set.</param>
+            <returns>The changed files</returns>
+            <example>
+            	<code>
+            		var files = directory.GetFiles("*.txt", "*.xml");
+            		files.SetAttributesAdditive(FileAttributes.Archive);
+            	</code>
+            </example>
+        </member>
+        <member name="T:IntExtensions">
+            <summary>
+            	Extension methods for the string data type
+            </summary>
+        </member>
+        <member name="M:IntExtensions.Times(System.Int32,System.Action)">
+            <summary>
+            	Performs the specified action n times based on the underlying int value.
+            </summary>
+            <param name = "value">The value.</param>
+            <param name = "action">The action.</param>
+        </member>
+        <member name="M:IntExtensions.Times(System.Int32,System.Action{System.Int32})">
+            <summary>
+            	Performs the specified action n times based on the underlying int value.
+            </summary>
+            <param name = "value">The value.</param>
+            <param name = "action">The action.</param>
+        </member>
+        <member name="M:IntExtensions.Times``1(System.Int32,System.Func{``0})">
+            <summary>
+            	Performs the specified action n times based on the underlying int value.
+            </summary>
+            <param name = "times">The value.</param>
+            <param name = "action">The action.</param>
+            <returns>action返回值集合</returns>
+        </member>
+        <member name="M:IntExtensions.Times``1(System.Int32,System.Func{System.Int32,``0})">
+            <summary>
+            Performs the specified action n times based on the underlying int value.
+            </summary>
+            <param name = "times">重复次数</param>
+            <param name = "action">The action.</param>
+            <returns>action返回值集合</returns>
+        </member>
+        <member name="T:ListExtensions">
+            <summary>
+            	Extension methods for all kind of Lists implementing the IList&lt;T&gt; interface
+            </summary>
+        </member>
+        <member name="M:ListExtensions.InsertUnqiue``1(System.Collections.Generic.IList{``0},System.Int32,``0)">
+            <summary>
+            	Inserts an item uniquely to to a list and returns a value whether the item was inserted or not.
+            </summary>
+            <typeparam name = "T">The generic list item type.</typeparam>
+            <param name = "list">The list to be inserted into.</param>
+            <param name = "index">The index to insert the item at.</param>
+            <param name = "item">The item to be added.</param>
+            <returns>Indicates whether the item was inserted or not</returns>
+        </member>
+        <member name="M:ListExtensions.InsertRangeUnique``1(System.Collections.Generic.IList{``0},System.Int32,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            	Inserts a range of items uniquely to a list starting at a given index and returns the amount of items inserted.
+            </summary>
+            <typeparam name = "T">The generic list item type.</typeparam>
+            <param name = "list">The list to be inserted into.</param>
+            <param name = "startIndex">The start index.</param>
+            <param name = "items">The items to be inserted.</param>
+            <returns>The amount if items that were inserted.</returns>
+        </member>
+        <member name="M:ListExtensions.IndexOf``1(System.Collections.Generic.IList{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            	Return the index of the first matching item or -1.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "list">The list.</param>
+            <param name = "comparison">The comparison.</param>
+            <returns>The item index</returns>
+        </member>
+        <member name="M:ListExtensions.Join``1(System.Collections.Generic.IList{``0},System.Char)">
+            <summary>
+            	Join all the elements in the list and create a string seperated by the specified char.
+            </summary>
+            <param name = "list">
+            	The list.
+            </param>
+            <param name = "joinChar">
+            	The join char.
+            </param>
+            <typeparam name = "T">
+            </typeparam>
+            <returns>
+            	The resulting string of the elements in the list.
+            </returns>
+            <remarks>
+            	Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:ListExtensions.Join``1(System.Collections.Generic.IList{``0},System.String)">
+            <summary>
+            	Join all the elements in the list and create a string seperated by the specified string.
+            </summary>
+            <param name = "list">
+            	The list.
+            </param>
+            <param name = "joinString">
+            	The join string.
+            </param>
+            <typeparam name = "T">
+            </typeparam>
+            <returns>
+            	The resulting string of the elements in the list.
+            </returns>
+            <remarks>
+            	Contributed by Michael T, http://about.me/MichaelTran
+            	Optimised by Mario Majcica
+            </remarks>
+        </member>
+        <member name="M:ListExtensions.Cast``1(System.Collections.IList)">
+            <summary>
+            	Cast this list into a List
+            </summary>
+            <param name = "source"></param>
+            <typeparam name = "T"></typeparam>
+            <returns></returns>
+             <remarks>
+             	Contributed by Michael T, http://about.me/MichaelTran
+             </remarks>
+        </member>
+        <member name="M:ListExtensions.Merge``1(System.Collections.Generic.List{``0}[])">
+            <summary>The merge.</summary>
+            <param name="lists">The lists.</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <remarks>
+            	Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:ListExtensions.Merge``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}},System.Collections.Generic.List{``0}[])">
+            <summary>The merge.</summary>
+            <param name="match">The match.</param>
+            <param name="lists">The lists.</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <remarks>
+            	Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:ListExtensions.Merge``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0},System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>The merge.</summary>
+            <param name="list1">The list 1.</param>
+            <param name="list2">The list 2.</param>
+            <param name="match">The match.</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <remarks>
+            	Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:ListExtensions.Merge``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>The merge.</summary>
+            <param name="list1">The list 1.</param>
+            <param name="list2">The list 2.</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+            <remarks>
+            	Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="T:NameValueExtensions">
+            <summary>
+            Extension classes for NameValueCollection.
+            </summary>
+        </member>
+        <member name="M:NameValueExtensions.GetOrDefault(System.Collections.Specialized.NameValueCollection,System.String,System.String)">
+            <summary>
+            Gets the value associated w/ the key, if it's empty returns the default value.
+            </summary>
+            <param name="collection"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NameValueExtensions.GetOrDefault``1(System.Collections.Specialized.NameValueCollection,System.String,``0)">
+            <summary>
+            Gets the value associated w/ the key and convert it to the correct Type, if empty returns the default value.
+            </summary>
+            <typeparam name="T">The type to convert the value to.</typeparam>
+            <param name="collection">Collection.</param>
+            <param name="key">The key representing the value to get.</param>
+            <param name="defaultValue">Value to return if the key has an empty value.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ObjectExtensions">
+            <summary>
+            	Extension methods for the root data type object
+            </summary>
+        </member>
+        <member name="M:ObjectExtensions.EqualsAny``1(``0,``0[])">
+            <summary>
+            	Determines whether the object is equal to any of the provided values.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "obj">The object to be compared.</param>
+            <param name = "values">The values to compare with the object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ObjectExtensions.EqualsNone``1(``0,``0[])">
+            <summary>
+            	Determines whether the object is equal to none of the provided values.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "obj">The object to be compared.</param>
+            <param name = "values">The values to compare with the object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:ObjectExtensions.ConvertTo``1(System.Object)">
+            <summary>
+            	Converts an object to the specified target type or returns the default value.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "value">The value.</param>
+            <returns>The target type</returns>
+        </member>
+        <member name="M:ObjectExtensions.ConvertTo``1(System.Object,``0)">
+            <summary>
+            	Converts an object to the specified target type or returns the default value.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "value">The value.</param>
+            <param name = "defaultValue">The default value.</param>
+            <returns>The target type</returns>
+        </member>
+        <member name="M:ObjectExtensions.ConvertTo``1(System.Object,``0,System.Boolean)">
+            <summary>
+            	Converts an object to the specified target type or returns the default value. Any exceptions are optionally ignored.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "value">The value.</param>
+            <param name = "defaultValue">The default value.</param>
+            <param name = "ignoreException">if set to <c>true</c> ignore any exception.</param>
+            <returns>The target type</returns>
+        </member>
+        <member name="M:ObjectExtensions.CanConvertTo``1(System.Object)">
+            <summary>
+            	Determines whether the value can (in theory) be converted to the specified target type.
+            </summary>
+            <typeparam name = "T"></typeparam>
+            <param name = "value">The value.</param>
+            <returns>
+            	<c>true</c> if this instance can be convert to the specified target type; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:ObjectExtensions.CastTo``1(System.Object)">
+            <summary>
+            	Cast an object to the given type. Usefull especially for anonymous types.
+            </summary>
+            <typeparam name = "T">The type to cast to</typeparam>
+            <param name = "value">The object to case</param>
+            <returns>
+            	the casted type or null if casting is not possible.
+            </returns>
+            <remarks>
+            	Contributed by blaumeister, http://www.codeplex.com/site/users/view/blaumeiser
+            </remarks>
+        </member>
+        <member name="M:ObjectExtensions.IsNull(System.Object)">
+            <summary>
+            	Returns TRUE, if specified target reference is equals with null reference.
+            	Othervise returns FALSE.
+            </summary>
+            <param name = "target">Target reference. Can be null.</param>
+            <remarks>
+            	Some types has overloaded '==' and '!=' operators.
+            	So the code "null == ((MyClass)null)" can returns <c>false</c>.
+            	The most correct way how to test for null reference is using "System.Object.ReferenceEquals(object, object)" method.
+            	However the notation with ReferenceEquals method is long and uncomfortable - this extension method solve it.
+            
+            	Contributed by tencokacistromy, http://www.codeplex.com/site/users/view/tencokacistromy
+            </remarks>
+            <example>
+            	object someObject = GetSomeObject();
+            	if ( someObject.IsNull() ) { /* the someObject is null */ }
+            	else { /* the someObject is not null */ }
+            </example>
+        </member>
+        <member name="M:ObjectExtensions.IsNull``1(``0)">
+            <summary>
+            	Returns TRUE, if specified target reference is equals with null reference.
+            	Othervise returns FALSE.
+            </summary>
+            <typeparam name = "T">Type of target.</typeparam>
+            <param name = "target">Target reference. Can be null.</param>
+            <remarks>
+            	Some types has overloaded '==' and '!=' operators.
+            	So the code "null == ((MyClass)null)" can returns <c>false</c>.
+            	The most correct way how to test for null reference is using "System.Object.ReferenceEquals(object, object)" method.
+            	However the notation with ReferenceEquals method is long and uncomfortable - this extension method solve it.
+            
+            	Contributed by tencokacistromy, http://www.codeplex.com/site/users/view/tencokacistromy
+            </remarks>
+            <example>
+            	MyClass someObject = GetSomeObject();
+            	if ( someObject.IsNull() ) { /* the someObject is null */ }
+            	else { /* the someObject is not null */ }
+            </example>
+        </member>
+        <member name="M:ObjectExtensions.IfNull``1(``0,``0)">
+            <summary>
+            如果当前对象是Null则返回defaultValue
+            </summary>
+            <typeparam name="T">参数类型</typeparam>
+            <param name="target">当前参数</param>
+            <param name="defaultValue">默认值</param>
+            <returns>如果当前对象是Null则返回defaultValue，否则返回当前对象</returns>
+        </member>
+        <member name="M:ObjectExtensions.CastAs``1(System.Object)">
+            <summary>
+            Cast an object to the given type. Usefull especially for anonymous types.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj">The object to be cast</param>
+            <returns>
+            the casted type or null if casting is not possible.
+            </returns>
+            <remarks>
+            Contributed by Michael T, http://about.me/MichaelTran
+            </remarks>
+        </member>
+        <member name="M:ObjectExtensions.Clone``1(``0)">
+            <summary>
+            深度拷贝一个对象，拷贝的类型必须是可序列化的
+            </summary>
+            <typeparam name="T">The type of object being copied.</typeparam>
+            <param name="source">The object instance to copy.</param>
+            <returns>The copied object.</returns>
+        </member>
+        <member name="T:StringExtensions">
+            <summary>
+            	Extension methods for the string data type
+            </summary>
+        </member>
+        <member name="M:StringExtensions.IsEmpty(System.String)">
+            <summary>
+            	Determines whether the specified string is null or empty.
+            </summary>
+            <param name = "value">The string value to check.</param>
+        </member>
+        <member name="M:StringExtensions.IfEmpty(System.String,System.String)">
+            <summary>
+            	Checks whether the string is empty and returns a default value in case.
+            </summary>
+            <param name = "value">The string to check.</param>
+            <param name = "defaultValue">The default value.</param>
+            <returns>Either the string or the default value.</returns>
+        </member>
+        <member name="M:StringExtensions.FormatWith(System.String,System.Object[])">
+            <summary>
+            	Formats the value with the parameters using string.Format.
+            </summary>
+            <param name = "value">The input string.</param>
+            <param name = "parameters">The parameters.</param>
+            <returns></returns>
+        </member>
+        <member name="M:StringExtensions.TrimToMaxLength(System.String,System.Int32)">
+            <summary>
+            	Trims the text to a provided maximum length.
+            </summary>
+            <param name = "value">The input string.</param>
+            <param name = "maxLength">Maximum length.</param>
+            <returns></returns>
+            <remarks>
+            	Proposed by Rene Schulte
+            </remarks>
+        </member>
+        <member name="M:StringExtensions.TrimToMaxLength(System.String,System.Int32,System.String)">
+            <summary>
+            	Trims the text to a provided maximum length and adds a suffix if required.
+            <para>例如：</para>
+            <para>"十几年来，方兴东与马云每年一次，老友聚首，开怀畅谈，".TrimToMaxLength(10, "……")</para>
+            </summary>
+            <param name = "value">The input string.</param>
+            <param name = "maxLength">Maximum length.</param>
+            <param name = "suffix">The suffix.</param>
+            <returns></returns>
+            <remarks>
+            	Proposed by Rene Schulte
+            </remarks>
+        </member>
+        <member name="M:StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            	Determines whether the comparison value strig is contained within the input value string
+            </summary>
+            <param name = "inputValue">The input value.</param>
+            <param name = "comparisonValue">The comparison value.</param>
+            <param name = "comparisonType">Type of the comparison to allow case sensitive or insensitive comparison.</param>
+            <returns>
+            	<c>true</c> if input value contains the specified value, otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:StringExtensions.Repeat(System.String,System.Int32)">
+            <summary>
+            	Repeats the specified string value as provided by the repeat count.
+            </summary>
+            <param name = "value">The original string.</param>
+            <param name = "repeatCount">The repeat count.</param>
+            <returns>The repeated string</returns>
+        </member>
+        <member name="M:StringExtensions.ConcatWith(System.String,System.String[])">
+            <summary>
+            	Concatenates the specified string value with the passed additional strings.
+            </summary>
+            <param name = "value">The original value.</param>
+            <param name = "values">The additional string values to be concatenated.</param>
+            <returns>The concatenated string.</returns>
+        </member>
+        <member name="T:TypeExtensions">
+            <summary>
+            	Extension methods for the reflection meta data type "Type"
+            </summary>
+        </member>
+        <member name="M:TypeExtensions.CreateInstance(System.Type,System.Object[])">
+            <summary>
+            	Creates and returns an instance of the desired type
+            </summary>
+            <param name = "type">The type to be instanciated.</param>
+            <param name = "constructorParameters">Optional constructor parameters</param>
+            <returns>The instanciated object</returns>
+            <example>
+            	<code>
+            		var type = Type.GetType(".NET full qualified class Type")
+            		var instance = type.CreateInstance();
+            	</code>
+            </example>
+        </member>
+        <member name="M:TypeExtensions.CreateInstance``1(System.Type,System.Object[])">
+            <summary>
+            	Creates and returns an instance of the desired type casted to the generic parameter type T
+            </summary>
+            <typeparam name = "T">The data type the instance is casted to.</typeparam>
+            <param name = "type">The type to be instanciated.</param>
+            <param name = "constructorParameters">Optional constructor parameters</param>
+            <returns>The instanciated object</returns>
+            <example>
+            	<code>
+            		var type = Type.GetType(".NET full qualified class Type")
+            		var instance = type.CreateInstance&lt;IDataType&gt;();
+            	</code>
+            </example>
+        </member>
+        <member name="M:TypeExtensions.IsBaseType(System.Type,System.Type)">
+            <summary>
+            	Check if this is a base type
+            </summary>
+            <param name = "type"></param>
+            <param name = "checkingType"></param>
+            <returns></returns>
+             <remarks>
+             	Contributed by Michael T, http://about.me/MichaelTran
+             </remarks>
+        </member>
+        <member name="M:TypeExtensions.IsSubclassOfRawGeneric(System.Type,System.Type)">
+            <summary>
+            	Check if this is a sub class generic type
+            </summary>
+            <param name = "generic"></param>
+            <param name = "toCheck"></param>
+            <returns></returns>
+             <remarks>
+             	Contributed by Michael T, http://about.me/MichaelTran
+             </remarks>
+        </member>
+        <member name="M:TypeExtensions.CreateGenericTypeInstance``1(System.Type,System.Type[])">
+            <summary>
+            Closes the passed generic type with the provided type arguments and returns an instance of the newly constructed type.
+            </summary>
+            <typeparam name="T">The typed type to be returned.</typeparam>
+            <param name="genericType">The open generic type.</param>
+            <param name="typeArguments">The type arguments to close the generic type.</param>
+            <returns>An instance of the constructed type casted to T.</returns>
+        </member>
+        <member name="M:TypeExtensions.GetAllChildTypes(System.Type)">
+            <summary>
+            Gets all child types.
+            </summary>
+            <param name="type">The type.</param>
+            <returns></returns>
+        </member>
+        <member name="T:XmlNodeExtensions">
+            <summary>
+            	Extension methods for the XmlNode / XmlDocument classes and its sub classes
+            </summary>
+        </member>
+        <member name="M:XmlNodeExtensions.CreateChildNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            	Appends a child to a XML node
+            </summary>
+            <param name = "parentNode">The parent node.</param>
+            <param name = "name">The name of the child node.</param>
+            <returns>The newly cerated XML node</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.CreateChildNode(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            	Appends a child to a XML node
+            </summary>
+            <param name = "parentNode">The parent node.</param>
+            <param name = "name">The name of the child node.</param>
+            <param name = "namespaceUri">The node namespace.</param>
+            <returns>The newly cerated XML node</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.CreateCDataSection(System.Xml.XmlNode)">
+            <summary>
+            	Appends a CData section to a XML node
+            </summary>
+            <param name = "parentNode">The parent node.</param>
+            <returns>The created CData Section</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.CreateCDataSection(System.Xml.XmlNode,System.String)">
+            <summary>
+            	Appends a CData section to a XML node and prefills the provided data
+            </summary>
+            <param name = "parentNode">The parent node.</param>
+            <param name = "data">The CData section value.</param>
+            <returns>The created CData Section</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.GetCDataSection(System.Xml.XmlNode)">
+            <summary>
+            	Returns the value of a nested CData section.
+            </summary>
+            <param name = "parentNode">The parent node.</param>
+            <returns>The CData section content</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.GetAttribute(System.Xml.XmlNode,System.String)">
+            <summary>
+            	Gets an attribute value
+            </summary>
+            <param name = "node">The node.</param>
+            <param name = "attributeName">The Name of the attribute.</param>
+            <returns>The attribute value</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.GetAttribute(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            	Gets an attribute value
+            </summary>
+            <param name = "node">The node.</param>
+            <param name = "attributeName">The Name of the attribute.</param>
+            <param name = "defaultValue">The default value to be returned if no matching attribute exists.</param>
+            <returns>The attribute value</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.GetAttribute``1(System.Xml.XmlNode,System.String)">
+            <summary>
+            	Gets an attribute value converted to the specified data type
+            </summary>
+            <typeparam name = "T">The desired return data type</typeparam>
+            <param name = "node">The node.</param>
+            <param name = "attributeName">The Name of the attribute.</param>
+            <returns>The attribute value</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.GetAttribute``1(System.Xml.XmlNode,System.String,``0)">
+            <summary>
+            	Gets an attribute value converted to the specified data type
+            </summary>
+            <typeparam name = "T">The desired return data type</typeparam>
+            <param name = "node">The node.</param>
+            <param name = "attributeName">The Name of the attribute.</param>
+            <param name = "defaultValue">The default value to be returned if no matching attribute exists.</param>
+            <returns>The attribute value</returns>
+        </member>
+        <member name="M:XmlNodeExtensions.SetAttribute(System.Xml.XmlNode,System.String,System.Object)">
+            <summary>
+            	Creates or updates an attribute with the passed value.
+            </summary>
+            <param name = "node">The node.</param>
+            <param name = "name">The name.</param>
+            <param name = "value">The value.</param>
+        </member>
+        <member name="M:XmlNodeExtensions.SetAttribute(System.Xml.XmlNode,System.String,System.String)">
+            <summary>
+            	Creates or updates an attribute with the passed value.
+            </summary>
+            <param name = "node">The node.</param>
+            <param name = "name">The name.</param>
+            <param name = "value">The value.</param>
+        </member>
+        <member name="T:JFx.EncryptionHelper">
+            <summary>
+            加密解密
+            </summary>
+        </member>
+        <member name="F:JFx.EncryptionHelper.encryptIV">
+            <summary>
+            默认AES加密解密密钥向量
+            </summary>
+        </member>
+        <member name="M:JFx.EncryptionHelper.EncryptByAES(System.String,System.String)">
+            <summary>
+            AES加密
+            </summary>
+            <param name="encryptString">明文</param>
+            <param name="encryptKey">密钥</param>
+            <returns>密文</returns>
+        </member>
+        <member name="M:JFx.EncryptionHelper.DecryptByAES(System.String,System.String)">
+            <summary>
+            AES解密
+            </summary>
+            <param name="decryptString">密文</param>
+            <param name="decryptKey">密钥</param>
+            <returns>明文</returns>
+        </member>
+        <member name="M:JFx.EncryptionHelper.EncryptByDES(System.String,System.String)">
+            <summary>
+            DES加密字符串
+            </summary>
+            <param name="encryptString">待加密的字符串</param>
+            <param name="encryptKey">加密密钥,要求为8位</param>
+            <returns>加密成功返回加密后的字符串,失败返回源串</returns>
+        </member>
+        <member name="M:JFx.EncryptionHelper.DecryptByDES(System.String,System.String)">
+            <summary>
+            DES解密字符串
+            </summary>
+            <param name="decryptString">待解密的字符串</param>
+            <param name="decryptKey">解密密钥,要求为8位,和加密密钥相同</param>
+            <returns>解密成功返回解密后的字符串,失败返源串</returns>
+        </member>
+        <member name="M:JFx.EncryptionHelper.Base64Encode(System.String)">
+            <summary>
+            将指定的字符串（它将二进制数据编码为 Base64 数字）转换为等效的 8 位无符号整数数组。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.EncryptionHelper.Base64Decode(System.String)">
+            <summary>
+            将指定的字符串（它将二进制数据编码为 Base64 数字）转换为等效的 8 位无符号整数数组。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.EncryptionHelper.Md5(System.String)">
+            <summary>
+            获取字符串的MD5值
+            </summary>
+            <param name="source">源字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:JFx.Utils.CodeTimer">
+            <summary>
+            代码执行时间统计类
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.CodeTimer.Initialize">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.CodeTimer.Time(System.String,System.Int32,System.Action)">
+            <summary>
+            性能统计
+            </summary>
+            <param name="name">名称</param>
+            <param name="iteration">重复次数</param>
+            <param name="action">执行方法</param>
+        </member>
+        <member name="T:JFx.Utils.PinyinHelper">
+            <summary>
+            获得汉字的拼音
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.PinyinHelper.GetPinyin(System.String)">
+            <summary>
+            获得汉字的拼音，如果输入的是英文字符将原样输出，中文标点符号将被忽略
+            </summary>
+            <param name="chineseChars">汉字字符串</param>
+            <returns>拼音</returns>
+        </member>
+        <member name="M:JFx.Utils.PinyinHelper.GetShortPinyin(System.String)">
+            <summary>
+            获得汉字拼音的简写，即每一个汉字的拼音的首字母组成的串，如果输入的是英文字符将原样输出，中文标点符号将被忽略
+            </summary>
+            <param name="chineseChars">汉字字符串</param>
+            <returns>拼音简写</returns>
+        </member>
+        <member name="T:JFx.Utils.RandomHelper">
+            <summary>
+            随机数实用类
+            </summary>
+        </member>
+        <member name="F:JFx.Utils.RandomHelper.DefaultCharList">
+            <summary>
+            缺省的字符串取值范围
+            </summary>
+        </member>
+        <member name="F:JFx.Utils.RandomHelper.ReadCharList">
+            <summary>
+            可读的字符串取值范围
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.RandomHelper.GetRandomBytes(System.Int32)">
+            <summary>
+            获取随机字节序列
+            </summary>
+            <param name="length">字节序列的长度</param>
+            <returns>字节序列</returns>
+        </member>
+        <member name="M:JFx.Utils.RandomHelper.GetRandomBytes(System.Int32,System.Boolean)">
+            <summary>
+            获取随机字节序列
+            </summary>
+            <param name="length">字节序列的长度</param>
+            <param name="nonZero">生成的数字是否可为0</param>
+            <returns>字节序列</returns>
+        </member>
+        <member name="M:JFx.Utils.RandomHelper.GetRandomString(System.Int32,System.String)">
+            <summary>
+            获取随机字符串
+            </summary>
+            <param name="length">字符串长度</param>
+            <param name="charList">字符串取值范围（如果为Null或为空，则返回空字符串）</param>
+            <returns>随机字符串</returns>
+        </member>
+        <member name="M:JFx.Utils.RandomHelper.GetRandomString(System.Int32)">
+            <summary>
+            获取随机字符串
+            </summary>
+            <param name="length">字符串长度</param>
+            <returns>随机字符串</returns>
+            <remarks>
+            缺省使用ASCII从33到126共94个字符作为取值范围
+            </remarks>
+        </member>
+        <member name="T:JFx.Utils.Utility">
+            <summary>
+            工具类
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.Utility.InvokeFuncWithCatch``1(System.Func{``0},``0)">
+            <summary>
+            执行指定Action并捕捉异常
+            </summary>
+            <param name="action">需要执行的Action</param>
+            <param name="defaultValue">默认值</param>
+            <returns>action返回值，如果报错则返回defaultValue</returns>
+        </member>
+        <member name="M:JFx.Utils.Utility.GetClientIp">
+            <summary>
+            获取请求IP地址，默认返回：string.Empty
+            </summary>
+            <returns>默认返回：string.Empty</returns>
+        </member>
+        <member name="M:JFx.Utils.Utility.GetLocalIPAddress">
+            <summary>
+            获取本机IP地址，非客户端IP，默认返回：string.Empty
+            </summary>
+            <returns>默认返回：string.Empty</returns>
+        </member>
+        <member name="M:JFx.Utils.Utility.StrLength(System.String)">
+            <summary>
+            获取字符串长度，一个汉字长度为2
+            </summary>
+            <param name="inputString">参数字符串</param>
+            <returns>字符串长度</returns>
+        </member>
+        <member name="T:JFx.Utils.XmlHelper">
+            <summary>
+            Xml操作帮助类
+            </summary>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.CreateXmlDocument(System.String,System.String,System.String)">
+            <summary>
+            创建XML文件
+            </summary>
+            <param name="fileName">创建文件的完全限定名(包含路径)</param>
+            <param name="rootNodeName">根节点名称</param>
+            <param name="encoding">xml文档编码 (默认:utf-8)</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.CreateXmlDocument(System.String,System.String)">
+            <summary>
+            创建XML文件
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="rootNodeName">根节点名称</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.CreateXmlNode(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            创建一个子节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询父节点的XPath路径</param>
+            <param name="xmlNodeName">创建的节点名称</param>
+            <param name="innerXml">创建的节点内xml文字</param>
+            <param name="attributes">需要创建的属性字典(为NULL,则不创建属性)</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.CreateOrUpdateXmlNode(System.String,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            创建或修改一个子节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询父节点的XPath路径</param>
+            <param name="xmlNodeName">创建的节点名称</param>
+            <param name="innerXml">创建的节点内xml文字</param>
+            <param name="attributes">需要创建的属性字典(为NULL,则不创建属性)</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.UpdateXmlNode(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            批量更新多个属性
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询父节点的XPath路径</param>
+            <param name="attributes">属性集合</param>
+            <returns>是否修改成功</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.CreateOrUpdateAttribute(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建或修改一个属性
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询该属性节点的XPath路径</param>
+            <param name="name">创建或修改的属性名称</param>
+            <param name="value">创建或修改的属性值</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.CreateOrUpdateAttribute(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            创建或修改一个属性
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询该属性节点的XPath路径</param>
+            <param name="attrs">属性集合</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.DeleteXmlNode(System.String,System.String)">
+            <summary>
+            删除一个节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询该节点的XPath路径</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.BatchDeleteXmlNode(System.String,System.String)">
+            <summary>
+            批量删除节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询节点集合的XPath路径</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.DeleteAttribute(System.String,System.String,System.String)">
+            <summary>
+            删除属性
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询该属性节点的XPath路径</param>
+            <param name="attributeName">属性名称</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.GetXmlNode(System.String,System.String)">
+            <summary>
+            获取一个节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询该节点的XPath路径</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.GetXmlNodeByAttribute(System.String,System.String,System.String,System.String)">
+            <summary>
+             在节点项里面查找--根据节点的属性名称和属性值得到第一个符合的节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xpath">查询该属性节点的XPath路径</param>
+            <param name="attrName">属性名称</param>
+            <param name="attrValue">值</param>
+            <returns>获取到的节点</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.GetTreeXmlNodeByAttribute(System.Xml.XmlNodeList,System.String,System.String)">
+            <summary>
+            在节点树里面查找--根据节点的属性名称和属性值得到第一个符合的节点
+            </summary>
+            <param name="list">XmlNode集合</param>
+            <param name="attrName">属性名称</param>
+            <param name="attrValue">属性值</param>
+            <returns>获取到的节点</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.GetXmlNodeList(System.String,System.String)">
+            <summary>
+            获取多个节点
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询多个节点的XPath路径</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="M:JFx.Utils.XmlHelper.GetXmlAttribute(System.String,System.String,System.String)">
+            <summary>
+            获取属性
+            </summary>
+            <param name="fileName">XML文件的完全限定路径(包含路径)</param>
+            <param name="xPath">查询该属性节点的XPath路径</param>
+            <param name="name">属性名称</param>
+            <returns>成功返回True,失败返回Fasle</returns>
+        </member>
+        <member name="T:JFx.RegexMatchHelper">
+            <summary>
+            常用正则匹配验证助手
+            </summary>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsValidEmail(System.String)">
+            <summary>
+            检测是否符合email格式
+            </summary>
+            <param name="strEmail">要判断的email字符串</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsURL(System.String)">
+            <summary>
+            检测是否是正确的Url
+            </summary>
+            <param name="strUrl">要验证的Url</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsSafeSqlString(System.String)">
+            <summary>
+            检测是否有Sql危险字符
+            </summary>
+            <param name="str">要判断字符串</param>
+            <returns>判断结果</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsIP(System.String)">
+            <summary>
+            是否为ip
+            </summary>
+            <param name="ip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsInt(System.String)">
+            <summary>
+            验证是否为正整数
+            </summary>
+            <param name="str">需要验证的字符串</param>
+            <returns>是否正整数</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsInsideIp(System.String)">
+            <summary>
+            验证是否是内网IP
+            </summary>
+            <param name="ip">IP地址</param>
+            <returns>是否内网IP</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.CheckSqlKeyWord(System.String)">
+            <summary>
+            检查输入字符串是否有sql关键字。
+            </summary>
+            <param name="input">输入字符串</param>
+            <returns>返回结果，true为有sql关键字。</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsMobile(System.String)">
+            <summary>
+            是否为手机号
+            </summary>
+            <param name="strMobile">手机号码</param>
+            <returns>True：正确的手机号码格式，False：错误的手机号码格式</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsPhone(System.String)">
+            <summary>
+            是否为固话号
+            </summary>
+            <param name="strPhone">身份证号码</param>
+            <returns>True：正确的身份证号码格式，False：错误的身份证号码格式</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsIdCard(System.String)">
+            <summary>
+            是否是身份证号
+            </summary>
+            <param name="id">身份证号码</param>
+            <returns>True：正确的身份证号码格式，False：错误的身份证号码格式</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.CheckIDCard18(System.String)">
+            <summary>
+            是否为18位身份证号
+            </summary>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.CheckIDCard15(System.String)">
+            <summary>
+            是否为15位身份证号
+            </summary>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsDate(System.String)">
+            <summary>
+            是否为日期
+            </summary>
+            <param name="s">日期字符串</param>
+            <returns>True：正确的日期格式，False：错误的日期格式</returns>
+        </member>
+        <member name="M:JFx.RegexMatchHelper.IsImgFileName(System.String)">
+            <summary>
+            是否是图片文件名
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns>True：正确的图片文件名，False：错误的图片文件名</returns>
+        </member>
+        <member name="T:JFx.Web.JsHelper">
+            <summary>
+            客户端脚本输出
+            </summary>
+        </member>
+        <member name="M:JFx.Web.JsHelper.AlertAndRedirect(System.String,System.String)">
+            <summary>
+            弹出信息,并跳转指定页面。
+            </summary>
+            <param name="message">提示信息</param>
+            <param name="toURL">跳转地址</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.AlertAndGoHistory(System.String,System.Int32)">
+            <summary>
+            弹出信息,并返回历史页面
+            </summary>
+            <param name="message">提示信息</param>
+            <param name="value">history.go(value)</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.Redirect(System.String)">
+            <summary>
+            直接跳转到指定的页面
+            </summary>
+            <param name="toURL">跳转地址</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.AlertAndParentUrl(System.String,System.String)">
+            <summary>
+            弹出信息 并指定到父窗口
+            </summary>
+            <param name="message">提示信息</param>
+            <param name="toURL">跳转地址</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.ParentRedirect(System.String)">
+            <summary>
+            返回到父窗口
+            </summary>
+            <param name="toURL">跳转地址</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.BackHistory(System.Int32)">
+            <summary>
+            返回历史页面
+            </summary>
+            <param name="value">history.go(value)</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.Alert(System.String)">
+            <summary>
+            弹出信息
+            </summary>
+            <param name="message">提示信息</param>
+        </member>
+        <member name="M:JFx.Web.JsHelper.RegisterScriptBlock(System.Web.UI.Page,System.String)">
+            <summary>
+            注册脚本块
+            </summary>
+            <param name="page">page</param>
+            <param name="scriptString">js脚本</param>
+        </member>
+        <member name="T:JFx.Web.MessageBox">
+            <summary>
+            页面中弹出对话框
+            </summary>
+        </member>
+        <member name="M:JFx.Web.MessageBox.Show(System.Web.UI.Page,System.String)">
+            <summary>
+            显示消息提示对话框
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:JFx.Web.MessageBox.ShowConfirm(System.Web.UI.WebControls.WebControl,System.String)">
+            <summary>
+            控件点击 消息确认提示框
+            </summary>
+            <param name="Control">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:JFx.Web.MessageBox.ShowAndRedirect(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            显示消息提示对话框，并进行页面跳转
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+            <param name="url">跳转的目标URL</param>
+        </member>
+        <member name="M:JFx.Web.MessageBox.ShowAndRedirect(System.Web.UI.Page,System.String,System.String,System.Boolean)">
+            <summary>
+            显示消息提示对话框，并进行页面跳转
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="msg">提示信息</param>
+            <param name="url">跳转的目标URL</param>
+            <param name="top"></param>
+        </member>
+        <member name="M:JFx.Web.MessageBox.ResponseScript(System.Web.UI.Page,System.String)">
+            <summary>
+            输出自定义脚本信息
+            </summary>
+            <param name="page">当前页面指针，一般为this</param>
+            <param name="script">输出脚本</param>
+        </member>
+    </members>
+</doc>

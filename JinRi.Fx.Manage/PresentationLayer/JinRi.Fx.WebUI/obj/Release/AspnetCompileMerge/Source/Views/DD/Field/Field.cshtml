@@ -1,0 +1,125 @@
+﻿@{
+    Layout = null;
+}
+    <script type="text/javascript">
+        var url;
+        initFieldData();
+        function initFieldData(queryData) {
+            $('#tbField').datagrid({
+                fit: false,
+                height: 520,
+                fitColumns: true,
+                nowrap: false,
+                autoRowHeight: false,
+                striped: true,
+                collapsible: true,
+                url: '/Field/FieldJson?ServerName=@ViewBag.ServerName&DatabaseName=@ViewBag.DatabaseName&SchemaName=@ViewBag.SchemaName&TableName=@ViewBag.TableName',
+                sortName: 'FieldOrder',
+                sortOrder: 'asc',
+                singleSelect: true,
+                border: true,
+                remoteSort: false,
+                idField: 'FieldName',
+                pagination: false,
+                rownumbers: true,
+                pageSize: 20,
+                pageList: [15, 20, 25, 30, 35, 40, 45, 50],
+                pagePosition: 'bottom',
+                queryParams: queryData,
+                columns: [
+                    [
+                        { field: 'FieldName', title: '名称', width: 50, sortable: true },
+                        { field: 'FieldOrder', title: '位置', width: 50, sortable: true },
+                        { field: 'FieldType', title: '类型', width: 50, sortable: true },
+                        { field: 'FieldMaxLength', title: '最大长度', width: 50, sortable: true },
+                        { field: 'IsFieldAutoIncrement', title: '是否自增', width: 50, sortable: true },
+                        { field: 'IsFieldPrimaryKey', title: '是否主键', width: 50, sortable: true },
+                        { field: 'IsFieldNullable', title: '是否可空', width: 50, sortable: true },
+                        { field: 'FieldDefaultValue', title: '默认值', width: 50, sortable: true },
+                        { field: 'FieldDescription', title: '描述', width: 50, sortable: true }
+                    ]
+                ],
+                loadFilter: function(data) {
+                    if (data == null) {
+                        data = $(this).datagrid("reload");
+                    }
+                    return data;
+                },
+                toolbar: '#toolbarField'
+            });
+        }
+
+        function reloadField() {
+            $("#tbField").datagrid("reload");
+        }
+
+        function editField() {
+            $('.easyui-dialog').dialog('close');
+            var row = $('#tbField').datagrid('getSelected');
+            if (row) {
+                $('#dlgField').dialog('open').dialog('center').dialog('setTitle', '编辑');
+                $('#lbFieldName').text(row.FieldName);
+                $('#fmField').form('load', row);
+                $('#inputFieldServerName').val('@ViewBag.ServerName');
+                $('#inputFieldDbName').val('@ViewBag.DatabaseName');
+                $('#inputFieldSchemaName').val('@ViewBag.SchemaName');
+                $('#inputFieldTableName').val('@ViewBag.TableName');
+                url = '/Field/Edit';
+            }
+        }
+
+        function saveField() {
+            $('#fmField').form('submit', {
+                url: url,
+                onSubmit: function () {
+                    $('#taFieldDescription').val(encodeURI($('#taFieldDescription').val()));
+                    return $(this).form('validate');
+                },
+                success: function(result) {
+                    var tResult = eval("(' + result + ')");
+                    if (tResult.errorMsg) {
+                        $.messager.show({
+                            title: '出错了:<',
+                            msg: tResult.errorMsg
+                        });
+                    } else {
+                        $('#dlgField').dialog('close');
+                        $('#tbField').datagrid('reload');
+                    }
+                }
+            });
+        }
+    </script>
+<table id="tbField"></table>
+<div id="toolbarField">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr>
+            <td style=" padding-left:2px">
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-reload" plain="true" onclick="reloadField()">刷新</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-edit" plain="true" onclick="editField()">编辑</a>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="dlgField" class="easyui-dialog" style="width:500px;height:400px;padding:10px 20px" closed="true" buttons="#dlgField-buttons">
+    <form id="fmField" method="post" novalidate>
+        <div class="fitem">
+            <label>名称:</label>
+            <label id="lbFieldName"></label>
+        </div>
+        <div class="fitem">
+            <label>描述:</label>
+            <br />
+            <textarea id="taFieldDescription" name="FieldDescription" class="easyui-validatebox" style="width: 400px; height: 200px"></textarea>
+        </div>
+        <input name="FieldName" type="hidden">
+        <input id="inputFieldServerName" name="ServerName" type="hidden" />
+        <input id="inputFieldDatabaseName" name="DatabaseName" type="hidden" />
+        <input id="inputFieldSchemaName" name="SchemaName" type="hidden" />
+        <input id="inputFieldTableName" name="TableName" type="hidden" />
+    </form>
+</div>
+<div id="dlgField-buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton c6" iconcls="easyui-icon-ok" onclick="saveField()" style="width:90px">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-cancel" onclick="javascript: $('#dlgField').dialog('close');" style="width:90px">取消</a>
+</div>

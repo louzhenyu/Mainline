@@ -1,0 +1,5 @@
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.DBEntity\bin\Release\FX.CTI.DBEntity.XML
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.DBEntity\bin\Release\FX.CTI.DBEntity.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.DBEntity\bin\Release\FX.CTI.DBEntity.pdb
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.DBEntity\obj\Release\FX.CTI.DBEntity.dll
+E:\JinRi.Arch\Mainline\FX.CTI.SOA\EntityLayer\FX.CTI.DBEntity\obj\Release\FX.CTI.DBEntity.pdb

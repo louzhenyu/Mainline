@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JLog4net</id>
+    <version>1.0.0</version>
+    <title>JLog4net</title>
+    <authors>今日 - 架构部</authors>
+    <owners>古大集团</owners>
+    <projectUrl>http://wiki.jinri.org.cn/pages/viewpage.action?pageId=12812464</projectUrl>
+    <iconUrl>http://192.168.1.24:10086/ico.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>一个非常优秀的开源日志记录组件。</description>
+  </metadata>
+</package>

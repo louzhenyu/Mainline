@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{99E67607-8790-4EDF-8BD3-C4E86524DA66}</ProjectGuid>
+    <RootNamespace>EtermServer</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\8.0\Include\um;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <LibraryPath>C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\8.0\Include\um;$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files\Microsoft SDKs\Windows\v7.1\Include</IncludePath>
+    <ExecutablePath>$(VC_ExecutablePath_x86);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <LibraryPath>C:\Program Files\Microsoft SDKs\Windows\v7.1\Lib;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+    <ExcludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(MSBuild_ExecutablePath);$(VC_LibraryPath_x86);</ExcludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BookData.h" />
+    <ClInclude Include="CAsyncSocketEx\AsyncProxySocketLayer.h" />
+    <ClInclude Include="CAsyncSocketEx\AsyncSocketEx.h" />
+    <ClInclude Include="CAsyncSocketEx\AsyncSocketExLayer.h" />
+    <ClInclude Include="CAsyncSocketEx\AsyncSslSocketLayer.h" />
+    <ClInclude Include="CAsyncSocketEx\CBase64Coding.hpp" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="CntrItem.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="ConfigData.h" />
+    <ClInclude Include="CppSQLite3U.h" />
+    <ClInclude Include="Data.h" />
+    <ClInclude Include="DateTime.h" />
+    <ClInclude Include="DlgConfig.h" />
+    <ClInclude Include="DlgConfigManage.h" />
+    <ClInclude Include="DlgReckon.h" />
+    <ClInclude Include="EmailHelper.h" />
+    <ClInclude Include="Encrypt\Base64.h" />
+    <ClInclude Include="Encrypt\DES.h" />
+    <ClInclude Include="Encrypt\Encrypt.h" />
+    <ClInclude Include="enums.h" />
+    <ClInclude Include="eterm3Helper.h" />
+    <ClInclude Include="EtermCommand.h" />
+    <ClInclude Include="EtermConfig.h" />
+    <ClInclude Include="EtermConfigData.h" />
+    <ClInclude Include="EtermPacket.h" />
+    <ClInclude Include="EtermServer.h" />
+    <ClInclude Include="EtermServerDoc.h" />
+    <ClInclude Include="EtermServerView.h" />
+    <ClInclude Include="EtermSocket.h" />
+    <ClInclude Include="EtermUtility.h" />
+    <ClInclude Include="GetHDSerial.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="Http.h" />
+    <ClInclude Include="HttpParse.h" />
+    <ClInclude Include="HttpSocket.h" />
+    <ClInclude Include="IOCP\AcceptContext.h" />
+    <ClInclude Include="IOCP\BaseDefine.h" />
+    <ClInclude Include="IOCP\ContextStack.h" />
+    <ClInclude Include="IOCP\MemoryBlock.h" />
+    <ClInclude Include="IOCP\OperateContext.h" />
+    <ClInclude Include="IOCP\TcpReceiveContext.h" />
+    <ClInclude Include="IOCP\TcpSendContext.h" />
+    <ClInclude Include="IOCP\TcpServer.h" />
+    <ClInclude Include="IOCP\TcpSrvException.h" />
+    <ClInclude Include="IOCP\UdpContext.h" />
+    <ClInclude Include="IOCP\UdpServer.h" />
+    <ClInclude Include="IOCP\WebServer.h" />
+    <ClInclude Include="IPdlg.h" />
+    <ClInclude Include="json\autolink.h" />
+    <ClInclude Include="json\config.h" />
+    <ClInclude Include="json\features.h" />
+    <ClInclude Include="json\forwards.h" />
+    <ClInclude Include="json\json.h" />
+    <ClInclude Include="json\json_batchallocator.h" />
+    <ClInclude Include="json\json_tool.h" />
+    <ClInclude Include="json\reader.h" />
+    <ClInclude Include="json\value.h" />
+    <ClInclude Include="json\writer.h" />
+    <ClInclude Include="limitIP.h" />
+    <ClInclude Include="lip.h" />
+    <ClInclude Include="LockEterm.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="PingYingHelper.h" />
+    <ClInclude Include="PrinterDecrypt.h" />
+    <ClInclude Include="Proxy.h" />
+    <ClInclude Include="Proxyer.h" />
+    <ClInclude Include="RedisHelper.h" />
+    <ClInclude Include="redis\hiredis.h" />
+    <ClInclude Include="redis\xLock.h" />
+    <ClInclude Include="redis\xRedisClient.h" />
+    <ClInclude Include="redis\xRedisPool.h" />
+    <ClInclude Include="RegDlg.h" />
+    <ClInclude Include="Registry.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RxADO.h" />
+    <ClInclude Include="Script.h" />
+    <ClInclude Include="ScriptData.h" />
+    <ClInclude Include="ShowInfo.h" />
+    <ClInclude Include="SMS.h" />
+    <ClInclude Include="SocketHelper.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="strcoding.h" />
+    <ClInclude Include="stringEx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="threadpools.h" />
+    <ClInclude Include="WorkspaceBar.h" />
+    <ClInclude Include="xmlHelper.h" />
+    <ClInclude Include="ZBase64.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BookData.cpp" />
+    <ClCompile Include="CAsyncSocketEx\AsyncProxySocketLayer.cpp" />
+    <ClCompile Include="CAsyncSocketEx\AsyncSocketEx.cpp" />
+    <ClCompile Include="CAsyncSocketEx\AsyncSocketExLayer.cpp" />
+    <ClCompile Include="CAsyncSocketEx\AsyncSslSocketLayer.cpp" />
+    <ClCompile Include="CAsyncSocketEx\CBase64Coding.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="CntrItem.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="ConfigData.cpp" />
+    <ClCompile Include="CppSQLite3U.cpp" />
+    <ClCompile Include="Data.cpp" />
+    <ClCompile Include="DateTime.cpp" />
+    <ClCompile Include="DlgConfig.cpp" />
+    <ClCompile Include="DlgConfigManage.cpp" />
+    <ClCompile Include="DlgReckon.cpp" />
+    <ClCompile Include="EmailHelper.cpp" />
+    <ClCompile Include="Encrypt\Base64.cpp" />
+    <ClCompile Include="Encrypt\DES.cpp" />
+    <ClCompile Include="Encrypt\Encrypt.cpp" />
+    <ClCompile Include="enums.cpp" />
+    <ClCompile Include="eterm3Helper.cpp" />
+    <ClCompile Include="EtermCommand.cpp" />
+    <ClCompile Include="EtermConfig.cpp" />
+    <ClCompile Include="EtermConfigData.cpp" />
+    <ClCompile Include="EtermPacket.cpp" />
+    <ClCompile Include="EtermServer.cpp" />
+    <ClCompile Include="EtermServerDoc.cpp" />
+    <ClCompile Include="EtermServerView.cpp" />
+    <ClCompile Include="EtermSocket.cpp" />
+    <ClCompile Include="EtermUtility.cpp" />
+    <ClCompile Include="GetHDSerial.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="Http.cpp" />
+    <ClCompile Include="HttpParse.cpp" />
+    <ClCompile Include="HttpSocket.cpp" />
+    <ClCompile Include="IOCP\AcceptContext.cpp" />
+    <ClCompile Include="IOCP\ContextStack.cpp" />
+    <ClCompile Include="IOCP\MemoryBlock.cpp" />
+    <ClCompile Include="IOCP\OperateContext.cpp" />
+    <ClCompile Include="IOCP\TcpReceiveContext.cpp" />
+    <ClCompile Include="IOCP\TcpSendContext.cpp" />
+    <ClCompile Include="IOCP\TcpServer.cpp" />
+    <ClCompile Include="IOCP\TcpSrvException.cpp" />
+    <ClCompile Include="IOCP\UdpContext.cpp" />
+    <ClCompile Include="IOCP\UdpServer.cpp" />
+    <ClCompile Include="IOCP\WebServer.cpp" />
+    <ClCompile Include="IPdlg.cpp" />
+    <ClCompile Include="json\json_reader.cpp" />
+    <ClCompile Include="json\json_value.cpp" />
+    <ClCompile Include="json\json_writer.cpp" />
+    <ClCompile Include="limitIP.cpp" />
+    <ClCompile Include="lip.cpp" />
+    <ClCompile Include="LockEterm.cpp" />
+    <ClCompile Include="log.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="PingYingHelper.cpp" />
+    <ClCompile Include="PrinterDecrypt.cpp" />
+    <ClCompile Include="Proxy.cpp" />
+    <ClCompile Include="Proxyer.cpp" />
+    <ClCompile Include="RedisHelper.cpp" />
+    <ClCompile Include="redis\xRedisClient.cpp" />
+    <ClCompile Include="redis\xRedisClient_connection.cpp" />
+    <ClCompile Include="redis\xRedisClient_hashs.cpp" />
+    <ClCompile Include="redis\xRedisClient_keys.cpp" />
+    <ClCompile Include="redis\xRedisClient_lists.cpp" />
+    <ClCompile Include="redis\xRedisClient_sets.cpp" />
+    <ClCompile Include="redis\xRedisClient_sortedsets.cpp" />
+    <ClCompile Include="redis\xRedisClient_strings.cpp" />
+    <ClCompile Include="redis\xRedisPool.cpp" />
+    <ClCompile Include="RegDlg.cpp" />
+    <ClCompile Include="Registry.cpp" />
+    <ClCompile Include="RxADO.cpp" />
+    <ClCompile Include="Script.cpp" />
+    <ClCompile Include="ScriptData.cpp" />
+    <ClCompile Include="ShowInfo.cpp" />
+    <ClCompile Include="SMS.cpp" />
+    <ClCompile Include="SocketHelper.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="strcoding.cpp" />
+    <ClCompile Include="stringEx.cpp" />
+    <ClCompile Include="WorkspaceBar.cpp" />
+    <ClCompile Include="xmlHelper.cpp" />
+    <ClCompile Include="ZBase64.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EtermServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\EtermServer.ico" />
+    <Image Include="res\EtermServerDoc.ico" />
+    <Image Include="res\green.bmp" />
+    <Image Include="res\red.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\Toolbar256.bmp" />
+    <Image Include="res\White.bmp" />
+    <Image Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\EtermServer.rc2" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="EtermServer.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

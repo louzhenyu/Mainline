@@ -1,0 +1,175 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section PageSpecificJavascriptIncludes{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/mdm.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/icon.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/demo.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/default/easyui.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Content/navigation.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/jquery.easyui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/locale/easyui-lang-zh_CN.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/datagrid-filter.js")"></script>
+    <script type="text/javascript">
+        var url;
+        $(function () {
+            initDbData();
+        });
+
+        function initDbData(queryData) {
+            $('#tbDb').datagrid({
+                fit: false,
+                height: 520,
+                fitColumns: true,
+                nowrap: false,
+                autoRowHeight: false,
+                striped: true,
+                collapsible: true,
+                url: '/Database/DatabaseJson?ServerName=@ViewBag.ServerName',
+                sortName: 'DatabaseName',
+                sortOrder: 'asc',
+                singleSelect: true,
+                border: true,
+                remoteSort: false,
+                idField: 'DatabaseName',
+                pagination: false,
+                rownumbers: true,
+                pageSize: 20,
+                pageList: [15, 20, 25, 30, 35, 40, 45, 50],
+                pagePosition: 'bottom',
+                queryParams: queryData,
+                columns: [
+                    [
+                        {
+                            field: 'DatabaseName',
+                            title: '名称',
+                            width: 50,
+                            sortable: true,
+                            formatter: function (value, row, index) {
+                                if (row.DatabaseDescription == '<font color=\'red\'>脱机</font>')
+                                    return value;
+                                else
+                                    return '<a href="javascript:addTableTab(\'' + row.DatabaseName + '\');">' + value + '</a>';
+                            }
+                        },
+                        {
+                            field: 'DatabaseOwner',
+                            title: '所有者',
+                            width: 50,
+                            sortable: true
+                        },
+                        {
+                            field: 'DatabaseDescription',
+                            title: '描述',
+                            width: 50,
+                            sortable: true
+                        }
+                    ]
+                ],
+                loadFilter: function(data) {
+                    if (data == null) {
+                        data = $(this).datagrid("reload");
+                    }
+                    return data;
+                },
+                toolbar: '#toolbarDb',
+                filterBtnIconCls: 'easyui-icon-filter'
+            });
+            $('#tbDb').datagrid('enableFilter', [
+                {
+                    field: 'DatabaseName',
+                    type: 'text',
+                    op: ['contains', 'equal', 'notequal', 'beginwith', 'endwith']
+                }, {
+                    field: 'DatabaseDescription',
+                    type: 'text',
+                    op: ['contains', 'equal', 'notequal', 'beginwith', 'endwith']
+                }
+            ]);
+        }
+
+        function addTableTab(databasename) {
+            var url = "/Table/Table?ServerName=@ViewBag.ServerName" + "&DatabaseName=" + databasename + "&SchemaName=dbo";
+            addTab("数据库:" + databasename, url, 1);
+        }
+
+        function reloadDb() {
+            $("#tbDb").datagrid("reload");
+        }
+
+        function editDb() {
+            $('.easyui-dialog').dialog('close');
+            var row = $('#tbDb').datagrid('getSelected');
+            if (row) {
+                $('#dlgDb').dialog('open').dialog('center').dialog('setTitle', '编辑');
+                $('#lbDatabaseName').text(row.DatabaseName);
+                $('#fmDb').form('load', row);
+                $('#inputDbServerName').val('@ViewBag.ServerName');
+                url = '/Database/Edit';
+            }
+        }
+
+        function saveDb() {
+            $('#fmDb').form('submit', {
+                url: url,
+                onSubmit: function() {
+                    return $(this).form('validate');
+                },
+                success: function(result) {
+                    var tResult = eval("(' + result + ')");
+                    if (tResult.errorMsg) {
+                        $.messager.show({
+                            title: '出错了:<',
+                            msg: tResult.errorMsg
+                        });
+                    } else {
+                        $('#dlgDb').dialog('close');
+                        $('#tbDb').datagrid('reload');
+                    }
+                }
+            });
+        }
+    </script>
+}
+    <div id="tabs" class="easyui-tabs" fit="true" border="true">
+        <div title="数据库列表" index="0">
+            <table id="tbDb"></table>
+        </div>
+    </div>
+    <div id="toolbarDb">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td style="padding-left:2px">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-reload" plain="true" onclick="reloadDb()">刷新</a>
+                    <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-edit" plain="true" onclick="editDb()">编辑</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="dlgDb" class="easyui-dialog" style="width:500px;height:400px;padding:10px 20px" closed="true" buttons="#dlgDb-buttons">
+        <form id="fmDb" method="post" novalidate>
+            <div class="fitem">
+                <label>名称:</label>
+                <label id="lbDatabaseName"></label>
+            </div>
+            <div class="fitem">
+                <label>所有者:</label>
+                <br/>
+                <input id="inputDatabaseOwner" name="DatabaseOwner" style="width: 400px" />
+            </div>
+            <div class="fitem">
+                <label>描述:</label>
+                <br />
+                <textarea id="taDatabaseDescription" name="DatabaseDescription" class="easyui-validatebox" style="width: 400px; height: 150px"></textarea>
+            </div>
+            <input id="inputDatabaseName" name="DatabaseName" type="hidden">
+            <input id="inputDbServerName" name="ServerName" type="hidden" />
+        </form>
+    </div>
+    <div id="dlgDb-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconcls="easyui-icon-ok" onclick="saveDb()" style="width:90px">保存</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="easyui-icon-cancel" onclick="javascript: $('#dlgDb').dialog('close');" style="width:90px">取消</a>
+    </div>
+

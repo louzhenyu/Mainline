@@ -1,0 +1,58 @@
+﻿@using JinRi.Fx.Web
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link href="@Url.StaticFile("/media/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/media/css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/media/css/style-metro.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/media/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/media/css/jquery-ui-1.10.1.custom.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.StaticFile("/Content/css/admin.main.css?v=2014110612")" rel="stylesheet" type="text/css" />
+
+    @RenderSection("PageSpecificStyleSheetIncludes", required: false)
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "mainForm" }))
+    {
+        @RenderSection("MainContent", required: false)
+        @RenderBody()
+
+        <div style="height:30px;"></div>
+        <div class="form-actions navbar-fixed-bottom" style="text-align:center">
+            <button type="submit" id="submit" class="btn blue" style="width:75px;"><i class="icon-ok"></i> 保存</button>
+            <span id="submitloading" style="display:none;"><img src='@Url.StaticFile("/content/images/loading.gif")' /></span>
+            <button type="button" class="btn blue" id="cancel" style="width:75px;">取消</button>
+            @Html.ValidationSummary(true)
+        </div>
+    }
+    @RenderSection("OtherContent", required: false)
+    <!-- BEGIN JAVASCRIPTS -->
+    <script type="text/javascript">
+        var staticFileRoot = "@Url.StaticFile()";
+    </script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/jquery-1.8.3.min.js?v=20141027")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/jquery.validate.unobtrusive.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/jquery.numeric.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/jquery-ui-1.10.1.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/Media/js/jquery.ui.datapicker-zh-CN.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/media/js/bootstrap-tooltip.js")"></script>
+    <script type="text/javascript" src="@Url.StaticFile("/content/js/admin.edit.js?v=20141106")"></script>
+    @RenderSection("PageSpecificJavascriptIncludes", required: false)
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
